@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		159A85DF160CC64B00867385 /* BlisdLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85DE160CC64B00867385 /* BlisdLogInViewController.m */; };
+		159A85E0160CC64B00867385 /* BlisdLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85DE160CC64B00867385 /* BlisdLogInViewController.m */; };
+		159A85E3160CC6B800867385 /* BlisdSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85E2160CC6B800867385 /* BlisdSignUpViewController.m */; };
+		159A85E4160CC6B800867385 /* BlisdSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85E2160CC6B800867385 /* BlisdSignUpViewController.m */; };
 		15A6B27A160CA5D200D5CC20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6B279160CA5D200D5CC20 /* UIKit.framework */; };
 		15A6B27C160CA5D200D5CC20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6B27B160CA5D200D5CC20 /* Foundation.framework */; };
 		15A6B27E160CA5D200D5CC20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6B27D160CA5D200D5CC20 /* CoreGraphics.framework */; };
@@ -142,6 +146,30 @@
 		15A6B3B1160CAC7800D5CC20 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6B3B0160CAC7800D5CC20 /* Security.framework */; };
 		15A6B3B3160CAC8300D5CC20 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6B3B2160CAC8300D5CC20 /* StoreKit.framework */; };
 		15A6B3B5160CAC8F00D5CC20 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A6B3B4160CAC8F00D5CC20 /* SystemConfiguration.framework */; };
+		15EF2C71160CC4B100BE85B8 /* Exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C65160CC4B100BE85B8 /* Exit.png */; };
+		15EF2C72160CC4B100BE85B8 /* Exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C65160CC4B100BE85B8 /* Exit.png */; };
+		15EF2C73160CC4B100BE85B8 /* ExitDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C66160CC4B100BE85B8 /* ExitDown.png */; };
+		15EF2C74160CC4B100BE85B8 /* ExitDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C66160CC4B100BE85B8 /* ExitDown.png */; };
+		15EF2C75160CC4B100BE85B8 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C67160CC4B100BE85B8 /* Facebook.png */; };
+		15EF2C76160CC4B100BE85B8 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C67160CC4B100BE85B8 /* Facebook.png */; };
+		15EF2C77160CC4B100BE85B8 /* FacebookDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C68160CC4B100BE85B8 /* FacebookDown.png */; };
+		15EF2C78160CC4B100BE85B8 /* FacebookDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C68160CC4B100BE85B8 /* FacebookDown.png */; };
+		15EF2C79160CC4B100BE85B8 /* LoginFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C69160CC4B100BE85B8 /* LoginFieldBG.png */; };
+		15EF2C7A160CC4B100BE85B8 /* LoginFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C69160CC4B100BE85B8 /* LoginFieldBG.png */; };
+		15EF2C7B160CC4B100BE85B8 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6A160CC4B100BE85B8 /* Logo.png */; };
+		15EF2C7C160CC4B100BE85B8 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6A160CC4B100BE85B8 /* Logo.png */; };
+		15EF2C7D160CC4B100BE85B8 /* MainBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6B160CC4B100BE85B8 /* MainBG.png */; };
+		15EF2C7E160CC4B100BE85B8 /* MainBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6B160CC4B100BE85B8 /* MainBG.png */; };
+		15EF2C7F160CC4B100BE85B8 /* SignUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6C160CC4B100BE85B8 /* SignUp.png */; };
+		15EF2C80160CC4B100BE85B8 /* SignUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6C160CC4B100BE85B8 /* SignUp.png */; };
+		15EF2C81160CC4B100BE85B8 /* SignUpDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6D160CC4B100BE85B8 /* SignUpDown.png */; };
+		15EF2C82160CC4B100BE85B8 /* SignUpDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6D160CC4B100BE85B8 /* SignUpDown.png */; };
+		15EF2C83160CC4B100BE85B8 /* SignUpFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6E160CC4B100BE85B8 /* SignUpFieldBG.png */; };
+		15EF2C84160CC4B100BE85B8 /* SignUpFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6E160CC4B100BE85B8 /* SignUpFieldBG.png */; };
+		15EF2C85160CC4B100BE85B8 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6F160CC4B100BE85B8 /* Twitter.png */; };
+		15EF2C86160CC4B100BE85B8 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C6F160CC4B100BE85B8 /* Twitter.png */; };
+		15EF2C87160CC4B100BE85B8 /* TwitterDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C70160CC4B100BE85B8 /* TwitterDown.png */; };
+		15EF2C88160CC4B100BE85B8 /* TwitterDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 15EF2C70160CC4B100BE85B8 /* TwitterDown.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +183,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		159A85DC160CC62700867385 /* BlisdLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlisdLogInViewController.h; sourceTree = "<group>"; };
+		159A85DE160CC64B00867385 /* BlisdLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlisdLogInViewController.m; sourceTree = "<group>"; };
+		159A85E1160CC68A00867385 /* BlisdSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlisdSignUpViewController.h; sourceTree = "<group>"; };
+		159A85E2160CC6B800867385 /* BlisdSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlisdSignUpViewController.m; sourceTree = "<group>"; };
 		15A6B275160CA5D200D5CC20 /* Blisd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blisd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A6B279160CA5D200D5CC20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		15A6B27B160CA5D200D5CC20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -297,6 +329,18 @@
 		15A6B3B0160CAC7800D5CC20 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		15A6B3B2160CAC8300D5CC20 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		15A6B3B4160CAC8F00D5CC20 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		15EF2C65160CC4B100BE85B8 /* Exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exit.png; sourceTree = "<group>"; };
+		15EF2C66160CC4B100BE85B8 /* ExitDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExitDown.png; sourceTree = "<group>"; };
+		15EF2C67160CC4B100BE85B8 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
+		15EF2C68160CC4B100BE85B8 /* FacebookDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookDown.png; sourceTree = "<group>"; };
+		15EF2C69160CC4B100BE85B8 /* LoginFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginFieldBG.png; sourceTree = "<group>"; };
+		15EF2C6A160CC4B100BE85B8 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		15EF2C6B160CC4B100BE85B8 /* MainBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBG.png; sourceTree = "<group>"; };
+		15EF2C6C160CC4B100BE85B8 /* SignUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUp.png; sourceTree = "<group>"; };
+		15EF2C6D160CC4B100BE85B8 /* SignUpDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpDown.png; sourceTree = "<group>"; };
+		15EF2C6E160CC4B100BE85B8 /* SignUpFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpFieldBG.png; sourceTree = "<group>"; };
+		15EF2C6F160CC4B100BE85B8 /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter.png; sourceTree = "<group>"; };
+		15EF2C70160CC4B100BE85B8 /* TwitterDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterDown.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +380,7 @@
 		15A6B26A160CA5D200D5CC20 = {
 			isa = PBXGroup;
 			children = (
+				15EF2C5A160CC3F400BE85B8 /* XIBs */,
 				15A6B27F160CA5D200D5CC20 /* Blisd */,
 				15A6B2C8160CA8CE00D5CC20 /* Resources */,
 				15A6B2B7160CA5D300D5CC20 /* BlisdTests */,
@@ -377,6 +422,10 @@
 		15A6B27F160CA5D200D5CC20 /* Blisd */ = {
 			isa = PBXGroup;
 			children = (
+				159A85DC160CC62700867385 /* BlisdLogInViewController.h */,
+				159A85DE160CC64B00867385 /* BlisdLogInViewController.m */,
+				159A85E1160CC68A00867385 /* BlisdSignUpViewController.h */,
+				159A85E2160CC6B800867385 /* BlisdSignUpViewController.m */,
 				15A6B288160CA5D200D5CC20 /* com_blisdAppDelegate.h */,
 				15A6B289160CA5D300D5CC20 /* com_blisdAppDelegate.m */,
 				15A6B291160CA5D300D5CC20 /* com_blisdFirstViewController.h */,
@@ -387,10 +436,6 @@
 				15A6B299160CA5D300D5CC20 /* com_blisdSecondViewController.m */,
 				15A6B29B160CA5D300D5CC20 /* second.png */,
 				15A6B29D160CA5D300D5CC20 /* second@2x.png */,
-				15A6B29F160CA5D300D5CC20 /* com_blisdFirstViewController_iPhone.xib */,
-				15A6B2A2160CA5D300D5CC20 /* com_blisdFirstViewController_iPad.xib */,
-				15A6B2A5160CA5D300D5CC20 /* com_blisdSecondViewController_iPhone.xib */,
-				15A6B2A8160CA5D300D5CC20 /* com_blisdSecondViewController_iPad.xib */,
 				15A6B280160CA5D200D5CC20 /* Supporting Files */,
 			);
 			path = Blisd;
@@ -538,6 +583,7 @@
 		15A6B2EB160CA8CE00D5CC20 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				15EF2C64160CC47B00BE85B8 /* logingraphics */,
 				15A6B2EC160CA8CE00D5CC20 /* arrow_down.png */,
 				15A6B2ED160CA8CE00D5CC20 /* arrow_up.png */,
 				15A6B2EE160CA8CE00D5CC20 /* background3.jpg */,
@@ -616,6 +662,36 @@
 				15A6B337160CA8CE00D5CC20 /* viewbgmyblisd.jpg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		15EF2C5A160CC3F400BE85B8 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				15A6B29F160CA5D300D5CC20 /* com_blisdFirstViewController_iPhone.xib */,
+				15A6B2A2160CA5D300D5CC20 /* com_blisdFirstViewController_iPad.xib */,
+				15A6B2A5160CA5D300D5CC20 /* com_blisdSecondViewController_iPhone.xib */,
+				15A6B2A8160CA5D300D5CC20 /* com_blisdSecondViewController_iPad.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		15EF2C64160CC47B00BE85B8 /* logingraphics */ = {
+			isa = PBXGroup;
+			children = (
+				15EF2C65160CC4B100BE85B8 /* Exit.png */,
+				15EF2C66160CC4B100BE85B8 /* ExitDown.png */,
+				15EF2C67160CC4B100BE85B8 /* Facebook.png */,
+				15EF2C68160CC4B100BE85B8 /* FacebookDown.png */,
+				15EF2C69160CC4B100BE85B8 /* LoginFieldBG.png */,
+				15EF2C6A160CC4B100BE85B8 /* Logo.png */,
+				15EF2C6B160CC4B100BE85B8 /* MainBG.png */,
+				15EF2C6C160CC4B100BE85B8 /* SignUp.png */,
+				15EF2C6D160CC4B100BE85B8 /* SignUpDown.png */,
+				15EF2C6E160CC4B100BE85B8 /* SignUpFieldBG.png */,
+				15EF2C6F160CC4B100BE85B8 /* Twitter.png */,
+				15EF2C70160CC4B100BE85B8 /* TwitterDown.png */,
+			);
+			name = logingraphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -801,6 +877,18 @@
 				15A6B39A160CA8CE00D5CC20 /* usertwitter.png in Resources */,
 				15A6B39B160CA8CE00D5CC20 /* viewbgdeals.jpg in Resources */,
 				15A6B39C160CA8CE00D5CC20 /* viewbgmyblisd.jpg in Resources */,
+				15EF2C71160CC4B100BE85B8 /* Exit.png in Resources */,
+				15EF2C73160CC4B100BE85B8 /* ExitDown.png in Resources */,
+				15EF2C75160CC4B100BE85B8 /* Facebook.png in Resources */,
+				15EF2C77160CC4B100BE85B8 /* FacebookDown.png in Resources */,
+				15EF2C79160CC4B100BE85B8 /* LoginFieldBG.png in Resources */,
+				15EF2C7B160CC4B100BE85B8 /* Logo.png in Resources */,
+				15EF2C7D160CC4B100BE85B8 /* MainBG.png in Resources */,
+				15EF2C7F160CC4B100BE85B8 /* SignUp.png in Resources */,
+				15EF2C81160CC4B100BE85B8 /* SignUpDown.png in Resources */,
+				15EF2C83160CC4B100BE85B8 /* SignUpFieldBG.png in Resources */,
+				15EF2C85160CC4B100BE85B8 /* Twitter.png in Resources */,
+				15EF2C87160CC4B100BE85B8 /* TwitterDown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,6 +897,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A6B2BC160CA5D300D5CC20 /* InfoPlist.strings in Resources */,
+				15EF2C72160CC4B100BE85B8 /* Exit.png in Resources */,
+				15EF2C74160CC4B100BE85B8 /* ExitDown.png in Resources */,
+				15EF2C76160CC4B100BE85B8 /* Facebook.png in Resources */,
+				15EF2C78160CC4B100BE85B8 /* FacebookDown.png in Resources */,
+				15EF2C7A160CC4B100BE85B8 /* LoginFieldBG.png in Resources */,
+				15EF2C7C160CC4B100BE85B8 /* Logo.png in Resources */,
+				15EF2C7E160CC4B100BE85B8 /* MainBG.png in Resources */,
+				15EF2C80160CC4B100BE85B8 /* SignUp.png in Resources */,
+				15EF2C82160CC4B100BE85B8 /* SignUpDown.png in Resources */,
+				15EF2C84160CC4B100BE85B8 /* SignUpFieldBG.png in Resources */,
+				15EF2C86160CC4B100BE85B8 /* Twitter.png in Resources */,
+				15EF2C88160CC4B100BE85B8 /* TwitterDown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +941,8 @@
 				15A6B29A160CA5D300D5CC20 /* com_blisdSecondViewController.m in Sources */,
 				15A6B33D160CA8CE00D5CC20 /* bootstrap.js in Sources */,
 				15A6B33E160CA8CE00D5CC20 /* bootstrap.min.js in Sources */,
+				159A85DF160CC64B00867385 /* BlisdLogInViewController.m in Sources */,
+				159A85E3160CC6B800867385 /* BlisdSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +951,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A6B2BF160CA5D300D5CC20 /* BlisdTests.m in Sources */,
+				159A85E0160CC64B00867385 /* BlisdLogInViewController.m in Sources */,
+				159A85E4160CC6B800867385 /* BlisdSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,6 +981,7 @@
 				15A6B2A0160CA5D300D5CC20 /* en */,
 			);
 			name = com_blisdFirstViewController_iPhone.xib;
+			path = Blisd;
 			sourceTree = "<group>";
 		};
 		15A6B2A2160CA5D300D5CC20 /* com_blisdFirstViewController_iPad.xib */ = {
@@ -885,6 +990,7 @@
 				15A6B2A3160CA5D300D5CC20 /* en */,
 			);
 			name = com_blisdFirstViewController_iPad.xib;
+			path = Blisd;
 			sourceTree = "<group>";
 		};
 		15A6B2A5160CA5D300D5CC20 /* com_blisdSecondViewController_iPhone.xib */ = {
@@ -893,6 +999,7 @@
 				15A6B2A6160CA5D300D5CC20 /* en */,
 			);
 			name = com_blisdSecondViewController_iPhone.xib;
+			path = Blisd;
 			sourceTree = "<group>";
 		};
 		15A6B2A8160CA5D300D5CC20 /* com_blisdSecondViewController_iPad.xib */ = {
@@ -901,6 +1008,7 @@
 				15A6B2A9160CA5D300D5CC20 /* en */,
 			);
 			name = com_blisdSecondViewController_iPad.xib;
+			path = Blisd;
 			sourceTree = "<group>";
 		};
 		15A6B2BA160CA5D300D5CC20 /* InfoPlist.strings */ = {
