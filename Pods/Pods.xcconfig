@@ -1,0 +1,9 @@
+PODS_ROOT = ${SRCROOT}/../Pods
+PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
+ALWAYS_SEARCH_USER_PATHS = YES
+OTHER_LDFLAGS = -ObjC -Wl,-no_compact_unwind -lFlurry -lTestFlight -lz -framework AudioToolbox -framework CFNetwork -framework CoreGraphics -framework CoreLocation -framework CoreText -framework Foundation -framework MapKit -framework MessageUI -framework MobileCoreServices -framework Parse -framework QuartzCore -framework Security -framework SystemConfiguration -framework UIKit
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/FlurrySDK/Flurry" "$(PODS_ROOT)/TestFlightSDK"
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Parse"
+HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/A2DynamicDelegate" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/BlocksKit" "${PODS_ROOT}/BuildHeaders/ConciseKit" "${PODS_ROOT}/BuildHeaders/FlurrySDK" "${PODS_ROOT}/BuildHeaders/MBProgressHUD" "${PODS_ROOT}/BuildHeaders/Parse" "${PODS_ROOT}/BuildHeaders/QuickDialog" "${PODS_ROOT}/BuildHeaders/Reachability" "${PODS_ROOT}/BuildHeaders/TTTAttributedLabel" "${PODS_ROOT}/BuildHeaders/TestFlightSDK" "${PODS_ROOT}/BuildHeaders/libffi"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/A2DynamicDelegate" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/BlocksKit" "${PODS_ROOT}/Headers/ConciseKit" "${PODS_ROOT}/Headers/FlurrySDK" "${PODS_ROOT}/Headers/MBProgressHUD" "${PODS_ROOT}/Headers/Parse" "${PODS_ROOT}/Headers/QuickDialog" "${PODS_ROOT}/Headers/Reachability" "${PODS_ROOT}/Headers/TTTAttributedLabel" "${PODS_ROOT}/Headers/TestFlightSDK" "${PODS_ROOT}/Headers/libffi"
