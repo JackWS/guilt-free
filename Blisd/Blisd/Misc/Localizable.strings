@@ -1,0 +1,13 @@
+/****************************************************************************/
+/* Localization file */
+
+"SCAN_TAB" = "Scan";
+
+"LOG_IN_EMAIL_PLACEHOLDER" = "email address";
+"LOG_IN_PASSWORD_PLACEHOLDER" = "password";
+
+"SIGN_UP_EMAIL_PLACEHOLDER" = "email address";
+"SIGN_UP_PASSWORD_PLACEHOLDER" = "password (6 + chars)";
+
+"LOGIN_PROMPT" = "Login";
+"SIGNUP_PROMPT" = "Sign Up";

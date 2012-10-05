@@ -8,27 +8,56 @@
 
 #import "AppController.h"
 
-#import "FirstViewController.h"
+#import "ScanViewController.h"
 
 #import "SecondViewController.h"
 #import "LogInViewController.h"
+#import "SignUpViewController.h"
+#import "UIAlertView+BlocksKit.h"
+#import "CKMacros.h"
 
 @implementation AppController
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    
+#pragma mark UIApplicationDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self initialize];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [PFFacebookUtils handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [PFFacebookUtils handleOpenURL:url];
+}
+
+#pragma mark Initialization
+
+- (void) initialize {
+    [self initializeParse];
+    [self initializeUI];
+}
+
+- (void) initializeParse {
     [Parse setApplicationId:@"HjWLIOOPAcDdAGLosSh8nDY3OhB5Onh5LCdmW0en"
                   clientKey:@"Ua9MSXaabmMYAl0ZaLJirzdtuF4Cdb3ZlXRzm09F"];
-    
+    [PFFacebookUtils initializeWithApplicationId:@"132484773511826"];
+    [PFTwitterUtils initializeWithConsumerKey:@"CGsQrEsgk8Z0EUHPc0BQ"
+                               consumerSecret:@"91ZWdE68oPCmrOlxWdqkpUQakGECrwpWnUQbkgdBvwk"];
+}
+
+- (void) initializeUI {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *viewController1, *viewController2;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPhone" bundle:nil];
+        viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
         viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
     } else {
-        viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPad" bundle:nil];
+        viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPad" bundle:nil];
         viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
     }
     self.tabBarController = [[UITabBarController alloc] init];
@@ -37,50 +66,57 @@
     [self.window makeKeyAndVisible];
 
     LogInViewController *logInViewController = [[LogInViewController alloc] init];
-    [self.tabBarController presentModalViewController:logInViewController animated:YES];
+    logInViewController.delegate = self;
+    logInViewController.signUpController = [[SignUpViewController alloc] init];
+    logInViewController.signUpController.delegate = self;
+    [self.tabBarController presentModalViewController:logInViewController animated:NO];
+}
+
+#pragma mark PFLogInViewControllerDelegate
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [self.tabBarController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
+
+}
+
+#pragma mark PFSignUpViewControllerDelegate
+
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    user.email = user.username;
+    NSError *error = nil;
+    BOOL success = [user save:&error];
+    if (!success) {
+        NSString *errorMessage;
+        if ([error code] == 125) {
+            errorMessage = $str(@"The email address \"%@\" is invalid.", user.username);
+        } else {
+            errorMessage = [[error userInfo] objectForKey:@"error"];
+        }
+        [user deleteEventually];
+        NSLog(@"error: %@", [error description]);
+        [[[UIAlertView alloc] initWithTitle:@"Account Error"
+                                    message:errorMessage
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+        return;
+    }
+
+    [self.tabBarController dismissModalViewControllerAnimated:YES];
+}
+
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
+
+}
+
+- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
+    NSLog(@"signup info: %@", [info description]);
 
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
 
 @end

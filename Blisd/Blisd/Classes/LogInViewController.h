@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface LogInViewController : PFLogInViewController
+@interface LogInViewController : PFLogInViewController<PFLogInViewControllerDelegate>
 
 @end
