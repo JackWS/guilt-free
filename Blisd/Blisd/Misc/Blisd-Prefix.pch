@@ -11,6 +11,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "UIUtil.h"
+    #import "BlocksKit.h"
+    #import "ConciseKit.h"
 #endif
 
 #define HAS_AVFF 1

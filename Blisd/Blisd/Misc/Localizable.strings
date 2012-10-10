@@ -2,6 +2,12 @@
 /* Localization file */
 
 "SCAN_TAB" = "Scan";
+"BLISS_TAB" = "Bliss";
+
+"ERROR_TITLE" = "Error";
+"RETRY" = "Retry";
+"OK" = "OK";
+"ERROR_GENERIC" = "There was an unexpected problem with your request. Please try again later.";
 
 "LOG_IN_EMAIL_PLACEHOLDER" = "email address";
 "LOG_IN_PASSWORD_PLACEHOLDER" = "password";
@@ -11,3 +17,6 @@
 
 "LOGIN_PROMPT" = "Login";
 "SIGNUP_PROMPT" = "Sign Up";
+"LOADING" = "Loading...";
+
+"ERROR_LOADING_BLISS" = "There was an unexpected problem loading your balances. Please try again later.";

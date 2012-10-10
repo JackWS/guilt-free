@@ -10,7 +10,7 @@
 
 #import "ScanViewController.h"
 
-#import "SecondViewController.h"
+#import "BlissViewController.h"
 #import "LogInViewController.h"
 #import "SignUpViewController.h"
 #import "UIAlertView+BlocksKit.h"
@@ -55,10 +55,10 @@
     UIViewController *viewController1, *viewController2;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
-        viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
+        viewController2 = [[BlissViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
     } else {
         viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPad" bundle:nil];
-        viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
+        viewController2 = [[BlissViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
     }
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1, viewController2];
