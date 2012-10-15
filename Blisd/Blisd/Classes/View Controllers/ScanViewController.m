@@ -15,6 +15,7 @@
 #import "Balance.h"
 #import "Scan.h"
 #import "MockData.h"
+#import "PostScanViewController.h"
 
 @interface ScanViewController ()
 
@@ -55,7 +56,7 @@
         self.cameraSim.readerView = self.readerView;
 
 #if MOCK_DATA
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = self.view.frame;
         [button setTitle:@"FAKE SCAN" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(fakeScan:) forControlEvents:UIControlEventTouchUpInside];
@@ -108,6 +109,9 @@ static NSString *const kTriggerString = @"blisd";
             if (error) {
                 [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_SCAN", @"")];
             } else {
+                PostScanViewController *controller = [[PostScanViewController alloc] initWithBalance:balance];
+                [self.navigationController pushViewController:controller animated:YES];
+
                 [UIAlertView showAlertViewWithTitle:@"Hooray!"
                                             message:$str(@"Sucessfully created new balance. Number of scans: %d", balance.balance)
                                   cancelButtonTitle:@"Awesome!"

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A68C406161A6665005FD8D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A68C405161A6665005FD8D7 /* Localizable.strings */; };
 		0A68C462161B546A005FD8D7 /* LoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A68C461161B546A005FD8D7 /* LoginHeaderView.xib */; };
+		0A8B65C1162C6C7C000E6F62 /* PostScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8B65C0162C6C7C000E6F62 /* PostScanView.xib */; };
 		0AD3307E1625EE2600E5AE88 /* BlissTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AD3307D1625EE2600E5AE88 /* BlissTableViewCell.xib */; };
 		0AE8AB76161936B400D5714E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0AE8AB75161936B400D5714E /* Podfile */; };
 		0AE8AD1B16193E4800D5714E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE8AD1916193E4800D5714E /* first.png */; };
@@ -123,6 +124,7 @@
 		45094963F373BA35CB879A1D /* bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 450940232F3397907D23A7A7 /* bar_bg.png */; };
 		45094976F804E9836EFE597B /* SignUpFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 450942E1285ACA3CFA5609DD /* SignUpFieldBG.png */; };
 		4509498FFF3403422760E757 /* SignUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094244E0E9EA60BEC9CAA6 /* SignUp.png */; };
+		450949977DB976F5A4FB5829 /* PostScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450946867AE44AB2E75DFD18 /* PostScanViewController.m */; };
 		4509499E93C44D06177B9673 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 450940D0327391A8F1604BD2 /* User.m */; };
 		450949D3F16A8137E41703BC /* PFObject+NonNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 450943EF46A19A9E59475CEA /* PFObject+NonNull.m */; };
 		450949EB780F217B617B3D61 /* btntwitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094E35E71FA169EF171346 /* btntwitter.png */; };
@@ -144,6 +146,7 @@
 		45094C4D2FA2384D262920C8 /* logo275.png in Resources */ = {isa = PBXBuildFile; fileRef = 450945AD243CE6142D141432 /* logo275.png */; };
 		45094C51AD8C25DC961FB262 /* iconlogout.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094D1B71DF22F7D047C047 /* iconlogout.png */; };
 		45094C854CA1A66664E83B73 /* linetwobythreehundredpx.png in Resources */ = {isa = PBXBuildFile; fileRef = 450942D9F5F9F75DC4D8CA78 /* linetwobythreehundredpx.png */; };
+		45094CAC6E62E716A60062C2 /* NSString+Pluralize.m in Sources */ = {isa = PBXBuildFile; fileRef = 450944BFA36BFADA9A589BF1 /* NSString+Pluralize.m */; };
 		45094CDC286140654A8D20DE /* ui-bg_glass_100_f6f6f6_1x400.png in Resources */ = {isa = PBXBuildFile; fileRef = 4509470A6DFE5A5F4CA34B1E /* ui-bg_glass_100_f6f6f6_1x400.png */; };
 		45094CE324399F1087849127 /* sharefb.png in Resources */ = {isa = PBXBuildFile; fileRef = 450944EF56D459F4D7EB1DC6 /* sharefb.png */; };
 		45094CEA7B44FCE530C5A660 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 450948DC2A7998971B2CEECA /* InfoPlist.strings */; };
@@ -190,6 +193,7 @@
 /* Begin PBXFileReference section */
 		0A68C405161A6665005FD8D7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0A68C461161B546A005FD8D7 /* LoginHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginHeaderView.xib; sourceTree = "<group>"; };
+		0A8B65C0162C6C7C000E6F62 /* PostScanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostScanView.xib; sourceTree = "<group>"; };
 		0AD3307D1625EE2600E5AE88 /* BlissTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlissTableViewCell.xib; sourceTree = "<group>"; };
 		0AE8AB75161936B400D5714E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		0AE8AD1916193E4800D5714E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = en.lproj/images/first.png; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 		45094468241473D093EC7C9B /* useremail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = useremail.png; path = en.lproj/images/useremail.png; sourceTree = "<group>"; };
 		4509448DCF8865B2470D5346 /* menubuttonbliss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menubuttonbliss.png; path = en.lproj/images/menubuttonbliss.png; sourceTree = "<group>"; };
 		450944A310A665CC1A6FB3C4 /* LoginHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHeaderView.m; sourceTree = "<group>"; };
+		450944BFA36BFADA9A589BF1 /* NSString+Pluralize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Pluralize.m"; sourceTree = "<group>"; };
 		450944C9A8E3178F731ACA04 /* redtag7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redtag7.png; path = en.lproj/images/redtag7.png; sourceTree = "<group>"; };
 		450944D8F7BA16E5452810E5 /* BlisdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlisdModel.m; sourceTree = "<group>"; };
 		450944EA64EC3FDEA4E8C54B /* sharetweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sharetweet.png; path = en.lproj/images/sharetweet.png; sourceTree = "<group>"; };
@@ -292,6 +297,7 @@
 		45094509ED38FB8858319B62 /* menubar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menubar.png; path = en.lproj/images/menubar.png; sourceTree = "<group>"; };
 		4509450F2283B9FA0B54B3EB /* BlissViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BlissViewController_iPad.xib; path = en.lproj/NIBs/BlissViewController_iPad.xib; sourceTree = "<group>"; };
 		450945123F58FB4BFC479305 /* menu_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_info.png; path = en.lproj/images/menu_info.png; sourceTree = "<group>"; };
+		450945448BBD2A8FDBE77E2A /* NSString+Pluralize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Pluralize.h"; sourceTree = "<group>"; };
 		45094560987A132E266E45F5 /* box_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = box_80.png; path = en.lproj/images/box_80.png; sourceTree = "<group>"; };
 		4509457BF9E30A30D5110C1E /* btnanonymous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnanonymous.png; path = en.lproj/images/btnanonymous.png; sourceTree = "<group>"; };
 		4509457DEE2025077372B2BF /* BlissTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlissTableViewCell.m; sourceTree = "<group>"; };
@@ -300,6 +306,7 @@
 		4509463494A18FF9F4C15628 /* userfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = userfacebook.png; path = en.lproj/images/userfacebook.png; sourceTree = "<group>"; };
 		450946533D698F6297CF1150 /* menubuttoninfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menubuttoninfo.png; path = en.lproj/images/menubuttoninfo.png; sourceTree = "<group>"; };
 		4509467A460F9B2A0E6FE663 /* menubuttonblisspressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menubuttonblisspressed.png; path = en.lproj/images/menubuttonblisspressed.png; sourceTree = "<group>"; };
+		450946867AE44AB2E75DFD18 /* PostScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostScanViewController.m; sourceTree = "<group>"; };
 		45094699572F8A2ADF1D6003 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_launcher.png; path = en.lproj/images/ic_launcher.png; sourceTree = "<group>"; };
 		450946D1070D7270F9351420 /* NSError+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+App.h"; sourceTree = "<group>"; };
 		450946D5ADB0BB064CDF2F52 /* NIBLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIBLoader.h; sourceTree = "<group>"; };
@@ -322,6 +329,7 @@
 		4509486B0DFDEEA19C07523F /* viewbgdeals.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = viewbgdeals.jpg; path = en.lproj/images/viewbgdeals.jpg; sourceTree = "<group>"; };
 		45094870BF883C5D9079618D /* sharegmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sharegmail.png; path = en.lproj/images/sharegmail.png; sourceTree = "<group>"; };
 		45094873FFBA9B0E77DC13AE /* cancel_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel_button.png; path = en.lproj/images/cancel_button.png; sourceTree = "<group>"; };
+		4509487661FDE9D5BFDDBEF9 /* PostScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostScanViewController.h; sourceTree = "<group>"; };
 		45094876DCFF899748A91C94 /* ui-bg_glass_65_ffffff_1x400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ui-bg_glass_65_ffffff_1x400.png"; path = "en.lproj/html/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png"; sourceTree = "<group>"; };
 		450948B952E096AA8961E25F /* OutsideURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutsideURL.m; sourceTree = "<group>"; };
 		450948BF351500A6C80A1055 /* menu_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_search.png; path = en.lproj/images/menu_search.png; sourceTree = "<group>"; };
@@ -512,6 +520,23 @@
 				45094AA579E336BE8DEA9A8D /* images */,
 			);
 			name = "ui-lightness";
+			sourceTree = "<group>";
+		};
+		450941C3620CCAB9F27DD177 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				15A6B298160CA5D300D5CC20 /* BlissViewController.h */,
+				15A6B299160CA5D300D5CC20 /* BlissViewController.m */,
+				159A85DC160CC62700867385 /* LogInViewController.h */,
+				159A85DE160CC64B00867385 /* LogInViewController.m */,
+				15A6B291160CA5D300D5CC20 /* ScanViewController.h */,
+				15A6B292160CA5D300D5CC20 /* ScanViewController.m */,
+				159A85E1160CC68A00867385 /* SignUpViewController.h */,
+				159A85E2160CC6B800867385 /* SignUpViewController.m */,
+				450946867AE44AB2E75DFD18 /* PostScanViewController.m */,
+				4509487661FDE9D5BFDDBEF9 /* PostScanViewController.h */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		45094248B86525315FCA4903 /* img */ = {
@@ -712,6 +737,7 @@
 				4509450F2283B9FA0B54B3EB /* BlissViewController_iPad.xib */,
 				4509485AF95DE0991D59A737 /* BlissViewController_iPhone.xib */,
 				0A68C461161B546A005FD8D7 /* LoginHeaderView.xib */,
+				0A8B65C0162C6C7C000E6F62 /* PostScanView.xib */,
 			);
 			name = NIBs;
 			sourceTree = "<group>";
@@ -730,17 +756,10 @@
 			children = (
 				15A6B288160CA5D200D5CC20 /* AppController.h */,
 				15A6B289160CA5D300D5CC20 /* AppController.m */,
-				159A85DC160CC62700867385 /* LogInViewController.h */,
-				159A85DE160CC64B00867385 /* LogInViewController.m */,
-				15A6B291160CA5D300D5CC20 /* ScanViewController.h */,
-				15A6B292160CA5D300D5CC20 /* ScanViewController.m */,
-				15A6B298160CA5D300D5CC20 /* BlissViewController.h */,
-				15A6B299160CA5D300D5CC20 /* BlissViewController.m */,
-				159A85E1160CC68A00867385 /* SignUpViewController.h */,
-				159A85E2160CC6B800867385 /* SignUpViewController.m */,
 				4509443671ACB4D998D2D8FF /* View */,
 				45094AEE840DBE28BD8E6A75 /* Util */,
 				45094562DD1A3810CF4B7A2F /* Model */,
+				450941C3620CCAB9F27DD177 /* View Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -796,6 +815,8 @@
 				450949EF9A8D0DF87FF4D5A0 /* UIUtil.m */,
 				450946D1070D7270F9351420 /* NSError+App.h */,
 				450947B49ECE9B461F06EA41 /* NSError+App.m */,
+				450944BFA36BFADA9A589BF1 /* NSString+Pluralize.m */,
+				450945448BBD2A8FDBE77E2A /* NSString+Pluralize.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1006,6 +1027,7 @@
 				0A68C406161A6665005FD8D7 /* Localizable.strings in Resources */,
 				0A68C462161B546A005FD8D7 /* LoginHeaderView.xib in Resources */,
 				0AD3307E1625EE2600E5AE88 /* BlissTableViewCell.xib in Resources */,
+				0A8B65C1162C6C7C000E6F62 /* PostScanView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1098,8 @@
 				450943FA053CF88B880C5EA5 /* Campaign.m in Sources */,
 				450942A28C8AAE7893408280 /* ScanLog.m in Sources */,
 				450949D3F16A8137E41703BC /* PFObject+NonNull.m in Sources */,
+				450949977DB976F5A4FB5829 /* PostScanViewController.m in Sources */,
+				45094CAC6E62E716A60062C2 /* NSString+Pluralize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

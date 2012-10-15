@@ -22,3 +22,9 @@
 "ERROR_LOADING_BLISS" = "There was an unexpected problem loading your balances. Please try again later.";
 "ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
 "ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
+"NEXT_VISIT_GET" = "On your next visit, get:";
+"N_MORE_PURCHASES" = "%d more purchases";
+"UNTIL_YOU_EARN" = "until you earn";
+
+"BALANCE_STATUS" = "You popped in";
+"BALANCE_PLURALIZABLE" = "time";

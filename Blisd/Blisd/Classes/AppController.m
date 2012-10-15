@@ -62,7 +62,10 @@
         viewController2 = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPad" bundle:nil];
     }
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController1];
+    [navigationController setNavigationBarHidden:YES animated:NO];
+    self.tabBarController.viewControllers = @[navigationController, viewController2];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 
