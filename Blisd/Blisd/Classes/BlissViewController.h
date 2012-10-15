@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BlissViewController : UIViewController
+@interface BlissViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *balances;
 
-@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end

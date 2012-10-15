@@ -15,6 +15,7 @@
 #import "SignUpViewController.h"
 #import "UIAlertView+BlocksKit.h"
 #import "CKMacros.h"
+#import "User.h"
 
 @implementation AppController
 
@@ -55,21 +56,23 @@
     UIViewController *viewController1, *viewController2;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
-        viewController2 = [[BlissViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
+        viewController2 = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
     } else {
         viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPad" bundle:nil];
-        viewController2 = [[BlissViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
+        viewController2 = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPad" bundle:nil];
     }
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1, viewController2];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 
-    LogInViewController *logInViewController = [[LogInViewController alloc] init];
-    logInViewController.delegate = self;
-    logInViewController.signUpController = [[SignUpViewController alloc] init];
-    logInViewController.signUpController.delegate = self;
-    [self.tabBarController presentModalViewController:logInViewController animated:NO];
+    if (![User currentUser]) {
+        LogInViewController *logInViewController = [[LogInViewController alloc] init];
+        logInViewController.delegate = self;
+        logInViewController.signUpController = [[SignUpViewController alloc] init];
+        logInViewController.signUpController.delegate = self;
+        [self.tabBarController presentModalViewController:logInViewController animated:NO];
+    }
 }
 
 #pragma mark PFLogInViewControllerDelegate

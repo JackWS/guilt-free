@@ -12,5 +12,9 @@
 
 + (User *) currentUser;
 
+- (void) addToACLForObject:(id) object;
+
+- (NSString *) email;
+
 
 @end

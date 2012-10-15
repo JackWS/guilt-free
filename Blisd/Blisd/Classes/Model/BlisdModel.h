@@ -7,9 +7,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class PFObject;
+
 #define MOCK_DATA 1
 
 typedef void (^ResponseBlock) (id object, NSError *error);
 
 @interface BlisdModel : NSObject
+
+- (id) initWithPFObject:(PFObject *) pfObject;
+
+- (void) saveInBackgroundWithBlock:(ResponseBlock) block;
+
+// To be over-ridden by subclasses
+- (PFObject *) toPFObject;
+
 @end

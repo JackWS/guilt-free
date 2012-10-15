@@ -47,6 +47,10 @@
             ^{block();});
 }
 
++ (NSString *) generateCampaignURL {
+    return @"http://blisd.com/app/tickone.php?campaignNumber=120811gLACcwjnUH1";
+}
+
 + (void) callAfterDelay:(CGFloat) delayInSeconds successBlock:(void (^)()) success failureBlock:(void (^)()) failure {
     [MockData callAfterDelay:delayInSeconds successProbability:0.95 successBlock:success failureBlock:failure];
 }

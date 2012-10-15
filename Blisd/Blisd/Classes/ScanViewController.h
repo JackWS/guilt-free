@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZBarReaderView.h"
+#import "BlisdModel.h"
 
 @interface ScanViewController : UIViewController<ZBarReaderViewDelegate>
 

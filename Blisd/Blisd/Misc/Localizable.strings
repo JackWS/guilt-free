@@ -20,3 +20,5 @@
 "LOADING" = "Loading...";
 
 "ERROR_LOADING_BLISS" = "There was an unexpected problem loading your balances. Please try again later.";
+"ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
+"ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";

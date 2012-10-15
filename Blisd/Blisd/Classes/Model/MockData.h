@@ -12,6 +12,8 @@
 
 + (NSArray *) generateBalanceList;
 
++ (NSString *) generateCampaignURL;
+
 + (void) callAfterDelay:(CGFloat) delayInSeconds successBlock:(void (^)()) success failureBlock:(void (^)()) failure;
 
 + (void) callAfterDelay:(CGFloat) delayInSeconds successProbability:(CGFloat) prob successBlock:(void (^)()) success failureBlock:(void (^)()) failure;

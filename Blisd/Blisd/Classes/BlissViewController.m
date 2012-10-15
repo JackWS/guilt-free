@@ -9,6 +9,8 @@
 #import "BlissViewController.h"
 #import "HUDHelper.h"
 #import "Balance.h"
+#import "NIBLoader.h"
+#import "BlissTableViewCell.h"
 
 @interface BlissViewController ()
 
@@ -45,10 +47,37 @@
         if (!error) {
             self.balances = balances;
             NSLog(@"Received balances: %@", self.balances);
+            [self.tableView reloadData];
         } else {
             [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_LOADING_BLISS", @"")];
         }
     }];
+}
+
+#pragma mark UITableViewDatasource
+
+- (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger) section {
+    return self.balances.count;
+}
+
+- (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
+
+    static NSString *const CellIdentifier = @"CellIdentifier";
+
+    BlissTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [NIBLoader loadFirstObjectFromNibNamed:@"BlissTableViewCell"];
+    }
+
+    Balance *balance = [self.balances objectAtIndex:(NSUInteger) indexPath.row];
+    cell.businessLabel.text = balance.customerCompany;
+    cell.rewardLabel.text = balance.getX;
+
+    return cell;
+}
+
+- (CGFloat) tableView:(UITableView *) tableView heightForRowAtIndexPath:(NSIndexPath *) indexPath {
+    return 95;
 }
 
 

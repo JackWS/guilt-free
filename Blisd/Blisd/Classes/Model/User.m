@@ -20,7 +20,29 @@
     return [User userFromPFUser:[PFUser currentUser]];
 }
 
+- (void) addToACLForObject:(id) object {
+    if ([object isKindOfClass:[PFObject class]]) {
+        PFObject *pfObject = (PFObject *) object;
+        if (![pfObject ACL]) {
+            [pfObject setACL:[PFACL ACLWithUser:self.pfUser]];
+        } else {
+            PFACL *acl = [pfObject ACL];
+            [acl setReadAccess:YES forUser:self.pfUser];
+            [acl setWriteAccess:YES forUser:self.pfUser];
+        }
+    }
+}
+
+
+- (NSString *) email {
+    return self.pfUser.email;
+}
+
 + (User *) userFromPFUser:(PFUser *) pfUser {
+    if (!pfUser) {
+        return nil;
+    }
+
     User *user = [[User alloc] init];
     user.pfUser = pfUser;
 
