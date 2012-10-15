@@ -6,11 +6,13 @@
 //  Copyright (c) 2012 Blisd LLC All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "BlissViewController.h"
 #import "HUDHelper.h"
 #import "Balance.h"
 #import "NIBLoader.h"
 #import "BlissTableViewCell.h"
+#import "Customer.h"
 
 @interface BlissViewController ()
 
@@ -46,6 +48,7 @@
         [self.hudHelper hide];
         if (!error) {
             self.balances = balances;
+            self.loaded = YES;
             NSLog(@"Received balances: %@", self.balances);
             [self.tableView reloadData];
         } else {
@@ -72,6 +75,20 @@
     Balance *balance = [self.balances objectAtIndex:(NSUInteger) indexPath.row];
     cell.businessLabel.text = balance.customerCompany;
     cell.rewardLabel.text = balance.getX;
+    if (!balance.customer.companyImage) {
+        [balance.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
+            if (error) {
+                NSLog(@"Error retrieving image for company with name: %@, error: %@", balance.customerCompany, [error description]);
+            } else {
+                cell.logoImageView.image = image;
+            }
+        }];
+    } else {
+        cell.logoImageView.image = balance.customer.companyImage;
+    }
+    [cell.logoImageView loadInBackground];
+
+    cell.progressView.progress = (CGFloat) balance.balance / (CGFloat) balance.buyX;
 
     return cell;
 }

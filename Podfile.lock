@@ -8,7 +8,7 @@ PODS:
 - ConciseKit (0.1.2)
 - FlurrySDK (4.0.4)
 - MBProgressHUD (0.5)
-- Parse (1.0.39)
+- Parse (1.1.12)
 - QuickDialog (0.5)
 - Reachability (3.0.0)
 - TTTAttributedLabel (1.3.0)
@@ -22,12 +22,16 @@ DEPENDENCIES:
 - ConciseKit
 - FlurrySDK
 - MBProgressHUD
-- Parse
+- Parse (from `https://github.com/nivektric/Parse.git')
 - QuickDialog
 - Reachability
 - TTTAttributedLabel
 - TestFlightSDK
 - ZBarSDK
+
+EXTERNAL SOURCES:
+  Parse:
+    :git: https://github.com/nivektric/Parse.git
 
 SPEC CHECKSUMS:
   A2DynamicDelegate: 013b345f1aca891ded67a95c1512fad677c260a9
@@ -36,7 +40,7 @@ SPEC CHECKSUMS:
   ConciseKit: 1e086a66d098ba160ca5faa86458a0431b280b30
   FlurrySDK: 687546ff3267c28d615fdd7956f81f5255899145
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
-  Parse: 4d691a57a5c19d57bce1f168d522e0c062a8cb64
+  Parse: 1fec97c4e1f30f674932ec3ae104428f6b1482cc
   QuickDialog: 34f6199992c0658b0dbfbe35ba87c0ee4a65c2c9
   Reachability: 500bd76bf6cd8ff2c6fb715fc5f44ef6e4c024f2
   TTTAttributedLabel: 58386dcb6d23389d6e4381de7a0b21d4f7e1a283

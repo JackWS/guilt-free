@@ -7,6 +7,7 @@
 
 #import <Parse/Parse.h>
 #import "ScanLog.h"
+#import "PFObject+NonNull.h"
 
 
 @implementation ScanLog {
@@ -23,8 +24,8 @@ static NSString *const kCampaignNumberKey = @"campaignNumber";
     if (!obj) {
         obj = [[PFObject alloc] initWithClassName:kClassName];
     }
-    [obj setObject:self.user forKey:kUserKey];
-    [obj setObject:self.campaignNumber forKey:kCampaignNumberKey];
+    [obj setNonNullObject:self.user forKey:kUserKey];
+    [obj setNonNullObject:self.campaignNumber forKey:kCampaignNumberKey];
 
     return obj;
 }

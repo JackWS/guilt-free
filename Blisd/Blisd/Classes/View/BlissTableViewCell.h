@@ -7,10 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface BlissTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UIImageView *logoImageView;
+@property (nonatomic, strong) IBOutlet PFImageView *logoImageView;
 @property (nonatomic, strong) IBOutlet UILabel *businessLabel;
 @property (nonatomic, strong) IBOutlet UILabel *rewardLabel;
 @property (nonatomic, strong) IBOutlet UIProgressView *progressView;

@@ -9,7 +9,7 @@
 
 @class PFObject;
 
-#define MOCK_DATA 1
+#define MOCK_DATA 0
 
 typedef void (^ResponseBlock) (id object, NSError *error);
 

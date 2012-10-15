@@ -12,6 +12,7 @@
 #import "Campaign.h"
 #import "User.h"
 #import "PFObject+NonNull.h"
+#import "Customer.h"
 
 
 @implementation Balance {
@@ -31,6 +32,9 @@ static NSString *const kCampaignBalanceKey = @"campaignBalance";
 static NSString *const kIconTypeKey = @"iconType";
 static NSString *const kShortMessageKey = @"shortMessage";
 
+// TODO: This is a terrible name
+static NSString *const kCustomerKey = @"relationShip";
+
 + (void) getBalancesForCurrentUser:(ResponseBlock) response {
 
 #if MOCK_DATA
@@ -43,32 +47,32 @@ static NSString *const kShortMessageKey = @"shortMessage";
 #else
     PFQuery *query = [PFQuery queryWithClassName:kClassName];
     [query orderByAscending:kCustomerCompanyKey];
-    [query includeKey:kCustomerCompanyKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
+        if (error) {
+            response(nil, error);
+        } else {
             NSMutableArray *balances = [NSMutableArray arrayWithCapacity:objects.count];
-            NSMutableArray *companies = [NSMutableArray arrayWithCapacity:objects.count];
+            NSMutableArray *companyNames = [NSMutableArray arrayWithCapacity:objects.count];
             for (PFObject *obj in objects) {
                 Balance *bal = [Balance balanceFromPFObject:obj];
                 [balances addObject:bal];
-                [companies addObject:bal.customerCompany];
+                [companyNames addObject:bal.customerCompany];
             }
-            PFQuery *innerQuery = [PFQuery queryWithClassName:@"Customer"];
-            [innerQuery whereKey:@"customerCompany" containedIn:companies];
-            [innerQuery findObjectsInBackgroundWithBlock:^(NSArray *companyObjects, NSError *companiesError) {
-                for (PFObject *object in companyObjects) {
+            [Customer findWithNames:companyNames response:^(NSArray *customerObjects, NSError *companiesError) {
+                if (companiesError) {
+                    response(nil, companiesError);
+                } else {
                     for (Balance *bal in balances) {
-                        if ([bal.customerCompany isEqualToString:[object objectForKey:@"customerCompany"]]) {
-
+                        for (Customer *customer in customerObjects) {
+                            if ([bal.customerCompany isEqualToString:customer.company]) {
+                                bal.customer = customer;
+                                break;
+                            }
                         }
                     }
-
+                    response(balances, nil);
                 }
-                response(balances, error);
             }];
-
-        } else {
-            response(nil, error);
         }
     }];
 #endif
@@ -92,15 +96,15 @@ static NSString *const kShortMessageKey = @"shortMessage";
 
 + (void) createBalanceFromCampaign:(Campaign *) campaign response:(ResponseBlock) response {
     PFObject *balance = [[PFObject alloc] initWithClassName:kClassName];
-    [balance setObject:[User currentUser].email forKey:kUserKey];
-    [balance setObject:@1 forKey:kCampaignBalanceKey];
-    [balance setObject:campaign.campaignNumber forKey:kCampaignNumberKey];
-    [balance setObject:$int(campaign.buyX) forKey:kBuyXKey];
-    [balance setObject:campaign.buyY forKey:kBuyYKey];
-    [balance setObject:campaign.getX forKey:kGetXKey];
-    [balance setObject:campaign.customerCompany forKey:kCustomerCompanyKey];
-    [balance setObject:campaign.customerNumber forKey:kCustomerNumberKey];
-    [balance setObject:$str(@"%d %@ and get %@", campaign.buyX, campaign.buyY, campaign.getX) forKey:kShortMessageKey];
+    [balance setNonNullObject:[User currentUser].email forKey:kUserKey];
+    [balance setNonNullObject:@1 forKey:kCampaignBalanceKey];
+    [balance setNonNullObject:campaign.campaignNumber forKey:kCampaignNumberKey];
+    [balance setNonNullObject:$int(campaign.buyX) forKey:kBuyXKey];
+    [balance setNonNullObject:campaign.buyY forKey:kBuyYKey];
+    [balance setNonNullObject:campaign.getX forKey:kGetXKey];
+    [balance setNonNullObject:campaign.customerCompany forKey:kCustomerCompanyKey];
+    [balance setNonNullObject:campaign.customerNumber forKey:kCustomerNumberKey];
+    [balance setNonNullObject:$str(@"%d %@ and get %@", campaign.buyX, campaign.buyY, campaign.getX) forKey:kShortMessageKey];
     [[User currentUser] addToACLForObject:balance];
 
     [balance saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -128,7 +132,7 @@ static NSString *const kShortMessageKey = @"shortMessage";
     }
 
     Balance *bal = [[Balance alloc] initWithPFObject:object];
-    bal.customerCompany = [object objectForKey:kCustomerCompanyKey];
+    bal.customerCompany = [object nonNullObjectForKey:kCustomerCompanyKey];
     bal.buyX = [[object nonNullObjectForKey:kBuyXKey] intValue];
     bal.buyY = [object nonNullObjectForKey:kBuyYKey];
     bal.getX = [object nonNullObjectForKey:kGetXKey];

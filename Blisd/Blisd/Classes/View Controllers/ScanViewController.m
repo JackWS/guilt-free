@@ -55,13 +55,11 @@
                 initWithViewController:self];
         self.cameraSim.readerView = self.readerView;
 
-#if MOCK_DATA
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = self.view.frame;
         [button setTitle:@"FAKE SCAN" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(fakeScan:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
-#endif
     }
 }
 
@@ -135,7 +133,7 @@ static NSString *const kTriggerString = @"blisd";
     }
 }
 
-#if MOCK_DATA
+#if TARGET_IPHONE_SIMULATOR
 
 - (void) fakeScan:(id) sender {
     NSString *url = [MockData generateCampaignURL];

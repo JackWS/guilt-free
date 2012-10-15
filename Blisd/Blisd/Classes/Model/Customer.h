@@ -11,6 +11,11 @@
 
 @interface Customer : BlisdModel
 
-@property (nonatomic, retain) NSString *company;
+@property (nonatomic, strong) NSString *company;
+@property (nonatomic, strong) UIImage *companyImage;
+
++ (void) findWithNames:(NSArray *) names response:(ResponseBlock) response;
+
+- (void) loadImageWithResponse:(ResponseBlock) response;
 
 @end

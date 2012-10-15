@@ -7,6 +7,7 @@
 
 #import <Parse/Parse.h>
 #import "Campaign.h"
+#import "PFObject+NonNull.h"
 
 
 @implementation Campaign {
@@ -44,12 +45,12 @@ static NSString *const kGetXKey = @"getx";
     }
 
     Campaign *campaign = [[Campaign alloc] initWithPFObject:obj];
-    campaign.customerNumber = [obj objectForKey:kCustomerNumberKey];
-    campaign.customerCompany = [obj objectForKey:kCustomerCompanyKey];
-    campaign.buyX = [[obj objectForKey:kBuyXKey] intValue];
-    campaign.buyY = [obj objectForKey:kBuyYKey];
-    campaign.getX = [obj objectForKey:kGetXKey];
-    campaign.campaignNumber = [obj objectForKey:kCampaignNumberKey];
+    campaign.customerNumber = [obj nonNullObjectForKey:kCustomerNumberKey];
+    campaign.customerCompany = [obj nonNullObjectForKey:kCustomerCompanyKey];
+    campaign.buyX = [[obj nonNullObjectForKey:kBuyXKey] intValue];
+    campaign.buyY = [obj nonNullObjectForKey:kBuyYKey];
+    campaign.getX = [obj nonNullObjectForKey:kGetXKey];
+    campaign.campaignNumber = [obj nonNullObjectForKey:kCampaignNumberKey];
 
     return campaign;
 }

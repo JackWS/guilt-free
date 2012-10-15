@@ -5,6 +5,7 @@
 //
 
 
+#import <Parse/Parse.h>
 #import "BlissTableViewCell.h"
 
 

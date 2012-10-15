@@ -7,6 +7,7 @@
 
 #import <Parse/Parse.h>
 #import "OutsideURL.h"
+#import "PFObject+NonNull.h"
 
 
 @implementation OutsideURL {
@@ -18,8 +19,8 @@
     if (!obj) {
         obj = [[PFObject alloc] initWithClassName:@"LogOutsideUrls"];
     }
-    [obj setObject:self.url forKey:@"URL"];
-    [obj setObject:self.user forKey:@"User"];
+    [obj setNonNullObject:self.url forKey:@"URL"];
+    [obj setNonNullObject:self.user forKey:@"User"];
 
     return obj;
 }
