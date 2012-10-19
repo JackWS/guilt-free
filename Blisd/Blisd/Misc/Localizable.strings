@@ -1,0 +1,30 @@
+/****************************************************************************/
+/* Localization file */
+
+"SCAN_TAB" = "Scan";
+"BLISS_TAB" = "Bliss";
+
+"ERROR_TITLE" = "Error";
+"RETRY" = "Retry";
+"OK" = "OK";
+"ERROR_GENERIC" = "There was an unexpected problem with your request. Please try again later.";
+
+"LOG_IN_EMAIL_PLACEHOLDER" = "email address";
+"LOG_IN_PASSWORD_PLACEHOLDER" = "password";
+
+"SIGN_UP_EMAIL_PLACEHOLDER" = "email address";
+"SIGN_UP_PASSWORD_PLACEHOLDER" = "password (6 + chars)";
+
+"LOGIN_PROMPT" = "Login";
+"SIGNUP_PROMPT" = "Sign Up";
+"LOADING" = "Loading...";
+
+"ERROR_LOADING_BLISS" = "There was an unexpected problem loading your balances. Please try again later.";
+"ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
+"ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
+"NEXT_VISIT_GET" = "On your next visit, get:";
+"N_MORE_PURCHASES" = "%d more purchases";
+"UNTIL_YOU_EARN" = "until you earn";
+
+"BALANCE_STATUS" = "You popped in";
+"BALANCE_PLURALIZABLE" = "time";
