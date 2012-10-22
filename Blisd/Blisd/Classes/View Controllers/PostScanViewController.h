@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "Balance.h"
 
+@class ShareView;
+
 @interface PostScanViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
@@ -18,8 +20,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *earnLabel;
 @property (nonatomic, strong) IBOutlet UILabel *getXLabel;
 
-@property (nonatomic, strong) IBOutlet UIView *shareView;
-@property (nonatomic, strong) IBOutlet UILabel *statusLabel;
+@property (nonatomic, retain) IBOutlet UIView *shareViewContainer;
+@property (nonatomic, strong) ShareView *shareView;
 
 - (id) initWithBalance:(Balance *) balance;
 

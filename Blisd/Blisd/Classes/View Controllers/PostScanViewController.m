@@ -9,6 +9,8 @@
 #import "PostScanViewController.h"
 #import "Balance.h"
 #import "NSString+Pluralize.h"
+#import "ShareView.h"
+#import "NIBLoader.h"
 
 @interface PostScanViewController ()
 
@@ -34,14 +36,12 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    self.shareView = [NIBLoader loadFirstObjectFromNibNamed:@"ShareView"];
+    [self.shareViewContainer addSubview:self.shareView];
+
     srandom((unsigned int) time(NULL));
     int num = random() % 7 + 1;
     self.flareImageView.image = [UIImage imageNamed:$str(@"redtag%d.png", num)];
-
-
-    self.shareView.layer.borderColor = [[UIColor blackColor] CGColor];
-    self.shareView.layer.borderWidth = 1.0f;
-    self.shareView.layer.cornerRadius = 8.0f;
 
     BOOL earned = self.balance.balance >= self.balance.buyX;
     BOOL almostEarned = self.balance.balance + 1 == self.balance.buyX;
@@ -61,9 +61,7 @@
         self.getXLabel.text = self.balance.getX;
     }
 
-    self.statusLabel.text =
-            $str(@"%@ %@.", NSLocalizedString(@"BALANCE_STATUS", @""),
-            [NSLocalizedString(@"BALANCE_PLURALIZABLE", @"") pluralize:self.balance.balance]);
+    self.shareView.progress = self.balance.balance;
 }
 
 

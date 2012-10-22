@@ -28,3 +28,6 @@
 
 "BALANCE_STATUS" = "You popped in";
 "BALANCE_PLURALIZABLE" = "time";
+
+"OFFER_DETAILS_BUY_X" = "Buy %d %@";
+"OFFER_DETAILS_GET_X" = "Get %@";

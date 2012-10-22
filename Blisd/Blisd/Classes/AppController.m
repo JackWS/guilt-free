@@ -63,9 +63,12 @@
     }
     self.tabBarController = [[UITabBarController alloc] init];
 
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController1];
-    [navigationController setNavigationBarHidden:YES animated:NO];
-    self.tabBarController.viewControllers = @[navigationController, viewController2];
+    UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
+    [navController1 setNavigationBarHidden:YES animated:NO];
+
+    UINavigationController *navController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+    [navController2 setNavigationBarHidden:YES animated:NO];
+    self.tabBarController.viewControllers = @[navController1, navController2];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 
