@@ -6,12 +6,13 @@
 
 
 #import <Foundation/Foundation.h>
+#import "ShareHelper.h"
 
 @class Balance;
 @class ShareView;
 
 
-@interface BlissOfferDetailsViewController : UIViewController
+@interface BlissOfferDetailsViewController : UIViewController <ShareHelperDelegate>
 
 @property (nonatomic, strong) Balance *balance;
 

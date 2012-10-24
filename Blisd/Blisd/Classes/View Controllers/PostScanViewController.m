@@ -16,13 +16,6 @@ typedef enum {
     PostScanStateEarned
 } PostScanState;
 
-typedef enum {
-    ShareItemText,
-    ShareItemName,
-    ShareItemCaption,
-    ShareItemDescription
-} ShareItem;
-
 @interface PostScanViewController ()
 
 @property (nonatomic, strong) Balance *balance;
@@ -60,6 +53,10 @@ typedef enum {
                 },
                 $int(ShareServiceTwitter) : @{
                     $int(ShareItemText)         :    NSLocalizedString(@"POST_SCAN_TWITTER_PROGRESS_TEXT", @"")
+                },
+                $int(ShareServiceEmail) : @{
+                    $int(ShareItemText)         :    NSLocalizedString(@"POST_SCAN_EMAIL_PROGRESS_TEXT", @""),
+                    $int(ShareItemName)         :    NSLocalizedString(@"POST_SCAN_EMAIL_PROGRESS_NAME", @"")
                 }
             },
             $int(PostScanStateAlmostEarned) : @{
@@ -71,6 +68,10 @@ typedef enum {
                 },
                 $int(ShareServiceTwitter) : @{
                     $int(ShareItemText)         :    NSLocalizedString(@"POST_SCAN_TWITTER_ALMOST_TEXT", @"")
+                },
+                $int(ShareServiceEmail) : @{
+                    $int(ShareItemText)         :    NSLocalizedString(@"POST_SCAN_EMAIL_ALMOST_TEXT", @""),
+                    $int(ShareItemName)         :    NSLocalizedString(@"POST_SCAN_EMAIL_ALMOST_NAME", @"")
                 }
             },
             $int(PostScanStateEarned) :@{
@@ -82,6 +83,10 @@ typedef enum {
                 },
                 $int(ShareServiceTwitter) : @{
                     $int(ShareItemText)         :    NSLocalizedString(@"POST_SCAN_TWITTER_EARNED_TEXT", @"")
+                },
+                $int(ShareServiceEmail) : @{
+                    $int(ShareItemText)         :    NSLocalizedString(@"POST_SCAN_EMAIL_EARNED_TEXT", @""),
+                    $int(ShareItemName)         :    NSLocalizedString(@"POST_SCAN_EMAIL_EARNED_NAME", @"")
                 }
             }
         };

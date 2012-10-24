@@ -110,7 +110,7 @@
 }
 
 - (IBAction) shareEmail:(id) sender {
-
+    [self.shareHelper shareEmail:sender];
 }
 
 //#pragma mark Helpers

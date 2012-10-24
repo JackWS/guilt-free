@@ -47,7 +47,6 @@
     if ([SLComposeViewController class] &&
             [SLComposeViewController respondsToSelector:@selector(isAvailableForServiceType:)]
             && [self.delegate respondsToSelector:@selector(viewControllerForShareHelper:)]){
-        // && [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [self setParametersForController:controller shareService:ShareServiceTwitter];
         [[self.delegate viewControllerForShareHelper:self] presentModalViewController:controller animated:YES];
@@ -63,6 +62,27 @@
                           otherButtonTitles:nil
                                     handler:nil];
     }
+}
+
+- (IBAction) shareEmail:(id) sender {
+    if ([MFMailComposeViewController canSendMail]) {
+        if ([self.delegate respondsToSelector:@selector(shareHelper:textForShareWithService:)]
+                && [self.delegate respondsToSelector:@selector(shareHelper:nameForShareWithService:)]) {
+
+            MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+            controller.mailComposeDelegate = self;
+            [controller setSubject:[self.delegate shareHelper:self nameForShareWithService:ShareServiceEmail]];
+            [controller setMessageBody:[self.delegate shareHelper:self textForShareWithService:ShareServiceEmail] isHTML:NO];
+            [[self.delegate viewControllerForShareHelper:self] presentModalViewController:controller animated:YES];
+        }
+    } else {
+        [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"NO_EMAIL_ACCOUNT_TITLE", @"")
+                                    message:NSLocalizedString(@"NO_EMAIL_ACCOUNT_MESSAGE", @"")
+                          cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                          otherButtonTitles:nil
+                                    handler:nil];
+    }
+
 }
 
 #pragma mark Helpers
@@ -151,6 +171,12 @@
 
 - (BOOL) dialog:(PF_FBDialog *) dialog shouldOpenURLInExternalBrowser:(NSURL *) url {
     return NO;
+}
+
+#pragma mark MFMailComposeViewControllerDelegate
+
+- (void) mailComposeController:(MFMailComposeViewController *) controller didFinishWithResult:(MFMailComposeResult) result error:(NSError *) error {
+    [[self.delegate viewControllerForShareHelper:self] dismissModalViewControllerAnimated:YES];
 }
 
 

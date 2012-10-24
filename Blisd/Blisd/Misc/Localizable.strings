@@ -54,3 +54,23 @@
 "POST_SCAN_TWITTER_EARNED_TEXT" = "I got Bliss at %@";
 
 "SHARE_CUSTOMER_URL" = "http://blisd.com/app/customer.php?id=%@";
+
+"NO_EMAIL_ACCOUNT_TITLE" = "No Email Account";
+"NO_EMAIL_ACCOUNT_MESSAGE" = "This device hasn't been set up to send email. Please configure an account first.";
+
+"POST_SCAN_EMAIL_PROGRESS_TEXT" = "I got Bliss at %@";
+"POST_SCAN_EMAIL_PROGRESS_NAME" = "Blisd!";
+
+"POST_SCAN_EMAIL_ALMOST_TEXT" = "I got Bliss at %@";
+"POST_SCAN_EMAIL_ALMOST_NAME" = "Blisd!";
+
+"POST_SCAN_EMAIL_EARNED_TEXT" = "I got Bliss at %@";
+"POST_SCAN_EMAIL_EARNED_NAME" = "Blisd!";
+
+"OFFER_LIST_FACEBOOK_TEXT" = "I got Bliss at %@";
+"OFFER_LIST_FACEBOOK_NAME" = "Blisd!";
+"OFFER_LIST_FACEBOOK_CAPTION" = "I got Bliss at %@";
+"OFFER_LIST_FACEBOOK_DESCRIPTION" = "You could, too!";
+"OFFER_LIST_TWITTER_TEXT" = "I got Bliss at %@";
+"OFFER_LIST_EMAIL_TEXT" = "I got Bliss at %@";
+"OFFER_LIST_EMAIL_NAME" = "Blisd!";

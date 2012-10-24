@@ -10,13 +10,11 @@
 #import "ShareHelper.h"
 
 
-@interface ShareView : UIView <PF_FBDialogDelegate, PF_FBSessionDelegate>
+@interface ShareView : UIView
 
 @property (nonatomic, retain) ShareHelper *shareHelper;
 
 @property (nonatomic, assign) NSInteger progress;
-
-@property (nonatomic, assign) IBOutlet UIViewController *ownerViewController;
 
 @property (nonatomic, strong) IBOutlet UILabel *statusLabel;
 

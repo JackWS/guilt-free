@@ -12,8 +12,16 @@
 
 typedef enum {
     ShareServiceFacebook,
-    ShareServiceTwitter
+    ShareServiceTwitter,
+    ShareServiceEmail
 } ShareService;
+
+typedef enum {
+    ShareItemText,
+    ShareItemName,
+    ShareItemCaption,
+    ShareItemDescription
+} ShareItem;
 
 @protocol ShareHelperDelegate<NSObject>
 
@@ -35,13 +43,15 @@ typedef enum {
 
 @end
 
-@interface ShareHelper : NSObject <PF_FBDialogDelegate>
+@interface ShareHelper : NSObject <PF_FBDialogDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, assign) id <ShareHelperDelegate> delegate;
 
 - (IBAction) shareFacebook:(id) sender;
 
 - (IBAction) shareTwitter:(id) sender;
+
+- (IBAction) shareEmail:(id) sender;
 
 
 @end
