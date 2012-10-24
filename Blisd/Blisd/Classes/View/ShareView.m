@@ -7,9 +7,12 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <Parse/Parse.h>
+#import <Social/Social.h>
+#import <Twitter/Twitter.h>
 #import "ShareView.h"
 #import "NSString+Pluralize.h"
 #import "AppController.h"
+#import "ShareHelper.h"
 
 @implementation ShareView {
 
@@ -34,89 +37,110 @@
 }
 
 - (void) initialize {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(facebookSessionStateChanged:)
-                                                 name:kAppControllerDidChangeFacebookStatusNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(facebookSessionStateChanged:)
+//                                                 name:kAppControllerDidChangeFacebookStatusNotification
+//                                               object:nil];
 
+    self.shareHelper = [[ShareHelper alloc] init];
 }
 
 - (void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
 - (IBAction) shareFacebook:(id) sender {
-    if (![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-        [PFFacebookUtils linkUser:[PFUser currentUser] permissions:nil block:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                [self showFacebookDialog];
-            } else {
-                if (error) {
-                    [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"ERROR_TITLE", @"")
-                                                message:[[error userInfo] objectForKey:@"error"]
-                                      cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                                      otherButtonTitles:nil
-                                                handler:nil];
-                }
-            }
-        }];
-    } else {
-        [self showFacebookDialog];
-    }
+    [self.shareHelper shareFacebook:sender];
+//    // First try the native approach
+//    if ([SLComposeViewController class] &&
+//            [SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+//        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+//        [controller setInitialText:@"This is the text"];
+//       // [controller addImage:[UIImage imageNamed:@"blisd_logo_275.png"]];
+//        [controller addURL:[NSURL URLWithString:@"http://www.blisd.com"]];
+//        [self.ownerViewController presentModalViewController:controller animated:YES];
+//    } else if (![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+//        // If that doesn't work, link them up with the PFUser and then present the old-style dialog
+//        [PFFacebookUtils linkUser:[PFUser currentUser] permissions:nil block:^(BOOL succeeded, NSError *error) {
+//            if (succeeded) {
+//                [self shareFacebookNonNative];
+//            } else {
+//                if (error) {
+//                    [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"ERROR_TITLE", @"")
+//                                                message:[[error userInfo] objectForKey:@"error"]
+//                                      cancelButtonTitle:NSLocalizedString(@"OK", @"")
+//                                      otherButtonTitles:nil
+//                                                handler:nil];
+//                }
+//            }
+//        }];
+//    } else {
+//        [self shareFacebookNonNative];
+//    }
 }
 
 - (IBAction) shareTwitter:(id) sender {
+    [self.shareHelper shareTwitter:sender];
 
+//    if ([SLComposeViewController class] &&
+//            [SLComposeViewController respondsToSelector:@selector(isAvailableForServiceType:)]) {
+//            // && [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+//        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+//        [controller setInitialText:@"This is the text"];
+//        [controller addImage:[UIImage imageNamed:@"blisd_logo_275.png"]];
+//        [controller addURL:[NSURL URLWithString:@"http://www.blisd.com"]];
+//        [self.ownerViewController presentModalViewController:controller animated:YES];
+//    } else if ([TWTweetComposeViewController class]) {
+//        TWTweetComposeViewController *controller = [[TWTweetComposeViewController alloc] init];
+//        [controller setInitialText:@"This is the text"];
+//        //[controller addImage:[UIImage imageNamed:@"blisd_logo_275.png"]];
+//        [controller addURL:[NSURL URLWithString:@"http://www.blisd.com"]];
+//        [self.ownerViewController presentModalViewController:controller animated:YES];
+//    }
+//
+//    else {
+//        // If that doesn't work, link them up with the PFUser and then present the old-style dialog
+//        [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"NO_TWITTER_ACCOUNT_TITLE", @"")
+//                                    message:NSLocalizedString(@"NO_TWITTER_ACCOUNT_MESSAGE", @"")
+//                          cancelButtonTitle:NSLocalizedString(@"OK", @"")
+//                          otherButtonTitles:nil
+//                                    handler:nil];
+//    }
 }
 
 - (IBAction) shareEmail:(id) sender {
 
 }
 
-#pragma mark Helpers
-
-- (void) showFacebookDialog {
-    if ([PF_FBNativeDialogs canPresentShareDialogWithSession:[PF_FBSession activeSession]]) {
-        [PF_FBNativeDialogs presentShareDialogModallyFrom:self.ownerViewController
-                                              initialText:@"This is the text"
-                                                    image:[UIImage imageNamed:@"blisd_logo_275.png"]
-                                                      url:@"http://www.blisd.com"
-                                                  handler:^(PF_FBNativeDialogResult result, NSError *error) {
-
-                                                  }];
-    } else {
-        PF_Facebook *fb = [PFFacebookUtils facebook];
-        fb.accessToken = [PF_FBSession activeSession].accessToken;
-        fb.expirationDate = [PF_FBSession activeSession].expirationDate;
-        [self reallyShare];
-
-        //[[AppController instance] openSessionWithAllowLoginUI:YES];
-    }
-}
-
-- (void) reallyShare {
-    NSMutableDictionary *params =
-            $mdict(
-            NSLocalizedString(@"FACEBOOK_SHARE_NAME", @""), @"name",
-            NSLocalizedString(@"FACEBOOK_SHARE_CAPTION", @""), @"caption",
-            NSLocalizedString(@"FACEBOOK_SHARE_DESCRIPTION", @""), @"description",
-            NSLocalizedString(@"FACEBOOK_SHARE_LINK", @""), @"link",
-            @"https://www.google.com/images/srpr/logo3w.png", @"picture");
-
-    [[PFFacebookUtils facebook] dialog:@"feed"
-                                    andParams:params
-                                  andDelegate:self];
-}
-
-#pragma mark Notifications
-
-- (void) facebookSessionStateChanged:(NSNotification *) notification {
-    NSLog(@"STATE CHANGED!");
-    if (PF_FBSession.activeSession.isOpen) {
-        [self reallyShare];
-    }
-}
+//#pragma mark Helpers
+//
+//- (void) shareFacebookNonNative {
+//    PF_Facebook *fb = [PFFacebookUtils facebook];
+//    fb.accessToken = [PF_FBSession activeSession].accessToken;
+//    fb.expirationDate = [PF_FBSession activeSession].expirationDate;
+//
+//    NSMutableDictionary *params =
+//            $mdict(
+//            NSLocalizedString(@"FACEBOOK_SHARE_NAME", @""), @"name",
+//            NSLocalizedString(@"FACEBOOK_SHARE_CAPTION", @""), @"caption",
+//            NSLocalizedString(@"FACEBOOK_SHARE_DESCRIPTION", @""), @"description",
+//            NSLocalizedString(@"FACEBOOK_SHARE_LINK", @""), @"link",
+//            @"https://www.google.com/images/srpr/logo3w.png", @"picture");
+//
+//    [fb dialog:@"feed"
+//                                    andParams:params
+//                                  andDelegate:self];
+//}
+//
+//#pragma mark Notifications
+//
+//- (void) facebookSessionStateChanged:(NSNotification *) notification {
+//    NSLog(@"STATE CHANGED!");
+//    if (PF_FBSession.activeSession.isOpen) {
+//        [self shareFacebookNonNative];
+//    }
+//}
 
 #pragma mark UIView Over-Rides
 
@@ -131,32 +155,5 @@
             $str(@"%@ %@.", NSLocalizedString(@"BALANCE_STATUS", @""),
             [NSLocalizedString(@"BALANCE_PLURALIZABLE", @"") pluralize:self.progress]);
 }
-
-#pragma mark PF_FBDialogDelegate
-
-- (void) dialogDidComplete:(PF_FBDialog *) dialog {
-
-}
-
-- (void) dialogCompleteWithUrl:(NSURL *) url {
-
-}
-
-- (void) dialog:(PF_FBDialog *) dialog didFailWithError:(NSError *) error {
-
-}
-
-- (void) dialogDidNotCompleteWithUrl:(NSURL *) url {
-
-}
-
-- (void) dialogDidNotComplete:(PF_FBDialog *) dialog {
-
-}
-
-- (BOOL) dialog:(PF_FBDialog *) dialog shouldOpenURLInExternalBrowser:(NSURL *) url {
-    return NO;
-}
-
 
 @end

@@ -139,6 +139,7 @@ static NSString *const kCustomerKey = @"relationShip";
     bal.balance = [[object nonNullObjectForKey:kCampaignBalanceKey] intValue];
     bal.iconType = [object nonNullObjectForKey:kIconTypeKey];
     bal.user = [object nonNullObjectForKey:kUserKey];
+    bal.customerNumber = [object nonNullObjectForKey:kCustomerNumberKey];
 
     return bal;
 }

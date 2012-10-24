@@ -7,9 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "ShareHelper.h"
 
 
 @interface ShareView : UIView <PF_FBDialogDelegate, PF_FBSessionDelegate>
+
+@property (nonatomic, retain) ShareHelper *shareHelper;
 
 @property (nonatomic, assign) NSInteger progress;
 

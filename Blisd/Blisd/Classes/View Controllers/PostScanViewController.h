@@ -7,10 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Balance.h"
+#import "ShareHelper.h"
 
 @class ShareView;
 
-@interface PostScanViewController : UIViewController
+@interface PostScanViewController : UIViewController<ShareHelperDelegate>
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *flareImageView;

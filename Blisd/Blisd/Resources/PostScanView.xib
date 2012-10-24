@@ -126,7 +126,7 @@
 					<object class="IBUIButton" id="29841019">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">-2147483347</int>
-						<string key="NSFrame">{{20, 149}, {275, 110}}</string>
+						<string key="NSFrame">{{20, 173}, {275, 110}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="468882253"/>
@@ -233,7 +233,7 @@
 								<double key="preferredMaxLayoutWidth">280</double>
 							</object>
 						</array>
-						<string key="NSFrame">{{20, 140}, {275, 110}}</string>
+						<string key="NSFrame">{{20, 162}, {275, 110}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="16245988"/>
@@ -247,10 +247,9 @@
 					<object class="IBUIView" id="490292295">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">271</int>
-						<string key="NSFrame">{{10, 267}, {300, 140}}</string>
+						<string key="NSFrame">{{10, 316}, {300, 140}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="179305622"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -258,7 +257,7 @@
 					<object class="IBUILabel" id="468882253">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{20, 239}, {280, 21}}</string>
+						<string key="NSFrame">{{20, 286}, {280, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="490292295"/>
@@ -277,7 +276,7 @@
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 20}, {320, 411}}</string>
+				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="255650414"/>
@@ -289,7 +288,6 @@
 					</object>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
 					<string key="IBUISimulatedSizeMetricsClass">IBUIScreenMetrics</string>
 					<object class="NSMutableDictionary" key="IBUINormalizedOrientationToSizeMap">

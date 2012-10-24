@@ -108,6 +108,7 @@ static NSString *const kTriggerString = @"blisd";
                 [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_SCAN", @"")];
             } else {
                 PostScanViewController *controller = [[PostScanViewController alloc] initWithBalance:balance];
+                controller.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:controller animated:YES];
 
                 [UIAlertView showAlertViewWithTitle:@"Hooray!"

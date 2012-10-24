@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSString *user;
 @property (nonatomic, strong) NSString *customerCompany;
+@property (nonatomic, strong) NSString *customerNumber;
 @property (nonatomic, strong) NSString *iconType;
 @property (nonatomic, assign) NSInteger buyX;
 @property (nonatomic, strong) NSString *buyY;
