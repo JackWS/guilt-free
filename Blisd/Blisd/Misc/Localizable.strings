@@ -31,3 +31,8 @@
 
 "OFFER_DETAILS_BUY_X" = "Buy %d %@";
 "OFFER_DETAILS_GET_X" = "Get %@";
+
+"FACEBOOK_SHARE_NAME" = "Name";
+"FACEBOOK_SHARE_CAPTION" = "Caption";
+"FACEBOOK_SHARE_DESCRIPTION" = "Description";
+"FACEBOOK_SHARE_LINK" = "http://www.blisd.com";

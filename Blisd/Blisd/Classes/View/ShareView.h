@@ -6,11 +6,14 @@
 
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 
-@interface ShareView : UIView
+@interface ShareView : UIView <PF_FBDialogDelegate, PF_FBSessionDelegate>
 
 @property (nonatomic, assign) NSInteger progress;
+
+@property (nonatomic, assign) IBOutlet UIViewController *ownerViewController;
 
 @property (nonatomic, strong) IBOutlet UILabel *statusLabel;
 

@@ -37,6 +37,7 @@
     [super viewDidLoad];
 
     self.shareView = [NIBLoader loadFirstObjectFromNibNamed:@"ShareView"];
+    self.shareView.ownerViewController = self;
     [self.shareViewContainer addSubview:self.shareView];
 
     srandom((unsigned int) time(NULL));

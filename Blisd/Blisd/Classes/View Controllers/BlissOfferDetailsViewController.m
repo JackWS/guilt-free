@@ -34,6 +34,7 @@
     self.detailsView.layer.cornerRadius = 8.0f;
 
     self.shareView = [NIBLoader loadFirstObjectFromNibNamed:@"ShareView"];
+    self.shareView.ownerViewController = self;
     [self.shareViewContainer addSubview:self.shareView];
 
     self.businessNameLabel.text = self.balance.customer.company;
