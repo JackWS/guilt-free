@@ -3,6 +3,9 @@
 
 "SCAN_TAB" = "Scan";
 "BLISS_TAB" = "Bliss";
+"SETTINGS_TAB" = "Settings";
+"INFO_TAB" = "Info";
+"DEALS_TAB" = "Deals";
 
 "ERROR_TITLE" = "Error";
 "RETRY" = "Retry";

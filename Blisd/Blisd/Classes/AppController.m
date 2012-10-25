@@ -14,6 +14,9 @@
 #import "LogInViewController.h"
 #import "SignUpViewController.h"
 #import "User.h"
+#import "DealsViewController.h"
+#import "SettingsViewController.h"
+#import "InfoViewController.h"
 
 NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControllerDidChangeFacebookStatusNotification";
 
@@ -66,22 +69,28 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 - (void) initializeUI {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
-        viewController2 = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
-    } else {
-        viewController1 = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPad" bundle:nil];
-        viewController2 = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPad" bundle:nil];
-    }
+//    UIViewController *scanController, *blissController;
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    UIViewController *scanController = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
+    UIViewController *blissController = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
+    UIViewController *dealController = [[DealsViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
+    UIViewController *settingsController = [[SettingsViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
+    UIViewController *infoController = [[InfoViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
+
+//    } else {
+//        scanController = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPad" bundle:nil];
+//        blissController = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPad" bundle:nil];
+//    }
     self.tabBarController = [[UITabBarController alloc] init];
 
-    UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
-    [navController1 setNavigationBarHidden:YES animated:NO];
+    UINavigationController *scanNavController = [[UINavigationController alloc] initWithRootViewController:scanController];
+    [scanNavController setNavigationBarHidden:YES animated:NO];
 
-    UINavigationController *navController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
-    [navController2 setNavigationBarHidden:YES animated:NO];
-    self.tabBarController.viewControllers = @[navController1, navController2];
+    UINavigationController *blissNavController = [[UINavigationController alloc] initWithRootViewController:blissController];
+    [blissNavController setNavigationBarHidden:YES animated:NO];
+    self.tabBarController.viewControllers = @[scanNavController, blissNavController, dealController, settingsController, infoController];
+    self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
+    self.tabBarController.tabBar.backgroundImage = [UIImage imageNamed:@"tab_bar_bg.png"];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 

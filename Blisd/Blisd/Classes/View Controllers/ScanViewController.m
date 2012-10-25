@@ -29,8 +29,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"SCAN_TAB", @"");
-        self.tabBarItem.image = [UIImage imageNamed:@"first.png"];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttonscanpressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttonscan.png"]];
     }
     return self;
 }
