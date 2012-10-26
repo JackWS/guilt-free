@@ -18,13 +18,28 @@
 
 }
 
+- (id) init {
+    self = [super init];
+    if (self) {
+        [self initialize];
+    }
+
+    return self;
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttoninfopressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttoninfo.png"]];
+        [self initialize];;
     }
     return self;
 }
+
+- (void) initialize {
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttoninfopressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttoninfo.png"]];
+}
+
 
 - (void) loadView {
 

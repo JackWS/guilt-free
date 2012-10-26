@@ -93,9 +93,9 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     UIViewController *scanController = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
     UIViewController *blissController = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
-    UIViewController *dealController = [[DealsViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
+    UIViewController *dealController = [[DealsViewController alloc] initWithNibName:@"DealsView" bundle:nil];
     UIViewController *settingsController = [[SettingsViewController alloc] init];
-    UIViewController *infoController = [[InfoViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
+    UIViewController *infoController = [[InfoViewController alloc] init];
 
 //    } else {
 //        scanController = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPad" bundle:nil];
