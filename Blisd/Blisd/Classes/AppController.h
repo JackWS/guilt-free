@@ -19,9 +19,9 @@ extern NSString *const kAppControllerDidChangeFacebookStatusNotification;
 
 + (AppController *) instance;
 
+- (void) logOut;
+
+
 - (BOOL) openSessionWithAllowLoginUI:(BOOL) allowLoginUI;
-
-
-- (void) displayFacebookShareDialogWithParams:(NSDictionary *) params;
 
 @end

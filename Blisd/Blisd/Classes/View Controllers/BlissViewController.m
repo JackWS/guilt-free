@@ -14,6 +14,7 @@
 #import "BlissTableViewCell.h"
 #import "Customer.h"
 #import "BlissOfferDetailsViewController.h"
+#import "BlisdStyle.h"
 
 @interface BlissViewController ()
 
@@ -108,6 +109,14 @@
     controller.balance = balance;
     controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (UIView *) tableView:(UITableView *) tableView viewForFooterInSection:(NSInteger) section {
+    return [[UIView alloc] init];
+}
+
+- (void) tableView:(UITableView *) tableView willDisplayCell:(UITableViewCell *) cell forRowAtIndexPath:(NSIndexPath *) indexPath {
+    cell.backgroundColor = [BlisdStyle colorForBackground];
 }
 
 

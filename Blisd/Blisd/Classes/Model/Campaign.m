@@ -17,6 +17,7 @@
 static NSString *const kClassName = @"Campaign";
 
 static NSString *const kCampaignNumberKey = @"campaignNumber";
+static NSString *const kCampaignNameKey = @"campaignName";
 static NSString *const kCustomerNumberKey = @"customerNumber";
 static NSString *const kCustomerCompanyKey = @"customerCompany";
 static NSString *const kBuyXKey = @"buyx";
@@ -51,6 +52,7 @@ static NSString *const kGetXKey = @"getx";
     campaign.buyY = [obj nonNullObjectForKey:kBuyYKey];
     campaign.getX = [obj nonNullObjectForKey:kGetXKey];
     campaign.campaignNumber = [obj nonNullObjectForKey:kCampaignNumberKey];
+    campaign.campaignName = [obj nonNullObjectForKey:kCampaignNameKey];
 
     return campaign;
 }

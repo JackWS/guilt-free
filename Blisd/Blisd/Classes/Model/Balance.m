@@ -13,6 +13,7 @@
 #import "User.h"
 #import "PFObject+NonNull.h"
 #import "Customer.h"
+#import "Subscription.h"
 
 
 @implementation Balance {
@@ -107,24 +108,33 @@ static NSString *const kCustomerKey = @"relationShip";
     [balance setNonNullObject:$str(@"%d %@ and get %@", campaign.buyX, campaign.buyY, campaign.getX) forKey:kShortMessageKey];
     [[User currentUser] addToACLForObject:balance];
 
-    [balance saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            response(nil, error);
+    [balance saveInBackgroundWithBlock:^(BOOL succeeded, NSError *balanceError) {
+        if (balanceError) {
+            response(nil, balanceError);
         } else if (!succeeded) {
             response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_GENERIC", @"")]);
         } else {
             Balance *bal = [Balance balanceFromPFObject:balance];
+            // Return this value, the rest can be done in the background.
             response(bal, nil);
+
+            Subscription *subscription = [[Subscription alloc] init];
+            subscription.userId = [User currentUser].userId;
+            subscription.campaignNumber = campaign.campaignNumber;
+            subscription.campaignName = campaign.campaignName;
+            subscription.customerCompany = campaign.customerCompany;
+            subscription.status = YES;
+            [subscription saveInBackgroundWithBlock:^(id object, NSError *subscriptionError) {
+                if (subscriptionError) {
+                    NSLog(@"Error creating subscription for campaign number: %@, %@",
+                            subscription.campaignNumber, [subscriptionError description]);
+                } else {
+                    NSLog(@"Succesfully created subscription for campaign number: %@", subscription.campaignNumber);
+                }
+            }];
         }
     }];
 }
-
-
-+ (void) findByCampaign:(NSString *) campaign responeBlock:(ResponseBlock) response {
-
-
-}
-
 
 + (Balance *) balanceFromPFObject:(PFObject *) object {
     if (!object) {

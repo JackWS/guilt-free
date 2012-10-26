@@ -17,6 +17,7 @@
 #import "DealsViewController.h"
 #import "SettingsViewController.h"
 #import "InfoViewController.h"
+#import "UncaughtExceptionHandler.h"
 
 NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControllerDidChangeFacebookStatusNotification";
 
@@ -50,10 +51,29 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
     [[PF_FBSession activeSession] handleDidBecomeActive];
 }
 
+- (void) application:(UIApplication *) application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken {
+    [self handlePushRegistrationWithToken:deviceToken];
+}
+
+- (void) application:(UIApplication *) application didFailToRegisterForRemoteNotificationsWithError:(NSError *) error {
+    NSLog(@"Error registering for remote notifications: %@", [error localizedDescription]);
+}
+
+- (void) application:(UIApplication *) application didReceiveRemoteNotification:(NSDictionary *) userInfo {
+    [PFPush handlePush:userInfo];
+}
+
 
 #pragma mark Initialization
 
 - (void) initialize {
+    InstallUncaughtExceptionHandler();
+
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+            UIRemoteNotificationTypeBadge |
+            UIRemoteNotificationTypeAlert |
+            UIRemoteNotificationTypeSound];
+
     [self initializeParse];
     [self initializeUI];
 }
@@ -74,7 +94,7 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
     UIViewController *scanController = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
     UIViewController *blissController = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
     UIViewController *dealController = [[DealsViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
-    UIViewController *settingsController = [[SettingsViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
+    UIViewController *settingsController = [[SettingsViewController alloc] init];
     UIViewController *infoController = [[InfoViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
 
 //    } else {
@@ -95,12 +115,40 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
     [self.window makeKeyAndVisible];
 
     if (![User currentUser]) {
-        LogInViewController *logInViewController = [[LogInViewController alloc] init];
-        logInViewController.delegate = self;
-        logInViewController.signUpController = [[SignUpViewController alloc] init];
-        logInViewController.signUpController.delegate = self;
-        [self.tabBarController presentModalViewController:logInViewController animated:NO];
+        [self displayLogInAnimated:NO];
     }
+}
+
+- (void) handlePushRegistrationWithToken:(NSData *) deviceToken {
+    [PFPush storeDeviceToken:deviceToken]; // Send parse the device token
+    // Subscribe this user to the broadcast channel, ""
+    [PFPush subscribeToChannelInBackground:@"" block:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Successfully subscribed to the broadcast channel.");
+        } else {
+            NSLog(@"Failed to subscribe to the broadcast channel.");
+        }
+    }];
+}
+
+#pragma mark Helpers
+
+- (void) logOut {
+    [[User currentUser] logOut];
+    [self displayLogInAnimated:YES];
+
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                      block:^(NSTimeInterval time) {
+                                          [self.tabBarController setSelectedIndex:0];
+                                      } repeats:NO];
+}
+
+- (void) displayLogInAnimated:(BOOL) animated {
+    LogInViewController *logInViewController = [[LogInViewController alloc] init];
+    logInViewController.delegate = self;
+    logInViewController.signUpController = [[SignUpViewController alloc] init];
+    logInViewController.signUpController.delegate = self;
+    [self.tabBarController presentModalViewController:logInViewController animated:animated];
 }
 
 #pragma mark PFLogInViewControllerDelegate

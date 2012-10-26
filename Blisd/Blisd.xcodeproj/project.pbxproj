@@ -54,6 +54,7 @@
 		450941589A095E9261481D40 /* menuinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094F6ECA441204FEB8C86C /* menuinfo.png */; };
 		450941B383B2ED76AAB7978F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4509497101908F7E8D760116 /* Default@2x.png */; };
 		450941B825E98C364022C5BD /* twittershareicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 450949D9DD3F12D74FA81031 /* twittershareicon.png */; };
+		4509420D1A054DD74DC71212 /* BlisdStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 45094D0A5B1B05DDE87EED27 /* BlisdStyle.m */; };
 		45094233ED12FB92640A7734 /* menuscan.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094E37082740972A60E16C /* menuscan.png */; };
 		45094252E2B93A1930BB612B /* iconnotification.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094D5782732A8BD6E47599 /* iconnotification.png */; };
 		45094259A957292B7C9C7F23 /* TwitterDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 4509479AD6074ACA8D6B1915 /* TwitterDown.png */; };
@@ -100,6 +101,7 @@
 		4509482960C8D6469205502E /* confirm_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094471E49DB5F733197894 /* confirm_button.png */; };
 		4509482FB341D5C7EADC25DC /* userfacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094BE3F03BB94B28FB9F6B /* userfacebook.png */; };
 		45094847B63FC919F4E88121 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 450949B474E67F9AE5E5AB20 /* ic_launcher.png */; };
+		4509484CA21C8A45B5A95EB6 /* Subscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 45094345E4867E2CE8EC1358 /* Subscription.m */; };
 		45094881A2C1B9BB65FFC1F2 /* NSError+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 450947B49ECE9B461F06EA41 /* NSError+App.m */; };
 		450948847ED6B7C046152054 /* NIBLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4509438A2C834B15F012FEE9 /* NIBLoader.m */; };
 		4509489117873681A234FB58 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094AB0322F9B1361A9CA74 /* second@2x.png */; };
@@ -153,6 +155,7 @@
 		45094DF0004C7B916215CD21 /* redeem_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4509445F3EEFEEED466E8B3E /* redeem_button.png */; };
 		45094DF340F1F8F58DF76DFA /* ExitDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 450940D0058160DDBF90B28F /* ExitDown.png */; };
 		45094E44CDF03BA8B984D9B6 /* letyourfriendsloveittoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094E64DFF7ABECD11B2EC6 /* letyourfriendsloveittoo.png */; };
+		45094E50D09DF0A4F22659FF /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 450946B473DF103B43ECFB12 /* UncaughtExceptionHandler.m */; };
 		45094E687285EA7CBE2086D7 /* menubar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4509403E7E1B75B4AF92ACBE /* menubar.png */; };
 		45094EB0F1DE093E4B2CFC2B /* menubuttonbliss.png in Resources */ = {isa = PBXBuildFile; fileRef = 450940B03866DEF98E72BB51 /* menubuttonbliss.png */; };
 		45094EBAE46B4BCF228B5EFC /* background3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45094DA82DF22ACC113BA47A /* background3.jpg */; };
@@ -167,6 +170,7 @@
 		45094F336FEAD801E0C39E30 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4509427BB7A953FE68263A94 /* Twitter.png */; };
 		45094F3615EEAE7856192E25 /* iconlogout.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094A47B7A5BF6944489328 /* iconlogout.png */; };
 		45094F535CA8B67B0590976F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094715B2092ABF48DDF2CA /* Default.png */; };
+		45094F5AD259D213720F9DC2 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 450941A155CD9DA53B68DA7C /* SwitchCell.m */; };
 		45094F61B490613C2AFA4D20 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094DEAC4FA687B2F83293A /* arrow_down.png */; };
 		45094FE23885C3F0B02F3416 /* menubuttonsettingspressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094AF216BFD1CFEC5AD280 /* menubuttonsettingspressed.png */; };
 		45094FEA916FBEC1602C139D /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45094F54D703D1100EDF9BBE /* Customer.m */; };
@@ -222,9 +226,11 @@
 		15A6B3B0160CAC7800D5CC20 /* Security.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		15A6B3B2160CAC8300D5CC20 /* StoreKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		15A6B3B4160CAC8F00D5CC20 /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4509400B91840125755DC056 /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
 		4509403E7E1B75B4AF92ACBE /* menubar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubar.png; sourceTree = "<group>"; };
 		4509405372F5C174729B06D5 /* ScanLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanLog.h; sourceTree = "<group>"; };
 		450940770B6B7698952390DD /* viewbgdeals.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = viewbgdeals.jpg; sourceTree = "<group>"; };
+		4509408343B03B12D3AE14C3 /* Subscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subscription.h; sourceTree = "<group>"; };
 		450940997A00AE9C0F10EF29 /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHelper.m; sourceTree = "<group>"; };
 		450940AC9F5DD9B53CAFF357 /* BlisdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlisdModel.h; sourceTree = "<group>"; };
 		450940B03866DEF98E72BB51 /* menubuttonbliss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubuttonbliss.png; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 		450941774143960DBD8A2DFE /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		450941843D0633E355EA1581 /* LoginHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHeaderView.h; sourceTree = "<group>"; };
 		4509419540CF5BE913147E68 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		450941A155CD9DA53B68DA7C /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
 		450941CBE525AB720BD29F84 /* ScanLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanLog.m; sourceTree = "<group>"; };
 		450941D8EDC78D7C37D3437B /* Balance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Balance.h; sourceTree = "<group>"; };
 		4509420696AB67F779DF457C /* BlissTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlissTableViewCell.h; sourceTree = "<group>"; };
@@ -250,6 +257,7 @@
 		450942852D26650712CB583A /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
 		450942A7B16E62648D86881A /* bgsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgsplash.jpg; sourceTree = "<group>"; };
 		450942ED52FAA18AE8B3BD52 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		45094345E4867E2CE8EC1358 /* Subscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subscription.m; sourceTree = "<group>"; };
 		450943572F1701F4EC631ACC /* ScanViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanViewController_iPad.xib; sourceTree = "<group>"; };
 		4509437604886A8094EDFD4C /* menubuttonscan2.pxm */ = {isa = PBXFileReference; lastKnownFileType = file.pxm; path = menubuttonscan2.pxm; sourceTree = "<group>"; };
 		45094386FC7EB0FDF23ECDF3 /* iconlogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconlogin.png; sourceTree = "<group>"; };
@@ -274,6 +282,7 @@
 		450944D8F7BA16E5452810E5 /* BlisdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlisdModel.m; sourceTree = "<group>"; };
 		450944DD778AC067F87B9052 /* menubuttoninfopressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubuttoninfopressed.png; sourceTree = "<group>"; };
 		450945194B4C56CC6DCC977D /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		4509454208573A59594BA1A8 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		450945448BBD2A8FDBE77E2A /* NSString+Pluralize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Pluralize.h"; sourceTree = "<group>"; };
 		4509454ABC615E5CDF4C05DC /* usertwitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usertwitter.png; sourceTree = "<group>"; };
 		4509455031C1DA1318464FBC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -286,6 +295,7 @@
 		450945FF252215365F34287B /* redtag4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redtag4.png; sourceTree = "<group>"; };
 		45094626FFF401A217756298 /* redtag1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redtag1.png; sourceTree = "<group>"; };
 		450946867AE44AB2E75DFD18 /* PostScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostScanViewController.m; sourceTree = "<group>"; };
+		450946B473DF103B43ECFB12 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		450946D1070D7270F9351420 /* NSError+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+App.h"; sourceTree = "<group>"; };
 		450946D5ADB0BB064CDF2F52 /* NIBLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIBLoader.h; sourceTree = "<group>"; };
 		450946D65477A25F49BE0405 /* menubuttonscan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubuttonscan2.png; sourceTree = "<group>"; };
@@ -311,6 +321,7 @@
 		450949136FF5BF8F4BEAFFCB /* useremail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = useremail.png; sourceTree = "<group>"; };
 		4509491978EBB730BD6E9C27 /* BlissViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlissViewController_iPhone.xib; sourceTree = "<group>"; };
 		4509491BF0C0DF893F2B1074 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		450949310F3BB738CBA856AB /* BlisdStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlisdStyle.h; sourceTree = "<group>"; };
 		4509495B81F1906DC46FDD71 /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
 		45094964990E49311DA2AB2E /* Scan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scan.h; sourceTree = "<group>"; };
 		4509497101908F7E8D760116 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -351,6 +362,7 @@
 		45094C82BA4F0CC939DAB0EB /* BlissViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlissViewController_iPad.xib; sourceTree = "<group>"; };
 		45094CB41CA1B5FE4807AE96 /* OutsideURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutsideURL.h; sourceTree = "<group>"; };
 		45094CD635C19456AC48A21A /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		45094D0A5B1B05DDE87EED27 /* BlisdStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlisdStyle.m; sourceTree = "<group>"; };
 		45094D2A7A0DC26D251473DF /* HUDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDHelper.h; sourceTree = "<group>"; };
 		45094D2D30CAB953A8B2D8FC /* menu_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_search.png; sourceTree = "<group>"; };
 		45094D41D3CBDFBDB725B1B7 /* btnanonymous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnanonymous.png; sourceTree = "<group>"; };
@@ -421,7 +433,6 @@
 		15A6B26A160CA5D200D5CC20 = {
 			isa = PBXGroup;
 			children = (
-				0ACB387316387FED003CE46B /* Twitter.framework */,
 				15A6B27F160CA5D200D5CC20 /* Blisd */,
 				15A6B2C8160CA8CE00D5CC20 /* Resources */,
 				15A6B2B7160CA5D300D5CC20 /* BlisdTests */,
@@ -458,6 +469,7 @@
 				15A6B2B1160CA5D300D5CC20 /* SenTestingKit.framework */,
 				15A6B3B2160CAC8300D5CC20 /* StoreKit.framework */,
 				15A6B3B4160CAC8F00D5CC20 /* SystemConfiguration.framework */,
+				0ACB387316387FED003CE46B /* Twitter.framework */,
 				15A6B279160CA5D200D5CC20 /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -537,6 +549,8 @@
 				4509420696AB67F779DF457C /* BlissTableViewCell.h */,
 				4509487D184D34E8C1023396 /* ShareView.m */,
 				450942852D26650712CB583A /* ShareView.h */,
+				4509400B91840125755DC056 /* SwitchCell.h */,
+				450941A155CD9DA53B68DA7C /* SwitchCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,6 +589,8 @@
 				4509405372F5C174729B06D5 /* ScanLog.h */,
 				450943EF46A19A9E59475CEA /* PFObject+NonNull.m */,
 				45094782341CB5AAFA782D13 /* PFObject+NonNull.h */,
+				45094345E4867E2CE8EC1358 /* Subscription.m */,
+				4509408343B03B12D3AE14C3 /* Subscription.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,6 +623,10 @@
 				450945448BBD2A8FDBE77E2A /* NSString+Pluralize.h */,
 				4509470ABBE033D3940196C6 /* ShareHelper.m */,
 				45094DE28B7D3E14FBCDFD76 /* ShareHelper.h */,
+				450946B473DF103B43ECFB12 /* UncaughtExceptionHandler.m */,
+				4509454208573A59594BA1A8 /* UncaughtExceptionHandler.h */,
+				45094D0A5B1B05DDE87EED27 /* BlisdStyle.m */,
+				450949310F3BB738CBA856AB /* BlisdStyle.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1004,6 +1024,10 @@
 				450949D8B960A533B1A7A721 /* DealsViewController.m in Sources */,
 				450946E60C79B85569CC7F68 /* SettingsViewController.m in Sources */,
 				450940949C2F4F9983AD9F9A /* InfoViewController.m in Sources */,
+				45094E50D09DF0A4F22659FF /* UncaughtExceptionHandler.m in Sources */,
+				4509420D1A054DD74DC71212 /* BlisdStyle.m in Sources */,
+				4509484CA21C8A45B5A95EB6 /* Subscription.m in Sources */,
+				45094F5AD259D213720F9DC2 /* SwitchCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1096,7 +1120,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1516556BD8804AE0803B656E /* Pods.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kevin Monahan (K4DEA73L3C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1108,7 +1132,7 @@
 				INFOPLIST_FILE = "Blisd/Misc/Blisd-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7D130993-AA85-42CD-9360-D27327D0BCA0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

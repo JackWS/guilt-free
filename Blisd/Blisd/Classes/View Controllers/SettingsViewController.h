@@ -8,5 +8,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+
 @end

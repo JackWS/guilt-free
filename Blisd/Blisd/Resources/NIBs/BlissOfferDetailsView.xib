@@ -292,7 +292,6 @@
 								<int key="NSvFlags">282</int>
 								<string key="NSFrame">{{0, 188}, {300, 140}}</string>
 								<reference key="NSSuperview" ref="57623508"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -357,7 +356,6 @@
 						<int key="NSvFlags">293</int>
 						<string key="NSFrame">{{50, 5}, {221, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -400,7 +398,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{10, 427}, {300, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -766,8 +763,8 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="box_80.png">{16, 16}</string>
-			<string key="leftarrow.png">{16, 16}</string>
+			<string key="box_80.png">{80, 80}</string>
+			<string key="leftarrow.png">{100, 32}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>

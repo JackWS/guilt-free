@@ -25,6 +25,8 @@
 "ERROR_LOADING_BLISS" = "There was an unexpected problem loading your balances. Please try again later.";
 "ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
 "ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
+"ERROR_LOADING_SUBSCRIPTIONS" = "There was an unexpected problem loading your subscriptions. Please try again later.";
+
 "NEXT_VISIT_GET" = "On your next visit, get:";
 "N_MORE_PURCHASES" = "%d more purchases";
 "UNTIL_YOU_EARN" = "until you earn";
@@ -77,3 +79,15 @@
 "OFFER_LIST_TWITTER_TEXT" = "I got Bliss at %@";
 "OFFER_LIST_EMAIL_TEXT" = "I got Bliss at %@";
 "OFFER_LIST_EMAIL_NAME" = "Blisd!";
+
+"USER_SETTINGS_TITLE" = "User Settings";
+"SUBSCRIPTION_SETTINGS_TITLE" = "Subscription Settings";
+
+"SETTINGS_LOGGED_IN_EMAIL" = "Logged in using email";
+"SETTINGS_LOGGED_IN_FACEBOOK" = "Logged in using Facebook";
+"SETTINGS_LOGGED_IN_TWITTER" = "Logged in using Twitter";
+"SETTINGS_LOGOUT" = "Logout";
+
+"ERROR_SAVING_SUBSCRIPTION" = "There was a problem updating your subscription status. Please try again later.";
+"LOCATIONS_FOR_NOTIFICATION" = "Locations for Notifications";
+"SUBSCRIPTION_SUBHEADING" = "Select to receive notifications from available locations";

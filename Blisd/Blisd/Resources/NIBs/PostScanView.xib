@@ -241,7 +241,6 @@
 						<int key="NSvFlags">271</int>
 						<string key="NSFrame">{{10, 316}, {300, 140}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="179305622"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -514,9 +513,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="leftarrow.png">{16, 16}</string>
-			<string key="redeem_button.png">{16, 16}</string>
-			<string key="redtag1.png">{16, 16}</string>
+			<string key="leftarrow.png">{100, 32}</string>
+			<string key="redeem_button.png">{275, 110}</string>
+			<string key="redtag1.png">{320, 150}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1926</string>
 	</data>

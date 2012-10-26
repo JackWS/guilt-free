@@ -7,14 +7,21 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    UserTypePassword,
+    UserTypeFacebook,
+    UserTypeTwitter
+} UserType;
 
 @interface User : NSObject
+
+@property (readonly) NSString *userId;
+@property (readonly) UserType userType;
+@property (readonly) NSString *email;
 
 + (User *) currentUser;
 
 - (void) addToACLForObject:(id) object;
-
-- (NSString *) email;
-
+- (void) logOut;
 
 @end
