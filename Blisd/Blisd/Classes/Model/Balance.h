@@ -27,6 +27,8 @@
 
 + (void) getBalancesForCurrentUser:(ResponseBlock) response;
 
++ (void) getBalancesForCurrentUserWithCompanies:(BOOL) includeCompanies response:(ResponseBlock) response;
+
 + (void) getByCampaignId:(NSString *) campaignId response:(ResponseBlock) response;
 
 + (void) createBalanceFromCampaign:(Campaign *) campaign response:(ResponseBlock) response;

@@ -9,6 +9,7 @@
 #import "Subscription.h"
 #import "PFObject+NonNull.h"
 #import "User.h"
+#import "Balance.h"
 
 
 @implementation Subscription {
@@ -23,96 +24,72 @@ static NSString *const kStatusKey = @"status";
 static NSString *const kUserIdKey = @"userUniqueId";
 static NSString *const kCustomerCompanyKey = @"customerCompany";
 
-- (PFObject *) toPFObject {
-    PFObject *obj = [super toPFObject];
-    if (!obj) {
-        obj = [[PFObject alloc] initWithClassName:kClassName];
-    }
-    [obj setNonNullObject:self.userId forKey:kUserIdKey];
-    [obj setNonNullObject:self.campaignName forKey:kCampaignNameKey];
-    [obj setNonNullObject:self.campaignNumber forKey:kCampaignNumberKey];
-    [obj setNonNullObject:$bool(self.status) forKey:kStatusKey];
-    [obj setNonNullObject:self.customerCompany forKey:kCustomerCompanyKey];
-
-    return obj;
+- (NSString *) channelName {
+    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"( ,)|(,,)|( )|(-)"
+                                                                                options:(NSRegularExpressionOptions) 0
+                                                                                  error:nil];
+    return [expression stringByReplacingMatchesInString:self.customerCompany
+                                                options:(NSMatchingOptions) 0
+                                                  range:NSMakeRange(0, self.customerCompany.length)
+                                           withTemplate:@"_"];
 }
 
 - (void) saveInBackgroundWithBlock:(ResponseBlock) block {
     // Do in reverse order depending on whether this is a subscribe or un-subscribe
     if (!self.status) {
-        [PFPush unsubscribeFromChannelInBackground:self.customerCompany
-                                             block:^(BOOL succeeded, NSError *unSubscribeError) {
-                                                 if (unSubscribeError) {
-                                                     NSLog(@"Error unsubscribing to channel: %@, %@",
-                                                             self.customerCompany, [unSubscribeError description]);
-                                                     block(nil, unSubscribeError);
-                                                 } else {
-                                                     [super saveInBackgroundWithBlock:^(id object, NSError *saveError) {
-                                                         if (saveError) {
-                                                             NSLog(@"Error updating subscription for company: %@, %@",
-                                                                     self.customerCompany, [unSubscribeError description]);
-                                                             block(nil, unSubscribeError);
-                                                         } else {
-                                                             NSLog(@"Successfully unsubscribed to channel: %@", self.customerCompany);
-                                                             block(object, nil);
-                                                         }
-                                                     }];
-                                                 }
-                                             }];
-    } else {
-        [super saveInBackgroundWithBlock:^(id object, NSError *error) {
-            if (error) {
-                NSLog(@"Error updating subscription tochannel: %@, %@",
-                        self.customerCompany, [error description]);
-                // Don't create the subscription
-                block(object, error);
+        [PFPush unsubscribeFromChannelInBackground:self.customerCompany block:^(BOOL succeeded, NSError *unSubscribeError) {
+            if (unSubscribeError) {
+                NSLog(@"Error unsubscribing to channel: %@, %@",
+                        self.customerCompany, [unSubscribeError description]);
+                block(nil, unSubscribeError);
             } else {
-                [PFPush subscribeToChannelInBackground:self.customerCompany
-                                                 block:^(BOOL succeeded, NSError *subscribeError) {
-                                                     if (subscribeError) {
-                                                         NSLog(@"Error subscribing to channel: %@, %@",
-                                                                 self.customerCompany, [subscribeError description]);
-                                                     } else {
-                                                         NSLog(@"Successfully subscribed to channel: %@", self.customerCompany);
-                                                     }
-                                                     // We still mostly succeeded, so don't forward this error
-                                                     block(object, error);
-                                                 }];
+                NSLog(@"Successfully unsubscribed to channel: %@", self.customerCompany);
+                block(nil, nil);
+            }
+        }];
+    } else {
+        [PFPush subscribeToChannelInBackground:self.customerCompany block:^(BOOL succeeded, NSError *subscribeError) {
+            if (subscribeError) {
+                NSLog(@"Error subscribing to channel: %@, %@",
+                        self.customerCompany, [subscribeError description]);
+                block(nil, subscribeError);
+            } else {
+                NSLog(@"Successfully subscribed to channel: %@", self.customerCompany);
+                // We still mostly succeeded, so don't forward this error
+                block(nil, nil);
             }
         }];
     }
 }
 
 + (void) getSubscriptionsForCurrentUser:(ResponseBlock) response {
-    PFQuery *query = [PFQuery queryWithClassName:kClassName];
-    [query whereKey:kUserIdKey equalTo:[User currentUser].userId];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            response(nil, error);
+    [Balance getBalancesForCurrentUserWithCompanies:NO response:^(NSArray *balances, NSError *balancesError) {
+        if (balancesError) {
+            response(nil, balancesError);
         } else {
-            NSMutableArray *array = [NSMutableArray arrayWithCapacity:objects.count];
-            for (PFObject *object in objects) {
-                Subscription *subscription = [Subscription subscriptionWithPFObject:object];
-                [array addObject:subscription];
+            NSMutableDictionary *subscriptions = [NSMutableDictionary dictionary];
+            for (Balance *balance in balances) {
+                Subscription *subscription = [[Subscription alloc] init];
+                subscription.customerCompany = balance.customerCompany;
+                subscription.status = NO;
+                subscriptions[subscription.channelName] = subscription;
             }
-            response(array, nil);
+
+            [PFPush getSubscribedChannelsInBackgroundWithBlock:^(NSSet *channels, NSError *channelsError) {
+                if (channelsError) {
+                    response(nil, channelsError);
+                } else {
+                    for (NSString *channel in channels) {
+                        Subscription *subscription = subscriptions[channel];
+                        if (subscription) {
+                            subscription.status = YES;
+                        }
+                    }
+                    response([subscriptions allValues], nil);
+                }
+            }];
         }
     }];
-}
-
-+ (Subscription *) subscriptionWithPFObject:(PFObject *) object {
-    if (!object) {
-        return nil;
-    }
-
-    Subscription *subscription = [[Subscription alloc] initWithPFObject:object];
-    subscription.campaignNumber = [object nonNullObjectForKey:kCampaignNumberKey];
-    subscription.customerCompany = [object nonNullObjectForKey:kCustomerCompanyKey];
-    subscription.userId = [object nonNullObjectForKey:kUserIdKey];
-    subscription.campaignName = [object nonNullObjectForKey:kCampaignNameKey];
-    subscription.status = [[object nonNullObjectForKey:kStatusKey] boolValue];
-
-    return subscription;
 }
 
 

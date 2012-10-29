@@ -37,7 +37,10 @@ static NSString *const kShortMessageKey = @"shortMessage";
 static NSString *const kCustomerKey = @"relationShip";
 
 + (void) getBalancesForCurrentUser:(ResponseBlock) response {
+    [self getBalancesForCurrentUserWithCompanies:YES response:response];
+}
 
++ (void) getBalancesForCurrentUserWithCompanies:(BOOL) includeCompanies response:(ResponseBlock) response {
 #if MOCK_DATA
     [MockData callAfterDelay:1
             successBlock:^{
@@ -59,25 +62,30 @@ static NSString *const kCustomerKey = @"relationShip";
                 [balances addObject:bal];
                 [companyNames addObject:bal.customerCompany];
             }
-            [Customer findWithNames:companyNames response:^(NSArray *customerObjects, NSError *companiesError) {
-                if (companiesError) {
-                    response(nil, companiesError);
-                } else {
-                    for (Balance *bal in balances) {
-                        for (Customer *customer in customerObjects) {
-                            if ([bal.customerCompany isEqualToString:customer.company]) {
-                                bal.customer = customer;
-                                break;
+            if (includeCompanies) {
+                [Customer findWithNames:companyNames response:^(NSArray *customerObjects, NSError *companiesError) {
+                    if (companiesError) {
+                        response(nil, companiesError);
+                    } else {
+                        for (Balance *bal in balances) {
+                            for (Customer *customer in customerObjects) {
+                                if ([bal.customerCompany isEqualToString:customer.company]) {
+                                    bal.customer = customer;
+                                    break;
+                                }
                             }
                         }
+                        response(balances, nil);
                     }
-                    response(balances, nil);
-                }
-            }];
+                }];
+            } else {
+                response(balances, nil);
+            }
         }
     }];
 #endif
 }
+
 
 + (void) getByCampaignId:(NSString *) campaignId response:(ResponseBlock) response {
     PFQuery *query = [PFQuery queryWithClassName:kClassName];
@@ -119,17 +127,14 @@ static NSString *const kCustomerKey = @"relationShip";
             response(bal, nil);
 
             Subscription *subscription = [[Subscription alloc] init];
-            subscription.userId = [User currentUser].userId;
-            subscription.campaignNumber = campaign.campaignNumber;
-            subscription.campaignName = campaign.campaignName;
             subscription.customerCompany = campaign.customerCompany;
             subscription.status = YES;
             [subscription saveInBackgroundWithBlock:^(id object, NSError *subscriptionError) {
                 if (subscriptionError) {
-                    NSLog(@"Error creating subscription for campaign number: %@, %@",
-                            subscription.campaignNumber, [subscriptionError description]);
+                    NSLog(@"Error creating subscription for customer: %@, %@",
+                            subscription.customerCompany, [subscriptionError description]);
                 } else {
-                    NSLog(@"Succesfully created subscription for campaign number: %@", subscription.campaignNumber);
+                    NSLog(@"Succesfully created subscription for campaign number: %@", subscription.customerCompany);
                 }
             }];
         }

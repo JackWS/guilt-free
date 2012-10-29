@@ -11,14 +11,10 @@
 
 @interface Subscription : BlisdModel
 
-@property (nonatomic, strong) NSString *userId;
-@property (nonatomic, strong) NSString *campaignNumber;
-@property (nonatomic, strong) NSString *campaignName;
 @property (nonatomic, strong) NSString *customerCompany;
 @property (nonatomic, assign) BOOL status;
+@property (readonly) NSString *channelName;
 
 + (void) getSubscriptionsForCurrentUser:(ResponseBlock) response;
-
-+ (Subscription *) subscriptionWithPFObject:(PFObject *) object;
 
 @end
