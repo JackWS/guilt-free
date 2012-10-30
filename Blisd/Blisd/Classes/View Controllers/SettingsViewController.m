@@ -157,8 +157,10 @@
         }
         Subscription *sub = self.subscriptions[(NSUInteger) indexPath.row];
         cell.textLabel.text = sub.customerCompany;
-        ((SwitchCell *) cell).aSwitch.on = sub.status;
-        cell.tag = indexPath.row;
+
+        UISwitch *aSwitch = ((SwitchCell *) cell).aSwitch;
+        aSwitch.on = sub.status;
+        aSwitch.tag = indexPath.row;
     }
 
     return cell;

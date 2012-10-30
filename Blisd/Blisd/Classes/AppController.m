@@ -120,6 +120,7 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 }
 
 - (void) handlePushRegistrationWithToken:(NSData *) deviceToken {
+    NSLog(@"Received device token: %@", [deviceToken description]);
     [PFPush storeDeviceToken:deviceToken]; // Send parse the device token
     // Subscribe this user to the broadcast channel, ""
     [PFPush subscribeToChannelInBackground:@"" block:^(BOOL succeeded, NSError *error) {
