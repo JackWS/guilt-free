@@ -44,7 +44,7 @@
 							<object class="IBUIImageView" id="1024321005">
 								<reference key="NSNextResponder" ref="621650699"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrameSize">{91, 94}</string>
+								<string key="NSFrameSize">{94, 94}</string>
 								<reference key="NSSuperview" ref="621650699"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="757180952"/>
@@ -54,8 +54,8 @@
 							</object>
 							<object class="IBUILabel" id="757180952">
 								<reference key="NSNextResponder" ref="621650699"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{99, 8}, {192, 21}}</string>
+								<int key="NSvFlags">290</int>
+								<string key="NSFrame">{{102, 8}, {189, 21}}</string>
 								<reference key="NSSuperview" ref="621650699"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="782397688"/>
@@ -89,8 +89,8 @@
 							</object>
 							<object class="IBUILabel" id="782397688">
 								<reference key="NSNextResponder" ref="621650699"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{99, 36}, {192, 21}}</string>
+								<int key="NSvFlags">290</int>
+								<string key="NSFrame">{{102, 36}, {189, 21}}</string>
 								<reference key="NSSuperview" ref="621650699"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="45582132"/>
@@ -117,11 +117,10 @@
 							</object>
 							<object class="IBUIProgressView" id="45582132">
 								<reference key="NSNextResponder" ref="621650699"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{99, 72}, {192, 9}}</string>
+								<int key="NSvFlags">290</int>
+								<string key="NSFrame">{{102, 72}, {189, 9}}</string>
 								<reference key="NSSuperview" ref="621650699"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -149,6 +148,10 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="621650699"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">3</int>
+					<bytes key="NSWhite">MC44NQA</bytes>
+				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUIAccessoryType">1</int>
 				<reference key="IBUIContentView" ref="621650699"/>
@@ -268,7 +271,7 @@
 					<string key="superclassName">UITableViewCell</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="businessLabel">UILabel</string>
-						<string key="logoImageView">UIImageView</string>
+						<string key="logoImageView">PFImageView</string>
 						<string key="progressView">UIProgressView</string>
 						<string key="rewardLabel">UILabel</string>
 					</dictionary>
@@ -279,7 +282,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="logoImageView">
 							<string key="name">logoImageView</string>
-							<string key="candidateClassName">UIImageView</string>
+							<string key="candidateClassName">PFImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="progressView">
 							<string key="name">progressView</string>

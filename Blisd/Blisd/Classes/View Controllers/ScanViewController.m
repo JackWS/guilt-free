@@ -29,8 +29,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"SCAN_TAB", @"");
-        self.tabBarItem.image = [UIImage imageNamed:@"first.png"];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttonscanpressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttonscan.png"]];
     }
     return self;
 }
@@ -108,6 +107,7 @@ static NSString *const kTriggerString = @"blisd";
                 [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_SCAN", @"")];
             } else {
                 PostScanViewController *controller = [[PostScanViewController alloc] initWithBalance:balance];
+                controller.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:controller animated:YES];
 
                 [UIAlertView showAlertViewWithTitle:@"Hooray!"

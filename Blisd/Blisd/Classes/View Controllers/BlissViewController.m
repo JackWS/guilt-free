@@ -13,6 +13,8 @@
 #import "NIBLoader.h"
 #import "BlissTableViewCell.h"
 #import "Customer.h"
+#import "BlissOfferDetailsViewController.h"
+#import "BlisdStyle.h"
 
 @interface BlissViewController ()
 
@@ -26,8 +28,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"BLISS_TAB", @"");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttonblisspressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttonbliss.png"]];
     }
     return self;
 }
@@ -57,7 +58,7 @@
     }];
 }
 
-#pragma mark UITableViewDatasource
+#pragma mark UITableViewDataSource
 
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger) section {
     return self.balances.count;
@@ -95,6 +96,27 @@
 
 - (CGFloat) tableView:(UITableView *) tableView heightForRowAtIndexPath:(NSIndexPath *) indexPath {
     return 95;
+}
+
+#pragma mark UITableViewDelegate
+
+- (void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *) indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    Balance *balance = [self.balances objectAtIndex:(NSUInteger) indexPath.row];
+
+    BlissOfferDetailsViewController *controller = [[BlissOfferDetailsViewController alloc] init];
+    controller.balance = balance;
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (UIView *) tableView:(UITableView *) tableView viewForFooterInSection:(NSInteger) section {
+    return [[UIView alloc] init];
+}
+
+- (void) tableView:(UITableView *) tableView willDisplayCell:(UITableViewCell *) cell forRowAtIndexPath:(NSIndexPath *) indexPath {
+    cell.backgroundColor = [BlisdStyle colorForBackground];
 }
 
 

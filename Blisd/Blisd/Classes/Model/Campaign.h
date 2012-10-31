@@ -11,7 +11,8 @@
 
 @interface Campaign : BlisdModel
 
-@property (nonatomic, retain) NSString *campaignNumber;
+@property (nonatomic, strong) NSString *campaignNumber;
+@property (nonatomic, strong) NSString *campaignName;
 @property (nonatomic, strong) NSString *customerNumber;
 @property (nonatomic, strong) NSString *customerCompany;
 @property (nonatomic, assign) NSInteger buyX;

@@ -33,9 +33,27 @@
     }
 }
 
+- (void) logOut {
+    [PFUser logOut];
+}
+
 
 - (NSString *) email {
     return self.pfUser.email;
+}
+
+- (NSString *) userId {
+    return self.pfUser.objectId;
+}
+
+- (UserType) userType {
+    if ([PFFacebookUtils isLinkedWithUser:self.pfUser]) {
+        return UserTypeFacebook;
+    } else if ([PFTwitterUtils isLinkedWithUser:self.pfUser]) {
+        return UserTypeTwitter;
+    } else {
+        return UserTypePassword;
+    }
 }
 
 + (User *) userFromPFUser:(PFUser *) pfUser {

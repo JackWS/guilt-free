@@ -13,6 +13,7 @@
 #import "User.h"
 #import "PFObject+NonNull.h"
 #import "Customer.h"
+#import "Subscription.h"
 
 
 @implementation Balance {
@@ -36,7 +37,10 @@ static NSString *const kShortMessageKey = @"shortMessage";
 static NSString *const kCustomerKey = @"relationShip";
 
 + (void) getBalancesForCurrentUser:(ResponseBlock) response {
+    [self getBalancesForCurrentUserWithCompanies:YES response:response];
+}
 
++ (void) getBalancesForCurrentUserWithCompanies:(BOOL) includeCompanies response:(ResponseBlock) response {
 #if MOCK_DATA
     [MockData callAfterDelay:1
             successBlock:^{
@@ -58,25 +62,30 @@ static NSString *const kCustomerKey = @"relationShip";
                 [balances addObject:bal];
                 [companyNames addObject:bal.customerCompany];
             }
-            [Customer findWithNames:companyNames response:^(NSArray *customerObjects, NSError *companiesError) {
-                if (companiesError) {
-                    response(nil, companiesError);
-                } else {
-                    for (Balance *bal in balances) {
-                        for (Customer *customer in customerObjects) {
-                            if ([bal.customerCompany isEqualToString:customer.company]) {
-                                bal.customer = customer;
-                                break;
+            if (includeCompanies) {
+                [Customer findWithNames:companyNames response:^(NSArray *customerObjects, NSError *companiesError) {
+                    if (companiesError) {
+                        response(nil, companiesError);
+                    } else {
+                        for (Balance *bal in balances) {
+                            for (Customer *customer in customerObjects) {
+                                if ([bal.customerCompany isEqualToString:customer.company]) {
+                                    bal.customer = customer;
+                                    break;
+                                }
                             }
                         }
+                        response(balances, nil);
                     }
-                    response(balances, nil);
-                }
-            }];
+                }];
+            } else {
+                response(balances, nil);
+            }
         }
     }];
 #endif
 }
+
 
 + (void) getByCampaignId:(NSString *) campaignId response:(ResponseBlock) response {
     PFQuery *query = [PFQuery queryWithClassName:kClassName];
@@ -107,24 +116,30 @@ static NSString *const kCustomerKey = @"relationShip";
     [balance setNonNullObject:$str(@"%d %@ and get %@", campaign.buyX, campaign.buyY, campaign.getX) forKey:kShortMessageKey];
     [[User currentUser] addToACLForObject:balance];
 
-    [balance saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            response(nil, error);
+    [balance saveInBackgroundWithBlock:^(BOOL succeeded, NSError *balanceError) {
+        if (balanceError) {
+            response(nil, balanceError);
         } else if (!succeeded) {
             response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_GENERIC", @"")]);
         } else {
             Balance *bal = [Balance balanceFromPFObject:balance];
+            // Return this value, the rest can be done in the background.
             response(bal, nil);
+
+            Subscription *subscription = [[Subscription alloc] init];
+            subscription.customerCompany = campaign.customerCompany;
+            subscription.status = YES;
+            [subscription saveInBackgroundWithBlock:^(id object, NSError *subscriptionError) {
+                if (subscriptionError) {
+                    NSLog(@"Error creating subscription for customer: %@, %@",
+                            subscription.customerCompany, [subscriptionError description]);
+                } else {
+                    NSLog(@"Succesfully created subscription for campaign number: %@", subscription.customerCompany);
+                }
+            }];
         }
     }];
 }
-
-
-+ (void) findByCampaign:(NSString *) campaign responeBlock:(ResponseBlock) response {
-
-
-}
-
 
 + (Balance *) balanceFromPFObject:(PFObject *) object {
     if (!object) {
@@ -139,6 +154,7 @@ static NSString *const kCustomerKey = @"relationShip";
     bal.balance = [[object nonNullObjectForKey:kCampaignBalanceKey] intValue];
     bal.iconType = [object nonNullObjectForKey:kIconTypeKey];
     bal.user = [object nonNullObjectForKey:kUserKey];
+    bal.customerNumber = [object nonNullObjectForKey:kCustomerNumberKey];
 
     return bal;
 }

@@ -13,6 +13,10 @@
 
 @property (nonatomic, strong) NSString *company;
 @property (nonatomic, strong) UIImage *companyImage;
+@property (readonly) NSString *address;
+@property (nonatomic, strong) NSString *website;
+@property (nonatomic, strong) NSString *tagLine;
+@property (nonatomic, strong) NSString *type;
 
 + (void) findWithNames:(NSArray *) names response:(ResponseBlock) response;
 

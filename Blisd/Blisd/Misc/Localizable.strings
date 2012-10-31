@@ -3,6 +3,9 @@
 
 "SCAN_TAB" = "Scan";
 "BLISS_TAB" = "Bliss";
+"SETTINGS_TAB" = "Settings";
+"INFO_TAB" = "Info";
+"DEALS_TAB" = "Deals";
 
 "ERROR_TITLE" = "Error";
 "RETRY" = "Retry";
@@ -22,9 +25,69 @@
 "ERROR_LOADING_BLISS" = "There was an unexpected problem loading your balances. Please try again later.";
 "ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
 "ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
+"ERROR_LOADING_SUBSCRIPTIONS" = "There was an unexpected problem loading your subscriptions. Please try again later.";
+
 "NEXT_VISIT_GET" = "On your next visit, get:";
 "N_MORE_PURCHASES" = "%d more purchases";
 "UNTIL_YOU_EARN" = "until you earn";
 
 "BALANCE_STATUS" = "You popped in";
 "BALANCE_PLURALIZABLE" = "time";
+
+"OFFER_DETAILS_BUY_X" = "Buy %d %@";
+"OFFER_DETAILS_GET_X" = "Get %@";
+
+"NO_TWITTER_ACCOUNT_TITLE" = "No Twitter Account";
+"NO_TWITTER_ACCOUNT_MESSAGE" = "To post on Twitter, please open the \"Settings\" app, and enter your Twitter credentials.";
+
+"POST_SCAN_FACEBOOK_PROGRESS_TEXT" = "I got Bliss at %@";
+"POST_SCAN_FACEBOOK_PROGRESS_NAME" = "Blisd!";
+"POST_SCAN_FACEBOOK_PROGRESS_CAPTION" = "I got Bliss at %@";
+"POST_SCAN_FACEBOOK_PROGRESS_DESCRIPTION" = "You could, too!";
+"POST_SCAN_TWITTER_PROGRESS_TEXT" = "I got Bliss at %@";
+
+"POST_SCAN_FACEBOOK_ALMOST_TEXT" = "I got Bliss at %@";
+"POST_SCAN_FACEBOOK_ALMOST_NAME" = "Blisd!";
+"POST_SCAN_FACEBOOK_ALMOST_CAPTION" = "I got Bliss at %@";
+"POST_SCAN_FACEBOOK_ALMOST_DESCRIPTION" = "You could, too!";
+"POST_SCAN_TWITTER_ALMOST_TEXT" = "I got Bliss at %@";
+
+"POST_SCAN_FACEBOOK_EARNED_TEXT" = "I got Bliss at %@";
+"POST_SCAN_FACEBOOK_EARNED_NAME" = "Blisd!";
+"POST_SCAN_FACEBOOK_EARNED_CAPTION" = "I got Bliss at %@";
+"POST_SCAN_FACEBOOK_EARNED_DESCRIPTION" = "You could, too!";
+"POST_SCAN_TWITTER_EARNED_TEXT" = "I got Bliss at %@";
+
+"SHARE_CUSTOMER_URL" = "http://blisd.com/app/customer.php?id=%@";
+
+"NO_EMAIL_ACCOUNT_TITLE" = "No Email Account";
+"NO_EMAIL_ACCOUNT_MESSAGE" = "This device hasn't been set up to send email. Please configure an account first.";
+
+"POST_SCAN_EMAIL_PROGRESS_TEXT" = "I got Bliss at %@";
+"POST_SCAN_EMAIL_PROGRESS_NAME" = "Blisd!";
+
+"POST_SCAN_EMAIL_ALMOST_TEXT" = "I got Bliss at %@";
+"POST_SCAN_EMAIL_ALMOST_NAME" = "Blisd!";
+
+"POST_SCAN_EMAIL_EARNED_TEXT" = "I got Bliss at %@";
+"POST_SCAN_EMAIL_EARNED_NAME" = "Blisd!";
+
+"OFFER_LIST_FACEBOOK_TEXT" = "I got Bliss at %@";
+"OFFER_LIST_FACEBOOK_NAME" = "Blisd!";
+"OFFER_LIST_FACEBOOK_CAPTION" = "I got Bliss at %@";
+"OFFER_LIST_FACEBOOK_DESCRIPTION" = "You could, too!";
+"OFFER_LIST_TWITTER_TEXT" = "I got Bliss at %@";
+"OFFER_LIST_EMAIL_TEXT" = "I got Bliss at %@";
+"OFFER_LIST_EMAIL_NAME" = "Blisd!";
+
+"USER_SETTINGS_TITLE" = "User Settings";
+"SUBSCRIPTION_SETTINGS_TITLE" = "Subscription Settings";
+
+"SETTINGS_LOGGED_IN_EMAIL" = "Logged in using email";
+"SETTINGS_LOGGED_IN_FACEBOOK" = "Logged in using Facebook";
+"SETTINGS_LOGGED_IN_TWITTER" = "Logged in using Twitter";
+"SETTINGS_LOGOUT" = "Logout";
+
+"ERROR_SAVING_SUBSCRIPTION" = "There was a problem updating your subscription status. Please try again later.";
+"LOCATIONS_FOR_NOTIFICATION" = "Locations for Notifications";
+"SUBSCRIPTION_SUBHEADING" = "Select to receive notifications from available locations";

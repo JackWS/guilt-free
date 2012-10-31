@@ -1,7 +1,7 @@
 PODS_ROOT = ${SRCROOT}/../Pods
 PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
 ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -Wl,-no_compact_unwind -lFlurry -lTestFlight -liconv -lz -framework AVFoundation -framework Accounts -framework AdSupport -framework AudioToolbox -framework CFNetwork -framework CoreGraphics -framework CoreLocation -framework CoreMedia -framework CoreText -framework CoreVideo -framework Foundation -framework MapKit -framework MessageUI -framework MobileCoreServices -framework Parse -framework QuartzCore -framework Security -framework Social -framework SystemConfiguration -framework UIKit
+OTHER_LDFLAGS = -ObjC -Wl,-no_compact_unwind -lFlurry -lTestFlight -liconv -lz -framework AVFoundation -framework AudioToolbox -framework CFNetwork -framework CoreGraphics -framework CoreLocation -framework CoreMedia -framework CoreText -framework CoreVideo -framework Foundation -framework MapKit -framework MessageUI -framework MobileCoreServices -framework Parse -framework QuartzCore -framework Security -framework SystemConfiguration -framework UIKit -weak_framework Accounts -weak_framework AdSupport -weak_framework Social
 LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/FlurrySDK/Flurry" "$(PODS_ROOT)/TestFlightSDK"
 FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Parse"
 EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*] = ZBarReaderViewImpl_Simulator.m
