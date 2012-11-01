@@ -13,6 +13,11 @@
 		0ACB38A21638BD68003CE46B /* html in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB38A11638BD68003CE46B /* html */; };
 		0AE4F652163AD10E00B6CE63 /* DealsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE4F651163AD10E00B6CE63 /* DealsView.xib */; };
 		0AE8AB76161936B400D5714E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0AE8AB75161936B400D5714E /* Podfile */; };
+		1506056216430C1E00712623 /* Blisd_logo_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1506056116430C1E00712623 /* Blisd_logo_114.png */; };
+		1506056516430CC300712623 /* Blisd_logo_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1506056416430CC300712623 /* Blisd_logo_57.png */; };
+		1506056716430D8A00712623 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1506056616430D8A00712623 /* Default.png */; };
+		1506056916430E2900712623 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1506056816430E2900712623 /* Default@2x.png */; };
+		1506056B16430E3200712623 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1506056A16430E3200712623 /* Default-568h@2x.png */; };
 		159A85DF160CC64B00867385 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85DE160CC64B00867385 /* LogInViewController.m */; };
 		159A85E0160CC64B00867385 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85DE160CC64B00867385 /* LogInViewController.m */; };
 		159A85E3160CC6B800867385 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85E2160CC6B800867385 /* SignUpViewController.m */; };
@@ -195,6 +200,11 @@
 		0ACB38A11638BD68003CE46B /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		0AE4F651163AD10E00B6CE63 /* DealsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsView.xib; sourceTree = "<group>"; };
 		0AE8AB75161936B400D5714E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		1506056116430C1E00712623 /* Blisd_logo_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blisd_logo_114.png; sourceTree = "<group>"; };
+		1506056416430CC300712623 /* Blisd_logo_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blisd_logo_57.png; sourceTree = "<group>"; };
+		1506056616430D8A00712623 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1506056816430E2900712623 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1506056A16430E3200712623 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1516556BD8804AE0803B656E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		159A85DC160CC62700867385 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		159A85DE160CC64B00867385 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
@@ -435,6 +445,11 @@
 		15A6B26A160CA5D200D5CC20 = {
 			isa = PBXGroup;
 			children = (
+				1506056A16430E3200712623 /* Default-568h@2x.png */,
+				1506056816430E2900712623 /* Default@2x.png */,
+				1506056616430D8A00712623 /* Default.png */,
+				1506056416430CC300712623 /* Blisd_logo_57.png */,
+				1506056116430C1E00712623 /* Blisd_logo_114.png */,
 				15A6B27F160CA5D200D5CC20 /* Blisd */,
 				15A6B2C8160CA8CE00D5CC20 /* Resources */,
 				15A6B2B7160CA5D300D5CC20 /* BlisdTests */,
@@ -950,6 +965,11 @@
 				45094EF60AA361E3ED63B7CE /* menubuttonscan2.png in Resources */,
 				0ACB38A21638BD68003CE46B /* html in Resources */,
 				0AE4F652163AD10E00B6CE63 /* DealsView.xib in Resources */,
+				1506056216430C1E00712623 /* Blisd_logo_114.png in Resources */,
+				1506056516430CC300712623 /* Blisd_logo_57.png in Resources */,
+				1506056716430D8A00712623 /* Default.png in Resources */,
+				1506056916430E2900712623 /* Default@2x.png in Resources */,
+				1506056B16430E3200712623 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
