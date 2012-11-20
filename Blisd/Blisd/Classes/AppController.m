@@ -18,6 +18,8 @@
 #import "SettingsViewController.h"
 #import "InfoViewController.h"
 #import "UncaughtExceptionHandler.h"
+#import "Location.h"
+#import "LocationManager.h"
 
 NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControllerDidChangeFacebookStatusNotification";
 
@@ -49,7 +51,13 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 
 - (void) applicationDidBecomeActive:(UIApplication *) application {
     [[PF_FBSession activeSession] handleDidBecomeActive];
+    [[LocationManager instance] findLocation];
 }
+
+- (void) applicationDidEnterBackground:(UIApplication *) application {
+    [[LocationManager instance] stopFindingLocation];
+}
+
 
 - (void) application:(UIApplication *) application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken {
     [self handlePushRegistrationWithToken:deviceToken];

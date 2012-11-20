@@ -101,7 +101,6 @@ static NSString *const kWebsiteKey = @"customerWebsite";
     }];
 }
 
-
 + (Customer *) customerFromPFObject:(PFObject *) obj {
     if (!obj) {
         return nil;

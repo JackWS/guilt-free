@@ -26,6 +26,7 @@
 "ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
 "ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
 "ERROR_LOADING_SUBSCRIPTIONS" = "There was an unexpected problem loading your subscriptions. Please try again later.";
+"ERROR_LOADING_NEARBY_CAMPAIGNS" = "There was an unexpecte problem loading nearby campaigns. Please try again later.";
 
 "NEXT_VISIT_GET" = "On your next visit, get:";
 "N_MORE_PURCHASES" = "%d more purchases";
@@ -91,3 +92,5 @@
 "ERROR_SAVING_SUBSCRIPTION" = "There was a problem updating your subscription status. Please try again later.";
 "LOCATIONS_FOR_NOTIFICATION" = "Locations for Notifications";
 "SUBSCRIPTION_SUBHEADING" = "Select to receive notifications from available locations";
+"MY_BLISS_TITLE" = "My Bliss";
+"NEARBY_BLISS_TITLE" = "Nearby Bliss";

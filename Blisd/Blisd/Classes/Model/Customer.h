@@ -22,4 +22,7 @@
 
 - (void) loadImageWithResponse:(ResponseBlock) response;
 
++ (Customer *) customerFromPFObject:(PFObject *) obj;
+
+
 @end
