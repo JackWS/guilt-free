@@ -11,10 +11,12 @@
 #import "Customer.h"
 #import "ShareView.h"
 #import "NIBLoader.h"
+#import "HUDHelper.h"
 
 @interface BlissOfferDetailsViewController ()
 
 @property (nonatomic, strong) NSDictionary *text;
+@property (nonatomic, strong) HUDHelper *hudHelper;
 
 @end
 
@@ -49,6 +51,8 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    self.hudHelper = [[HUDHelper alloc] initWithView:self.view];
+
     self.detailsView.layer.borderColor = [[UIColor blackColor] CGColor];
     self.detailsView.layer.borderWidth = 1.0f;
     self.detailsView.layer.cornerRadius = 8.0f;
@@ -57,16 +61,7 @@
     self.shareView.shareHelper.delegate = self;
     [self.shareViewContainer addSubview:self.shareView];
 
-    self.businessNameLabel.text = self.balance.customer.company;
-    self.businessTagLineLabel.text = self.balance.customer.tagLine;
-    self.businessTypeLabel.text = self.balance.customer.type;
-
-    self.buyXLabel.text = $str(NSLocalizedString(@"OFFER_DETAILS_BUY_X", @""), self.balance.buyX, self.balance.buyY);
-    self.getXLabel.text = $str(NSLocalizedString(@"OFFER_DETAILS_GET_X", @""), self.balance.getX);
-    self.countRemainingLabel.text = $str(@"%d", self.balance.buyX - self.balance.balance);
-
-    self.addressLabel.text = self.balance.customer.address;
-    self.websiteLabel.text = self.balance.customer.website;
+    [self update];
 
     [self.balance.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
         if (error) {
@@ -78,7 +73,6 @@
     }];
 
 }
-
 
 #pragma mark User Actions
 
@@ -93,7 +87,50 @@
     }
 }
 
+- (IBAction) redeem:(id) sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"REDEEM_TITLE", @"")
+                                                        message:NSLocalizedString(@"REDEEM_MESSAGE", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"REDEEM_CANCEL", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"REDEEM_OK", @"")
+                          handler:^{
+                            [self.hudHelper showWithText:NSLocalizedString(@"LOADING", @"")];
+                            [self.balance redeemResponse:^(NSNumber *success, NSError *error) {
+                                [self.hudHelper hide];
+                                if ([success boolValue]) {
+                                    [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
+                                                                message:NSLocalizedString(@"REDEEMED_MESSAGE", @"")
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                                      otherButtonTitles:nil
+                                                                handler:nil];
+                                    [self.navigationController popViewControllerAnimated:YES];
+                                } else {
+                                    [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_REDEEMING", @"")];
+                                }
+                            }];
+                          }];
+    [alertView show];
+}
+
 #pragma mark Helpers
+
+- (void) update {
+    self.businessNameLabel.text = self.balance.customer.company;
+    self.businessTagLineLabel.text = self.balance.customer.tagLine;
+    self.businessTypeLabel.text = self.balance.customer.type;
+
+    self.buyXLabel.text = $str(NSLocalizedString(@"OFFER_DETAILS_BUY_X", @""), self.balance.buyX, self.balance.buyY);
+    self.getXLabel.text = $str(NSLocalizedString(@"OFFER_DETAILS_GET_X", @""), self.balance.getX);
+
+    if (self.balance.balance >= self.balance.buyX) {
+        [self.progressView addSubview:self.redeemProgressView];
+    } else {
+        [self.progressView addSubview:self.standardProgressView];
+        self.countRemainingLabel.text = $str(@"%d", self.balance.buyX - self.balance.balance);
+    }
+
+    self.addressLabel.text = self.balance.customer.address;
+    self.websiteLabel.text = self.balance.customer.website;
+}
 
 - (id) itemForService:(ShareService) shareService itemType:(ShareItem) item extraText:(NSString *) extraText {
     NSDictionary *serviceDict = self.text[$int(shareService)];
@@ -120,6 +157,13 @@
 
 - (void) shareHelper:(ShareHelper *) shareHelper didCancelShareWithService:(ShareService) shareService {
 
+}
+
+- (void) shareHelper:(ShareHelper *) shareHelper didCompleteShareWithService:(ShareService) shareService {
+    NSLog(@"Share did complete!");
+    [self.balance recordShare:^(id object, NSError *error) {
+        [self performSelectorOnMainThread:@selector(update) withObject:nil waitUntilDone:NO];
+    }];
 }
 
 - (void) shareHelper:(ShareHelper *) shareHelper didReceiveError:(NSError *) error forShareWithService:(ShareService) shareService {

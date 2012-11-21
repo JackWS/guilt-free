@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "BlisdModel.h"
 
-
 @interface Scan : BlisdModel
 
 + (void) processScanFromURL:(NSString *) url response:(ResponseBlock) response;

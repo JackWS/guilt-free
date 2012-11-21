@@ -33,10 +33,25 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttonblisspressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttonbliss.png"]];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(locationUpdated:)
+                                                     name:kLocationManagerDidFindAccurateLocationNotification
+                                                   object:self];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(locationUpdated:)
+                                                     name:kLocationManagerDidTimeOutNotification
+                                                   object:self];
     }
     return self;
 }
-							
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -61,21 +76,7 @@
             [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_LOADING_BLISS", @"")];
         }
     }];
-    if ([LocationManager instance].location) {
-        [Campaign getCampaignsNear:[LocationManager instance].location.coordinate
-                          response:^(NSArray *campaigns, NSError *error) {
-                              self.campaignsLoaded = YES;
-                              [self update];
-                              if (!error) {
-                                  self.nearbyCampaigns = campaigns;
-                              } else {
-                                  [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_LOADING_NEARBY_CAMPAIGNS", @"")];
-                              }
-                          }];
-    } else {
-        self.campaignsLoaded = YES;
-        [self update];
-    }
+    [self loadNearbyCampaigns];
 }
 
 #pragma mark Getters/Setters
@@ -91,6 +92,24 @@
 
     if (self.loaded) {
         [self.hudHelper hide];
+    }
+}
+
+- (void) loadNearbyCampaigns {
+    if ([LocationManager instance].location) {
+        [Campaign getCampaignsNear:[LocationManager instance].location.coordinate
+                          response:^(NSArray *campaigns, NSError *error) {
+                              self.campaignsLoaded = YES;
+                              if (!error) {
+                                  self.nearbyCampaigns = campaigns;
+                              } else {
+                                  //[UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_LOADING_NEARBY_CAMPAIGNS", @"")];
+                              }
+                              [self update];
+                          }];
+    } else {
+        self.campaignsLoaded = YES;
+        [self update];
     }
 }
 
@@ -152,6 +171,12 @@
     return cell;
 }
 
+#pragma mark Notification Callbacks
+
+- (void) locationUpdated:(NSNotification *) notification {
+    [self loadNearbyCampaigns];
+}
+
 #pragma mark UITableViewDataSource
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *) tableView {
@@ -165,7 +190,7 @@
 
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger) section {
     if (section == 0) {
-        return self.balances.count;
+        return self.balances.count == 0 ? 1 : self.balances.count;
     } else {
         return self.nearbyCampaigns.count;
     }
@@ -173,7 +198,14 @@
 
 - (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath {
     if (indexPath.section == 0) {
-        return [self tableView:tableView cellForBalanceAtIndex:indexPath.row];
+        if (self.balances.count == 0) {
+            UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            cell.textLabel.text = NSLocalizedString(@"NO_BLISS", @"");
+            cell.textLabel.numberOfLines = 0;
+            return cell;
+        } else {
+            return [self tableView:tableView cellForBalanceAtIndex:indexPath.row];
+        }
     } else {
         return [self tableView:tableView cellForCampaignAtIndex:indexPath.row];
     }
@@ -181,6 +213,10 @@
 
 - (CGFloat) tableView:(UITableView *) tableView heightForRowAtIndexPath:(NSIndexPath *) indexPath {
     return 95;
+}
+
+- (CGFloat) tableView:(UITableView *) tableView heightForFooterInSection:(NSInteger) section {
+    return 0;
 }
 
 - (NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger) section {

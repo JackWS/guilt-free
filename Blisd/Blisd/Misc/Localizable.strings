@@ -26,7 +26,7 @@
 "ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
 "ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
 "ERROR_LOADING_SUBSCRIPTIONS" = "There was an unexpected problem loading your subscriptions. Please try again later.";
-"ERROR_LOADING_NEARBY_CAMPAIGNS" = "There was an unexpecte problem loading nearby campaigns. Please try again later.";
+"ERROR_LOADING_NEARBY_CAMPAIGNS" = "There was an unexpected problem loading nearby campaigns. Please try again later.";
 
 "NEXT_VISIT_GET" = "On your next visit, get:";
 "N_MORE_PURCHASES" = "%d more purchases";
@@ -94,3 +94,15 @@
 "SUBSCRIPTION_SUBHEADING" = "Select to receive notifications from available locations";
 "MY_BLISS_TITLE" = "My Bliss";
 "NEARBY_BLISS_TITLE" = "Nearby Bliss";
+"NO_BLISS" = "You haven't started any Bliss campaigns yet.";
+
+"REDEEM_TITLE" = "Redeem?";
+"REDEEM_MESSAGE" = "Show this to your cashier, and have them press \"OK\" to redeem.";
+"REDEEM_CANCEL" = "Cancel";
+"REDEEM_OK" = "OK";
+
+"ERROR_CANNOT_REDEEM" = "You cannot redeem this offer yet.";
+"ERROR_REDEEMING" = "There was an unexpected problem redeeming this offer. Please try again later.";
+"REDEEMED_TITLE" = "Hooray!";
+"REDEEMED_MESSAGE" = "You redeemed this offer.";
+"ERROR_INVALID_URL" = "This is an invalid URL.";

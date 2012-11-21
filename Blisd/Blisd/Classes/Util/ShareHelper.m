@@ -88,7 +88,7 @@
 #pragma mark Helpers
 
 - (void) setParametersForController:(id) controller shareService:(ShareService) shareService {
-    TWTweetComposeViewController *vc = (TWTweetComposeViewController *) controller;
+    SLComposeViewController *vc = (SLComposeViewController *) controller;
     if ([self.delegate respondsToSelector:@selector(shareHelper:textForShareWithService:)]) {
         [vc setInitialText:[self.delegate shareHelper:self textForShareWithService:shareService]];
     }
@@ -98,6 +98,18 @@
     if ([self.delegate respondsToSelector:@selector(shareHelper:URLForShareWithService:)]) {
         [vc addURL:[self.delegate shareHelper:self URLForShareWithService:shareService]];
     }
+    vc.completionHandler = ^(SLComposeViewControllerResult result) {
+        if (result == SLComposeViewControllerResultDone) {
+            if ([self.delegate respondsToSelector:@selector(shareHelper:didCompleteShareWithService:)]) {
+                [self.delegate shareHelper:self didCompleteShareWithService:shareService];
+            }
+        } else {
+            if ([self.delegate respondsToSelector:@selector(shareHelper:didCancelShareWithService:)]) {
+                [self.delegate shareHelper:self didCancelShareWithService:shareService];
+            }
+        }
+        [[self.delegate viewControllerForShareHelper:self] dismissModalViewControllerAnimated:YES];
+    };
 }
 
 - (void) shareFacebookNonNative {
@@ -147,26 +159,56 @@
    andDelegate:self];
 }
 
-#pragma mark PF_FBDialogDelegate
+/**
+ * A function for parsing URL parameters.
+ */
+- (NSDictionary*) parseURLParams:(NSString *)query {
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        NSString *val =
+                [[kv objectAtIndex:1]
+                        stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
-- (void) dialogDidComplete:(PF_FBDialog *) dialog {
-
+        [params setObject:val forKey:[kv objectAtIndex:0]];
+    }
+    return params;
 }
 
-- (void) dialogCompleteWithUrl:(NSURL *) url {
+#pragma mark PF_FBDialogDelegate
 
+// Handle the publish feed call back
+- (void)dialogCompleteWithUrl:(NSURL *)url {
+    // We get this callback even if the user cancels. Try to extract the post_id to determine if they actually shared.
+    // Only proceed if they did share.
+    NSDictionary *params = [self parseURLParams:[url query]];
+    NSString *postId = [params valueForKey:@"post_id"];
+    if (postId) {
+        NSLog(@"FBDialog complete with url: %@", [url absoluteString]);
+        if ([self.delegate respondsToSelector:@selector(shareHelper:didCompleteShareWithService:)]) {
+            [self.delegate shareHelper:self didCompleteShareWithService:ShareServiceFacebook];
+        }
+    } else {
+        if ([self.delegate respondsToSelector:@selector(shareHelper:didCancelShareWithService:)]) {
+            [self.delegate shareHelper:self didCancelShareWithService:ShareServiceFacebook];
+        }
+    }
 }
 
 - (void) dialogDidNotCompleteWithUrl:(NSURL *) url {
-
+    if ([self.delegate respondsToSelector:@selector(shareHelper:didCancelShareWithService:)]) {
+        [self.delegate shareHelper:self didCancelShareWithService:ShareServiceFacebook];
+    }
+    NSLog(@"FBDialog did not complete.");
 }
 
-- (void) dialogDidNotComplete:(PF_FBDialog *) dialog {
-
-}
 
 - (void) dialog:(PF_FBDialog *) dialog didFailWithError:(NSError *) error {
-
+    if ([self.delegate respondsToSelector:@selector(shareHelper:didCancelShareWithService:)]) {
+        [self.delegate shareHelper:self didCancelShareWithService:ShareServiceFacebook];
+    }
+    NSLog(@"FBDialog error: %@", [error description]);
 }
 
 - (BOOL) dialog:(PF_FBDialog *) dialog shouldOpenURLInExternalBrowser:(NSURL *) url {
@@ -176,6 +218,15 @@
 #pragma mark MFMailComposeViewControllerDelegate
 
 - (void) mailComposeController:(MFMailComposeViewController *) controller didFinishWithResult:(MFMailComposeResult) result error:(NSError *) error {
+    if (result == MFMailComposeResultSent) {
+        if ([self.delegate respondsToSelector:@selector(shareHelper:didCompleteShareWithService:)]) {
+            [self.delegate shareHelper:self didCompleteShareWithService:ShareServiceEmail];
+        }
+    } else {
+        if ([self.delegate respondsToSelector:@selector(shareHelper:didCancelShareWithService:)]) {
+            [self.delegate shareHelper:self didCancelShareWithService:ShareServiceEmail];
+        }
+    }
     [[self.delegate viewControllerForShareHelper:self] dismissModalViewControllerAnimated:YES];
 }
 

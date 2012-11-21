@@ -35,6 +35,10 @@
 @property (nonatomic, strong) IBOutlet UILabel *addressLabel;
 @property (nonatomic, strong) IBOutlet UILabel *websiteLabel;
 
+@property (nonatomic, strong) IBOutlet UIView *progressView;
+@property (nonatomic, strong) IBOutlet UIView *redeemProgressView;
+@property (nonatomic, strong) IBOutlet UIView *standardProgressView;
+
 - (IBAction) back:(id) sender;
 
 - (IBAction) openWebsite:(id) sender;

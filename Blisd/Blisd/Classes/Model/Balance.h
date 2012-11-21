@@ -22,6 +22,9 @@
 @property (nonatomic, strong) NSString *buyY;
 @property (nonatomic, strong) NSString *getX;
 @property (nonatomic, assign) NSInteger balance;
+@property (nonatomic, assign) NSInteger redeemedCount;
+@property (nonatomic, assign) BOOL shared;
+@property (nonatomic, strong) NSString *campaignNumber;
 
 @property (nonatomic, strong) Customer *customer;
 
@@ -29,8 +32,12 @@
 
 + (void) getBalancesForCurrentUserWithCompanies:(BOOL) includeCompanies response:(ResponseBlock) response;
 
-+ (void) getByCampaignId:(NSString *) campaignId response:(ResponseBlock) response;
++ (void) getByCampaignNumber:(NSString *) campaignId response:(ResponseBlock) response;
 
 + (void) createBalanceFromCampaign:(Campaign *) campaign response:(ResponseBlock) response;
+
+- (void) redeemResponse:(ResponseBlock) response;
+
+- (void) recordShare:(ResponseBlock) response;
 
 @end

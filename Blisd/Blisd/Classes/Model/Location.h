@@ -15,6 +15,7 @@
 @interface Location : BlisdModel
 
 @property (nonatomic, strong) Customer *customer;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 + (Location *) locationFromPFObject:(PFObject *) obj;
 

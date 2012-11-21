@@ -32,6 +32,8 @@ static NSString *const kGetXKey = @"getx";
 static NSString *const kCampaignBalanceKey = @"campaignBalance";
 static NSString *const kIconTypeKey = @"iconType";
 static NSString *const kShortMessageKey = @"shortMessage";
+static NSString *const kRedeemedCountKey = @"redeemedCount";
+static NSString *const kSharedKey = @"shared";
 
 // TODO: This is a terrible name
 static NSString *const kCustomerKey = @"relationShip";
@@ -87,7 +89,7 @@ static NSString *const kCustomerKey = @"relationShip";
 }
 
 
-+ (void) getByCampaignId:(NSString *) campaignId response:(ResponseBlock) response {
++ (void) getByCampaignNumber:(NSString *) campaignId response:(ResponseBlock) response {
     PFQuery *query = [PFQuery queryWithClassName:kClassName];
     [query whereKey:kCampaignNumberKey equalTo:campaignId];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -98,7 +100,7 @@ static NSString *const kCustomerKey = @"relationShip";
             Balance *balance = [Balance balanceFromPFObject:objects[0]];
             response(balance, nil);
         } else {
-            response(nil,nil);
+            response(nil, nil);
         }
     }];
 }
@@ -141,6 +143,28 @@ static NSString *const kCustomerKey = @"relationShip";
     }];
 }
 
+- (void) redeemResponse:(ResponseBlock) response {
+    if (!self.balance >= self.buyX) {
+        response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_CANNOT_REDEEM", @"")]);
+    } else {
+        self.balance = 0;
+        self.redeemedCount += 1;
+        [self saveInBackgroundWithBlock:response];
+    }
+}
+
+- (void) recordShare:(ResponseBlock) response {
+    if (self.shared) {
+        // Can't get bonus more than once for the same offer
+        response($bool(NO), nil);
+    } else {
+        self.balance++;
+        self.shared = YES;
+        [self saveInBackgroundWithBlock:response];
+    }
+}
+
+
 + (Balance *) balanceFromPFObject:(PFObject *) object {
     if (!object) {
         return nil;
@@ -155,6 +179,9 @@ static NSString *const kCustomerKey = @"relationShip";
     bal.iconType = [object nonNullObjectForKey:kIconTypeKey];
     bal.user = [object nonNullObjectForKey:kUserKey];
     bal.customerNumber = [object nonNullObjectForKey:kCustomerNumberKey];
+    bal.redeemedCount = [[object nonNullObjectForKey:kRedeemedCountKey] intValue];
+    bal.shared = [[object nonNullObjectForKey:kSharedKey] boolValue];
+    bal.campaignNumber = [object nonNullObjectForKey:kCampaignNumberKey];
 
     return bal;
 }
@@ -171,6 +198,9 @@ static NSString *const kCustomerKey = @"relationShip";
     [obj setNonNullObject:self.buyY forKey:kBuyYKey];
     [obj setNonNullObject:self.getX forKey:kGetXKey];
     [obj setNonNullObject:$int(self.balance) forKey:kCampaignBalanceKey];
+    [obj setNonNullObject:$int(self.redeemedCount) forKey:kRedeemedCountKey];
+    [obj setNonNullObject:$bool(self.shared) forKey:kSharedKey];
+    [obj setNonNullObject:self.campaignNumber forKey:kCampaignNumberKey];
 
     return obj;
 }
