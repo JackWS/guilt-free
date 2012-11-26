@@ -12,15 +12,15 @@
 @class CheckIn;
 
 
-@interface UserCheckIn : BlisdModel
+@interface CheckInBalance : BlisdModel
 
 @property (nonatomic, retain) CheckIn *checkIn;
 @property (nonatomic, assign) NSInteger count;
 
 + (void) getByCheckInID:(NSString *) checkInID response:(ResponseBlock) response;
 
-+ (void) createUserCheckInFromCheckIn:(CheckIn *) checkIn response:(ResponseBlock) response;
++ (void) createBalanceFromCheckIn:(CheckIn *) checkIn response:(ResponseBlock) response;
 
-+ (UserCheckIn *) userCheckInFromPFObject:(PFObject *) object;
++ (CheckInBalance *) userCheckInFromPFObject:(PFObject *) object;
 
 @end

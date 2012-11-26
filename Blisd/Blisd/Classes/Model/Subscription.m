@@ -9,7 +9,7 @@
 #import "Subscription.h"
 #import "PFObject+NonNull.h"
 #import "User.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 
 
 @implementation Subscription {
@@ -63,12 +63,12 @@ static NSString *const kCustomerCompanyKey = @"customerCompany";
 }
 
 + (void) getSubscriptionsForCurrentUser:(ResponseBlock) response {
-    [Balance getBalancesForCurrentUserWithCompanies:NO response:^(NSArray *balances, NSError *balancesError) {
+    [BlissBalance getBalancesForCurrentUserWithCompanies:NO response:^(NSArray *balances, NSError *balancesError) {
         if (balancesError) {
             response(nil, balancesError);
         } else {
             NSMutableDictionary *subscriptions = [NSMutableDictionary dictionary];
-            for (Balance *balance in balances) {
+            for (BlissBalance *balance in balances) {
                 Subscription *subscription = [[Subscription alloc] init];
                 subscription.customerCompany = balance.customerCompany;
                 subscription.status = NO;

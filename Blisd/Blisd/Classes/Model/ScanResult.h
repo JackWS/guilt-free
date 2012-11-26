@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class Balance;
-@class UserCheckIn;
+@class BlissBalance;
+@class CheckInBalance;
 
 
 typedef enum {
@@ -17,10 +17,18 @@ typedef enum {
     ScanResultTypeOutsideURL
 } ScanResultType;
 
+typedef enum {
+    ScanResultStatusUnknown,
+    ScanResultStatusSuccess,
+    ScanResultStatusRedeemRequired,
+    ScanResultStatusError
+} ScanResultStatus;
+
 @interface ScanResult : NSObject
 
 @property (nonatomic, assign) ScanResultType type;
-@property (nonatomic, strong) Balance *balance;
-@property (nonatomic, strong) UserCheckIn *checkIn;
+@property (nonatomic, assign) ScanResultStatus status;
+@property (nonatomic, strong) BlissBalance *balance;
+@property (nonatomic, strong) CheckInBalance *checkIn;
 
 @end

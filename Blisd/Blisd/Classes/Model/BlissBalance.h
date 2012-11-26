@@ -12,7 +12,7 @@
 @class Customer;
 
 
-@interface Balance : BlisdModel
+@interface BlissBalance : BlisdModel
 
 @property (nonatomic, strong) NSString *user;
 @property (nonatomic, strong) NSString *customerCompany;

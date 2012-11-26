@@ -8,13 +8,13 @@
 #import <Foundation/Foundation.h>
 #import "ShareHelper.h"
 
-@class Balance;
+@class BlissBalance;
 @class ShareView;
 
 
 @interface BlissOfferDetailsViewController : UIViewController <ShareHelperDelegate>
 
-@property (nonatomic, strong) Balance *balance;
+@property (nonatomic, strong) BlissBalance *balance;
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 

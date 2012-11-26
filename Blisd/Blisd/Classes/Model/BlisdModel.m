@@ -7,6 +7,7 @@
 
 #import <Parse/Parse.h>
 #import "BlisdModel.h"
+#import "PFObject+NonNull.h"
 
 @interface BlisdModel()
 
@@ -18,6 +19,12 @@
 
 }
 
+static NSString *const kIDKey = @"objectId";
+
+- (NSString * ) id {
+    return self.pfObject.objectId;
+}
+
 - (id) initWithPFObject:(PFObject *) pfObject {
     self = [super init];
     if (self) {
@@ -27,7 +34,8 @@
 }
 
 - (void) saveInBackgroundWithBlock:(ResponseBlock) block {
-    [[self toPFObject] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    self.pfObject = [self toPFObject];
+    [self.pfObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (block) {
             block($bool(succeeded), error);
         }

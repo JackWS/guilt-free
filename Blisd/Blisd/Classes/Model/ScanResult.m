@@ -6,8 +6,8 @@
 
 
 #import "ScanResult.h"
-#import "Balance.h"
-#import "UserCheckIn.h"
+#import "BlissBalance.h"
+#import "CheckInBalance.h"
 
 
 @implementation ScanResult {

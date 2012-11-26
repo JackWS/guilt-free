@@ -9,6 +9,7 @@
 #import "PostScanViewController.h"
 #import "ShareView.h"
 #import "NIBLoader.h"
+#import "HUDHelper.h"
 
 typedef enum {
     PostScanStateProgress,
@@ -18,9 +19,11 @@ typedef enum {
 
 @interface PostScanViewController ()
 
-@property (nonatomic, strong) Balance *balance;
+@property (nonatomic, strong) BlissBalance *balance;
 @property (nonatomic, assign) PostScanState state;
 @property (nonatomic, retain) NSDictionary *text;
+@property (nonatomic, strong) HUDHelper *hudHelper;
+
 
 @end
 
@@ -28,7 +31,7 @@ typedef enum {
 
 }
 
-- (id) initWithBalance:(Balance *) balance {
+- (id) initWithBalance:(BlissBalance *) balance {
     self = [super initWithNibName:@"PostScanView" bundle:nil];
     if (self) {
         self.balance = balance;
@@ -100,6 +103,8 @@ typedef enum {
 - (void) viewDidLoad {
     [super viewDidLoad];
 
+    self.hudHelper = [[HUDHelper alloc] initWithView:self.view];
+
     self.shareView = [NIBLoader loadFirstObjectFromNibNamed:@"ShareView"];
     self.shareView.shareHelper.delegate = self;
     [self.shareViewContainer addSubview:self.shareView];
@@ -135,7 +140,27 @@ typedef enum {
 }
 
 - (IBAction) redeem:(id) sender {
-
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"REDEEM_TITLE", @"")
+                                                        message:NSLocalizedString(@"REDEEM_MESSAGE", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"REDEEM_CANCEL", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"REDEEM_OK", @"")
+                          handler:^{
+                              [self.hudHelper showWithText:NSLocalizedString(@"LOADING", @"")];
+                              [self.balance redeemResponse:^(NSNumber *success, NSError *error) {
+                                  [self.hudHelper hide];
+                                  if ([success boolValue]) {
+                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
+                                                                  message:NSLocalizedString(@"REDEEMED_MESSAGE", @"")
+                                                        cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                                        otherButtonTitles:nil
+                                                                  handler:nil];
+                                      [self.navigationController popToRootViewControllerAnimated:YES];
+                                  } else {
+                                      [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_REDEEMING", @"")];
+                                  }
+                              }];
+                          }];
+    [alertView show];
 }
 
 

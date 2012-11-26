@@ -7,7 +7,7 @@
 
 #import <Parse/Parse.h>
 #import "Customer.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "PFObject+NonNull.h"
 
 @interface Customer ()

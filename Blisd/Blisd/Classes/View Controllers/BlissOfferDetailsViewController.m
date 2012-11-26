@@ -7,7 +7,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "BlissOfferDetailsViewController.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "Customer.h"
 #import "ShareView.h"
 #import "NIBLoader.h"

@@ -106,3 +106,6 @@
 "REDEEMED_TITLE" = "Hooray!";
 "REDEEMED_MESSAGE" = "You redeemed this offer.";
 "ERROR_INVALID_URL" = "This is an invalid URL.";
+"REDEEM_REQUIRED_TITLE" = "Must Redeem";
+"REDEEM_REQUIRED_MESSAGE" = "You can't earn any more until you redeem your balance. Would you like to redeem now?";
+"REDEEM" = "Redeem";

@@ -15,6 +15,8 @@ typedef void (^ResponseBlock) (id object, NSError *error);
 
 @interface BlisdModel : NSObject
 
+@property (nonatomic, readonly) NSString *id;
+
 - (id) initWithPFObject:(PFObject *) pfObject;
 
 - (void) saveInBackgroundWithBlock:(ResponseBlock) block;

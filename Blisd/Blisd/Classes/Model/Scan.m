@@ -6,15 +6,16 @@
 
 
 #import "Scan.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "Campaign.h"
 #import "NSError+App.h"
-#import "ScanLog.h"
+#import "BlissScanLog.h"
 #import "User.h"
 #import "OutsideURL.h"
 #import "ScanResult.h"
-#import "UserCheckIn.h"
+#import "CheckInBalance.h"
 #import "CheckIn.h"
+#import "CheckInScanLog.h"
 
 
 @implementation Scan {
@@ -69,7 +70,7 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
 }
 
 + (void) processCheckInScanWithID:(NSString *) checkInID response:(ResponseBlock) response {
-    [UserCheckIn getByCheckInID:checkInID response:^(UserCheckIn *userCheckIn, NSError *error) {
+    [CheckInBalance getByCheckInID:checkInID response:^(CheckInBalance *userCheckIn, NSError *error) {
         if (userCheckIn) {
             NSLog(@"Found user check in: %@", userCheckIn);
             userCheckIn.count++;
@@ -89,7 +90,7 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
                 } else if (!checkIn) {
                     response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_INVALID_URL", @"")]);
                 } else {
-                    [UserCheckIn createUserCheckInFromCheckIn:checkIn response:^(UserCheckIn *uci, NSError *errorCheckIn) {
+                    [CheckInBalance createBalanceFromCheckIn:checkIn response:^(CheckInBalance *uci, NSError *errorCheckIn) {
                         if (errorCheckIn) {
                             response(nil, errorCheckIn);
                         } else {
@@ -105,22 +106,31 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
 }
 
 + (void) processCampaignScanWithID:(NSString *) campaignNumber response:(ResponseBlock) response {
-    [Balance getByCampaignNumber:campaignNumber response:^(Balance *balance, NSError *error) {
+    [BlissBalance getByCampaignNumber:campaignNumber response:^(BlissBalance *balance, NSError *error) {
         if (error) {
             response(nil, error);
         } else if (balance) {
             NSLog(@"Found balance: %@", balance);
-            balance.balance++;
-            [balance saveInBackgroundWithBlock:^(NSNumber *success, NSError *errorBalance) {
-                if (errorBalance) {
-                    response(nil, errorBalance);
-                } else if (![success boolValue]) {
-                    response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_GENERIC", @"")]);
-                } else {
-                    NSLog(@"Successfully incremented balance for campaign with id: %@", campaignNumber);
-                    [self postCampaignScanWithBalance:balance response:response];
-                }
-            }];
+            // Must redeem before they can add to their balance
+            if (balance.balance >= balance.buyX) {
+                ScanResult *result = [[ScanResult alloc] init];
+                result.type = ScanResultTypeCampaign;
+                result.status = ScanResultStatusRedeemRequired;
+                result.balance = balance;
+                response(result, nil);
+            } else {
+                balance.balance++;
+                [balance saveInBackgroundWithBlock:^(NSNumber *success, NSError *errorBalance) {
+                    if (errorBalance) {
+                        response(nil, errorBalance);
+                    } else if (![success boolValue]) {
+                        response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_GENERIC", @"")]);
+                    } else {
+                        NSLog(@"Successfully incremented balance for campaign with id: %@", campaignNumber);
+                        [self postCampaignScanWithBalance:balance response:response];
+                    }
+                }];
+            }
         } else {
             NSLog(@"No balance found.");
             [Campaign getByCampaignNumber:campaignNumber response:^(Campaign *campaign, NSError *errorCampaign) {
@@ -130,7 +140,7 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
                     response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_INVALID_CAMPAIGN", @"")]);
                 } else {
                     NSLog(@"Successfully retrieved campaign with id: %@", campaignNumber);
-                    [Balance createBalanceFromCampaign:campaign response:^(Balance *newBalance, NSError *errorBalance) {
+                    [BlissBalance createBalanceFromCampaign:campaign response:^(BlissBalance *newBalance, NSError *errorBalance) {
                         if (errorBalance) {
                             response(nil, errorBalance);
                         } else {
@@ -144,37 +154,48 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
     }];
 }
 
-+ (void) postCampaignScanWithBalance:(Balance *) balance response:(ResponseBlock) response {
++ (void) postCampaignScanWithBalance:(BlissBalance *) balance response:(ResponseBlock) response {
     ScanResult *result = [[ScanResult alloc] init];
     result.type = ScanResultTypeCampaign;
     result.balance = balance;
+    result.status = ScanResultStatusSuccess;
     // Get back to the UI now, and save the log in the background.
     response(result, nil);
-    [Scan logScan:balance.campaignNumber];
+    [Scan logBlissScan:balance.campaignNumber];
 }
 
-+ (void) postCheckInScanWithUserCheckIn:(UserCheckIn *) checkIn response:(ResponseBlock) response {
++ (void) postCheckInScanWithUserCheckIn:(CheckInBalance *) balance response:(ResponseBlock) response {
     ScanResult *result = [[ScanResult alloc] init];
     result.type = ScanResultTypeCheckIn;
-    result.checkIn = checkIn;
+    result.checkIn = balance;
+    result.status = ScanResultStatusSuccess;
     // Get back to the UI now, and save the log in the background.
     response(result, nil);
-
-
-    // TODO: Implement
-    // [Scan logScan:balance.campaignNumber];
+    [Scan logCheckInScan:balance];
 }
 
-+ (void) logScan:(NSString *) campaignId {
-    ScanLog *log = [[ScanLog alloc] init];
++ (void) logBlissScan:(NSString *) campaignId {
+    BlissScanLog *log = [[BlissScanLog alloc] init];
     log.user = [User currentUser].email;
     log.campaignNumber = campaignId;
     [log saveInBackgroundWithBlock:^(id object, NSError *errorLog) {
         // Just log it and move on
         if (errorLog) {
-            NSLog(@"Error saving scan log: %@", [errorLog description]);
+            NSLog(@"Error saving Bliss scan log: %@", [errorLog description]);
         } else {
-            NSLog(@"Successfully created scan log for campaign with id: %@", campaignId);
+            NSLog(@"Successfully created Bliss scan log for campaign with id: %@", campaignId);
+        }
+    }];
+}
+
++ (void) logCheckInScan:(CheckInBalance *) balance {
+    CheckInScanLog *log = [[CheckInScanLog alloc] init];
+    log.balance = balance;
+    [log saveInBackgroundWithBlock:^(id object, NSError *error) {
+        if (error) {
+            NSLog(@"Error saving check-in scan log: %@", [error description]);
+        } else {
+            NSLog(@"Successfully created check-in scan log for balance with id: %@", balance.id);
         }
     }];
 }

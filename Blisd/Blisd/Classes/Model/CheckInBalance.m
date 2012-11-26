@@ -6,16 +6,16 @@
 
 
 #import <Parse/Parse.h>
-#import "UserCheckIn.h"
+#import "CheckInBalance.h"
 #import "Customer.h"
 #import "CheckIn.h"
 #import "User.h"
 #import "PFObject+NonNull.h"
 #import "NSError+App.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "Subscription.h"
 
-@implementation UserCheckIn
+@implementation CheckInBalance
 
 static NSString *const kClassName = @"CBal";
 
@@ -23,6 +23,7 @@ static NSString *const kCheckInKey = @"checkIn_Relationship";
 static NSString *const kCustomerKey = @"checkIn_Relationship.relationShip";
 static NSString *const kUserKey = @"user_Relationship";
 static NSString *const kCountKey = @"count";
+static NSString *const kIDKey = @"objectId";
 
 - (id) initWithPFObject:(PFObject *) pfObject {
     self = [super initWithPFObject:pfObject];
@@ -47,7 +48,7 @@ static NSString *const kCountKey = @"count";
         if (error) {
             response(nil, error);
         } else if (objects && objects.count >= 1) {
-            UserCheckIn *userCheckIn = [UserCheckIn userCheckInFromPFObject:objects[0]];
+            CheckInBalance *userCheckIn = [CheckInBalance userCheckInFromPFObject:objects[0]];
             response(userCheckIn, nil);
         } else {
             response(nil, nil);
@@ -55,7 +56,7 @@ static NSString *const kCountKey = @"count";
     }];
 }
 
-+ (void) createUserCheckInFromCheckIn:(CheckIn *) checkIn response:(ResponseBlock) response {
++ (void) createBalanceFromCheckIn:(CheckIn *) checkIn response:(ResponseBlock) response {
     PFObject *userCheckIn = [[PFObject alloc] initWithClassName:kClassName];
     [userCheckIn setNonNullObject:[PFUser currentUser] forKey:kUserKey];
     [userCheckIn setNonNullObject:[checkIn toPFObject] forKey:kCheckInKey];
@@ -68,7 +69,7 @@ static NSString *const kCountKey = @"count";
         } else if (!succeeded) {
             response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_GENERIC", @"")]);
         } else {
-            UserCheckIn *uci = [UserCheckIn userCheckInFromPFObject:userCheckIn];
+            CheckInBalance *uci = [CheckInBalance userCheckInFromPFObject:userCheckIn];
             // Return this value, the rest can be done in the background.
             response(uci, nil);
 
@@ -87,12 +88,12 @@ static NSString *const kCountKey = @"count";
     }];
 }
 
-+ (UserCheckIn *) userCheckInFromPFObject:(PFObject *) object {
++ (CheckInBalance *) userCheckInFromPFObject:(PFObject *) object {
     if (!object) {
         return nil;
     }
 
-    UserCheckIn *userCheckIn = [[UserCheckIn alloc] initWithPFObject:object];
+    CheckInBalance *userCheckIn = [[CheckInBalance alloc] initWithPFObject:object];
     userCheckIn.count = [[object nonNullObjectForKey:kCountKey] intValue];
     userCheckIn.checkIn = [CheckIn checkInFromPFObject:[object nonNullObjectForKey:kCheckInKey]];
 

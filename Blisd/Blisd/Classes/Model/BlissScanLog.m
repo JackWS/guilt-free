@@ -6,11 +6,11 @@
 
 
 #import <Parse/Parse.h>
-#import "ScanLog.h"
+#import "BlissScanLog.h"
 #import "PFObject+NonNull.h"
 
 
-@implementation ScanLog {
+@implementation BlissScanLog {
 
 }
 

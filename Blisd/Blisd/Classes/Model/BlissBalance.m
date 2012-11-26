@@ -6,7 +6,7 @@
 
 
 #import <Parse/Parse.h>
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "MockData.h"
 #import "NSError+App.h"
 #import "Campaign.h"
@@ -16,7 +16,7 @@
 #import "Subscription.h"
 
 
-@implementation Balance {
+@implementation BlissBalance {
 
 }
 
@@ -60,7 +60,7 @@ static NSString *const kCustomerKey = @"relationShip";
             NSMutableArray *balances = [NSMutableArray arrayWithCapacity:objects.count];
             NSMutableArray *companyNames = [NSMutableArray arrayWithCapacity:objects.count];
             for (PFObject *obj in objects) {
-                Balance *bal = [Balance balanceFromPFObject:obj];
+                BlissBalance *bal = [BlissBalance balanceFromPFObject:obj];
                 [balances addObject:bal];
                 [companyNames addObject:bal.customerCompany];
             }
@@ -69,7 +69,7 @@ static NSString *const kCustomerKey = @"relationShip";
                     if (companiesError) {
                         response(nil, companiesError);
                     } else {
-                        for (Balance *bal in balances) {
+                        for (BlissBalance *bal in balances) {
                             for (Customer *customer in customerObjects) {
                                 if ([bal.customerCompany isEqualToString:customer.company]) {
                                     bal.customer = customer;
@@ -97,7 +97,7 @@ static NSString *const kCustomerKey = @"relationShip";
             NSLog(@"Error retrieving campaign id: %@", [error description]);
             response(nil, error);
         } else if (objects && objects.count >= 1) {
-            Balance *balance = [Balance balanceFromPFObject:objects[0]];
+            BlissBalance *balance = [BlissBalance balanceFromPFObject:objects[0]];
             response(balance, nil);
         } else {
             response(nil, nil);
@@ -124,7 +124,7 @@ static NSString *const kCustomerKey = @"relationShip";
         } else if (!succeeded) {
             response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_GENERIC", @"")]);
         } else {
-            Balance *bal = [Balance balanceFromPFObject:balance];
+            BlissBalance *bal = [BlissBalance balanceFromPFObject:balance];
             // Return this value, the rest can be done in the background.
             response(bal, nil);
 
@@ -165,12 +165,12 @@ static NSString *const kCustomerKey = @"relationShip";
 }
 
 
-+ (Balance *) balanceFromPFObject:(PFObject *) object {
++ (BlissBalance *) balanceFromPFObject:(PFObject *) object {
     if (!object) {
         return nil;
     }
 
-    Balance *bal = [[Balance alloc] initWithPFObject:object];
+    BlissBalance *bal = [[BlissBalance alloc] initWithPFObject:object];
     bal.customerCompany = [object nonNullObjectForKey:kCustomerCompanyKey];
     bal.buyX = [[object nonNullObjectForKey:kBuyXKey] intValue];
     bal.buyY = [object nonNullObjectForKey:kBuyYKey];

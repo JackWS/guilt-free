@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import "BlissViewController.h"
 #import "HUDHelper.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "NIBLoader.h"
 #import "BlissTableViewCell.h"
 #import "Customer.h"
@@ -65,7 +65,7 @@
         [self.hudHelper showWithText:NSLocalizedString(@"LOADING", @"")];
     }
 
-    [Balance getBalancesForCurrentUser:^(NSArray *balances, NSError *error) {
+    [BlissBalance getBalancesForCurrentUser:^(NSArray *balances, NSError *error) {
         self.balancesLoaded = YES;
         [self update];
         if (!error) {
@@ -121,7 +121,7 @@
         cell = [NIBLoader loadFirstObjectFromNibNamed:@"BlissTableViewCell"];
     }
 
-    Balance *balance = [self.balances objectAtIndex:(NSUInteger) index];
+    BlissBalance *balance = [self.balances objectAtIndex:(NSUInteger) index];
     cell.businessLabel.text = balance.customerCompany;
     cell.rewardLabel.text = balance.getX;
     if (!balance.customer.companyImage) {
@@ -233,14 +233,14 @@
 - (void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *) indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    Balance *balance = nil;
+    BlissBalance *balance = nil;
     if (indexPath.section == 0) {
         balance = [self.balances objectAtIndex:(NSUInteger) indexPath.row];
     } else {
         Campaign *campaign = [self.nearbyCampaigns objectAtIndex:indexPath.row];
 
         // No balance yet, so just fake one out
-        balance = [[Balance alloc] init];
+        balance = [[BlissBalance alloc] init];
         balance.balance = 0;
         balance.buyX = campaign.buyX;
         balance.buyY = campaign.buyY;

@@ -6,7 +6,7 @@
 
 
 #import "MockData.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 
 
 @implementation MockData {
@@ -27,7 +27,7 @@
 + (NSArray *) generateBalanceList {
     NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < 10; i++) {
-        Balance *balance = [[Balance alloc] init];
+        BlissBalance *balance = [[BlissBalance alloc] init];
         balance.buyX = 5;
         balance.buyY = @"cups of coffee";
         balance.getX = @"a coupon for a free hug";

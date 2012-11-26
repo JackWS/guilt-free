@@ -9,7 +9,7 @@
 #import "BlisdModel.h"
 
 
-@interface ScanLog : BlisdModel
+@interface BlissScanLog : BlisdModel
 
 @property (nonatomic, strong) NSString *user;
 @property (nonatomic, strong) NSString *campaignNumber;
