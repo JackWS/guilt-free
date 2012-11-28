@@ -19,11 +19,10 @@
 
 static NSString *const kClassName = @"CBal";
 
-static NSString *const kCheckInKey = @"checkIn_Relationship";
-static NSString *const kCustomerKey = @"checkIn_Relationship.relationShip";
-static NSString *const kUserKey = @"user_Relationship";
+static NSString *const kCheckInKey = @"checkIn_Pointer";
+static NSString *const kCustomerKey = @"checkIn_Pointer.cust_Pointer";
+static NSString *const kUserKey = @"user_Pointer";
 static NSString *const kCountKey = @"count";
-static NSString *const kIDKey = @"objectId";
 
 - (id) initWithPFObject:(PFObject *) pfObject {
     self = [super initWithPFObject:pfObject];
@@ -50,6 +49,21 @@ static NSString *const kIDKey = @"objectId";
         } else if (objects && objects.count >= 1) {
             CheckInBalance *userCheckIn = [CheckInBalance userCheckInFromPFObject:objects[0]];
             response(userCheckIn, nil);
+        } else {
+            response(nil, nil);
+        }
+    }];
+}
+
++ (void) getForLocation:(Location *) location response:(ResponseBlock) response {
+    PFQuery *query = [PFQuery queryWithClassName:kClassName];
+    [query whereKey:kCheckInKey matchesQuery:[CheckIn queryForCheckInAtLocation:location]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            response(nil, error);
+        } else if (objects && objects.count > 0) {
+            CheckInBalance *bal = [CheckInBalance userCheckInFromPFObject:objects[0]];
+            response(bal, nil);
         } else {
             response(nil, nil);
         }

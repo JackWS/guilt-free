@@ -112,7 +112,7 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
         } else if (balance) {
             NSLog(@"Found balance: %@", balance);
             // Must redeem before they can add to their balance
-            if (balance.balance >= balance.buyX) {
+            if (balance.balance >= balance.campaign.buyX) {
                 ScanResult *result = [[ScanResult alloc] init];
                 result.type = ScanResultTypeCampaign;
                 result.status = ScanResultStatusRedeemRequired;
@@ -145,7 +145,7 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
                             response(nil, errorBalance);
                         } else {
                             NSLog(@"Successfully created balance for campaign with id: %@", campaignNumber);
-                            [self postCampaignScanWithBalance:balance response:response];
+                            [self postCampaignScanWithBalance:newBalance response:response];
                         }
                     }];
                 }
@@ -161,7 +161,7 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
     result.status = ScanResultStatusSuccess;
     // Get back to the UI now, and save the log in the background.
     response(result, nil);
-    [Scan logBlissScan:balance.campaignNumber];
+    [Scan logBlissScan:balance];
 }
 
 + (void) postCheckInScanWithUserCheckIn:(CheckInBalance *) balance response:(ResponseBlock) response {
@@ -174,16 +174,15 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
     [Scan logCheckInScan:balance];
 }
 
-+ (void) logBlissScan:(NSString *) campaignId {
++ (void) logBlissScan:(BlissBalance *) balance {
     BlissScanLog *log = [[BlissScanLog alloc] init];
-    log.user = [User currentUser].email;
-    log.campaignNumber = campaignId;
+    log.balance = balance;
     [log saveInBackgroundWithBlock:^(id object, NSError *errorLog) {
         // Just log it and move on
         if (errorLog) {
             NSLog(@"Error saving Bliss scan log: %@", [errorLog description]);
         } else {
-            NSLog(@"Successfully created Bliss scan log for campaign with id: %@", campaignId);
+            NSLog(@"Successfully created Bliss scan log for campaign with id: %@", balance.campaign.campaignNumber);
         }
     }];
 }

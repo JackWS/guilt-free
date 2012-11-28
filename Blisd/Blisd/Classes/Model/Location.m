@@ -17,7 +17,7 @@
 
 static NSString *const kClassName = @"Location";
 
-static NSString *const kCustomerKey = @"cust_Relationship";
+static NSString *const kCustomerKey = @"cust_Pointer";
 static NSString *const kCoordinateKey = @"location";
 
 + (Location *) locationFromPFObject:(PFObject *) obj {

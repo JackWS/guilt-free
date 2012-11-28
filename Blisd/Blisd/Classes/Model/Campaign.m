@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Campaign.h"
 #import "PFObject+NonNull.h"
+#import "Customer.h"
 
 
 @implementation Campaign {
@@ -25,14 +26,13 @@ static NSString *const kBuyXKey = @"buyx";
 static NSString *const kBuyYKey = @"buyy";
 static NSString *const kGetXKey = @"getx";
 
-static NSString *const kCustomerKey = @"customer";
-static NSString *const kLocationKey = @"loc_Relationship";
-static NSString *kLocationCustomerKey = @"loc_Relationship.cust_Relationship";
+static NSString *const kCustomerKey = @"cust_Pointer";
+static NSString *const kLocationKey = @"loc_Pointer";
 
 + (void) getCampaignsNear:(CLLocationCoordinate2D) coordinate response:(ResponseBlock) response {
     PFQuery *campaignQuery = [PFQuery queryWithClassName:kClassName];
     [campaignQuery includeKey:kLocationKey];
-    [campaignQuery includeKey:kLocationCustomerKey];
+    [campaignQuery includeKey:kCustomerKey];
 
     PFQuery *locationQuery = [PFQuery queryWithClassName:@"Location"];
     [locationQuery whereKey:@"location"
@@ -78,7 +78,10 @@ static NSString *kLocationCustomerKey = @"loc_Relationship.cust_Relationship";
 
 + (void) getByCampaignNumber:(NSString *) campaignNumber response:(ResponseBlock) response {
     PFQuery *query = [PFQuery queryWithClassName:kClassName];
-    [query whereKey:@"campaignNumber" equalTo:campaignNumber];
+    [query whereKey:kCampaignNumberKey equalTo:campaignNumber];
+    [query includeKey:kCustomerKey];
+    [query includeKey:kLocationKey];
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error retrieving campaign with number: %@", campaignNumber);
@@ -98,6 +101,7 @@ static NSString *kLocationCustomerKey = @"loc_Relationship.cust_Relationship";
     }
 
     Campaign *campaign = [[Campaign alloc] initWithPFObject:obj];
+    campaign.customer = [Customer customerFromPFObject:[obj nonNullObjectForKey:kCustomerKey]];
     campaign.customerNumber = [obj nonNullObjectForKey:kCustomerNumberKey];
     campaign.customerCompany = [obj nonNullObjectForKey:kCustomerCompanyKey];
     campaign.buyX = [[obj nonNullObjectForKey:kBuyXKey] intValue];
@@ -108,6 +112,13 @@ static NSString *kLocationCustomerKey = @"loc_Relationship.cust_Relationship";
     campaign.location = [Location locationFromPFObject:[obj nonNullObjectForKey:kLocationKey]];
 
     return campaign;
+}
+
++ (PFQuery *) queryForCampaignNumber:(NSString *) campaignNumber {
+    PFQuery *query = [PFQuery queryWithClassName:kClassName];
+    [query whereKey:kCampaignNumberKey equalTo:campaignNumber];
+
+    return query;
 }
 
 

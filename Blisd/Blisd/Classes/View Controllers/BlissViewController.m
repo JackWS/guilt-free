@@ -70,6 +70,7 @@
         [self update];
         if (!error) {
             self.balances = balances;
+            [self removeDuplicates];
             NSLog(@"Received balances: %@", self.balances);
             [self update];
         } else {
@@ -79,6 +80,7 @@
     [self loadNearbyCampaigns];
 }
 
+
 #pragma mark Getters/Setters
 
 - (BOOL) loaded {
@@ -86,6 +88,25 @@
 }
 
 #pragma mark Helpers
+
+- (void) removeDuplicates {
+    if (self.nearbyCampaigns && self.nearbyCampaigns.count > 0) {
+
+        NSMutableArray *itemsToDiscard = [NSMutableArray array];
+        for (Campaign *campaign in self.nearbyCampaigns) {
+            for (BlissBalance *balance in self.balances) {
+                if ([balance.campaign.campaignNumber isEqualToString:campaign.campaignNumber]) {
+                    [itemsToDiscard addObject:campaign];
+                    break;
+                }
+            }
+        }
+
+        NSMutableArray *newCampaigns = [self.nearbyCampaigns mutableCopy];
+        [newCampaigns removeObjectsInArray:itemsToDiscard];
+        self.nearbyCampaigns = newCampaigns;
+    }
+}
 
 - (void) update {
     [self.tableView reloadData];
@@ -102,6 +123,7 @@
                               self.campaignsLoaded = YES;
                               if (!error) {
                                   self.nearbyCampaigns = campaigns;
+                                  [self removeDuplicates];
                               } else {
                                   //[UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_LOADING_NEARBY_CAMPAIGNS", @"")];
                               }
@@ -122,12 +144,12 @@
     }
 
     BlissBalance *balance = [self.balances objectAtIndex:(NSUInteger) index];
-    cell.businessLabel.text = balance.customerCompany;
+    cell.businessLabel.text = balance.customer.company;
     cell.rewardLabel.text = balance.getX;
     if (!balance.customer.companyImage) {
         [balance.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
             if (error) {
-                NSLog(@"Error retrieving image for company with name: %@, error: %@", balance.customerCompany, [error description]);
+                NSLog(@"Error retrieving image for company with name: %@, error: %@", balance.customer.company, [error description]);
             } else {
                 cell.logoImageView.image = image;
             }
@@ -190,7 +212,7 @@
 
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger) section {
     if (section == 0) {
-        return self.balances.count == 0 ? 1 : self.balances.count;
+        return self.balances.count == 0 && self.loaded ? 1 : self.balances.count;
     } else {
         return self.nearbyCampaigns.count;
     }
@@ -242,10 +264,10 @@
         // No balance yet, so just fake one out
         balance = [[BlissBalance alloc] init];
         balance.balance = 0;
+        balance.campaign = campaign;
         balance.buyX = campaign.buyX;
         balance.buyY = campaign.buyY;
         balance.getX = campaign.getX;
-        balance.customer = campaign.location.customer;
     }
 
     BlissOfferDetailsViewController *controller = [[BlissOfferDetailsViewController alloc] init];

@@ -9,6 +9,7 @@
 #import "CheckIn.h"
 #import "Customer.h"
 #import "PFObject+NonNull.h"
+#import "Location.h"
 
 
 @implementation CheckIn
@@ -16,7 +17,8 @@
 static NSString *const kClassName = @"CheckIns";
 
 static NSString *const kObjectIDKey = @"objectId";
-static NSString *const kCustomerKey = @"relationShip";
+static NSString *const kCustomerKey = @"cust_Pointer";
+static NSString *const kLocationKey = @"loc_Pointer";
 
 + (void) getCheckInWithID:(NSString *) checkInID response:(ResponseBlock) response {
     PFQuery *query = [PFQuery queryWithClassName:kClassName];
@@ -37,6 +39,13 @@ static NSString *const kCustomerKey = @"relationShip";
     return query;
 }
 
++ (PFQuery *) queryForCheckInAtLocation:(Location *) location {
+    PFQuery *query = [PFQuery queryWithClassName:kClassName];
+    [query whereKey:kLocationKey equalTo:[location toPFObject]];
+    return query;
+}
+
+
 + (CheckIn *) checkInFromPFObject:(PFObject *) pfObject {
     if (!pfObject) {
         return nil;
@@ -44,6 +53,7 @@ static NSString *const kCustomerKey = @"relationShip";
 
     CheckIn *checkIn = [[CheckIn alloc] initWithPFObject:pfObject];
     checkIn.customer = [Customer customerFromPFObject:[pfObject nonNullObjectForKey:kCustomerKey]];
+    checkIn.location = [Location locationFromPFObject:[pfObject nonNullObjectForKey:kLocationKey]];
 
     return checkIn;
 }

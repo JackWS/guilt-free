@@ -13,6 +13,7 @@
 #import "NSString+Pluralize.h"
 #import "AppController.h"
 #import "ShareHelper.h"
+#import "CheckInBalance.h"
 
 @implementation ShareView {
 
@@ -153,7 +154,7 @@
 
     self.statusLabel.text =
             $str(@"%@ %@.", NSLocalizedString(@"BALANCE_STATUS", @""),
-            [NSLocalizedString(@"BALANCE_PLURALIZABLE", @"") pluralize:self.progress]);
+            [NSLocalizedString(@"BALANCE_PLURALIZABLE", @"") pluralize:self.balance.count]);
 }
 
 @end

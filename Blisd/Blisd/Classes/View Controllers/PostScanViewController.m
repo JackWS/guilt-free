@@ -10,6 +10,9 @@
 #import "ShareView.h"
 #import "NIBLoader.h"
 #import "HUDHelper.h"
+#import "PostRedeemViewController.h"
+#import "Campaign.h"
+#import "Customer.h"
 
 typedef enum {
     PostScanStateProgress,
@@ -123,13 +126,11 @@ typedef enum {
             self.buyXLabel.text = NSLocalizedString(@"NEXT_VISIT_GET", @"");
             self.earnLabel.text = nil;
         } else {
-            self.buyXLabel.text = $str(NSLocalizedString(@"N_MORE_PURCHASES", @""), self.balance.buyX - self.balance.balance);
+            self.buyXLabel.text = $str(NSLocalizedString(@"N_MORE_PURCHASES", @""), self.balance.campaign.buyX - self.balance.balance);
             self.earnLabel.text = NSLocalizedString(@"UNTIL_YOU_EARN", @"");
         }
-        self.getXLabel.text = self.balance.getX;
+        self.getXLabel.text = self.balance.campaign.getX;
     }
-
-    self.shareView.progress = self.balance.balance;
 }
 
 
@@ -149,12 +150,15 @@ typedef enum {
                               [self.balance redeemResponse:^(NSNumber *success, NSError *error) {
                                   [self.hudHelper hide];
                                   if ([success boolValue]) {
-                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
-                                                                  message:NSLocalizedString(@"REDEEMED_MESSAGE", @"")
-                                                        cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                                                        otherButtonTitles:nil
-                                                                  handler:nil];
-                                      [self.navigationController popToRootViewControllerAnimated:YES];
+                                      PostRedeemViewController *controller = [[PostRedeemViewController alloc] init];
+                                      [self.navigationController pushViewController:controller animated:YES];
+
+//                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
+//                                                                  message:NSLocalizedString(@"REDEEMED_MESSAGE", @"")
+//                                                        cancelButtonTitle:NSLocalizedString(@"OK", @"")
+//                                                        otherButtonTitles:nil
+//                                                                  handler:nil];
+//                                      [self.navigationController popToRootViewControllerAnimated:YES];
                                   } else {
                                       [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_REDEEMING", @"")];
                                   }
@@ -205,6 +209,17 @@ typedef enum {
 
 }
 
+- (void) shareHelper:(ShareHelper *) shareHelper didCompleteShareWithService:(ShareService) shareService {
+    NSLog(@"Share did complete!");
+    [self.balance recordShare:^(id object, NSError *error) {
+        if (error) {
+            // I guess they just don't get it...
+            NSLog(@"Error recording share: %@", [error description]);
+        }
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
+}
+
 - (void) shareHelper:(ShareHelper *) shareHelper didCancelShareWithService:(ShareService) shareService {
 
 }
@@ -214,7 +229,7 @@ typedef enum {
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper textForShareWithService:(ShareService) shareService {
-    return [self itemForService:shareService itemType:ShareItemText extraText:self.balance.customerCompany];
+    return [self itemForService:shareService itemType:ShareItemText extraText:self.balance.customer.company];
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper nameForShareWithService:(ShareService) shareService {
@@ -222,7 +237,7 @@ typedef enum {
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper captionForShareWithService:(ShareService) shareService {
-    return [self itemForService:shareService itemType:ShareItemCaption extraText:self.balance.customerCompany];
+    return [self itemForService:shareService itemType:ShareItemCaption extraText:self.balance.customer.company];
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper descriptionForShareWithService:(ShareService) shareService {
@@ -230,7 +245,7 @@ typedef enum {
 }
 
 - (NSURL *) shareHelper:(ShareHelper *) shareHelper URLForShareWithService:(ShareService) shareService {
-    return [NSURL URLWithString:$str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.customerNumber)];
+    return [NSURL URLWithString:$str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.customer.company)];
 }
 
 - (UIImage *) shareHelper:(ShareHelper *) shareHelper imageForShareWithService:(ShareService) shareService {

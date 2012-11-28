@@ -33,24 +33,18 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self initialize];
+        [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttonsettingspressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttonsettings.png"]];
     }
     return self;
 }
 
 - (id) init {
-    self = [super init];
+    self = [self initWithNibName:nil bundle:nil];
     if (self) {
-        [self initialize];
     }
 
     return self;
 }
-
-- (void) initialize {
-    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"menubuttonsettingspressed.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"menubuttonsettings.png"]];
-}
-
 
 - (void) loadView {
     self.tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame style:UITableViewStylePlain];

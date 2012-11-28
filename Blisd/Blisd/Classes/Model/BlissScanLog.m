@@ -8,7 +8,7 @@
 #import <Parse/Parse.h>
 #import "BlissScanLog.h"
 #import "PFObject+NonNull.h"
-
+#import "BlissBalance.h"
 
 @implementation BlissScanLog {
 
@@ -16,16 +16,16 @@
 
 static NSString *const kClassName = @"ULog";
 
-static NSString *const kUserKey = @"User";
-static NSString *const kCampaignNumberKey = @"campaignNumber";
+static NSString *const kUserKey = @"user_Pointer";
+static NSString *const kBalanceKey = @"bal_Pointer";
 
 - (PFObject *) toPFObject {
     PFObject *obj = [super toPFObject];
     if (!obj) {
         obj = [[PFObject alloc] initWithClassName:kClassName];
     }
-    [obj setNonNullObject:self.user forKey:kUserKey];
-    [obj setNonNullObject:self.campaignNumber forKey:kCampaignNumberKey];
+    [obj setNonNullObject:[PFUser currentUser] forKey:kUserKey];
+    [obj setNonNullObject:[self.balance toPFObject] forKey:kBalanceKey];
 
     return obj;
 }

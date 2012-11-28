@@ -10,6 +10,7 @@
 #import "PFObject+NonNull.h"
 #import "User.h"
 #import "BlissBalance.h"
+#import "Customer.h"
 
 
 @implementation Subscription {
@@ -28,10 +29,15 @@ static NSString *const kCustomerCompanyKey = @"customerCompany";
     NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"( ,)|(,,)|( )|(-)"
                                                                                 options:(NSRegularExpressionOptions) 0
                                                                                   error:nil];
-    return [expression stringByReplacingMatchesInString:self.customerCompany
-                                                options:(NSMatchingOptions) 0
-                                                  range:NSMakeRange(0, self.customerCompany.length)
-                                           withTemplate:@"_"];
+
+    if (!self.customerCompany) {
+        return nil;
+    } else {
+        return [expression stringByReplacingMatchesInString:self.customerCompany
+                                                    options:(NSMatchingOptions) 0
+                                                      range:NSMakeRange(0, self.customerCompany.length)
+                                               withTemplate:@"_"];
+    }
 }
 
 - (void) saveInBackgroundWithBlock:(ResponseBlock) block {
@@ -63,21 +69,26 @@ static NSString *const kCustomerCompanyKey = @"customerCompany";
 }
 
 + (void) getSubscriptionsForCurrentUser:(ResponseBlock) response {
-    [BlissBalance getBalancesForCurrentUserWithCompanies:NO response:^(NSArray *balances, NSError *balancesError) {
+    [BlissBalance getBalancesForCurrentUserResponse:^(NSArray *balances, NSError *balancesError) {
         if (balancesError) {
             response(nil, balancesError);
         } else {
             NSMutableDictionary *subscriptions = [NSMutableDictionary dictionary];
             for (BlissBalance *balance in balances) {
                 Subscription *subscription = [[Subscription alloc] init];
-                subscription.customerCompany = balance.customerCompany;
+                subscription.customerCompany = balance.customer.company;
                 subscription.status = NO;
                 subscriptions[subscription.channelName] = subscription;
             }
 
             [PFPush getSubscribedChannelsInBackgroundWithBlock:^(NSSet *channels, NSError *channelsError) {
                 if (channelsError) {
-                    response(nil, channelsError);
+                    // We don't have a push token, so not really an error
+                    if ([channelsError code] == kPFErrorPushMisconfigured) {
+                        response(nil, nil);
+                    } else {
+                        response(nil, channelsError);
+                    }
                 } else {
                     for (NSString *channel in channels) {
                         Subscription *subscription = subscriptions[channel];

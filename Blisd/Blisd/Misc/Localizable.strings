@@ -81,6 +81,14 @@
 "OFFER_LIST_EMAIL_TEXT" = "I got Bliss at %@";
 "OFFER_LIST_EMAIL_NAME" = "Blisd!";
 
+"POST_REDEEM_FACEBOOK_TEXT" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_FACEBOOK_NAME" = "Blisd!";
+"POST_REDEEM_FACEBOOK_CAPTION" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_FACEBOOK_DESCRIPTION" = "You could, too!";
+"POST_REDEEM_TWITTER_TEXT" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_EMAIL_TEXT" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_EMAIL_NAME" = "Blisd!";
+
 "USER_SETTINGS_TITLE" = "User Settings";
 "SUBSCRIPTION_SETTINGS_TITLE" = "Subscription Settings";
 
@@ -109,3 +117,6 @@
 "REDEEM_REQUIRED_TITLE" = "Must Redeem";
 "REDEEM_REQUIRED_MESSAGE" = "You can't earn any more until you redeem your balance. Would you like to redeem now?";
 "REDEEM" = "Redeem";
+
+"CHECK_IN_TITLE" = "Success!";
+"CHECK_IN_MESSAGE" = "You have checked in here!";

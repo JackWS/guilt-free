@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BlisdModel.h"
+#import "Location.h"
 
 @class Customer;
 @class CheckIn;
@@ -18,6 +19,8 @@
 @property (nonatomic, assign) NSInteger count;
 
 + (void) getByCheckInID:(NSString *) checkInID response:(ResponseBlock) response;
+
++ (void) getForLocation:(Location *) location response:(ResponseBlock) response;
 
 + (void) createBalanceFromCheckIn:(CheckIn *) checkIn response:(ResponseBlock) response;
 

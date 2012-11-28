@@ -16,7 +16,8 @@
 
 static NSString *const kClassName = @"CLog";
 
-static NSString *const kBalanceKey = @"cbal_Relationship";
+static NSString *const kBalanceKey = @"cbal_Pointer";
+static NSString *const kUserKey = @"user_Pointer";
 
 - (PFObject *) toPFObject {
     PFObject *obj = [super toPFObject];
@@ -24,6 +25,7 @@ static NSString *const kBalanceKey = @"cbal_Relationship";
         obj = [[PFObject alloc] initWithClassName:kClassName];
     }
     [obj setNonNullObject:[self.balance toPFObject] forKey:kBalanceKey];
+    [obj setNonNullObject:[PFUser currentUser] forKey:kUserKey];
 
     return obj;
 }

@@ -17,6 +17,7 @@
 #import "MockData.h"
 #import "PostScanViewController.h"
 #import "ScanResult.h"
+#import "PostRedeemViewController.h"
 
 @interface ScanViewController ()
 
@@ -100,11 +101,14 @@
                               [balance redeemResponse:^(NSNumber *success, NSError *error) {
                                   [self.hudHelper hide];
                                   if ([success boolValue]) {
-                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
-                                                                  message:NSLocalizedString(@"REDEEMED_MESSAGE", @"")
-                                                        cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                                                        otherButtonTitles:nil
-                                                                  handler:nil];
+                                      PostRedeemViewController *controller = [[PostRedeemViewController alloc] init];
+                                      [self.navigationController pushViewController:controller animated:YES];
+
+//                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
+//                                                                  message:NSLocalizedString(@"REDEEMED_MESSAGE", @"")
+//                                                        cancelButtonTitle:NSLocalizedString(@"OK", @"")
+//                                                        otherButtonTitles:nil
+//                                                                  handler:nil];
                                   } else {
                                       [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_REDEEMING", @"")];
                                   }
@@ -142,6 +146,14 @@
                     }
                 }];
             }
+        } else if (result.type == ScanResultTypeCheckIn) {
+            if (result.status == ScanResultStatusSuccess) {
+                [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"CHECK_IN_TITLE", @"")
+                                            message:NSLocalizedString(@"CHECK_IN_MESSAGE", @"")
+                                  cancelButtonTitle:NSLocalizedString(@"OK", @"")
+                                  otherButtonTitles:nil
+                                            handler:nil];
+            }
         }
     }];
 }
@@ -149,7 +161,7 @@
 #if TARGET_IPHONE_SIMULATOR
 
 - (void) fakeScan:(id) sender {
-    NSString *url = [MockData generateCampaignURL]; //[MockData generateCheckInURL];
+    NSString *url = [MockData generateCheckInURL]; //[MockData generateCheckInURL];
     [self processURL:url];
 }
 

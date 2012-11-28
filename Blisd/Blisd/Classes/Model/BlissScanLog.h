@@ -7,11 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BlisdModel.h"
+#import "Campaign.h"
+#import "BlissBalance.h"
 
 
 @interface BlissScanLog : BlisdModel
 
-@property (nonatomic, strong) NSString *user;
-@property (nonatomic, strong) NSString *campaignNumber;
+@property (nonatomic, strong) BlissBalance *balance;
 
 @end

@@ -17,12 +17,15 @@
 @property (nonatomic, strong) NSString *website;
 @property (nonatomic, strong) NSString *tagLine;
 @property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *customerNumber;
 
 + (void) findWithNames:(NSArray *) names response:(ResponseBlock) response;
 
 - (void) loadImageWithResponse:(ResponseBlock) response;
 
 + (Customer *) customerFromPFObject:(PFObject *) obj;
+
++ (PFQuery *) queryForCustomerWithNumber:(NSString *) customerNumber;
 
 
 @end

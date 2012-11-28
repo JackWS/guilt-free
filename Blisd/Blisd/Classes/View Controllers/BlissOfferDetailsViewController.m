@@ -12,11 +12,14 @@
 #import "ShareView.h"
 #import "NIBLoader.h"
 #import "HUDHelper.h"
+#import "Campaign.h"
+#import "CheckInBalance.h"
 
 @interface BlissOfferDetailsViewController ()
 
 @property (nonatomic, strong) NSDictionary *text;
 @property (nonatomic, strong) HUDHelper *hudHelper;
+@property (nonatomic, assign) BOOL loaded;
 
 @end
 
@@ -72,6 +75,23 @@
         }
     }];
 
+}
+
+- (void) viewWillAppear:(BOOL) animated {
+    [super viewWillAppear:animated];
+
+    if (!self.loaded) {
+        [self.hudHelper showWithText:NSLocalizedString(@"LOADING", @"")];
+    }
+    [CheckInBalance getForLocation:self.balance.campaign.location response:^(CheckInBalance *balance, NSError *error) {
+        [self.hudHelper hide];
+        if (error) {
+            NSLog(@"Error retrieving check-in for customer with id: %@, %@", self.balance.customer.id, [error description]);
+        } else {
+            self.shareView.balance = balance;
+            [self.shareView setNeedsLayout];
+        }
+    }];
 }
 
 #pragma mark User Actions
@@ -171,7 +191,7 @@
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper textForShareWithService:(ShareService) shareService {
-    return [self itemForService:shareService itemType:ShareItemText extraText:self.balance.customerCompany];
+    return [self itemForService:shareService itemType:ShareItemText extraText:self.balance.campaign.customerCompany];
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper nameForShareWithService:(ShareService) shareService {
@@ -179,7 +199,7 @@
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper captionForShareWithService:(ShareService) shareService {
-    return [self itemForService:shareService itemType:ShareItemCaption extraText:self.balance.customerCompany];
+    return [self itemForService:shareService itemType:ShareItemCaption extraText:self.balance.campaign.customerCompany];
 }
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper descriptionForShareWithService:(ShareService) shareService {
@@ -187,7 +207,7 @@
 }
 
 - (NSURL *) shareHelper:(ShareHelper *) shareHelper URLForShareWithService:(ShareService) shareService {
-    return [NSURL URLWithString:$str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.customerNumber)];
+    return [NSURL URLWithString:$str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.campaign.customerNumber)];
 }
 
 - (UIImage *) shareHelper:(ShareHelper *) shareHelper imageForShareWithService:(ShareService) shareService {

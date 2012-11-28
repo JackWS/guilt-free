@@ -12,6 +12,7 @@
 		0A8B6607162CC9F1000E6F62 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8B6606162CC9F1000E6F62 /* Parse.framework */; };
 		0ACB387416387FED003CE46B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB387316387FED003CE46B /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0ACB38A21638BD68003CE46B /* html in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB38A11638BD68003CE46B /* html */; };
+		0AD83FFC1663DEBB00041748 /* PostRedeemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AD83FFB1663DEBB00041748 /* PostRedeemView.xib */; };
 		0AE4F652163AD10E00B6CE63 /* DealsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE4F651163AD10E00B6CE63 /* DealsView.xib */; };
 		0AE8AB76161936B400D5714E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0AE8AB75161936B400D5714E /* Podfile */; };
 		159A85DF160CC64B00867385 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 159A85DE160CC64B00867385 /* LogInViewController.m */; };
@@ -133,6 +134,7 @@
 		45094AC88976F6DB303C26C4 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094CD635C19456AC48A21A /* edit.png */; };
 		45094AF39346E6DBD195F1A0 /* SignUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094216AFDCE37AA3CAFBA3 /* SignUp.png */; };
 		45094B35EC4C59C6D1BD8354 /* viewbgmyblisd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45094C225C0A3156D7B37098 /* viewbgmyblisd.jpg */; };
+		45094B575B400AB26D4C06DD /* PostRedeemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450948BA4B7AFAA2ABB89937 /* PostRedeemViewController.m */; };
 		45094B722F189DCE3808BD75 /* iconlogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094386FC7EB0FDF23ECDF3 /* iconlogin.png */; };
 		45094B809BEE30AF53B50920 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094DEDAF2018772EB864BA /* Facebook.png */; };
 		45094B832427B7D85C52A64C /* LoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45094B5616DBF4F8C0C9F70F /* LoginHeaderView.xib */; };
@@ -201,6 +203,7 @@
 		0A8B6606162CC9F1000E6F62 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Pods/Parse/Parse.framework; sourceTree = "<group>"; };
 		0ACB387316387FED003CE46B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		0ACB38A11638BD68003CE46B /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		0AD83FFB1663DEBB00041748 /* PostRedeemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostRedeemView.xib; sourceTree = "<group>"; };
 		0AE4F651163AD10E00B6CE63 /* DealsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealsView.xib; sourceTree = "<group>"; };
 		0AE8AB75161936B400D5714E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		1516556BD8804AE0803B656E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -289,6 +292,7 @@
 		4509445F3EEFEEED466E8B3E /* redeem_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redeem_button.png; sourceTree = "<group>"; };
 		450944673A9C91B33E8F6033 /* redtag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redtag3.png; sourceTree = "<group>"; };
 		45094471E49DB5F733197894 /* confirm_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirm_button.png; sourceTree = "<group>"; };
+		45094488BA939D6DF3BC593A /* PostRedeemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostRedeemViewController.h; sourceTree = "<group>"; };
 		4509449EBC8E608126518821 /* CheckInScanLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInScanLog.h; sourceTree = "<group>"; };
 		450944A11018BCB76D701CA6 /* redtag7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redtag7.png; sourceTree = "<group>"; };
 		450944A310A665CC1A6FB3C4 /* LoginHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHeaderView.m; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 		4509487661FDE9D5BFDDBEF9 /* PostScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostScanViewController.h; sourceTree = "<group>"; };
 		4509487D184D34E8C1023396 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
 		450948B952E096AA8961E25F /* OutsideURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutsideURL.m; sourceTree = "<group>"; };
+		450948BA4B7AFAA2ABB89937 /* PostRedeemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostRedeemViewController.m; sourceTree = "<group>"; };
 		450948CECBBF4DFD1CEFC62C /* menubuttonscan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubuttonscan.png; sourceTree = "<group>"; };
 		450948D72632190D383F45BE /* Campaign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Campaign.m; sourceTree = "<group>"; };
 		450949136FF5BF8F4BEAFFCB /* useremail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = useremail.png; sourceTree = "<group>"; };
@@ -560,6 +565,8 @@
 				4509455031C1DA1318464FBC /* SettingsViewController.h */,
 				450941774143960DBD8A2DFE /* InfoViewController.m */,
 				450945194B4C56CC6DCC977D /* InfoViewController.h */,
+				450948BA4B7AFAA2ABB89937 /* PostRedeemViewController.m */,
+				45094488BA939D6DF3BC593A /* PostRedeemViewController.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -783,17 +790,18 @@
 		45094D6B14C51E7A0B68F69A /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
+				450942487C890E8B570E4022 /* BlissOfferDetailsView.xib */,
+				4509459C27ED48CE781407FB /* BlissTableViewCell.xib */,
 				45094C82BA4F0CC939DAB0EB /* BlissViewController_iPad.xib */,
 				4509491978EBB730BD6E9C27 /* BlissViewController_iPhone.xib */,
+				0AE4F651163AD10E00B6CE63 /* DealsView.xib */,
+				45094B5616DBF4F8C0C9F70F /* LoginHeaderView.xib */,
+				450949761A23E39FF88276AF /* LogInLogoView.xib */,
+				0AD83FFB1663DEBB00041748 /* PostRedeemView.xib */,
+				45094845189E1F26DFB833F3 /* PostScanView.xib */,
 				450943572F1701F4EC631ACC /* ScanViewController_iPad.xib */,
 				45094A9534B431F12E8EE561 /* ScanViewController_iPhone.xib */,
 				450949B8ECCE13507FDB5D4C /* ShareView.xib */,
-				450942487C890E8B570E4022 /* BlissOfferDetailsView.xib */,
-				4509459C27ED48CE781407FB /* BlissTableViewCell.xib */,
-				450949761A23E39FF88276AF /* LogInLogoView.xib */,
-				45094B5616DBF4F8C0C9F70F /* LoginHeaderView.xib */,
-				45094845189E1F26DFB833F3 /* PostScanView.xib */,
-				0AE4F651163AD10E00B6CE63 /* DealsView.xib */,
 			);
 			path = NIBs;
 			sourceTree = "<group>";
@@ -984,6 +992,7 @@
 				45094EF60AA361E3ED63B7CE /* menubuttonscan2.png in Resources */,
 				0ACB38A21638BD68003CE46B /* html in Resources */,
 				0AE4F652163AD10E00B6CE63 /* DealsView.xib in Resources */,
+				0AD83FFC1663DEBB00041748 /* PostRedeemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,6 +1081,7 @@
 				4509419258AFFE765DE80B0B /* CheckInBalance.m in Sources */,
 				45094E457A9E31DEC6915FE3 /* CheckIn.m in Sources */,
 				450949CA683E5EBBB562447A /* CheckInScanLog.m in Sources */,
+				45094B575B400AB26D4C06DD /* PostRedeemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

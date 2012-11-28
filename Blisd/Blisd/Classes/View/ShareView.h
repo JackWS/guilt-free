@@ -9,12 +9,14 @@
 #import <Parse/Parse.h>
 #import "ShareHelper.h"
 
+@class CheckInBalance;
+
 
 @interface ShareView : UIView
 
 @property (nonatomic, retain) ShareHelper *shareHelper;
 
-@property (nonatomic, assign) NSInteger progress;
+@property (nonatomic, retain) CheckInBalance *balance;
 
 @property (nonatomic, strong) IBOutlet UILabel *statusLabel;
 

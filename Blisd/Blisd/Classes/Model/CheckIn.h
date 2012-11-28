@@ -11,16 +11,20 @@
 @class PFQuery;
 @class PFObject;
 @class Customer;
+@class Location;
 
 
 @interface CheckIn : BlisdModel
 
 @property (nonatomic, strong) Customer *customer;
+@property (nonatomic, strong) Location *location;
 
 + (CheckIn *) checkInFromPFObject:(PFObject *) pfObject;
 
 + (void) getCheckInWithID:(NSString *) checkInID response:(ResponseBlock) response;
 
 + (PFQuery *) queryForCheckInID:(NSString *) checkInID;
+
++ (PFQuery *) queryForCheckInAtLocation:(Location *) location;
 
 @end
