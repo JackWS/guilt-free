@@ -215,6 +215,7 @@ static NSString *const kLocationKey = @"camp_Pointer.loc_Pointer";
     } else {
         self.balance++;
         self.shared = YES;
+        NSLog(@"Recording share for balance with ID: %@, balance = %d, shared = %d", self.id, self.balance, self.shared);
         [self saveInBackgroundWithBlock:response];
     }
 }

@@ -89,6 +89,14 @@
 "POST_REDEEM_EMAIL_TEXT" = "I just got %@ at %@ using Blisd!";
 "POST_REDEEM_EMAIL_NAME" = "Blisd!";
 
+"DEAL_FACEBOOK_TEXT" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_FACEBOOK_NAME" = "Blisd!";
+"DEAL_FACEBOOK_CAPTION" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_FACEBOOK_DESCRIPTION" = "You could, too!";
+"DEAL_TWITTER_TEXT" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_EMAIL_TEXT" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_EMAIL_NAME" = "Blisd!";
+
 "USER_SETTINGS_TITLE" = "User Settings";
 "SUBSCRIPTION_SETTINGS_TITLE" = "Subscription Settings";
 
@@ -120,3 +128,6 @@
 
 "CHECK_IN_TITLE" = "Success!";
 "CHECK_IN_MESSAGE" = "You have checked in here!";
+
+"ERROR_LOADING_DEALS" = "There was an unexpected problem loading nearby deals. Please try again later.";
+"NO_DEALS" = "We couldn't find any deals nearby for you.";

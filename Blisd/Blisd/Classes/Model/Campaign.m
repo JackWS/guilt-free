@@ -50,27 +50,7 @@ static NSString *const kLocationKey = @"loc_Pointer";
                 Campaign *campaign = [Campaign campaignFromPFObject:object];
                 [campaigns addObject:campaign];
             }
-            CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:coordinate.latitude
-                                                                     longitude:coordinate.longitude];
-            [campaigns sortUsingComparator:^NSComparisonResult(Campaign *obj1, Campaign *obj2) {
-                CLLocationCoordinate2D coord1 = obj1.location.coordinate;
-                CLLocation *location1 = [[CLLocation alloc] initWithLatitude:coord1.latitude
-                                                                   longitude:coord1.longitude];
-                CLLocationDistance distance1 = [location1 distanceFromLocation:currentLocation];
-
-                CLLocationCoordinate2D coord2 = obj2.location.coordinate;
-                CLLocation *location2 = [[CLLocation alloc] initWithLatitude:coord2.latitude
-                                                                   longitude:coord2.longitude];
-                CLLocationDistance distance2 = [location2 distanceFromLocation:currentLocation];
-
-                if (distance1 > distance2) {
-                    return NSOrderedDescending;
-                } else if (distance1 < distance2) {
-                    return NSOrderedDescending;
-                } else {
-                    return NSOrderedSame;
-                }
-            }];
+            [campaigns sortUsingComparator:[Location comparatorForCoordinate:coordinate]];
             response(campaigns, nil);
         }
     }];

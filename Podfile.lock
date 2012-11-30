@@ -8,7 +8,7 @@ PODS:
 - ConciseKit (0.1.2)
 - FlurrySDK (4.0.4)
 - MBProgressHUD (0.5)
-- Parse (1.1.12)
+- Parse (1.1.18)
 - QuickDialog (0.5)
 - Reachability (3.0.0)
 - TTTAttributedLabel (1.3.0)
@@ -40,7 +40,7 @@ SPEC CHECKSUMS:
   ConciseKit: 1e086a66d098ba160ca5faa86458a0431b280b30
   FlurrySDK: 687546ff3267c28d615fdd7956f81f5255899145
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
-  Parse: dfa7546ad8c7d3e60f9a7dc8389a70f949a0e6bb
+  Parse: 96d76390b926fd09d768060874f7da7ca559c6f3
   QuickDialog: 34f6199992c0658b0dbfbe35ba87c0ee4a65c2c9
   Reachability: 500bd76bf6cd8ff2c6fb715fc5f44ef6e4c024f2
   TTTAttributedLabel: 58386dcb6d23389d6e4381de7a0b21d4f7e1a283

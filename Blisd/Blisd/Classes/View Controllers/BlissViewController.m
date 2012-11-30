@@ -55,6 +55,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.tableView.backgroundColor = [BlisdStyle colorForBackground];
+
     self.hudHelper = [[HUDHelper alloc] initWithView:self.view];
 }
 
@@ -175,10 +177,10 @@
     Campaign *campaign = [self.nearbyCampaigns objectAtIndex:index];
     cell.businessLabel.text = campaign.customerCompany;
     cell.rewardLabel.text = campaign.getX;
-    if (!campaign.location.customer.companyImage) {
-        [campaign.location.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
+    if (!campaign.customer.companyImage) {
+        [campaign.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
             if (error) {
-                NSLog(@"Error retrieving image for company with name: %@, error: %@", campaign.location.customer.company, [error description]);
+                NSLog(@"Error retrieving image for company with name: %@, error: %@", campaign.customer.company, [error description]);
             } else {
                 cell.logoImageView.image = image;
             }

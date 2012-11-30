@@ -96,19 +96,11 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 
 - (void) initializeUI {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-//    UIViewController *scanController, *blissController;
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     UIViewController *scanController = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPhone" bundle:nil];
     UIViewController *blissController = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPhone" bundle:nil];
-    UIViewController *dealController = [[DealsViewController alloc] initWithNibName:@"DealsView" bundle:nil];
+    UIViewController *dealsController = [[DealsViewController alloc] initWithNibName:@"DealsView" bundle:nil];
     UIViewController *settingsController = [[SettingsViewController alloc] init];
     UIViewController *infoController = [[InfoViewController alloc] init];
-
-//    } else {
-//        scanController = [[ScanViewController alloc] initWithNibName:@"ScanViewController_iPad" bundle:nil];
-//        blissController = [[BlissViewController alloc] initWithNibName:@"BlissViewController_iPad" bundle:nil];
-//    }
     self.tabBarController = [[UITabBarController alloc] init];
 
     UINavigationController *scanNavController = [[UINavigationController alloc] initWithRootViewController:scanController];
@@ -116,7 +108,11 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 
     UINavigationController *blissNavController = [[UINavigationController alloc] initWithRootViewController:blissController];
     [blissNavController setNavigationBarHidden:YES animated:NO];
-    self.tabBarController.viewControllers = @[scanNavController, blissNavController, dealController, settingsController, infoController];
+
+    UINavigationController *dealsNavController = [[UINavigationController alloc] initWithRootViewController:dealsController];
+    [dealsNavController setNavigationBarHidden:YES animated:NO];
+
+    self.tabBarController.viewControllers = @[scanNavController, blissNavController, dealsNavController, settingsController, infoController];
     self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
     self.tabBarController.tabBar.backgroundImage = [UIImage imageNamed:@"tab_bar_bg.png"];
     self.window.rootViewController = self.tabBarController;

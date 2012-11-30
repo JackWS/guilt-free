@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "BlisdModel.h"
 
+
 @class Customer;
 
 
@@ -19,5 +20,8 @@
 
 + (Location *) locationFromPFObject:(PFObject *) obj;
 
++ (PFQuery *) queryForLocationNear:(CLLocationCoordinate2D) coordinate;
+
++ (NSComparator) comparatorForCoordinate:(CLLocationCoordinate2D) coordinate;
 
 @end

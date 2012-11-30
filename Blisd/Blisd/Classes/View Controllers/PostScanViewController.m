@@ -210,7 +210,6 @@ typedef enum {
 }
 
 - (void) shareHelper:(ShareHelper *) shareHelper didCompleteShareWithService:(ShareService) shareService {
-    NSLog(@"Share did complete!");
     [self.balance recordShare:^(id object, NSError *error) {
         if (error) {
             // I guess they just don't get it...

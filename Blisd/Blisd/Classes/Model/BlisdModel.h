@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @class PFObject;
+@class PFQuery;
 
 #define MOCK_DATA 0
 

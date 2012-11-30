@@ -10,6 +10,8 @@
 		0A56C62E165B07AF00411329 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56C62D165B07AF00411329 /* CoreLocation.framework */; };
 		0A68C406161A6665005FD8D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A68C405161A6665005FD8D7 /* Localizable.strings */; };
 		0A8B6607162CC9F1000E6F62 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8B6606162CC9F1000E6F62 /* Parse.framework */; };
+		0ABAD9F91667C8B2005A85CB /* DealTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABAD9F81667C8B2005A85CB /* DealTableViewCell.xib */; };
+		0ABADA081667F5E6005A85CB /* DealDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABADA071667F5E6005A85CB /* DealDetailsView.xib */; };
 		0ACB387416387FED003CE46B /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB387316387FED003CE46B /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		0ACB38A21638BD68003CE46B /* html in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB38A11638BD68003CE46B /* html */; };
 		0AD83FFC1663DEBB00041748 /* PostRedeemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AD83FFB1663DEBB00041748 /* PostRedeemView.xib */; };
@@ -157,6 +159,7 @@
 		45094D8CDA5975EE5EB32733 /* ScanViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45094A9534B431F12E8EE561 /* ScanViewController_iPhone.xib */; };
 		45094D965556375C8B453CBC /* redtag6.png in Resources */ = {isa = PBXBuildFile; fileRef = 450945E4B27740FBE0D3CD4B /* redtag6.png */; };
 		45094DAE948984471EA3D873 /* BlissTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4509459C27ED48CE781407FB /* BlissTableViewCell.xib */; };
+		45094DB75DBD99C9F6327FB3 /* Deal.m in Sources */ = {isa = PBXBuildFile; fileRef = 45094A91DF883A1C1C7C5A22 /* Deal.m */; };
 		45094DBAB5FA368CDC3AA403 /* menubuttonsettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094779AB71A9FE142BE16A /* menubuttonsettings.png */; };
 		45094DD16C0A7C42BD317795 /* menubuttonscanpressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094FF44A875BC2506AE05B /* menubuttonscanpressed.png */; };
 		45094DDEAFC256C766F9041B /* menubuttoninfopressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 450944DD778AC067F87B9052 /* menubuttoninfopressed.png */; };
@@ -166,6 +169,7 @@
 		45094E44CDF03BA8B984D9B6 /* letyourfriendsloveittoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 45094E64DFF7ABECD11B2EC6 /* letyourfriendsloveittoo.png */; };
 		45094E457A9E31DEC6915FE3 /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 45094846B3BB45609A742E37 /* CheckIn.m */; };
 		45094E50D09DF0A4F22659FF /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 450946B473DF103B43ECFB12 /* UncaughtExceptionHandler.m */; };
+		45094E5F446C11AC308D4F1E /* DealDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45094C43503A9B31306B2959 /* DealDetailsViewController.m */; };
 		45094E687285EA7CBE2086D7 /* menubar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4509403E7E1B75B4AF92ACBE /* menubar.png */; };
 		45094EB0F1DE093E4B2CFC2B /* menubuttonbliss.png in Resources */ = {isa = PBXBuildFile; fileRef = 450940B03866DEF98E72BB51 /* menubuttonbliss.png */; };
 		45094EBAE46B4BCF228B5EFC /* background3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45094DA82DF22ACC113BA47A /* background3.jpg */; };
@@ -201,6 +205,8 @@
 		0A56C62D165B07AF00411329 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0A68C405161A6665005FD8D7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0A8B6606162CC9F1000E6F62 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Pods/Parse/Parse.framework; sourceTree = "<group>"; };
+		0ABAD9F81667C8B2005A85CB /* DealTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealTableViewCell.xib; sourceTree = "<group>"; };
+		0ABADA071667F5E6005A85CB /* DealDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealDetailsView.xib; sourceTree = "<group>"; };
 		0ACB387316387FED003CE46B /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		0ACB38A11638BD68003CE46B /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		0AD83FFB1663DEBB00041748 /* PostRedeemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostRedeemView.xib; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 		45094420C05E1270E4479EC7 /* menusettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menusettings.png; sourceTree = "<group>"; };
 		4509444EA5A0428E1D38C575 /* menubuttoninfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubuttoninfo.png; sourceTree = "<group>"; };
 		4509444EB73745E888BE9888 /* menubuttondeals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubuttondeals.png; sourceTree = "<group>"; };
+		450944549EC7A598B855B451 /* Deal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deal.h; sourceTree = "<group>"; };
 		4509445F3EEFEEED466E8B3E /* redeem_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redeem_button.png; sourceTree = "<group>"; };
 		450944673A9C91B33E8F6033 /* redtag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redtag3.png; sourceTree = "<group>"; };
 		45094471E49DB5F733197894 /* confirm_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confirm_button.png; sourceTree = "<group>"; };
@@ -322,6 +329,7 @@
 		450946EC22D936125F71CE7C /* sharegmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharegmail.png; sourceTree = "<group>"; };
 		4509470ABBE033D3940196C6 /* ShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareHelper.m; sourceTree = "<group>"; };
 		45094715B2092ABF48DDF2CA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		45094741DF9CD79DB44A6161 /* DealDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealDetailsViewController.h; sourceTree = "<group>"; };
 		4509475E9A9A64B540618DEA /* SignUpFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpFieldBG.png; sourceTree = "<group>"; };
 		45094779AB71A9FE142BE16A /* menubuttonsettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubuttonsettings.png; sourceTree = "<group>"; };
 		45094782341CB5AAFA782D13 /* PFObject+NonNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFObject+NonNull.h"; sourceTree = "<group>"; };
@@ -365,6 +373,7 @@
 		45094A6BF41163817F498C5B /* menudeals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menudeals.png; sourceTree = "<group>"; };
 		45094A6E02097806B0DB6B7E /* menu_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_cancel.png; sourceTree = "<group>"; };
 		45094A82D10E910B8E078C44 /* circleplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleplay.png; sourceTree = "<group>"; };
+		45094A91DF883A1C1C7C5A22 /* Deal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deal.m; sourceTree = "<group>"; };
 		45094A9534B431F12E8EE561 /* ScanViewController_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanViewController_iPhone.xib; sourceTree = "<group>"; };
 		45094A9E98F28389746EE89F /* leftarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftarrow.png; sourceTree = "<group>"; };
 		45094AB0322F9B1361A9CA74 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
@@ -373,6 +382,7 @@
 		45094AF92753982D067E7331 /* tiny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiny.png; sourceTree = "<group>"; };
 		45094B426FB5DA3B1991FB3E /* btnfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnfacebook.png; sourceTree = "<group>"; };
 		45094B5616DBF4F8C0C9F70F /* LoginHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginHeaderView.xib; sourceTree = "<group>"; };
+		45094B61E847938F147FC3F5 /* HasLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HasLocation.h; sourceTree = "<group>"; };
 		45094B78373E3DE19CB75E38 /* pls_enroll_depressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pls_enroll_depressed.png; sourceTree = "<group>"; };
 		45094BB0FBA9634B1B635089 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		45094BBF98022103825D04FC /* facebookshareicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookshareicon.png; sourceTree = "<group>"; };
@@ -383,6 +393,7 @@
 		45094BE5DF09387BC55FB10C /* MockData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockData.m; sourceTree = "<group>"; };
 		45094BFAAF6EB82B12D130B0 /* CheckInBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInBalance.m; sourceTree = "<group>"; };
 		45094C225C0A3156D7B37098 /* viewbgmyblisd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = viewbgmyblisd.jpg; sourceTree = "<group>"; };
+		45094C43503A9B31306B2959 /* DealDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealDetailsViewController.m; sourceTree = "<group>"; };
 		45094C509D597DF6F18FB066 /* DealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsViewController.m; sourceTree = "<group>"; };
 		45094C82BA4F0CC939DAB0EB /* BlissViewController_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlissViewController_iPad.xib; sourceTree = "<group>"; };
 		45094CB41CA1B5FE4807AE96 /* OutsideURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutsideURL.h; sourceTree = "<group>"; };
@@ -567,6 +578,8 @@
 				450945194B4C56CC6DCC977D /* InfoViewController.h */,
 				450948BA4B7AFAA2ABB89937 /* PostRedeemViewController.m */,
 				45094488BA939D6DF3BC593A /* PostRedeemViewController.h */,
+				45094C43503A9B31306B2959 /* DealDetailsViewController.m */,
+				45094741DF9CD79DB44A6161 /* DealDetailsViewController.h */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -632,6 +645,9 @@
 				4509426A95A5C18E0D990967 /* CheckIn.h */,
 				45094275D8BA8C07BEBF4996 /* CheckInScanLog.m */,
 				4509449EBC8E608126518821 /* CheckInScanLog.h */,
+				45094A91DF883A1C1C7C5A22 /* Deal.m */,
+				450944549EC7A598B855B451 /* Deal.h */,
+				45094B61E847938F147FC3F5 /* HasLocation.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -795,6 +811,7 @@
 				45094C82BA4F0CC939DAB0EB /* BlissViewController_iPad.xib */,
 				4509491978EBB730BD6E9C27 /* BlissViewController_iPhone.xib */,
 				0AE4F651163AD10E00B6CE63 /* DealsView.xib */,
+				0ABAD9F81667C8B2005A85CB /* DealTableViewCell.xib */,
 				45094B5616DBF4F8C0C9F70F /* LoginHeaderView.xib */,
 				450949761A23E39FF88276AF /* LogInLogoView.xib */,
 				0AD83FFB1663DEBB00041748 /* PostRedeemView.xib */,
@@ -802,6 +819,7 @@
 				450943572F1701F4EC631ACC /* ScanViewController_iPad.xib */,
 				45094A9534B431F12E8EE561 /* ScanViewController_iPhone.xib */,
 				450949B8ECCE13507FDB5D4C /* ShareView.xib */,
+				0ABADA071667F5E6005A85CB /* DealDetailsView.xib */,
 			);
 			path = NIBs;
 			sourceTree = "<group>";
@@ -993,6 +1011,8 @@
 				0ACB38A21638BD68003CE46B /* html in Resources */,
 				0AE4F652163AD10E00B6CE63 /* DealsView.xib in Resources */,
 				0AD83FFC1663DEBB00041748 /* PostRedeemView.xib in Resources */,
+				0ABAD9F91667C8B2005A85CB /* DealTableViewCell.xib in Resources */,
+				0ABADA081667F5E6005A85CB /* DealDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1082,6 +1102,8 @@
 				45094E457A9E31DEC6915FE3 /* CheckIn.m in Sources */,
 				450949CA683E5EBBB562447A /* CheckInScanLog.m in Sources */,
 				45094B575B400AB26D4C06DD /* PostRedeemViewController.m in Sources */,
+				45094DB75DBD99C9F6327FB3 /* Deal.m in Sources */,
+				45094E5F446C11AC308D4F1E /* DealDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,6 +35,7 @@ static NSString *const kIDKey = @"objectId";
 
 - (void) saveInBackgroundWithBlock:(ResponseBlock) block {
     self.pfObject = [self toPFObject];
+    NSLog(@"Saving pfObject: %@, hash: %d", self.pfObject, [self.pfObject hash]);
     [self.pfObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (block) {
             block($bool(succeeded), error);

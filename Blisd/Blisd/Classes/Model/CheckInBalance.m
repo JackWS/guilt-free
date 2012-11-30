@@ -47,7 +47,7 @@ static NSString *const kCountKey = @"count";
         if (error) {
             response(nil, error);
         } else if (objects && objects.count >= 1) {
-            CheckInBalance *userCheckIn = [CheckInBalance userCheckInFromPFObject:objects[0]];
+            CheckInBalance *userCheckIn = [CheckInBalance checkInBalanceFromPFObject:objects[0]];
             response(userCheckIn, nil);
         } else {
             response(nil, nil);
@@ -62,7 +62,7 @@ static NSString *const kCountKey = @"count";
         if (error) {
             response(nil, error);
         } else if (objects && objects.count > 0) {
-            CheckInBalance *bal = [CheckInBalance userCheckInFromPFObject:objects[0]];
+            CheckInBalance *bal = [CheckInBalance checkInBalanceFromPFObject:objects[0]];
             response(bal, nil);
         } else {
             response(nil, nil);
@@ -83,7 +83,7 @@ static NSString *const kCountKey = @"count";
         } else if (!succeeded) {
             response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_GENERIC", @"")]);
         } else {
-            CheckInBalance *uci = [CheckInBalance userCheckInFromPFObject:userCheckIn];
+            CheckInBalance *uci = [CheckInBalance checkInBalanceFromPFObject:userCheckIn];
             // Return this value, the rest can be done in the background.
             response(uci, nil);
 
@@ -102,7 +102,7 @@ static NSString *const kCountKey = @"count";
     }];
 }
 
-+ (CheckInBalance *) userCheckInFromPFObject:(PFObject *) object {
++ (CheckInBalance *) checkInBalanceFromPFObject:(PFObject *) object {
     if (!object) {
         return nil;
     }

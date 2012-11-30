@@ -24,6 +24,6 @@
 
 + (void) createBalanceFromCheckIn:(CheckIn *) checkIn response:(ResponseBlock) response;
 
-+ (CheckInBalance *) userCheckInFromPFObject:(PFObject *) object;
++ (CheckInBalance *) checkInBalanceFromPFObject:(PFObject *) object;
 
 @end

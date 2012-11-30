@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class PFImageView;
+
 @interface BlissTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet PFImageView *logoImageView;
