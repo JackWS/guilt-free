@@ -6,7 +6,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "ShareHelper.h"
 
 @class ShareView;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) IBOutlet UIView *shareViewContainer;
 @property (nonatomic, strong) ShareView *shareView;
 
-- (id) initWithBalance:(Balance *) balance;
+- (id) initWithBalance:(BlissBalance *) balance;
 
 - (IBAction) back:(id) sender;
 

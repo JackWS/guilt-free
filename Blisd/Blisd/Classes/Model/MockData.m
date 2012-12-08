@@ -6,7 +6,8 @@
 
 
 #import "MockData.h"
-#import "Balance.h"
+#import "BlissBalance.h"
+#import "Campaign.h"
 
 
 @implementation MockData {
@@ -27,11 +28,15 @@
 + (NSArray *) generateBalanceList {
     NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < 10; i++) {
-        Balance *balance = [[Balance alloc] init];
-        balance.buyX = 5;
-        balance.buyY = @"cups of coffee";
-        balance.getX = @"a coupon for a free hug";
-        balance.customerCompany = @"ACME, Ltd.";
+        BlissBalance *balance = [[BlissBalance alloc] init];
+
+        Campaign *campaign = [[Campaign alloc] init];
+        balance.campaign = campaign;
+
+        campaign.buyX = 5;
+        campaign.buyY = @"cups of coffee";
+        campaign.getX = @"a coupon for a free hug";
+        campaign.customerCompany = @"ACME, Ltd.";
         balance.balance = 3;
 
         [array addObject:balance];
@@ -48,7 +53,11 @@
 }
 
 + (NSString *) generateCampaignURL {
-    return @"http://blisd.com/app/tickone.php?campaignNumber=120811gLACcwjnUH1";
+    return @"http://blisd.com/app/tickone.php?campaignNumber=121111lUyGCyZKKn";
+}
+
++ (NSString *) generateCheckInURL {
+    return @"http://blisd.com/app/CUzVxYDwKzM";
 }
 
 + (void) callAfterDelay:(CGFloat) delayInSeconds successBlock:(void (^)()) success failureBlock:(void (^)()) failure {

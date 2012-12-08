@@ -7,7 +7,7 @@
 
 #import <Parse/Parse.h>
 #import "Customer.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "PFObject+NonNull.h"
 
 @interface Customer ()
@@ -37,6 +37,7 @@ static NSString *const kZipKey = @"customerPostalCode";
 static NSString *const kTagLineKey = @"customerTagline";
 static NSString *const kTypeKey = @"customerType";
 static NSString *const kWebsiteKey = @"customerWebsite";
+static NSString *const kCustomerNumberKey = @"customerNumber";
 
 - (NSString *) address {
     NSMutableString *addr = [NSMutableString string];
@@ -101,7 +102,6 @@ static NSString *const kWebsiteKey = @"customerWebsite";
     }];
 }
 
-
 + (Customer *) customerFromPFObject:(PFObject *) obj {
     if (!obj) {
         return nil;
@@ -118,8 +118,15 @@ static NSString *const kWebsiteKey = @"customerWebsite";
     customer.tagLine = [obj nonNullObjectForKey:kTagLineKey];
     customer.type = [obj nonNullObjectForKey:kTypeKey];
     customer.website = [obj nonNullObjectForKey:kWebsiteKey];
+    customer.customerNumber = [obj nonNullObjectForKey:kCustomerNumberKey];
 
     return customer;
+}
+
++ (PFQuery *) queryForCustomerWithNumber:(NSString *) customerNumber {
+    PFQuery *query = [PFQuery queryWithClassName:kClassName];
+    [query whereKey:kCustomerNumberKey equalTo:customerNumber];
+    return query;
 }
 
 

@@ -6,10 +6,15 @@
 
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "BlisdModel.h"
+#import "Location.h"
+#import "HasLocation.h"
 
+@class PFObject;
+@class PFQuery;
 
-@interface Campaign : BlisdModel
+@interface Campaign : BlisdModel<HasLocation>
 
 @property (nonatomic, strong) NSString *campaignNumber;
 @property (nonatomic, strong) NSString *campaignName;
@@ -19,6 +24,16 @@
 @property (nonatomic, strong) NSString *buyY;
 @property (nonatomic, strong) NSString *getX;
 
+@property (nonatomic, strong) Customer *customer;
+@property (nonatomic, strong) Location *location;
+
++ (void) getCampaignsNear:(CLLocationCoordinate2D) coordinate response:(ResponseBlock) response;
+
 + (void) getByCampaignNumber:(NSString *) campaignNumber response:(ResponseBlock) response;
+
++ (Campaign *) campaignFromPFObject:(PFObject *) obj;
+
++ (PFQuery *) queryForCampaignNumber:(NSString *) campaignNumber;
+
 
 @end

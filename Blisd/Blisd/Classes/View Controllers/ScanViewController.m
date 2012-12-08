@@ -12,10 +12,12 @@
 #import "HUDHelper.h"
 #import "OutsideURL.h"
 #import "User.h"
-#import "Balance.h"
+#import "BlissBalance.h"
 #import "Scan.h"
 #import "MockData.h"
 #import "PostScanViewController.h"
+#import "ScanResult.h"
+#import "PostRedeemViewController.h"
 
 @interface ScanViewController ()
 
@@ -89,54 +91,77 @@
 
 #pragma mark Helpers
 
+- (IBAction) redeemWithBalance:(BlissBalance *) balance {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"REDEEM_TITLE", @"")
+                                                        message:NSLocalizedString(@"REDEEM_MESSAGE", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"REDEEM_CANCEL", @"")];
+    [alertView addButtonWithTitle:NSLocalizedString(@"REDEEM_OK", @"")
+                          handler:^{
+                              [self.hudHelper showWithText:NSLocalizedString(@"LOADING", @"")];
+                              [balance redeemResponse:^(NSNumber *success, NSError *error) {
+                                  [self.hudHelper hide];
+                                  if ([success boolValue]) {
+                                      PostRedeemViewController *controller = [[PostRedeemViewController alloc] init];
+                                      [self.navigationController pushViewController:controller animated:YES];
+
+//                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
+//                                                                  message:NSLocalizedString(@"REDEEMED_MESSAGE", @"")
+//                                                        cancelButtonTitle:NSLocalizedString(@"OK", @"")
+//                                                        otherButtonTitles:nil
+//                                                                  handler:nil];
+                                  } else {
+                                      [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_REDEEMING", @"")];
+                                  }
+                              }];
+                          }];
+    [alertView show];
+}
+
+
 - (void) cleanup {
     self.cameraSim = nil;
     self.readerView.readerDelegate = nil;
     self.readerView = nil;
 }
 
-static NSString *const kTriggerString = @"blisd";
-
 - (void) processURL:(NSString *) url {
     [self.hudHelper showWithText:NSLocalizedString(@"LOADING", @"")];
-    NSLog(@"URL = %@", url);
-    if ([[url lowercaseString] rangeOfString:kTriggerString].location != NSNotFound) {
-        [Scan processScanFromURL:url response:^(Balance *balance, NSError *error) {
-            [self.hudHelper hide];
-            if (error) {
-                [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_SCAN", @"")];
-            } else {
-                PostScanViewController *controller = [[PostScanViewController alloc] initWithBalance:balance];
+    [Scan processScanFromURL:url response:^(ScanResult *result, NSError *error) {
+        [self.hudHelper hide];
+        if (error) {
+            [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_SCAN", @"")];
+        } else if (result.type == ScanResultTypeCampaign) {
+            if (result.status == ScanResultStatusSuccess) {
+                PostScanViewController *controller = [[PostScanViewController alloc] initWithBalance:result.balance];
                 controller.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:controller animated:YES];
-
-                [UIAlertView showAlertViewWithTitle:@"Hooray!"
-                                            message:$str(@"Sucessfully created new balance. Number of scans: %d", balance.balance)
-                                  cancelButtonTitle:@"Awesome!"
+            } else if (result.status == ScanResultStatusRedeemRequired) {
+                [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEM_REQUIRED_TITLE", @"")
+                                            message:NSLocalizedString(@"REDEEM_REQUIRED_MESSAGE", @"")
+                                  cancelButtonTitle:NSLocalizedString(@"REDEEM_CANCEL", @"")
+                                  otherButtonTitles:@[NSLocalizedString(@"REDEEM", @"")]
+                                            handler:^(UIAlertView *view, NSInteger i) {
+                    if (i != view.cancelButtonIndex) {
+                        [self redeemWithBalance:result.balance];
+                    }
+                }];
+            }
+        } else if (result.type == ScanResultTypeCheckIn) {
+            if (result.status == ScanResultStatusSuccess) {
+                [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"CHECK_IN_TITLE", @"")
+                                            message:NSLocalizedString(@"CHECK_IN_MESSAGE", @"")
+                                  cancelButtonTitle:NSLocalizedString(@"OK", @"")
                                   otherButtonTitles:nil
                                             handler:nil];
             }
-        }];
-    } else {
-        OutsideURL *outsideURL = [[OutsideURL alloc] init];
-        outsideURL.url = url;
-        outsideURL.user = [User currentUser].email;
-        [outsideURL saveInBackgroundWithBlock:^(id object, NSError *error) {
-            [self.hudHelper hide];
-            if (error) {
-                NSLog(@"Error logging external URL: %@", [error description]);
-            }
-
-            NSURL *externalURL = [NSURL URLWithString:url];
-            [[UIApplication sharedApplication] openURL:externalURL];
-        }];
-    }
+        }
+    }];
 }
 
 #if TARGET_IPHONE_SIMULATOR
 
 - (void) fakeScan:(id) sender {
-    NSString *url = [MockData generateCampaignURL];
+    NSString *url = [MockData generateCampaignURL]; //[MockData generateCheckInURL];
     [self processURL:url];
 }
 

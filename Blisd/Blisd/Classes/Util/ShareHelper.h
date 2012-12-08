@@ -31,6 +31,7 @@ typedef enum {
 - (void) shareHelper:(ShareHelper *) shareHelper
      didReceiveError:(NSError *) error
  forShareWithService:(ShareService) shareService;
+- (void) shareHelper:(ShareHelper *) shareHelper didCompleteShareWithService:(ShareService) shareService;
 
 - (NSString *) shareHelper:(ShareHelper *) shareHelper textForShareWithService:(ShareService) shareService;
 - (NSString *) shareHelper:(ShareHelper *) shareHelper nameForShareWithService:(ShareService) shareService;

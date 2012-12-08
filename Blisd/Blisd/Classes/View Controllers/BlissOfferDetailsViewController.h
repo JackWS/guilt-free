@@ -8,13 +8,13 @@
 #import <Foundation/Foundation.h>
 #import "ShareHelper.h"
 
-@class Balance;
+@class BlissBalance;
 @class ShareView;
 
 
 @interface BlissOfferDetailsViewController : UIViewController <ShareHelperDelegate>
 
-@property (nonatomic, strong) Balance *balance;
+@property (nonatomic, strong) BlissBalance *balance;
 
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 
@@ -34,6 +34,10 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *addressLabel;
 @property (nonatomic, strong) IBOutlet UILabel *websiteLabel;
+
+@property (nonatomic, strong) IBOutlet UIView *progressView;
+@property (nonatomic, strong) IBOutlet UIView *redeemProgressView;
+@property (nonatomic, strong) IBOutlet UIView *standardProgressView;
 
 - (IBAction) back:(id) sender;
 

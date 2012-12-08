@@ -19,6 +19,11 @@
 }
 
 - (id) nonNullObjectForKey:(NSString *) key {
+    // Parse crashes if you try to retrieve data for a key that
+    // hasn't been fetched yet, so make sure we have data first
+    if (!self.isDataAvailable) {
+        return nil;
+    }
     id obj = [self objectForKey:key];
     if (obj == [NSNull null]) {
         return nil;

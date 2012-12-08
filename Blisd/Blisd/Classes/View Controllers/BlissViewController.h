@@ -11,6 +11,7 @@
 @interface BlissViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *balances;
+@property (nonatomic, strong) NSArray *nearbyCampaigns;
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 

@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 @class PFObject;
+@class PFQuery;
 
 #define MOCK_DATA 0
 
 typedef void (^ResponseBlock) (id object, NSError *error);
 
 @interface BlisdModel : NSObject
+
+@property (nonatomic, readonly) NSString *id;
 
 - (id) initWithPFObject:(PFObject *) pfObject;
 

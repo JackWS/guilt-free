@@ -7,6 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class BlissTableViewCell;
 
-@interface DealsViewController : UIViewController
+
+@interface DealsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+
 @end

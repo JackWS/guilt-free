@@ -26,6 +26,7 @@
 "ERROR_INVALID_CAMPAIGN" = "This is not a valid campaign.";
 "ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
 "ERROR_LOADING_SUBSCRIPTIONS" = "There was an unexpected problem loading your subscriptions. Please try again later.";
+"ERROR_LOADING_NEARBY_CAMPAIGNS" = "There was an unexpected problem loading nearby campaigns. Please try again later.";
 
 "NEXT_VISIT_GET" = "On your next visit, get:";
 "N_MORE_PURCHASES" = "%d more purchases";
@@ -80,6 +81,22 @@
 "OFFER_LIST_EMAIL_TEXT" = "I got Bliss at %@";
 "OFFER_LIST_EMAIL_NAME" = "Blisd!";
 
+"POST_REDEEM_FACEBOOK_TEXT" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_FACEBOOK_NAME" = "Blisd!";
+"POST_REDEEM_FACEBOOK_CAPTION" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_FACEBOOK_DESCRIPTION" = "You could, too!";
+"POST_REDEEM_TWITTER_TEXT" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_EMAIL_TEXT" = "I just got %@ at %@ using Blisd!";
+"POST_REDEEM_EMAIL_NAME" = "Blisd!";
+
+"DEAL_FACEBOOK_TEXT" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_FACEBOOK_NAME" = "Blisd!";
+"DEAL_FACEBOOK_CAPTION" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_FACEBOOK_DESCRIPTION" = "You could, too!";
+"DEAL_TWITTER_TEXT" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_EMAIL_TEXT" = "I just got a deal at %@ using Blisd: %@";
+"DEAL_EMAIL_NAME" = "Blisd!";
+
 "USER_SETTINGS_TITLE" = "User Settings";
 "SUBSCRIPTION_SETTINGS_TITLE" = "Subscription Settings";
 
@@ -91,3 +108,26 @@
 "ERROR_SAVING_SUBSCRIPTION" = "There was a problem updating your subscription status. Please try again later.";
 "LOCATIONS_FOR_NOTIFICATION" = "Locations for Notifications";
 "SUBSCRIPTION_SUBHEADING" = "Select to receive notifications from available locations";
+"MY_BLISS_TITLE" = "My Bliss";
+"NEARBY_BLISS_TITLE" = "Nearby Bliss";
+"NO_BLISS" = "You haven't started any Bliss campaigns yet.";
+
+"REDEEM_TITLE" = "Redeem?";
+"REDEEM_MESSAGE" = "Show this to your cashier, and have them press \"OK\" to redeem.";
+"REDEEM_CANCEL" = "Cancel";
+"REDEEM_OK" = "OK";
+
+"ERROR_CANNOT_REDEEM" = "You cannot redeem this offer yet.";
+"ERROR_REDEEMING" = "There was an unexpected problem redeeming this offer. Please try again later.";
+"REDEEMED_TITLE" = "Hooray!";
+"REDEEMED_MESSAGE" = "You redeemed this offer.";
+"ERROR_INVALID_URL" = "This is an invalid URL.";
+"REDEEM_REQUIRED_TITLE" = "Must Redeem";
+"REDEEM_REQUIRED_MESSAGE" = "You can't earn any more until you redeem your balance. Would you like to redeem now?";
+"REDEEM" = "Redeem";
+
+"CHECK_IN_TITLE" = "Success!";
+"CHECK_IN_MESSAGE" = "You have checked in here!";
+
+"ERROR_LOADING_DEALS" = "There was an unexpected problem loading nearby deals. Please try again later.";
+"NO_DEALS" = "We couldn't find any deals nearby for you.";

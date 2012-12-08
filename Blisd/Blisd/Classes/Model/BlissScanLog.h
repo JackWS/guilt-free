@@ -7,9 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BlisdModel.h"
+#import "Campaign.h"
+#import "BlissBalance.h"
 
-@interface Scan : BlisdModel
 
-+ (void) processScanFromURL:(NSString *) url response:(ResponseBlock) response;
+@interface BlissScanLog : BlisdModel
+
+@property (nonatomic, strong) BlissBalance *balance;
 
 @end
