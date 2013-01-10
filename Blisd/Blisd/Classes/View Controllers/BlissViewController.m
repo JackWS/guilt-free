@@ -17,6 +17,9 @@
 #import "BlisdStyle.h"
 #import "Campaign.h"
 #import "LocationManager.h"
+#import "User.h"
+#import "IntroState.h"
+#import "IntroView.h"
 
 @interface BlissViewController ()
 
@@ -24,6 +27,7 @@
 @property (nonatomic, readonly) BOOL loaded;
 @property (nonatomic, assign) BOOL balancesLoaded;
 @property (nonatomic, assign) BOOL campaignsLoaded;
+@property (nonatomic, strong) IntroView *introView;
 
 @end
 
@@ -111,6 +115,18 @@
 }
 
 - (void) update {
+    if (![User currentUser].introState.bliss) {
+        if (!self.introView) {
+            self.introView = [[IntroView alloc] initWithImage:[UIImage imageNamed:@"how_to_bliss.png"]];
+            self.introView.frame = self.view.bounds;
+            [self.view addSubview:self.introView];
+            self.introView.doneBlock = ^{
+                [User currentUser].introState.bliss = YES;
+                [[User currentUser] saveState];
+            };
+        }
+    }
+
     [self.tableView reloadData];
 
     if (self.loaded) {
@@ -149,6 +165,7 @@
     cell.businessLabel.text = balance.customer.company;
     cell.rewardLabel.text = balance.getX;
     if (!balance.customer.companyImage) {
+        cell.logoImageView.image = [UIImage imageNamed:@"placeholder.png"];
         [balance.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
             if (error) {
                 NSLog(@"Error retrieving image for company with name: %@, error: %@", balance.customer.company, [error description]);
@@ -178,6 +195,7 @@
     cell.businessLabel.text = campaign.customerCompany;
     cell.rewardLabel.text = campaign.getX;
     if (!campaign.customer.companyImage) {
+        cell.logoImageView.image = [UIImage imageNamed:@"placeholder.png"];
         [campaign.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
             if (error) {
                 NSLog(@"Error retrieving image for company with name: %@, error: %@", campaign.customer.company, [error description]);
@@ -186,7 +204,7 @@
             }
         }];
     } else {
-        cell.logoImageView.image = campaign.location.customer.companyImage;
+        cell.logoImageView.image = campaign.customer.companyImage;
     }
     [cell.logoImageView loadInBackground];
 

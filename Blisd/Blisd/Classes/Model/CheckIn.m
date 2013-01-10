@@ -33,6 +33,21 @@ static NSString *const kLocationKey = @"loc_Pointer";
     }];
 }
 
++ (void) getCheckInWithCustomer:(Customer *) customer location:(Location *) location response:(ResponseBlock) response {
+    PFQuery *query = [PFQuery queryWithClassName:kClassName];
+    [query whereKey:kCustomerKey equalTo:[customer toPFObject]];
+    [query whereKey:kLocationKey equalTo:[location toPFObject]];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (error) {
+            response(nil, error);
+        } else {
+            CheckIn *checkIn = [CheckIn checkInFromPFObject:object];
+            response(checkIn, nil);
+        }
+    }];
+}
+
+
 + (PFQuery *) queryForCheckInID:(NSString *) checkInID {
     PFQuery *query = [PFQuery queryWithClassName:kClassName];
     [query whereKey:kObjectIDKey equalTo:checkInID];

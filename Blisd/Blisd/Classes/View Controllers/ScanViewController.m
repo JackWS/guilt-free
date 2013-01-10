@@ -18,11 +18,14 @@
 #import "PostScanViewController.h"
 #import "ScanResult.h"
 #import "PostRedeemViewController.h"
+#import "IntroState.h"
+#import "IntroView.h"
 
 @interface ScanViewController ()
 
 @property (nonatomic, strong) ZBarCameraSimulator *cameraSim;
 @property (nonatomic, strong) HUDHelper *hudHelper;
+@property (nonatomic, strong) IntroView *introView;
 
 @end
 
@@ -80,8 +83,30 @@
                                         duration:duration];
 }
 
+- (void) viewWillAppear:(BOOL) animated {
+    [super viewWillAppear:animated];
+    if (![User currentUser].introState.scan) {
+        if (!self.introView) {
+            self.introView = [[IntroView alloc] initWithImage:[UIImage imageNamed:@"how_to_scan.png"]];
+            [self.view addSubview:self.introView];
+            self.introView.doneBlock = ^{
+                [User currentUser].introState.scan = YES;
+                [[User currentUser] saveState];
+            };
+        }
+    }
+}
+
+- (void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    self.introView.frame = self.view.bounds;
+}
+
+
 - (void) viewDidAppear:(BOOL) animated {
-    // run the reader when the view is visible
+    [super viewDidAppear:animated];
+
     [self.readerView start];
 }
 

@@ -15,12 +15,16 @@
 #import "BlisdStyle.h"
 #import "NIBLoader.h"
 #import "DealDetailsViewController.h"
+#import "User.h"
+#import "IntroState.h"
+#import "IntroView.h"
 
 @interface DealsViewController ()
 
 @property (nonatomic, assign) BOOL loaded;
 @property (nonatomic, retain) HUDHelper *hudHelper;
 @property (nonatomic, retain) NSArray *deals;
+@property (nonatomic, strong) IntroView *introView;
 
 @end
 
@@ -86,9 +90,25 @@
             [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_LOADING_DEALS", @"")];
         } else {
            self.deals = deals;
-            [self.tableView reloadData];
+           [self update];
         }
     }];
+}
+
+- (void) update {
+    if (![User currentUser].introState.deals) {
+        if (!self.introView) {
+            self.introView = [[IntroView alloc] initWithImage:[UIImage imageNamed:@"how_to_deals.png"]];
+            self.introView.frame = self.view.bounds;
+            [self.view addSubview:self.introView];
+            self.introView.doneBlock = ^{
+                [User currentUser].introState.deals = YES;
+                [[User currentUser] saveState];
+            };
+        }
+    }
+
+    [self.tableView reloadData];
 }
 
 #pragma mark UITableViewDataSource
@@ -117,6 +137,7 @@
     cell.businessLabel.text = deal.customer.company;
     cell.rewardLabel.text = deal.shortDescription;
     if (!deal.customer.companyImage) {
+        cell.logoImageView.image = [UIImage imageNamed:@"placeholder.png"];
         [deal.customer loadImageWithResponse:^(UIImage *image, NSError *error) {
             if (error) {
                 NSLog(@"Error retrieving image for company with name: %@, error: %@", deal.customer.company, [error description]);

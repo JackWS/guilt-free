@@ -70,12 +70,16 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
 }
 
 + (void) processCheckInScanWithID:(NSString *) checkInID response:(ResponseBlock) response {
+    [self processCheckInScanWithID:checkInID checkIn:nil isCampaign:NO response:response];
+}
+
++ (void) processCheckInScanWithID:(NSString *) checkInID checkIn:(CheckIn *) checkIn isCampaign:(BOOL) isCampaign response:(ResponseBlock) response {
     [CheckInBalance getByCheckInID:checkInID response:^(CheckInBalance *userCheckIn, NSError *error) {
         if (userCheckIn) {
             NSLog(@"Found user check in: %@", userCheckIn);
             userCheckIn.count++;
-            [userCheckIn saveInBackgroundWithBlock:^(id object, NSError *error) {
-                if (error) {
+            [userCheckIn saveInBackgroundWithBlock:^(id object, NSError *checkInError) {
+                if (checkInError) {
                     response(nil, error);
                 } else {
                     NSLog(@"Successfully incremented count for check in with id: %@", checkInID);
@@ -84,25 +88,21 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
             }];
         } else {
             NSLog(@"No user check in found");
-            [CheckIn getCheckInWithID:checkInID response:^(CheckIn *checkIn, NSError *error) {
-                if (error) {
-                    response(nil, error);
-                } else if (!checkIn) {
-                    response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_INVALID_URL", @"")]);
-                } else {
-                    [CheckInBalance createBalanceFromCheckIn:checkIn response:^(CheckInBalance *uci, NSError *errorCheckIn) {
-                        if (errorCheckIn) {
-                            response(nil, errorCheckIn);
-                        } else {
-                            NSLog(@"Successfully created user check in for check in with id: %@", checkInID);
-                            [self postCheckInScanWithUserCheckIn:uci response:response];
-                        }
-                    }];
-                }
-            }];
+            if (checkIn) {
+                [self createBalanceForCheckIn:checkIn isCampaign:isCampaign response:response];
+            } else {
+                [CheckIn getCheckInWithID:checkInID response:^(CheckIn *retrievedCheckIn, NSError *checkInError) {
+                    if (checkInError) {
+                        response(nil, error);
+                    } else if (!checkIn) {
+                        response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_INVALID_URL", @"")]);
+                    } else {
+                        [self createBalanceForCheckIn:retrievedCheckIn isCampaign:isCampaign response:response];
+                    }
+                }];
+            }
         }
     }];
-
 }
 
 + (void) processCampaignScanWithID:(NSString *) campaignNumber response:(ResponseBlock) response {
@@ -154,14 +154,29 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
     }];
 }
 
++ (void) processCheckInForCampaign:(Campaign *) campaign response:(ResponseBlock) response {
+    [CheckIn getCheckInWithCustomer:campaign.customer location:campaign.location response:^(CheckIn *checkIn, NSError *error) {
+        if (error) {
+            response(nil, error);
+        } else {
+            [self processCheckInScanWithID:checkIn.id checkIn:checkIn isCampaign:NO response:response];
+        }
+    }];
+}
+
 + (void) postCampaignScanWithBalance:(BlissBalance *) balance response:(ResponseBlock) response {
-    ScanResult *result = [[ScanResult alloc] init];
-    result.type = ScanResultTypeCampaign;
-    result.balance = balance;
-    result.status = ScanResultStatusSuccess;
-    // Get back to the UI now, and save the log in the background.
-    response(result, nil);
-    [Scan logBlissScan:balance];
+    // Create a check-in for every campaign scan
+    [self processCheckInForCampaign:balance.campaign response:^(id object, NSError *error) {
+        // An error is normal if there is no check-in associated with this location, so just ignore it
+
+        ScanResult *result = [[ScanResult alloc] init];
+        result.type = ScanResultTypeCampaign;
+        result.balance = balance;
+        result.status = ScanResultStatusSuccess;
+        // Get back to the UI now, and save the log in the background.
+        response(result, nil);
+        [Scan logBlissScan:balance];
+    }];
 }
 
 + (void) postCheckInScanWithUserCheckIn:(CheckInBalance *) balance response:(ResponseBlock) response {
@@ -172,6 +187,23 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
     // Get back to the UI now, and save the log in the background.
     response(result, nil);
     [Scan logCheckInScan:balance];
+}
+
++ (void) createBalanceForCheckIn:(CheckIn *) checkIn isCampaign:(BOOL) isCampaign response:(ResponseBlock) response {
+    [CheckInBalance createBalanceFromCheckIn:checkIn response:^(CheckInBalance *cib, NSError *errorCheckIn) {
+        if (errorCheckIn) {
+            response(nil, errorCheckIn);
+        } else {
+            NSLog(@"Successfully created user check in for check in with id: %@", checkIn.id);
+            // If it's a campaign, we don't want to trigger the 'check-in' UI code, so just log it
+            if (isCampaign) {
+                [Scan logCheckInScan:cib];
+            } else {
+                // Otherwise, do standard post-check-in logic
+                [self postCheckInScanWithUserCheckIn:cib response:response];
+            }
+        }
+    }];
 }
 
 + (void) logBlissScan:(BlissBalance *) balance {

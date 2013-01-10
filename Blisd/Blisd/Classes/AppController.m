@@ -71,6 +71,10 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
     [PFPush handlePush:userInfo];
 }
 
+- (void) applicationWillTerminate:(UIApplication *) application {
+    [[User currentUser] saveState];
+}
+
 
 #pragma mark Initialization
 
@@ -83,6 +87,7 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
             UIRemoteNotificationTypeSound];
 
     [self initializeParse];
+    [self initializeState];
     [self initializeUI];
 }
 
@@ -92,6 +97,10 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
     [PFFacebookUtils initializeWithApplicationId:@"132484773511826"];
     [PFTwitterUtils initializeWithConsumerKey:@"CGsQrEsgk8Z0EUHPc0BQ"
                                consumerSecret:@"91ZWdE68oPCmrOlxWdqkpUQakGECrwpWnUQbkgdBvwk"];
+}
+
+- (void) initializeState {
+    [[User currentUser] restoreState];
 }
 
 - (void) initializeUI {
@@ -118,7 +127,7 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 
-    if (![User currentUser]) {
+    if (![User currentUser].loggedIn) {
         [self displayLogInAnimated:NO];
     }
 }

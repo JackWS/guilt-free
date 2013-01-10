@@ -7,6 +7,7 @@
 
 #import <Parse/Parse.h>
 #import "User.h"
+#import "IntroState.h"
 
 @interface User()
 
@@ -16,8 +17,28 @@
 
 @implementation User
 
++ (User *) instance {
+    static User *_instance = nil;
+
+    @synchronized (self) {
+        if (_instance == nil) {
+            _instance = [[self alloc] init];
+        }
+    }
+
+    return _instance;
+}
+
 + (User *) currentUser {
-    return [User userFromPFUser:[PFUser currentUser]];
+    static User *_currentUser = nil;
+
+    @synchronized (self) {
+        if (_currentUser == nil) {
+            _currentUser = [[self alloc] init];
+        }
+    }
+    _currentUser.pfUser = [PFUser currentUser];
+    return _currentUser;
 }
 
 - (void) addToACLForObject:(id) object {
@@ -37,6 +58,21 @@
     [PFUser logOut];
 }
 
+static NSString *kIntroStateKey = @"introState";
+
+- (void) restoreState {
+    NSDictionary *introStateDict = [[NSUserDefaults standardUserDefaults] objectForKey:kIntroStateKey];
+    self.introState = [IntroState fromDictionary:introStateDict];
+}
+
+- (void) saveState {
+    if (self.introState) {
+        [[NSUserDefaults standardUserDefaults] setObject:[self.introState toDictionary]
+                                                  forKey:kIntroStateKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 
 - (NSString *) email {
     return self.pfUser.email;
@@ -46,6 +82,11 @@
     return self.pfUser.objectId;
 }
 
+- (BOOL) loggedIn {
+    return self.pfUser.isAuthenticated;
+}
+
+
 - (UserType) userType {
     if ([PFFacebookUtils isLinkedWithUser:self.pfUser]) {
         return UserTypeFacebook;
@@ -54,17 +95,6 @@
     } else {
         return UserTypePassword;
     }
-}
-
-+ (User *) userFromPFUser:(PFUser *) pfUser {
-    if (!pfUser) {
-        return nil;
-    }
-
-    User *user = [[User alloc] init];
-    user.pfUser = pfUser;
-
-    return user;
 }
 
 @end
