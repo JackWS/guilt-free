@@ -23,6 +23,8 @@
 
 + (void) getCheckInWithID:(NSString *) checkInID response:(ResponseBlock) response;
 
++ (void) getCheckInWithCustomer:(Customer *) customer location:(Location *) location response:(ResponseBlock) response;
+
 + (PFQuery *) queryForCheckInID:(NSString *) checkInID;
 
 + (PFQuery *) queryForCheckInAtLocation:(Location *) location;
