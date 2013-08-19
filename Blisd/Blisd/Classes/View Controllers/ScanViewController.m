@@ -186,7 +186,7 @@
 #if TARGET_IPHONE_SIMULATOR
 
 - (void) fakeScan:(id) sender {
-    NSString *url = [MockData generateCampaignURL]; //[MockData generateCheckInURL];
+    NSString *url = [MockData generateCheckInURL]; //[MockData generateCampaignURL];
     [self processURL:url];
 }
 
