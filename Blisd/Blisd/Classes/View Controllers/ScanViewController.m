@@ -26,6 +26,7 @@
 @property (nonatomic, strong) ZBarCameraSimulator *cameraSim;
 @property (nonatomic, strong) HUDHelper *hudHelper;
 @property (nonatomic, strong) IntroView *introView;
+@property (nonatomic, assign) BOOL pending;
 
 @end
 
@@ -152,6 +153,7 @@
 - (void) processURL:(NSString *) url {
     [self.hudHelper showWithText:NSLocalizedString(@"LOADING", @"")];
     [Scan processScanFromURL:url response:^(ScanResult *result, NSError *error) {
+        self.pending = NO;
         [self.hudHelper hide];
         if (error) {
             [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_SCAN", @"")];
@@ -195,10 +197,16 @@
 #pragma mark ZBarReaderViewDelegate
 
 - (void) readerView:(ZBarReaderView*) view didReadSymbols:(ZBarSymbolSet*) syms fromImage:(UIImage*) img {
+    // Prevent processing of more than one QR code at a time
+    if (self.pending) {
+        return;
+    }
+
     // do something useful with results
     for(ZBarSymbol *sym in syms) {
         NSLog(@"scanResult = %@", sym.data);
         NSString *result = sym.data;
+        self.pending = YES;
         [self processURL:result];
         break;
     }
