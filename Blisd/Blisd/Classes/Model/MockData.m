@@ -53,7 +53,7 @@
 }
 
 + (NSString *) generateCampaignURL {
-    return @"http://blisd.com/app/tickone.php?campaignNumber=121111lUyGCyZKKn";
+    return @"http://blisd.com/tickone.php?campaignNumber=130810BZgcDHtE441";
 }
 
 + (NSString *) generateCheckInURL {

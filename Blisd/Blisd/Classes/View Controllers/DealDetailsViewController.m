@@ -151,7 +151,9 @@
 }
 
 - (NSURL *) shareHelper:(ShareHelper *) shareHelper URLForShareWithService:(ShareService) shareService {
-    return [NSURL URLWithString:$str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.deal.customer.customerNumber)];
+    NSString *str = $str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.deal.customer.customerNumber);
+    NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    return [NSURL URLWithString:url];
 }
 
 - (UIImage *) shareHelper:(ShareHelper *) shareHelper imageForShareWithService:(ShareService) shareService {

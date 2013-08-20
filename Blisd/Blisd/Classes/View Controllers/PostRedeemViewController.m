@@ -126,7 +126,9 @@
 }
 
 - (NSURL *) shareHelper:(ShareHelper *) shareHelper URLForShareWithService:(ShareService) shareService {
-    return [NSURL URLWithString:$str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.customer.customerNumber)];
+    NSString *str = $str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.customer.customerNumber);
+    NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    return url;
 }
 
 - (UIImage *) shareHelper:(ShareHelper *) shareHelper imageForShareWithService:(ShareService) shareService {

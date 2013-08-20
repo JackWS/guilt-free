@@ -186,7 +186,7 @@
 #if TARGET_IPHONE_SIMULATOR
 
 - (void) fakeScan:(id) sender {
-    NSString *url = [MockData generateCheckInURL]; //[MockData generateCampaignURL];
+    NSString *url = [MockData generateCampaignURL]; //[MockData generateCheckInURL]; //
     [self processURL:url];
 }
 
@@ -197,6 +197,7 @@
 - (void) readerView:(ZBarReaderView*) view didReadSymbols:(ZBarSymbolSet*) syms fromImage:(UIImage*) img {
     // do something useful with results
     for(ZBarSymbol *sym in syms) {
+        NSLog(@"scanResult = %@", sym.data);
         NSString *result = sym.data;
         [self processURL:result];
         break;

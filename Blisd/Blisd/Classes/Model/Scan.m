@@ -22,7 +22,7 @@
 
 }
 
-static NSString *const kTriggerString = @"http://blisd.com/app/";
+static NSString *const kTriggerString = @"http://blisd.com/";
 
 + (void) processScanFromURL:(NSString *) url response:(ResponseBlock) response {
     NSLog(@"URL = %@", url);
