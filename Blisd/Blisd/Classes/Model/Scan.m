@@ -22,7 +22,7 @@
 
 }
 
-static NSString *const kTriggerString = @"http://blisd.com/app/";
+static NSString *const kTriggerString = @"http://blisd.com/";
 
 + (void) processScanFromURL:(NSString *) url response:(ResponseBlock) response {
     NSLog(@"URL = %@", url);
@@ -94,7 +94,7 @@ static NSString *const kTriggerString = @"http://blisd.com/app/";
                 [CheckIn getCheckInWithID:checkInID response:^(CheckIn *retrievedCheckIn, NSError *checkInError) {
                     if (checkInError) {
                         response(nil, error);
-                    } else if (!checkIn) {
+                    } else if (!retrievedCheckIn) {
                         response(nil, [NSError appErrorWithDisplayText:NSLocalizedString(@"ERROR_INVALID_URL", @"")]);
                     } else {
                         [self createBalanceForCheckIn:retrievedCheckIn isCampaign:isCampaign response:response];
