@@ -8,6 +8,8 @@
 #import <Twitter/Twitter.h>
 #import <Parse/Parse.h>
 #import "ShareHelper.h"
+#import "AppController.h"
+#import "Facebook.h"
 
 
 @implementation ShareHelper {
@@ -113,9 +115,7 @@
 }
 
 - (void) shareFacebookNonNative {
-    PF_Facebook *fb = [PFFacebookUtils facebook];
-    fb.accessToken = [PF_FBSession activeSession].accessToken;
-    fb.expirationDate = [PF_FBSession activeSession].expirationDate;
+    Facebook *fb = [AppController instance].facebook;
 
     NSString *name = nil;
     if ([self.delegate respondsToSelector:@selector(shareHelper:nameForShareWithService:)]) {
@@ -204,14 +204,14 @@
 }
 
 
-- (void) dialog:(PF_FBDialog *) dialog didFailWithError:(NSError *) error {
+- (void) dialog:(FBDialog *) dialog didFailWithError:(NSError *) error {
     if ([self.delegate respondsToSelector:@selector(shareHelper:didCancelShareWithService:)]) {
         [self.delegate shareHelper:self didCancelShareWithService:ShareServiceFacebook];
     }
     NSLog(@"FBDialog error: %@", [error description]);
 }
 
-- (BOOL) dialog:(PF_FBDialog *) dialog shouldOpenURLInExternalBrowser:(NSURL *) url {
+- (BOOL) dialog:(FBDialog *) dialog shouldOpenURLInExternalBrowser:(NSURL *) url {
     return NO;
 }
 

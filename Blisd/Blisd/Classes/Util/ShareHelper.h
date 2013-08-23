@@ -7,6 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <Facebook-iOS-SDK/FacebookSDK/FacebookSDK.h>
+#import "FBDialog.h"
 
 @class ShareHelper;
 
@@ -44,7 +47,7 @@ typedef enum {
 
 @end
 
-@interface ShareHelper : NSObject <PF_FBDialogDelegate, MFMailComposeViewControllerDelegate>
+@interface ShareHelper : NSObject <FBDialogDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, assign) id <ShareHelperDelegate> delegate;
 

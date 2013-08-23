@@ -1,0 +1,1626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00330A9BE9444CF781E1B6B0 /* timer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92E98CF9D5C746FF89325B95 /* timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		008785FC22F44D61B036F060 /* img_scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = A2796A1927F14C63A7766BFC /* img_scanner.c */; };
+		011EBFCD0E874674B91E3DAC /* TestFlight.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC33E68A83564A638CBC6DC4 /* TestFlight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		015A00CA7B5F401E90BD844E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB3C764444B4821AE0057CF /* AFHTTPClient.m */; };
+		029757E988324CDEBC37337D /* AFURLConnectionOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84A3879F6A8D4EB2BB313081 /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		032D2E4A2D1A4359B79EBE08 /* MFMessageComposeViewController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A77EDB5E4748F79F754E8E /* MFMessageComposeViewController+BlocksKit.m */; };
+		0363F2C8AF0943378D543380 /* NSInvocation+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB70EE050754456B8FE71B1 /* NSInvocation+BlocksKit.m */; };
+		037EB604D6664481B6347E07 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6481903AFB430CA4F460A0 /* AFHTTPRequestOperation.m */; };
+		047F9BEC1D0B493F8EEE8CD5 /* ZBarReaderViewImpl_Simulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AD6FCF1561401D88020671 /* ZBarReaderViewImpl_Simulator.m */; };
+		05189389BE8F4FC0B241840B /* NSString+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E5015BA2CB2D4E5AA9EA0944 /* NSString+ConciseKit.m */; };
+		06071F031B2D4EF1A97142E4 /* A2BlockDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2066B10D3E2D43D3A5312386 /* A2BlockDelegate.m */; };
+		066E33E972AD43D6A31DE6E4 /* UIAlertView+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C49304605A884688914A461B /* UIAlertView+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06EFD97419CA4B0A8C9C2CF0 /* video.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8B5EECC9EFEA4CBE8A4A0282 /* video.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0786E78EE6A0412498C9CB55 /* QMapElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4E92132F35324ADD84E2BF76 /* QMapElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		095214D1712D4E7C9A103FFE /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 618BE5E570AE4755B5CA320C /* NSObject+AssociatedObjects.m */; };
+		0A1B7EA47F074EDEBB5FF046 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F90B1A39064803A3763CF7 /* AFURLConnectionOperation.m */; };
+		0E00668C218741F489980BFA /* NSMutableDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9971DDFD14F999746B078 /* NSMutableDictionary+BlocksKit.m */; };
+		0F04C2FC6FB242D59E8C50A6 /* CKSingleton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4E2C44931A84039807BC875 /* CKSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F19436430AE4610BF2AD04B /* UIControl+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3A5B6B37871469D80D1188F /* UIControl+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F3731C920034C9386703049 /* QEntryElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BD7923618F4395BB560AE8 /* QEntryElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		10596BBE494146AE92FC68ED /* NSObject+BlockObservation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7864BCB29C394A91962061C7 /* NSObject+BlockObservation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		113DD481534B445EA3398345 /* NSObject+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9B5F807B71641909F5F3A6A /* NSObject+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11783A6134F04E1E945136B7 /* databar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0917586AB42949C4B175B7AC /* databar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11CE8B74EDCC4E5287B2C5D5 /* QEmptyListElement.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF219F9C0B34BC386F94AD7 /* QEmptyListElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		14E32C3696EE4719BF75E817 /* NSObject+BlockObservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 861D26BA31314D7C801CC47E /* NSObject+BlockObservation.m */; };
+		1545BCABFCC148FDACBBFA5B /* QLoadingElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 304227013F0E422EBE1BDA43 /* QLoadingElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15F726E11F9348A980299FF7 /* ParseDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B331B90DFA7944BB9FE8294D /* ParseDummy.m */; };
+		1694B786857547128828F556 /* QDateEntryTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E4CA65D55A94940BAD22E8E /* QDateEntryTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19703432C652462AA533B1AA /* QuickDialogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF313EDD767844949764D56B /* QuickDialogTableView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		1A53BF0B5BCB4AF5A3F9C9AE /* MFMailComposeViewController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4A9FF069E4617B682AA6E /* MFMailComposeViewController+BlocksKit.m */; };
+		1BF294ADEF4B4478B670BF29 /* AFNetworkActivityIndicatorManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4D7B90511F12453E9E2F4C4A /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C6A0317A4FD4AF39DF8874A /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB04426986A4992BB36629D /* UIImageView+AFNetworking.m */; };
+		1DD063780FAF415F9E935F4C /* NSTimer+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BF4131C5C414B4FB33FE2EC /* NSTimer+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20685B0AFE404F36BE386F62 /* pdf417_hash.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF8F145CBEBB44EDACF69E32 /* pdf417_hash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		210F895DCDBE46DD994ECBB8 /* QDecimalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 592232654E844595B50778AD /* QDecimalTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		2168354C8DA04A8B93ACF4E0 /* NSMutableArray+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F28D79DABEEA4E9CA1DCFCA5 /* NSMutableArray+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22D6DD4B576149B2B4F8082B /* QuickDialogController+Loading.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9DF90CB75E084A2B9BBFD2B3 /* QuickDialogController+Loading.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2327B7492D7845CABC75D3E7 /* UIPopoverController+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F964F3497E943158ADF7898 /* UIPopoverController+BlocksKit.m */; };
+		23995F2BCC5A45CA91A3343B /* QEntryElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEAD4F58DCD343E5A675AA95 /* QEntryElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		239AE2617DEA4D37B511A631 /* ZBarCameraSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = DF25E25BB7B34E40AD81A855 /* ZBarCameraSimulator.m */; };
+		240C903DDEFF41E78F26948F /* PodsDummy_Pods.m in Sources */ = {isa = PBXBuildFile; fileRef = 094E90E9D3B94392A8AF6408 /* PodsDummy_Pods.m */; };
+		25C04E33E37349929CA1570B /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0E6BF14534098A4A0E594 /* A2DynamicDelegate.m */; };
+		25E9ED709CDA49B382184951 /* NSDictionary+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CE78B2B5B116460CB39D40A5 /* NSDictionary+BlocksKit.m */; };
+		26B5DE0361B1449F94522349 /* ZBarCVImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 87E69227147D462988C40F16 /* ZBarCVImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27DD6DF4DA634FBEBB1626B4 /* QuickDialogTableDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A58D68F47443269E640FE3 /* QuickDialogTableDelegate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		28C5A61FB8E742C58DE44358 /* NSIndexSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDED6FA0D46401A83ADB5EB /* NSIndexSet+BlocksKit.m */; };
+		28FD51E8FBAC4F8D9C4D0CF4 /* QRadioSection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C8C4802C55F4854964354F0 /* QRadioSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CAE23E3F9634346A91BA352 /* sysv.S in Sources */ = {isa = PBXBuildFile; fileRef = 50E3CD5A082F4C168A60057A /* sysv.S */; };
+		2EA3B105AF9045128DC0AF29 /* QBindingEvaluator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6721F333734E404ABFA828EB /* QBindingEvaluator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F5005338F27470AA1B84570 /* ZBarHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898DD6EF5ADD4FBC947D848B /* ZBarHelpController.m */; };
+		306E4868C15A4F1E8A9428C9 /* NSDictionary+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E6F40F7E75924DCA951C39BC /* NSDictionary+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31BFB2325D934F46B13AD7C5 /* UIBarButtonItem+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9314A87D3C404BF585767DE1 /* UIBarButtonItem+BlocksKit.m */; };
+		3295F06B7E8D44C685DFB7D3 /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC3C45F5A2411C945CEC30 /* AFJSONUtilities.m */; };
+		32FAE0D09F7146D49063839F /* QBadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D411DBFABC46FBB9454BEE /* QBadgeLabel.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		341D0A85BBF74E569A759D07 /* QBooleanElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CD28F226AF694678B71B7BC4 /* QBooleanElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		34E22F134955495B95929A1D /* scanner.c in Sources */ = {isa = PBXBuildFile; fileRef = 656040551FCB453482C775E7 /* scanner.c */; };
+		37788B5B03C14B0F8302FB0A /* QEntryTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1422235D3FE14880921BA1A9 /* QEntryTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38E3949021DA4677A9FC7BBC /* QuickDialogEntryElementDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38D1650828BE4495B8ECC46C /* QuickDialogEntryElementDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39A64B6F08FF4E5DB0B26E8E /* QRadioSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C770DB17CCB406286E532D2 /* QRadioSection.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3AE4DF7DB38C47D3B50B5E7D /* QDateTimeElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C995C65E2524854A784DDBD /* QDateTimeElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3AECAB7E7681462195FCF45B /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 4C8AB5CE66C34441B0069621 /* error.c */; };
+		3BACE824D2414849B59B5D2A /* AFPropertyListRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A713D4083FED4A98BBB7E304 /* AFPropertyListRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BFD4980A01340FBB8C2672C /* QEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 905A2B3EA73448B0915B4C97 /* QEntryTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3C5773425EE44BEE9A58FFBD /* QSelectItemElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A912F5A2C1461BA45033B6 /* QSelectItemElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3D8ECCEFBA9549888ED6FCB2 /* NSDictionary+ConciseKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A9E77D6A119490EBFC5625F /* NSDictionary+ConciseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E58059B060B414780EE23DF /* prep_cif.c in Sources */ = {isa = PBXBuildFile; fileRef = BBE16B9DAB384182AE708D55 /* prep_cif.c */; };
+		3FDD56DF0F4F49F48132D543 /* ZBarCameraSimulator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D401692E8CA7434595EF0021 /* ZBarCameraSimulator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FFED7E974AD42ACA49EF4C5 /* QFloatElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4112E6107233440A8B0C3FDA /* QFloatElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40201C495027432CA160DDC5 /* NSArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 353FF72C64AF47A3805D5F35 /* NSArray+BlocksKit.m */; };
+		415D1C9407BC4EA3BAA7A85C /* fficonfig_armv7.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6C82F3C881148ED85560AB1 /* fficonfig_armv7.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41AD4DC5EB464DE796450811 /* config.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6FC46BDF927A403ABF6B4590 /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		42A14C8B66B44C49A7608906 /* UIWebView+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6C6179D32624AC1B2651E96 /* UIWebView+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		431374F4226B4DF091748400 /* A2DynamicDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1962686DA3CD4072B25C5804 /* A2DynamicDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4347ADF2F38549888FF6A80D /* event.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E003C70DBBCB4F1798A93E01 /* event.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		441B5C0EA36F4E87B3459800 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF802CA395443DCB43F23AE /* TTTAttributedLabel.m */; settings = {COMPILER_FLAGS = "-Wno-arc-bridge-casts-disallowed-in-nonarc -fobjc-arc"; }; };
+		446B3427FC7A46C590F2D004 /* DOAutocompleteTextField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96E0578AEEB04B5C874B294F /* DOAutocompleteTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44CAAFF3A2CE48D9A8E24E67 /* ZBarReaderController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD9F3167FBA04CBC8D377740 /* ZBarReaderController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45785E8283FC4DC7B96B93D9 /* QBooleanElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 83C34BE41E7D456495FC54CE /* QBooleanElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		458098C792FD42D9BC1E3179 /* QuickDialogController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 055809E3A2F0457A874BB9AF /* QuickDialogController+Helpers.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		45B7FD511CED46ED8EC036E7 /* BKGlobals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 17860566B4CD42478CC2430F /* BKGlobals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45D40207915247BEA2124D83 /* QDateEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17895B9DB9EB4FA88637D4B3 /* QDateEntryTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		4647A1CD715C42CA9CAA8751 /* NSObject+AssociatedObjects.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 694BDD1DC4EE490497D4C165 /* NSObject+AssociatedObjects.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47F75FF327684E308B2BB5BE /* BKMacros.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CE8828A4E6040149EB678C7 /* BKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C895766C7E04677B3340DC0 /* ZBarReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FA35E5FA0E4B6DA200E993 /* ZBarReaderView.m */; };
+		4CA7FE28CA404213B06DC91C /* QSortingSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0670E0A9107949D3B2BAAF08 /* QSortingSection.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		4D2FFFD523474D99BDC7C9FE /* qrdec.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1CE52D2B36ED4092B07BA88A /* qrdec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DE44DA032F04106AFFF0D4F /* pdf417.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2AB0C0402114C5B881C557D /* pdf417.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E766D5C6CE2441495015300 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9F2972EFA41F68C93A351 /* AFJSONRequestOperation.m */; };
+		4F29F21CEED54AA8B2817CBB /* ffi.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 62733098299641F4B9DD0376 /* ffi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50A5AB0E7B844BC6BED73932 /* NSMutableArray+IMSExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B45A9E6A8AD64E4C91C118B5 /* NSMutableArray+IMSExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		511E352AC6BD4BEA94887974 /* i25.c in Sources */ = {isa = PBXBuildFile; fileRef = CA174107FD744A479122031B /* i25.c */; };
+		5249B28EAF4A4770AD2B44B5 /* ZBarCaptureReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9CEDA8E3941F3B6B89D59 /* ZBarCaptureReader.m */; };
+		528B1E94BD9946BBA2905976 /* QDateTimeInlineElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BDC1EA5FF3784E3383563024 /* QDateTimeInlineElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52B3809F783341BB94C7CA39 /* A2BlockClosure.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 971BFE76D97345759053C52F /* A2BlockClosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		534185C603814B97818FC8F5 /* AFImageRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1203760BE9BF4519A8654637 /* AFImageRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5369EEFDBEDB44DBA26A454B /* QLabelElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06B87960D4514A17A71BA040 /* QLabelElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53763D8E6C7C4A65BCA81FE6 /* UIView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 084312D102EA493EBC1CF8C4 /* UIView+BlocksKit.m */; };
+		549739E476014584B332D3A2 /* refcnt.c in Sources */ = {isa = PBXBuildFile; fileRef = 70FE2469191D4E2883A04C6A /* refcnt.c */; };
+		560BB1AC62DA4B89A19EE697 /* QPickerWhitespaceDelimitedStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C72ABEC1606A48C6A7BC1DB9 /* QPickerWhitespaceDelimitedStringParser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		56995D05A1164E639935905E /* debug.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A487F75174F342CEA3EE964C /* debug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57C2ACF655E240629EB9D62D /* A2BlockDelegate+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3EBD5A89B3D42F9A3960260 /* A2BlockDelegate+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57E1B22CEBC04B0FB2492505 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E917ACECEF04C4A832AB367 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		588C24C62D6B44379AEE383C /* code93.c in Sources */ = {isa = PBXBuildFile; fileRef = C200A2B0D85647C0AEC5C052 /* code93.c */; };
+		595A5B262B8548E9AB5206CF /* QuickDialogController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B8CF1CD4B56442F862C7B0D /* QuickDialogController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A683B8B82424D0FA21C8031 /* AFJSONUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 054FC3EEE42847C6AC75EBCE /* AFJSONUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B200A9A609B4D129AC4D11C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971E983A609E4C499A48FEF9 /* MBProgressHUD.m */; };
+		5BADD1D13FF7462BA1210FFD /* A2BlockDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB4721BDE67B4C1E821ABB27 /* A2BlockDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D2EF6938070447294412BEE /* QuickDialogDataSource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BCB50574A7F24E6A97BA06F3 /* QuickDialogDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DA1166E7B7640958711E5EC /* ffitarget_i386.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 455549F82E164BD586C75A93 /* ffitarget_i386.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E454C13279847789F69E865 /* refcnt.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C246AD724A204F00A90F810A /* refcnt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E7D7FF0CE644D60BD1D3A3A /* UIControl+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 82029E002F614735AF00D42C /* UIControl+BlocksKit.m */; };
+		5EC1018669B04797A200BFA7 /* ZBarHelpController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3F35F304BBB4002B3C24A66 /* ZBarHelpController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		607FF236E5BB4676BA32B53B /* QMultilineTextViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E1D547130E0240CEB36A6196 /* QMultilineTextViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6259611652364266A542E83B /* QAutoEntryElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8949A663A4314FD28368A01B /* QAutoEntryElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6343B47B15C6464A8E6578C8 /* QDateTimeInlineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD3174A739F4D56A670CF87 /* QDateTimeInlineElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		64235196EEB44CDDA3B2D30D /* x.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 57521EA51B6349B39679A78D /* x.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		646D6DEA23454624937E886B /* QRootElement+JsonBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51CE8738394BA389AF4AB3 /* QRootElement+JsonBuilder.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		64705E92DEAF4FBA81416351 /* UIActionSheet+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2DB77954B2E04D44910C5217 /* UIActionSheet+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6493F0EB95B04623BD9A1D06 /* Flurry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE6062386D6B4733861A41D2 /* Flurry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6498A3C02EDE474D958E396B /* UIGestureRecognizer+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5FE70969F04C0AAFDFD6D3 /* UIGestureRecognizer+BlocksKit.m */; };
+		66EA5DA6041A4C189CF00BF6 /* symbol.c in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E19222EE6437486C95B71 /* symbol.c */; };
+		677854EF3C7647A3A0A8EB73 /* Reachability.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B1DE640E9464A5CB2063558 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6778850F00ED4BDEB1DCFDB8 /* AFJSONRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D16DA18D7E94CE28205281C /* AFJSONRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		681F99C7C67740F8858A21F7 /* NSURLConnection+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857EF8FC2F44C9E8195CBB5 /* NSURLConnection+BlocksKit.m */; };
+		689506B9DBCF4C5BA75037BD /* NSMutableSet+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C532B79C77684C4B98D6C28F /* NSMutableSet+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68A4701DC4E64C98AA15AAC3 /* QPickerWhitespaceDelimitedStringParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D3737768F0E40E598D8C869 /* QPickerWhitespaceDelimitedStringParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69195BB25956407FB0CCEE98 /* NSURLConnection+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 25429A78B42C43B4B6386CD4 /* NSURLConnection+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69542165DBA343E9862F2DA4 /* QMapViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82D35551AF1B4AB1AD45DC37 /* QMapViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AB1B5AEC61A451381A67E7C /* QSegmentedElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FC39E6291F45AE8F5D7DC7 /* QSegmentedElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		6AD05E54E41B43338130B2C2 /* MFMailComposeViewController+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E879225FD7D4D0C86CA0DC2 /* MFMailComposeViewController+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B69F4F3E881428B8854BD87 /* NSMutableArray+MoveObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7C7378EB1EA4541B21055D1 /* NSMutableArray+MoveObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B8D3364FEB0426D961F71DE /* qrdec.c in Sources */ = {isa = PBXBuildFile; fileRef = 7C926D2BDBC949008785D1EA /* qrdec.c */; };
+		6BD6767DB83142FFA50C59B3 /* QPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A3CD041FAF41ABA906B79F /* QPickerTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		6D22226F87E749B2AAD1D31E /* ZBarSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 037ECF71019C4D638814DF8C /* ZBarSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D9EF56E8434404990A6FC5A /* svg.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45BA6C5236C348A588D450D1 /* svg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DF36588401B491FA143EDF0 /* CKAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3395631F8DA54572B61945E3 /* CKAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E3992CC940C4A5581B2C35F /* QDecimalTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C747C02C6A13432AA03120BF /* QDecimalTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FAD0AB76790489A95AD67B3 /* ffi_common.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5121F3338EB4F7B88A8C5AE /* ffi_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70264BBB125B41A68AB06A87 /* qrdectxt.c in Sources */ = {isa = PBXBuildFile; fileRef = ADE7229E87A8427FABCAC2EE /* qrdectxt.c */; };
+		71C4343D638A41D99AC68B51 /* QuickDialogTableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59E558CBE1DF4AF7BF59C844 /* QuickDialogTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		720B8D5ED1894FE49BB29506 /* QSegmentedElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CCC0BD5922524190BBB3ACB4 /* QSegmentedElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72FAEB59CCF44CAE9C8EB712 /* NSMutableArray+IMSExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C04921897BC544009FC564DE /* NSMutableArray+IMSExtensions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		7354F4CA31EB4D978D0A8905 /* QTextElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7B38909A76D498697B713E3 /* QTextElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73B028572AAF4813B3AE6C56 /* NSArray+ConciseKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4A9E5C905844AFA9F33666F /* NSArray+ConciseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7417B386F595412A8079D8EA /* NSCache+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 605B7CD4AFEE4F1396C58B8C /* NSCache+BlocksKit.m */; };
+		759D8E49645547F9A78B2BF6 /* NSDictionary+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F271E421DB44F70A21B8DD3 /* NSDictionary+ConciseKit.m */; };
+		7794C0F9322446CF935BC0AE /* types.c in Sources */ = {isa = PBXBuildFile; fileRef = DCF78D3A05264F3BAE18EC60 /* types.c */; };
+		77B8371D654B4C92B2361F9E /* ZBarReaderViewImpl_Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD58ACBCC0A476CBD13855B /* ZBarReaderViewImpl_Capture.m */; };
+		77C71C91E916409E9C75813C /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 230C1309194643E1B0FEDC74 /* util.c */; };
+		7B2B3710EA1F47C587F1537D /* QSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9F92D1DC44F29983D60E0 /* QSection.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		7C4B7467F17949A0AACF3749 /* processor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0ADC4869466248F5902AD001 /* processor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D27ED0C4DC0451489F1A95B /* NSMutableArray+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FE2D4133843C9A40381F1 /* NSMutableArray+BlocksKit.m */; };
+		7E67569E31204AC993E02FB6 /* QPickerElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F11BF7A268AA4BB6B375B567 /* QPickerElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		7EE6A6639DEB40148BB54195 /* ZBarReaderViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A374C1FDF9B4E80B54AC0E1 /* ZBarReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F5A2CC6EC6446C9A3B82EFC /* QRootElement+JsonBuilder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F282A1C0759C4F05A8EAB16B /* QRootElement+JsonBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FF02E94A38F4BC6BBD05A47 /* NSMutableIndexSet+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 041409E78CE64A949A6589BB /* NSMutableIndexSet+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		805049CA083D48579291F3CB /* symbol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6046FC0B12754AFDA8787A8B /* symbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80C95A65793040079A29E18A /* QTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2A179489C22041408D319F02 /* QTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80E2CE5AF6464433B67306B6 /* UIImageView+AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 03E51249CE3848A98A3F7B22 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80FEE4D6E32D4C26A7527A85 /* QRadioElement.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B76A8D160F4DDA8E7F274A /* QRadioElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		8166A4E5640F4858A78EDEA5 /* QPickerElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 404A9BDFBDE847858BBFEF2A /* QPickerElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81C58684362D4B47A323934F /* QDecimalElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA34E538BD4F46AE1A7522 /* QDecimalElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		81DB0745E86D4345A02BA002 /* QPickerTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB55A73803254CD48C4673AE /* QPickerTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8322D301198547C7836EB0E6 /* img_scanner.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 88D54ADD004C486AA5D2F089 /* img_scanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84FF43E1C2674FA0839FE909 /* QButtonElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A6E2BFCB5BFE4605973514DC /* QButtonElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		854834928FA74F60BD5B4B00 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E38AB601556B435B9320877B /* AFXMLRequestOperation.m */; };
+		8722BF743645482180EB1BD6 /* QRootBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9563AF07AF4786862477DC /* QRootBuilder.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		87B733BFC9FB43FA94470BD4 /* CKMacros.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D935F44AA0CC47268098BD90 /* CKMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88A153F54C5A43C396F2569B /* QLoadingElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 37710B88026442A5BA3F3844 /* QLoadingElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		895B577B418641909406DAAF /* QuickDialogController+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = C549383DA3744ECA8183FBCD /* QuickDialogController+Loading.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		8973A3CBF1324F3EBB1CE93E /* ffi_i386.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99F632B5831E49F98790BF43 /* ffi_i386.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A11A7F9BF12468B97A8C229 /* NSSet+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA1AC4212C4A462F9742A62D /* NSSet+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BAEE083D35641A78520D338 /* QEmptyListElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EC4DD5001B49F293439C35 /* QEmptyListElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F665794938649EC9F5A5DDB /* NSTimer+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 561E004DAE3541EF87B7BD45 /* NSTimer+BlocksKit.m */; };
+		8F99F3A587574444B013B3C1 /* QWebElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 256D9B0004F44E4993121806 /* QWebElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FBAF73ED60A46C7A7304E23 /* NSMutableDictionary+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B2D450B001848DEBF9893BE /* NSMutableDictionary+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90354DB4450342F492C80753 /* UIActionSheet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3242C51BE74C50A429E759 /* UIActionSheet+BlocksKit.m */; };
+		90A8F10F0E72435E8D32BADC /* fficonfig_i386.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DD19BD49F1204C3E896597FD /* fficonfig_i386.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91191A035DFF43B7A92A71DD /* QuickDialogWebController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98C929A445044CB09EC731EB /* QuickDialogWebController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94C3CD23F7D9440EB5D17D69 /* qr_finder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9C0AB1133F3A4484A70DDC0A /* qr_finder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		964B8D14569442B9B79414FC /* qr_finder.c in Sources */ = {isa = PBXBuildFile; fileRef = A4280250654C4A13B4CA2CD8 /* qr_finder.c */; };
+		967C7DD2F76841E19A828612 /* ffitarget.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 19750DB221374DC79134705F /* ffitarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96F5CB452D7A4DF784B16919 /* QMultilineTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8BF758C2D40A3B3959822 /* QMultilineTextViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		972C98CCF64A4209B30CEE97 /* posix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7936AFB781D147878D1D8F87 /* posix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98481CFA0A18459DBC4012E0 /* QRadioElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 42244EBA00D14F9098B13AFA /* QRadioElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A25C5760FB14B31A7F65FFE /* QSortingSection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 74C95E27945B4A09987F9494 /* QSortingSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B3286B2537041ADB1F6A42B /* QBadgeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A27CDADBB44C2D86458DD8 /* QBadgeTableCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		9BE9A29794B54B63AAC776FE /* image.c in Sources */ = {isa = PBXBuildFile; fileRef = 8E51C30CE5764CA49BD8E5F4 /* image.c */; };
+		9C33FE10B843472D8EFC863D /* QRootElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DA4102DDF649EB876E8C06 /* QRootElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		9C9B17BCE35444EF99991F76 /* ZBarReaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F636F0E6D6407286E3E775 /* ZBarReaderController.m */; };
+		9D5F214EEE5846EABE7299B3 /* UIPopoverController+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6DD8B2F52FCA4AA283074770 /* UIPopoverController+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D922CC742224792B87AE9D6 /* qrcode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AB838D8EE8A34EDD9B03B5E9 /* qrcode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DB5BAA5B8FA4DB78F37B911 /* ZBarImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B6297F3AC99643E8BA4E4755 /* ZBarImage.m */; };
+		9DF0B7F9FD1F4B5C8DD209B7 /* binarize.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C0A64C829B6B4EEBB1460ADF /* binarize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FCEFFAF5AE2427F9866403C /* rs.c in Sources */ = {isa = PBXBuildFile; fileRef = EDEE8425C8D1405BA4ABA964 /* rs.c */; };
+		A1F6CCD76BB742DBB6551724 /* QBadgeElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B19AF598FE4B3FB25422DF /* QBadgeElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A22ADB3056054BD5A20B1022 /* QAutoEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEB02162E57436693200A9C /* QAutoEntryTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A3EDD424C88C4C6CA70D1147 /* image.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1D31A4C789D54B8FA77038FC /* image.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3FF776112FC487D8BD9D55E /* raw_api.c in Sources */ = {isa = PBXBuildFile; fileRef = 39CC7AC288344B77B810798D /* raw_api.c */; };
+		A411212D66504CC7B7E30FF4 /* QMapElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C775985FC268401380402B9B /* QMapElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A4958C4BA07A427B95889D08 /* QWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868ACB32DF44E24820A82CE /* QWebViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A4C5F63FDFD94D2DB6B430EC /* NSInvocation+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = ABEC59B398C840F9B0807FBD /* NSInvocation+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A50CF4ABBDE34E1A8CF1F27F /* ZBarImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 404409DD160548D3A2D4F9A4 /* ZBarImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5551FBA2037411B89A0E214 /* A2BlockDelegate+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA0406BE67940899D3EC76B /* A2BlockDelegate+BlocksKit.m */; };
+		A610B965AE1D4BB4B2C03239 /* QFloatElement.m in Sources */ = {isa = PBXBuildFile; fileRef = EF79DBA4C07848789D88E14F /* QFloatElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A6CAFBF3A69E41B28E099C81 /* rs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 75629880307C4253A2CC4D41 /* rs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6CF889CFD0D480392410C9D /* ZBarImageScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = D093E4B711F24B5784F4005E /* ZBarImageScanner.m */; };
+		A716598F76E44DD9AEDBB67C /* ParseDummy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 68E5CE4E550E4BC1ACD43664 /* ParseDummy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A724C6D12C504D0B8B7B99F2 /* darwin.S in Sources */ = {isa = PBXBuildFile; fileRef = BCE82B1619DA4F4887DAA27F /* darwin.S */; };
+		A899116E2079461EB7D318DD /* QBadgeLabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 30B8FB39C43944CA91E69359 /* QBadgeLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A98535EBD4EE464FA4C62B09 /* AFHTTPRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D2AD6CC20E242CBA11B6D26 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA1C4CBBDBF744FD8F160BF1 /* MFMessageComposeViewController+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69AADD6C9C74417180F28303 /* MFMessageComposeViewController+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABB2D92C9F1B4AC6A32725C5 /* QDecimalElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64DBC3FB4C934084B0E9F74A /* QDecimalElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC92083DBCDB4492BF4B6BB6 /* bch15_5.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A40E74E3EC66431C94978AD8 /* bch15_5.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD22ED57C2034753A393CE1F /* QuickDialogTableDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A24321FD7EE64EEAB2814FA8 /* QuickDialogTableDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE2D7589B7DF4937B354C0D0 /* QuickDialog.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F18E3B7211242E081886E21 /* QuickDialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE6263E01B6845049A1E3FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54C27CC239447EDAE6068C3 /* Foundation.framework */; };
+		AED8900AE93F46AD938CB5B5 /* QWebViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 81D9DEDC020946A3B25422A3 /* QWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0DFD7FD72044C58ABE6F32C /* ZBarReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B877045F314E6991089238 /* ZBarReaderViewController.m */; };
+		B3039A3807E1492C9B566C94 /* NSMutableSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A6EC86D223487281967B8A /* NSMutableSet+BlocksKit.m */; };
+		B319304E5B6A445B979F9DAB /* UIView+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6D267E16B80483D957CA3A2 /* UIView+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4C5BF574E2D4D2993A7AA28 /* QLabelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7AFC6D2E174B4DA46EC975 /* QLabelElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B599698328704F41A1FC1A76 /* databar.c in Sources */ = {isa = PBXBuildFile; fileRef = B084E7F0B5BD4C76AACF91A0 /* databar.c */; };
+		B69F51A425C94C6FB2AC832C /* trampoline.S in Sources */ = {isa = PBXBuildFile; fileRef = A2740E13325D4407B9D9425E /* trampoline.S */; };
+		B6D163444E3C431CA82D37F7 /* NSArray+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2D61A88069E8494A8DBD5753 /* NSArray+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B81D67FEA0774BA7ADC68C56 /* QRootBuilder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F57952053C74433EA0122553 /* QRootBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B83B9A760E6542C8849EAC73 /* ZBarReaderView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D70F7A8925634181A23C9047 /* ZBarReaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8724BF4CA9542B38A7460F5 /* fficonfig.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CBCBC835F37E448488281914 /* fficonfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89A4A94D4964FDFBB3B7602 /* QMapAnnotation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71EE69584A234D54B333D9D5 /* QMapAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B95DBC0FB4664411BD62FA0E /* AFHTTPClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A56F842F0085420E989EACB3 /* AFHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9DDA212C8304E4F9ADB5EF8 /* NSIndexSet+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C0ED1CD4720A4B779AB8EC74 /* NSIndexSet+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA094442E78E4BCE8C355708 /* UIAlertView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C92D62F373AD43798EAB397C /* UIAlertView+BlocksKit.m */; };
+		BD8129BCA2DD484B9B93AA12 /* QTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBAAC71861143999BC8E95B /* QTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BD86CED457CB429092C662F4 /* zbar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9615740E4ADA40C7B9DF6FF5 /* zbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BDE3F0D02AB6436D86989CCF /* QAutoEntryElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D36972F8357040D1B7E2ABBD /* QAutoEntryElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BE2F5BF9237E440E99025509 /* QuickDialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7BB19B59F634181A4BA4DC1 /* QuickDialogController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		BF53FD4245704417AC994E47 /* ZBarCaptureReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4EF021BD444D4F2FAA82CAD4 /* ZBarCaptureReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF8AA120E615446693942537 /* QSection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3391F97E2FD4F5F9FA584C3 /* QSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFA3965FC9E445EABA3CAF5C /* ffitarget_armv7.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B1810DEEA48B40EEA2982852 /* ffitarget_armv7.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C10BCE82E4BD4BB089EA3558 /* QuickDialogStyleProvider.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A51EF63400B463CBE07D365 /* QuickDialogStyleProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C20B018ED6264C40842A37D8 /* QMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E230EB6D3B040DE9257FE0A /* QMapAnnotation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		C281779168C6469CA81216B3 /* QDynamicDataSection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 92256485EDD7400A880572D3 /* QDynamicDataSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3A8EB242FDA4434A75B430F /* QDateTimeElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B59490B8D82A4B4E9F9D08EB /* QDateTimeElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C442C9CE16114D0B89BB8995 /* TTTAttributedLabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 03589E8C533D4D52891A1546 /* TTTAttributedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C575BE64EF4A4D4890C4E5DF /* UIWebView+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5043F5B60945AB976BAB65 /* UIWebView+BlocksKit.m */; };
+		C6945C1DCB834D9FB6D80704 /* isaac.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76F713BBDADB424EBDBA5EE0 /* isaac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6A31CA870844820A45D4EA4 /* QBindingEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = 48096B810D7C4761A91F1B25 /* QBindingEvaluator.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		C6EA0F2C81DE4E5C85BD5D9E /* QRadioItemElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 77D06CF1E9294E0EBA543275 /* QRadioItemElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6FD5273BD6A40BD8562DB51 /* decoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9A0857D95D148A19B4D7E3A /* decoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8495D6E883142D08C3B80EA /* ConciseKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B60562ADFA1400F999EC7C8 /* ConciseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA6DC2D9BB1B486691E914C7 /* win.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A27F0EF5CE724096AFF1CC91 /* win.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAC5FF74AB824C8DB4258C07 /* QuickDialogWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 250CA9F8993B48EABF2EE4DA /* QuickDialogWebController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		CB5B2B8A59974C1E96EDCBA4 /* QAutoEntryTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FCFC9FFE67FD4133A1558664 /* QAutoEntryTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBFE5B37F28543CBAF4B7CBB /* QTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE2F1F5F06F4120948E6328 /* QTextField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		CCDDAED719F44071B2680A22 /* code39.c in Sources */ = {isa = PBXBuildFile; fileRef = 932FE88EA13249C989640691 /* code39.c */; };
+		CD650B022A4B42DFA384EE0B /* NSSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8284AF7684AADBD32F281 /* NSSet+BlocksKit.m */; };
+		CDC657AEFA5243D2999A1E9D /* mutex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D886212C738429AAB467628 /* mutex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDF563A3E3CB4730B8B38DEA /* QuickDialogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A00F62A5EF3494285CAC1CD /* QuickDialogDataSource.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		CF848A0E42AE43BF98952BA7 /* ZBarSymbol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF9A89771BBC41F891410E24 /* ZBarSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0A1DD9878194ED2BF7F33F5 /* QBadgeTableCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 244E5EBF28EE4D79BB7E2B2D /* QBadgeTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D14836E5FC0D40739D619B77 /* QPickerValueParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15F6396954924151B54FC767 /* QPickerValueParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D19DBD3AB9D2457386722247 /* QDynamicDataSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCF173B8F734967BF41026C /* QDynamicDataSection.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		D1DD45C28D0648FAB8CEFFF4 /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = 185930A6461A4F5E886DE7C2 /* ffi.c */; };
+		D217BA2FB1FF41428F023599 /* QRadioItemElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B4FBAEBA4F43829778ECA9 /* QRadioItemElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		D3D395C438044C44A4C60B1E /* QBadgeElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0899F70BE55B425BAF78A3D8 /* QBadgeElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D42483175C4748ADBCA0C98C /* AFNetworking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 071C24710BD84A51BB5D0CD7 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D53E54D6C130436DA9476258 /* ffi_armv7.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C48626FD62345CBB6F9E15E /* ffi_armv7.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6683CEA14084FA0837426E8 /* QTextElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7629A72E4D4D9482BD7B06 /* QTextElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		D66D82FF04DD43E29C43B378 /* QElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F9EF73F3C22746AD89EE3937 /* QElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6EDA37EAB654B8AB7B31C14 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E29C7DE78CE342549F9D9BFA /* AFNetworkActivityIndicatorManager.m */; };
+		D7D782880CC748D5ADEC0456 /* NSMutableArray+MoveObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C59C71CB634BDC91C506B7 /* NSMutableArray+MoveObject.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		D95A00DFD16E4F61873E5F15 /* ean.c in Sources */ = {isa = PBXBuildFile; fileRef = 29E357F71A514C4EAB0828EA /* ean.c */; };
+		DA1A0D9DBE414423ADDC9945 /* QMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D67A2F25FCA45BA9B859D55 /* QMapViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		DA1C6094A0074FA1AEE60732 /* QSelectItemElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6C272CBE4948269E6DE8A4 /* QSelectItemElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA41C129F72A40AAB0E4415D /* AFXMLRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7888B88E67614E948D3026D0 /* AFXMLRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB5D0DF6831B4C30BBF5E1C8 /* NSMutableIndexSet+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8207406A2C40E5BE9D0CF2 /* NSMutableIndexSet+BlocksKit.m */; };
+		DCDBE3C75B9A451FBF4DE0EB /* QMultilineElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 36AC4E8620994E729FD8842B /* QMultilineElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD393C41AC154E0189913F17 /* QWebElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 680954A3684448F1ACECE6AC /* QWebElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		DDF6B2C0C9E74CB7A652D891 /* UIGestureRecognizer+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA2A4AB425FC413DA963FE74 /* UIGestureRecognizer+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEBE9F238F0044D49757242D /* MBProgressHUD.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C2D196AAA7A8423EB06D2A25 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFAE6AE5B02F4D7A945CB176 /* A2BlockClosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA25735BA174F48838F3FEF /* A2BlockClosure.m */; };
+		E1B57D96849F41BFB0A8FE1C /* QSelectSection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9146E195B284435EABFBEEEB /* QSelectSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2289238CC2F4B5DA9ACF5DA /* ZBarCVImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D92C8F6DD1443E4A6965B9B /* ZBarCVImage.m */; };
+		E234FCE8081A41DF9E55C98F /* isaac.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E013081CF364CEBBFA0E19B /* isaac.c */; };
+		E2DB45B859C949088990A606 /* ZBarSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 008A563630814588980A0B94 /* ZBarSymbol.m */; };
+		E490D2C1ABF44E22B558BF7C /* BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4D1FA1FA272245018DBE8168 /* BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5411F7E30EE495BBD985423 /* binarize.c in Sources */ = {isa = PBXBuildFile; fileRef = D2656D5E320F4FE0A0796DC3 /* binarize.c */; };
+		E561DD4E2E0E481AA0C3D658 /* QTextField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B2FFAB016854889B86E12E7 /* QTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5864D784146462493916098 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 689E44F59D4E4B9C8F4FBED4 /* AFImageRequestOperation.m */; };
+		E75A9C1F0C4D4AF4897F4B6B /* ZBarImageScanner.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D750E4E43B17418BB21AF737 /* ZBarImageScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7876F40ABA546719AE6BEAD /* ffi.c in Sources */ = {isa = PBXBuildFile; fileRef = DD95292C9D0747FC9693A1C6 /* ffi.c */; };
+		E8D2F162039C42988BE62B2C /* ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E0E19490BF44109BF01671 /* ConciseKit.m */; };
+		E9EDDBB009FE495B87F003C5 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D56051F21C2B499CB4EA301D /* AFPropertyListRequestOperation.m */; };
+		E9FB81CAE54442228CB604B4 /* UIBarButtonItem+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EFE43F1A671643AEB14A0FB0 /* UIBarButtonItem+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA8CFD42E6EB463EBC3480B2 /* closures.c in Sources */ = {isa = PBXBuildFile; fileRef = 06C8651B4147477BBA443D67 /* closures.c */; };
+		EACC8F7A34FB4530B78A78D7 /* NSArray+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EE738B05EA4D35B4B08F54 /* NSArray+ConciseKit.m */; };
+		EB704456061D48568B056E5F /* NSString+ConciseKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C74FB05C51FB4B978AC4112B /* NSString+ConciseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB8B3B136C104A18B067230A /* NSCache+BlocksKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C64B7E61733B4496AE153E74 /* NSCache+BlocksKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED7384AA35754D83993CF123 /* code128.c in Sources */ = {isa = PBXBuildFile; fileRef = 35A4AF83F0E14A0A98CAA1E1 /* code128.c */; };
+		EDFF44DF94ED4D5B8B34C7B6 /* bch15_5.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CECA203E7AC472C88007410 /* bch15_5.c */; };
+		EE9EF3AEE5B74A97AD830A74 /* i25.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 316334824E6548DC9C254894 /* i25.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EECA2763A9084037A323E794 /* QSelectSection.m in Sources */ = {isa = PBXBuildFile; fileRef = B177E386F70A4653978515B3 /* QSelectSection.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		EF1F77BDCF92438299EB1D95 /* config.c in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B99ACED2649F99990E888 /* config.c */; };
+		EF479E9A6B734202A507C1F7 /* decoder.c in Sources */ = {isa = PBXBuildFile; fileRef = FA5F1E4307024BECBDF96231 /* decoder.c */; };
+		EF52AF39D735490ABBF5037A /* error.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 43290BAEE2B74175838E396F /* error.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF6AEEF519B64E70BAFC3E02 /* NSObject+BlocksKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FAFA06F91F435CAC44776D /* NSObject+BlocksKit.m */; };
+		EFCA1A63EE4945DC917AE8B7 /* code39.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5183304BBEDF44DF89686E70 /* code39.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0165C5EB7034E2AB35EF8A9 /* DOAutocompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FB9027E516469E939988BE /* DOAutocompleteTextField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F18FFCA1B8DB42FAA98882D9 /* window.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7892A9E5B22C45658663DF87 /* window.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2B7AF78BF734692A820BA84 /* QMultilineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = EC35BA1037B34D30B643CDF3 /* QMultilineElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F3304D5A591C405E91CCA0BC /* thread.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6DD06A4570E4163810CAC7C /* thread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5596BFDB75E45AF8A06CC11 /* QElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 346C77162AAC4E1B84C7D0F1 /* QElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F56C625CBCA14378A50896B1 /* debug.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 662FF7C1F71A4936B7698A98 /* debug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F58336D709C04AC79858AC2E /* QButtonElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D51BB575D44FFEB06A21C1 /* QButtonElement.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F5FD8CE92E71459FBF1A1FA7 /* util.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E09B8F1935424E81805BE040 /* util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6258B86CDE84D5BBB02F87D /* QuickDialogController+Helpers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAFA0B852B8941AA8C9758D4 /* QuickDialogController+Helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F860ED7285184BE88BADE994 /* ean.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D89FC28341464E6DA5D95FA2 /* ean.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8C137DE73FC40FAA105E11D /* code93.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 228BFAA8E13B439E911AECF3 /* code93.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8C173C4277D46DD90783AF6 /* QRootElement.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8B5E7645B0A64A398FEA1E22 /* QRootElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB4A6E45C62F429FBA95FA24 /* code128.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6F7E582BE136477682002F46 /* code128.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA2F08371C6F4079B4282AA4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				431374F4226B4DF091748400 /* A2DynamicDelegate.h in CopyFiles */,
+				5BADD1D13FF7462BA1210FFD /* A2BlockDelegate.h in CopyFiles */,
+				52B3809F783341BB94C7CA39 /* A2BlockClosure.h in CopyFiles */,
+				B95DBC0FB4664411BD62FA0E /* AFHTTPClient.h in CopyFiles */,
+				A98535EBD4EE464FA4C62B09 /* AFHTTPRequestOperation.h in CopyFiles */,
+				534185C603814B97818FC8F5 /* AFImageRequestOperation.h in CopyFiles */,
+				6778850F00ED4BDEB1DCFDB8 /* AFJSONRequestOperation.h in CopyFiles */,
+				5A683B8B82424D0FA21C8031 /* AFJSONUtilities.h in CopyFiles */,
+				1BF294ADEF4B4478B670BF29 /* AFNetworkActivityIndicatorManager.h in CopyFiles */,
+				D42483175C4748ADBCA0C98C /* AFNetworking.h in CopyFiles */,
+				3BACE824D2414849B59B5D2A /* AFPropertyListRequestOperation.h in CopyFiles */,
+				029757E988324CDEBC37337D /* AFURLConnectionOperation.h in CopyFiles */,
+				DA41C129F72A40AAB0E4415D /* AFXMLRequestOperation.h in CopyFiles */,
+				80E2CE5AF6464433B67306B6 /* UIImageView+AFNetworking.h in CopyFiles */,
+				57C2ACF655E240629EB9D62D /* A2BlockDelegate+BlocksKit.h in CopyFiles */,
+				45B7FD511CED46ED8EC036E7 /* BKGlobals.h in CopyFiles */,
+				47F75FF327684E308B2BB5BE /* BKMacros.h in CopyFiles */,
+				E490D2C1ABF44E22B558BF7C /* BlocksKit.h in CopyFiles */,
+				B6D163444E3C431CA82D37F7 /* NSArray+BlocksKit.h in CopyFiles */,
+				EB8B3B136C104A18B067230A /* NSCache+BlocksKit.h in CopyFiles */,
+				306E4868C15A4F1E8A9428C9 /* NSDictionary+BlocksKit.h in CopyFiles */,
+				B9DDA212C8304E4F9ADB5EF8 /* NSIndexSet+BlocksKit.h in CopyFiles */,
+				A4C5F63FDFD94D2DB6B430EC /* NSInvocation+BlocksKit.h in CopyFiles */,
+				2168354C8DA04A8B93ACF4E0 /* NSMutableArray+BlocksKit.h in CopyFiles */,
+				8FBAF73ED60A46C7A7304E23 /* NSMutableDictionary+BlocksKit.h in CopyFiles */,
+				7FF02E94A38F4BC6BBD05A47 /* NSMutableIndexSet+BlocksKit.h in CopyFiles */,
+				689506B9DBCF4C5BA75037BD /* NSMutableSet+BlocksKit.h in CopyFiles */,
+				4647A1CD715C42CA9CAA8751 /* NSObject+AssociatedObjects.h in CopyFiles */,
+				10596BBE494146AE92FC68ED /* NSObject+BlockObservation.h in CopyFiles */,
+				113DD481534B445EA3398345 /* NSObject+BlocksKit.h in CopyFiles */,
+				8A11A7F9BF12468B97A8C229 /* NSSet+BlocksKit.h in CopyFiles */,
+				1DD063780FAF415F9E935F4C /* NSTimer+BlocksKit.h in CopyFiles */,
+				69195BB25956407FB0CCEE98 /* NSURLConnection+BlocksKit.h in CopyFiles */,
+				64705E92DEAF4FBA81416351 /* UIActionSheet+BlocksKit.h in CopyFiles */,
+				066E33E972AD43D6A31DE6E4 /* UIAlertView+BlocksKit.h in CopyFiles */,
+				E9FB81CAE54442228CB604B4 /* UIBarButtonItem+BlocksKit.h in CopyFiles */,
+				0F19436430AE4610BF2AD04B /* UIControl+BlocksKit.h in CopyFiles */,
+				DDF6B2C0C9E74CB7A652D891 /* UIGestureRecognizer+BlocksKit.h in CopyFiles */,
+				9D5F214EEE5846EABE7299B3 /* UIPopoverController+BlocksKit.h in CopyFiles */,
+				B319304E5B6A445B979F9DAB /* UIView+BlocksKit.h in CopyFiles */,
+				42A14C8B66B44C49A7608906 /* UIWebView+BlocksKit.h in CopyFiles */,
+				6AD05E54E41B43338130B2C2 /* MFMailComposeViewController+BlocksKit.h in CopyFiles */,
+				AA1C4CBBDBF744FD8F160BF1 /* MFMessageComposeViewController+BlocksKit.h in CopyFiles */,
+				6DF36588401B491FA143EDF0 /* CKAdditions.h in CopyFiles */,
+				87B733BFC9FB43FA94470BD4 /* CKMacros.h in CopyFiles */,
+				0F04C2FC6FB242D59E8C50A6 /* CKSingleton.h in CopyFiles */,
+				C8495D6E883142D08C3B80EA /* ConciseKit.h in CopyFiles */,
+				73B028572AAF4813B3AE6C56 /* NSArray+ConciseKit.h in CopyFiles */,
+				3D8ECCEFBA9549888ED6FCB2 /* NSDictionary+ConciseKit.h in CopyFiles */,
+				EB704456061D48568B056E5F /* NSString+ConciseKit.h in CopyFiles */,
+				6493F0EB95B04623BD9A1D06 /* Flurry.h in CopyFiles */,
+				DEBE9F238F0044D49757242D /* MBProgressHUD.h in CopyFiles */,
+				A716598F76E44DD9AEDBB67C /* ParseDummy.h in CopyFiles */,
+				446B3427FC7A46C590F2D004 /* DOAutocompleteTextField.h in CopyFiles */,
+				50A5AB0E7B844BC6BED73932 /* NSMutableArray+IMSExtensions.h in CopyFiles */,
+				6B69F4F3E881428B8854BD87 /* NSMutableArray+MoveObject.h in CopyFiles */,
+				6259611652364266A542E83B /* QAutoEntryElement.h in CopyFiles */,
+				CB5B2B8A59974C1E96EDCBA4 /* QAutoEntryTableViewCell.h in CopyFiles */,
+				D3D395C438044C44A4C60B1E /* QBadgeElement.h in CopyFiles */,
+				A899116E2079461EB7D318DD /* QBadgeLabel.h in CopyFiles */,
+				D0A1DD9878194ED2BF7F33F5 /* QBadgeTableCell.h in CopyFiles */,
+				2EA3B105AF9045128DC0AF29 /* QBindingEvaluator.h in CopyFiles */,
+				45785E8283FC4DC7B96B93D9 /* QBooleanElement.h in CopyFiles */,
+				84FF43E1C2674FA0839FE909 /* QButtonElement.h in CopyFiles */,
+				1694B786857547128828F556 /* QDateEntryTableViewCell.h in CopyFiles */,
+				C3A8EB242FDA4434A75B430F /* QDateTimeElement.h in CopyFiles */,
+				528B1E94BD9946BBA2905976 /* QDateTimeInlineElement.h in CopyFiles */,
+				ABB2D92C9F1B4AC6A32725C5 /* QDecimalElement.h in CopyFiles */,
+				6E3992CC940C4A5581B2C35F /* QDecimalTableViewCell.h in CopyFiles */,
+				C281779168C6469CA81216B3 /* QDynamicDataSection.h in CopyFiles */,
+				D66D82FF04DD43E29C43B378 /* QElement.h in CopyFiles */,
+				8BAEE083D35641A78520D338 /* QEmptyListElement.h in CopyFiles */,
+				23995F2BCC5A45CA91A3343B /* QEntryElement.h in CopyFiles */,
+				37788B5B03C14B0F8302FB0A /* QEntryTableViewCell.h in CopyFiles */,
+				3FFED7E974AD42ACA49EF4C5 /* QFloatElement.h in CopyFiles */,
+				5369EEFDBEDB44DBA26A454B /* QLabelElement.h in CopyFiles */,
+				1545BCABFCC148FDACBBFA5B /* QLoadingElement.h in CopyFiles */,
+				B89A4A94D4964FDFBB3B7602 /* QMapAnnotation.h in CopyFiles */,
+				0786E78EE6A0412498C9CB55 /* QMapElement.h in CopyFiles */,
+				69542165DBA343E9862F2DA4 /* QMapViewController.h in CopyFiles */,
+				DCDBE3C75B9A451FBF4DE0EB /* QMultilineElement.h in CopyFiles */,
+				607FF236E5BB4676BA32B53B /* QMultilineTextViewController.h in CopyFiles */,
+				8166A4E5640F4858A78EDEA5 /* QPickerElement.h in CopyFiles */,
+				81DB0745E86D4345A02BA002 /* QPickerTableViewCell.h in CopyFiles */,
+				D14836E5FC0D40739D619B77 /* QPickerValueParser.h in CopyFiles */,
+				68A4701DC4E64C98AA15AAC3 /* QPickerWhitespaceDelimitedStringParser.h in CopyFiles */,
+				98481CFA0A18459DBC4012E0 /* QRadioElement.h in CopyFiles */,
+				C6EA0F2C81DE4E5C85BD5D9E /* QRadioItemElement.h in CopyFiles */,
+				28FD51E8FBAC4F8D9C4D0CF4 /* QRadioSection.h in CopyFiles */,
+				B81D67FEA0774BA7ADC68C56 /* QRootBuilder.h in CopyFiles */,
+				7F5A2CC6EC6446C9A3B82EFC /* QRootElement+JsonBuilder.h in CopyFiles */,
+				F8C173C4277D46DD90783AF6 /* QRootElement.h in CopyFiles */,
+				BF8AA120E615446693942537 /* QSection.h in CopyFiles */,
+				720B8D5ED1894FE49BB29506 /* QSegmentedElement.h in CopyFiles */,
+				DA1C6094A0074FA1AEE60732 /* QSelectItemElement.h in CopyFiles */,
+				E1B57D96849F41BFB0A8FE1C /* QSelectSection.h in CopyFiles */,
+				9A25C5760FB14B31A7F65FFE /* QSortingSection.h in CopyFiles */,
+				80C95A65793040079A29E18A /* QTableViewCell.h in CopyFiles */,
+				7354F4CA31EB4D978D0A8905 /* QTextElement.h in CopyFiles */,
+				E561DD4E2E0E481AA0C3D658 /* QTextField.h in CopyFiles */,
+				AE2D7589B7DF4937B354C0D0 /* QuickDialog.h in CopyFiles */,
+				F6258B86CDE84D5BBB02F87D /* QuickDialogController+Helpers.h in CopyFiles */,
+				22D6DD4B576149B2B4F8082B /* QuickDialogController+Loading.h in CopyFiles */,
+				595A5B262B8548E9AB5206CF /* QuickDialogController.h in CopyFiles */,
+				5D2EF6938070447294412BEE /* QuickDialogDataSource.h in CopyFiles */,
+				38E3949021DA4677A9FC7BBC /* QuickDialogEntryElementDelegate.h in CopyFiles */,
+				C10BCE82E4BD4BB089EA3558 /* QuickDialogStyleProvider.h in CopyFiles */,
+				AD22ED57C2034753A393CE1F /* QuickDialogTableDelegate.h in CopyFiles */,
+				71C4343D638A41D99AC68B51 /* QuickDialogTableView.h in CopyFiles */,
+				91191A035DFF43B7A92A71DD /* QuickDialogWebController.h in CopyFiles */,
+				8F99F3A587574444B013B3C1 /* QWebElement.h in CopyFiles */,
+				AED8900AE93F46AD938CB5B5 /* QWebViewController.h in CopyFiles */,
+				677854EF3C7647A3A0A8EB73 /* Reachability.h in CopyFiles */,
+				C442C9CE16114D0B89BB8995 /* TTTAttributedLabel.h in CopyFiles */,
+				011EBFCD0E874674B91E3DAC /* TestFlight.h in CopyFiles */,
+				BD86CED457CB429092C662F4 /* zbar.h in CopyFiles */,
+				56995D05A1164E639935905E /* debug.h in CopyFiles */,
+				FB4A6E45C62F429FBA95FA24 /* code128.h in CopyFiles */,
+				EFCA1A63EE4945DC917AE8B7 /* code39.h in CopyFiles */,
+				F8C137DE73FC40FAA105E11D /* code93.h in CopyFiles */,
+				11783A6134F04E1E945136B7 /* databar.h in CopyFiles */,
+				F860ED7285184BE88BADE994 /* ean.h in CopyFiles */,
+				EE9EF3AEE5B74A97AD830A74 /* i25.h in CopyFiles */,
+				4DE44DA032F04106AFFF0D4F /* pdf417.h in CopyFiles */,
+				20685B0AFE404F36BE386F62 /* pdf417_hash.h in CopyFiles */,
+				94C3CD23F7D9440EB5D17D69 /* qr_finder.h in CopyFiles */,
+				C6FD5273BD6A40BD8562DB51 /* decoder.h in CopyFiles */,
+				EF52AF39D735490ABBF5037A /* error.h in CopyFiles */,
+				4347ADF2F38549888FF6A80D /* event.h in CopyFiles */,
+				A3EDD424C88C4C6CA70D1147 /* image.h in CopyFiles */,
+				8322D301198547C7836EB0E6 /* img_scanner.h in CopyFiles */,
+				CDC657AEFA5243D2999A1E9D /* mutex.h in CopyFiles */,
+				972C98CCF64A4209B30CEE97 /* posix.h in CopyFiles */,
+				7C4B7467F17949A0AACF3749 /* processor.h in CopyFiles */,
+				AC92083DBCDB4492BF4B6BB6 /* bch15_5.h in CopyFiles */,
+				9DF0B7F9FD1F4B5C8DD209B7 /* binarize.h in CopyFiles */,
+				C6945C1DCB834D9FB6D80704 /* isaac.h in CopyFiles */,
+				4D2FFFD523474D99BDC7C9FE /* qrdec.h in CopyFiles */,
+				A6CAFBF3A69E41B28E099C81 /* rs.h in CopyFiles */,
+				F5FD8CE92E71459FBF1A1FA7 /* util.h in CopyFiles */,
+				9D922CC742224792B87AE9D6 /* qrcode.h in CopyFiles */,
+				5E454C13279847789F69E865 /* refcnt.h in CopyFiles */,
+				6D9EF56E8434404990A6FC5A /* svg.h in CopyFiles */,
+				805049CA083D48579291F3CB /* symbol.h in CopyFiles */,
+				F3304D5A591C405E91CCA0BC /* thread.h in CopyFiles */,
+				00330A9BE9444CF781E1B6B0 /* timer.h in CopyFiles */,
+				06EFD97419CA4B0A8C9C2CF0 /* video.h in CopyFiles */,
+				CA6DC2D9BB1B486691E914C7 /* win.h in CopyFiles */,
+				64235196EEB44CDDA3B2D30D /* x.h in CopyFiles */,
+				F18FFCA1B8DB42FAA98882D9 /* window.h in CopyFiles */,
+				F56C625CBCA14378A50896B1 /* debug.h in CopyFiles */,
+				26B5DE0361B1449F94522349 /* ZBarCVImage.h in CopyFiles */,
+				41AD4DC5EB464DE796450811 /* config.h in CopyFiles */,
+				3FDD56DF0F4F49F48132D543 /* ZBarCameraSimulator.h in CopyFiles */,
+				BF53FD4245704417AC994E47 /* ZBarCaptureReader.h in CopyFiles */,
+				5EC1018669B04797A200BFA7 /* ZBarHelpController.h in CopyFiles */,
+				A50CF4ABBDE34E1A8CF1F27F /* ZBarImage.h in CopyFiles */,
+				E75A9C1F0C4D4AF4897F4B6B /* ZBarImageScanner.h in CopyFiles */,
+				44CAAFF3A2CE48D9A8E24E67 /* ZBarReaderController.h in CopyFiles */,
+				B83B9A760E6542C8849EAC73 /* ZBarReaderView.h in CopyFiles */,
+				7EE6A6639DEB40148BB54195 /* ZBarReaderViewController.h in CopyFiles */,
+				6D22226F87E749B2AAD1D31E /* ZBarSDK.h in CopyFiles */,
+				CF848A0E42AE43BF98952BA7 /* ZBarSymbol.h in CopyFiles */,
+				4F29F21CEED54AA8B2817CBB /* ffi.h in CopyFiles */,
+				D53E54D6C130436DA9476258 /* ffi_armv7.h in CopyFiles */,
+				6FAD0AB76790489A95AD67B3 /* ffi_common.h in CopyFiles */,
+				8973A3CBF1324F3EBB1CE93E /* ffi_i386.h in CopyFiles */,
+				B8724BF4CA9542B38A7460F5 /* fficonfig.h in CopyFiles */,
+				415D1C9407BC4EA3BAA7A85C /* fficonfig_armv7.h in CopyFiles */,
+				90A8F10F0E72435E8D32BADC /* fficonfig_i386.h in CopyFiles */,
+				967C7DD2F76841E19A828612 /* ffitarget.h in CopyFiles */,
+				BFA3965FC9E445EABA3CAF5C /* ffitarget_armv7.h in CopyFiles */,
+				5DA1166E7B7640958711E5EC /* ffitarget_i386.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		008A563630814588980A0B94 /* ZBarSymbol.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarSymbol.m; path = ZBarSDK/iphone/ZBarSymbol.m; sourceTree = SOURCE_ROOT; };
+		03589E8C533D4D52891A1546 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; name = TTTAttributedLabel.h; path = TTTAttributedLabel/TTTAttributedLabel.h; sourceTree = SOURCE_ROOT; };
+		037ECF71019C4D638814DF8C /* ZBarSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarSDK.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarSDK.h; sourceTree = SOURCE_ROOT; };
+		03E51249CE3848A98A3F7B22 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIImageView+AFNetworking.h"; path = "AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = SOURCE_ROOT; };
+		041409E78CE64A949A6589BB /* NSMutableIndexSet+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableIndexSet+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSMutableIndexSet+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		054FC3EEE42847C6AC75EBCE /* AFJSONUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFJSONUtilities.h; path = AFNetworking/AFNetworking/AFJSONUtilities.h; sourceTree = SOURCE_ROOT; };
+		055809E3A2F0457A874BB9AF /* QuickDialogController+Helpers.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "QuickDialogController+Helpers.m"; path = "QuickDialog/quickdialog/QuickDialogController+Helpers.m"; sourceTree = SOURCE_ROOT; };
+		0670E0A9107949D3B2BAAF08 /* QSortingSection.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QSortingSection.m; path = QuickDialog/quickdialog/QSortingSection.m; sourceTree = SOURCE_ROOT; };
+		06B87960D4514A17A71BA040 /* QLabelElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QLabelElement.h; path = QuickDialog/quickdialog/QLabelElement.h; sourceTree = SOURCE_ROOT; };
+		06C8651B4147477BBA443D67 /* closures.c */ = {isa = PBXFileReference; includeInIndex = 1; name = closures.c; path = libffi/src/closures.c; sourceTree = SOURCE_ROOT; };
+		071C24710BD84A51BB5D0CD7 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFNetworking.h; path = AFNetworking/AFNetworking/AFNetworking.h; sourceTree = SOURCE_ROOT; };
+		084312D102EA493EBC1CF8C4 /* UIView+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIView+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIView+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		0868ACB32DF44E24820A82CE /* QWebViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QWebViewController.m; path = QuickDialog/quickdialog/QWebViewController.m; sourceTree = SOURCE_ROOT; };
+		0899F70BE55B425BAF78A3D8 /* QBadgeElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QBadgeElement.h; path = QuickDialog/quickdialog/QBadgeElement.h; sourceTree = SOURCE_ROOT; };
+		08A6EC86D223487281967B8A /* NSMutableSet+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableSet+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSMutableSet+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		0917586AB42949C4B175B7AC /* databar.h */ = {isa = PBXFileReference; includeInIndex = 1; name = databar.h; path = ZBarSDK/zbar/decoder/databar.h; sourceTree = SOURCE_ROOT; };
+		094E90E9D3B94392A8AF6408 /* PodsDummy_Pods.m */ = {isa = PBXFileReference; includeInIndex = 1; name = PodsDummy_Pods.m; path = PodsDummy_Pods.m; sourceTree = SOURCE_ROOT; };
+		09FA35E5FA0E4B6DA200E993 /* ZBarReaderView.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderView.m; path = ZBarSDK/iphone/ZBarReaderView.m; sourceTree = SOURCE_ROOT; };
+		0A374C1FDF9B4E80B54AC0E1 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderViewController.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarReaderViewController.h; sourceTree = SOURCE_ROOT; };
+		0ADC4869466248F5902AD001 /* processor.h */ = {isa = PBXFileReference; includeInIndex = 1; name = processor.h; path = ZBarSDK/zbar/processor.h; sourceTree = SOURCE_ROOT; };
+		0B5043F5B60945AB976BAB65 /* UIWebView+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIWebView+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIWebView+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		0C48626FD62345CBB6F9E15E /* ffi_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ffi_armv7.h; path = libffi/ios/include/ffi_armv7.h; sourceTree = SOURCE_ROOT; };
+		0C770DB17CCB406286E532D2 /* QRadioSection.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QRadioSection.m; path = QuickDialog/quickdialog/QRadioSection.m; sourceTree = SOURCE_ROOT; };
+		0E013081CF364CEBBFA0E19B /* isaac.c */ = {isa = PBXFileReference; includeInIndex = 1; name = isaac.c; path = ZBarSDK/zbar/qrcode/isaac.c; sourceTree = SOURCE_ROOT; };
+		0E917ACECEF04C4A832AB367 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; name = Reachability.m; path = Reachability/Reachability.m; sourceTree = SOURCE_ROOT; };
+		0EA25735BA174F48838F3FEF /* A2BlockClosure.m */ = {isa = PBXFileReference; includeInIndex = 1; name = A2BlockClosure.m; path = A2DynamicDelegate/A2BlockClosure.m; sourceTree = SOURCE_ROOT; };
+		1203760BE9BF4519A8654637 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFImageRequestOperation.h; path = AFNetworking/AFNetworking/AFImageRequestOperation.h; sourceTree = SOURCE_ROOT; };
+		1422235D3FE14880921BA1A9 /* QEntryTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QEntryTableViewCell.h; path = QuickDialog/quickdialog/QEntryTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		15F6396954924151B54FC767 /* QPickerValueParser.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QPickerValueParser.h; path = QuickDialog/quickdialog/QPickerValueParser.h; sourceTree = SOURCE_ROOT; };
+		17860566B4CD42478CC2430F /* BKGlobals.h */ = {isa = PBXFileReference; includeInIndex = 1; name = BKGlobals.h; path = BlocksKit/BlocksKit/BKGlobals.h; sourceTree = SOURCE_ROOT; };
+		17895B9DB9EB4FA88637D4B3 /* QDateEntryTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QDateEntryTableViewCell.m; path = QuickDialog/quickdialog/QDateEntryTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		185930A6461A4F5E886DE7C2 /* ffi.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ffi.c; path = libffi/ios/src/x86/ffi.c; sourceTree = SOURCE_ROOT; };
+		1962686DA3CD4072B25C5804 /* A2DynamicDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; name = A2DynamicDelegate.h; path = A2DynamicDelegate/A2DynamicDelegate.h; sourceTree = SOURCE_ROOT; };
+		19750DB221374DC79134705F /* ffitarget.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ffitarget.h; path = libffi/ios/include/ffitarget.h; sourceTree = SOURCE_ROOT; };
+		1A6C272CBE4948269E6DE8A4 /* QSelectItemElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QSelectItemElement.h; path = QuickDialog/quickdialog/QSelectItemElement.h; sourceTree = SOURCE_ROOT; };
+		1AEB02162E57436693200A9C /* QAutoEntryTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QAutoEntryTableViewCell.m; path = QuickDialog/quickdialog/QAutoEntryTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		1BF4131C5C414B4FB33FE2EC /* NSTimer+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSTimer+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSTimer+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		1C7629A72E4D4D9482BD7B06 /* QTextElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QTextElement.m; path = QuickDialog/quickdialog/QTextElement.m; sourceTree = SOURCE_ROOT; };
+		1CE52D2B36ED4092B07BA88A /* qrdec.h */ = {isa = PBXFileReference; includeInIndex = 1; name = qrdec.h; path = ZBarSDK/zbar/qrcode/qrdec.h; sourceTree = SOURCE_ROOT; };
+		1D31A4C789D54B8FA77038FC /* image.h */ = {isa = PBXFileReference; includeInIndex = 1; name = image.h; path = ZBarSDK/zbar/image.h; sourceTree = SOURCE_ROOT; };
+		1FF4A9FF069E4617B682AA6E /* MFMailComposeViewController+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "MFMailComposeViewController+BlocksKit.m"; path = "BlocksKit/BlocksKit/MessageUI/MFMailComposeViewController+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		2066B10D3E2D43D3A5312386 /* A2BlockDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; name = A2BlockDelegate.m; path = A2DynamicDelegate/A2BlockDelegate.m; sourceTree = SOURCE_ROOT; };
+		228BFAA8E13B439E911AECF3 /* code93.h */ = {isa = PBXFileReference; includeInIndex = 1; name = code93.h; path = ZBarSDK/zbar/decoder/code93.h; sourceTree = SOURCE_ROOT; };
+		230C1309194643E1B0FEDC74 /* util.c */ = {isa = PBXFileReference; includeInIndex = 1; name = util.c; path = ZBarSDK/zbar/qrcode/util.c; sourceTree = SOURCE_ROOT; };
+		244E5EBF28EE4D79BB7E2B2D /* QBadgeTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QBadgeTableCell.h; path = QuickDialog/quickdialog/QBadgeTableCell.h; sourceTree = SOURCE_ROOT; };
+		250CA9F8993B48EABF2EE4DA /* QuickDialogWebController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogWebController.m; path = QuickDialog/quickdialog/QuickDialogWebController.m; sourceTree = SOURCE_ROOT; };
+		25429A78B42C43B4B6386CD4 /* NSURLConnection+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSURLConnection+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSURLConnection+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		256D9B0004F44E4993121806 /* QWebElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QWebElement.h; path = QuickDialog/quickdialog/QWebElement.h; sourceTree = SOURCE_ROOT; };
+		29E357F71A514C4EAB0828EA /* ean.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ean.c; path = ZBarSDK/zbar/decoder/ean.c; sourceTree = SOURCE_ROOT; };
+		2A179489C22041408D319F02 /* QTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QTableViewCell.h; path = QuickDialog/quickdialog/QTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		2B1DE640E9464A5CB2063558 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; name = Reachability.h; path = Reachability/Reachability.h; sourceTree = SOURCE_ROOT; };
+		2BF802CA395443DCB43F23AE /* TTTAttributedLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; name = TTTAttributedLabel.m; path = TTTAttributedLabel/TTTAttributedLabel.m; sourceTree = SOURCE_ROOT; };
+		2CE8828A4E6040149EB678C7 /* BKMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; name = BKMacros.h; path = BlocksKit/BlocksKit/BKMacros.h; sourceTree = SOURCE_ROOT; };
+		2D61A88069E8494A8DBD5753 /* NSArray+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSArray+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSArray+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		2DB77954B2E04D44910C5217 /* UIActionSheet+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIActionSheet+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIActionSheet+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		2E4CA65D55A94940BAD22E8E /* QDateEntryTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QDateEntryTableViewCell.h; path = QuickDialog/quickdialog/QDateEntryTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		304227013F0E422EBE1BDA43 /* QLoadingElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QLoadingElement.h; path = QuickDialog/quickdialog/QLoadingElement.h; sourceTree = SOURCE_ROOT; };
+		30B8FB39C43944CA91E69359 /* QBadgeLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QBadgeLabel.h; path = QuickDialog/quickdialog/QBadgeLabel.h; sourceTree = SOURCE_ROOT; };
+		316334824E6548DC9C254894 /* i25.h */ = {isa = PBXFileReference; includeInIndex = 1; name = i25.h; path = ZBarSDK/zbar/decoder/i25.h; sourceTree = SOURCE_ROOT; };
+		31A27CDADBB44C2D86458DD8 /* QBadgeTableCell.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QBadgeTableCell.m; path = QuickDialog/quickdialog/QBadgeTableCell.m; sourceTree = SOURCE_ROOT; };
+		31A77EDB5E4748F79F754E8E /* MFMessageComposeViewController+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "MFMessageComposeViewController+BlocksKit.m"; path = "BlocksKit/BlocksKit/MessageUI/MFMessageComposeViewController+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		31FAFA06F91F435CAC44776D /* NSObject+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSObject+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSObject+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		3395631F8DA54572B61945E3 /* CKAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; name = CKAdditions.h; path = ConciseKit/src/CKAdditions.h; sourceTree = SOURCE_ROOT; };
+		346C77162AAC4E1B84C7D0F1 /* QElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QElement.m; path = QuickDialog/quickdialog/QElement.m; sourceTree = SOURCE_ROOT; };
+		353FF72C64AF47A3805D5F35 /* NSArray+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSArray+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSArray+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		35A4AF83F0E14A0A98CAA1E1 /* code128.c */ = {isa = PBXFileReference; includeInIndex = 1; name = code128.c; path = ZBarSDK/zbar/decoder/code128.c; sourceTree = SOURCE_ROOT; };
+		36AC4E8620994E729FD8842B /* QMultilineElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QMultilineElement.h; path = QuickDialog/quickdialog/QMultilineElement.h; sourceTree = SOURCE_ROOT; };
+		37710B88026442A5BA3F3844 /* QLoadingElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QLoadingElement.m; path = QuickDialog/quickdialog/QLoadingElement.m; sourceTree = SOURCE_ROOT; };
+		37B19AF598FE4B3FB25422DF /* QBadgeElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QBadgeElement.m; path = QuickDialog/quickdialog/QBadgeElement.m; sourceTree = SOURCE_ROOT; };
+		38D1650828BE4495B8ECC46C /* QuickDialogEntryElementDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogEntryElementDelegate.h; path = QuickDialog/quickdialog/QuickDialogEntryElementDelegate.h; sourceTree = SOURCE_ROOT; };
+		39CC7AC288344B77B810798D /* raw_api.c */ = {isa = PBXFileReference; includeInIndex = 1; name = raw_api.c; path = libffi/src/raw_api.c; sourceTree = SOURCE_ROOT; };
+		3C7E19222EE6437486C95B71 /* symbol.c */ = {isa = PBXFileReference; includeInIndex = 1; name = symbol.c; path = ZBarSDK/zbar/symbol.c; sourceTree = SOURCE_ROOT; };
+		3D92C8F6DD1443E4A6965B9B /* ZBarCVImage.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarCVImage.m; path = ZBarSDK/iphone/ZBarCVImage.m; sourceTree = SOURCE_ROOT; };
+		3F18E3B7211242E081886E21 /* QuickDialog.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialog.h; path = QuickDialog/quickdialog/QuickDialog.h; sourceTree = SOURCE_ROOT; };
+		404409DD160548D3A2D4F9A4 /* ZBarImage.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarImage.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarImage.h; sourceTree = SOURCE_ROOT; };
+		404A9BDFBDE847858BBFEF2A /* QPickerElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QPickerElement.h; path = QuickDialog/quickdialog/QPickerElement.h; sourceTree = SOURCE_ROOT; };
+		4112E6107233440A8B0C3FDA /* QFloatElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QFloatElement.h; path = QuickDialog/quickdialog/QFloatElement.h; sourceTree = SOURCE_ROOT; };
+		42244EBA00D14F9098B13AFA /* QRadioElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QRadioElement.h; path = QuickDialog/quickdialog/QRadioElement.h; sourceTree = SOURCE_ROOT; };
+		43290BAEE2B74175838E396F /* error.h */ = {isa = PBXFileReference; includeInIndex = 1; name = error.h; path = ZBarSDK/zbar/error.h; sourceTree = SOURCE_ROOT; };
+		44AD6FCF1561401D88020671 /* ZBarReaderViewImpl_Simulator.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderViewImpl_Simulator.m; path = ZBarSDK/iphone/ZBarReaderViewImpl_Simulator.m; sourceTree = SOURCE_ROOT; };
+		455549F82E164BD586C75A93 /* ffitarget_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ffitarget_i386.h; path = libffi/ios/include/ffitarget_i386.h; sourceTree = SOURCE_ROOT; };
+		45BA6C5236C348A588D450D1 /* svg.h */ = {isa = PBXFileReference; includeInIndex = 1; name = svg.h; path = ZBarSDK/zbar/svg.h; sourceTree = SOURCE_ROOT; };
+		47B877045F314E6991089238 /* ZBarReaderViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderViewController.m; path = ZBarSDK/iphone/ZBarReaderViewController.m; sourceTree = SOURCE_ROOT; };
+		48096B810D7C4761A91F1B25 /* QBindingEvaluator.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QBindingEvaluator.m; path = QuickDialog/quickdialog/QBindingEvaluator.m; sourceTree = SOURCE_ROOT; };
+		4A1B99ACED2649F99990E888 /* config.c */ = {isa = PBXFileReference; includeInIndex = 1; name = config.c; path = ZBarSDK/zbar/config.c; sourceTree = SOURCE_ROOT; };
+		4AA9971DDFD14F999746B078 /* NSMutableDictionary+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableDictionary+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSMutableDictionary+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		4B2D450B001848DEBF9893BE /* NSMutableDictionary+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableDictionary+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSMutableDictionary+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		4BCA34E538BD4F46AE1A7522 /* QDecimalElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QDecimalElement.m; path = QuickDialog/quickdialog/QDecimalElement.m; sourceTree = SOURCE_ROOT; };
+		4C8AB5CE66C34441B0069621 /* error.c */ = {isa = PBXFileReference; includeInIndex = 1; name = error.c; path = ZBarSDK/zbar/error.c; sourceTree = SOURCE_ROOT; };
+		4D1FA1FA272245018DBE8168 /* BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = BlocksKit.h; path = BlocksKit/BlocksKit/BlocksKit.h; sourceTree = SOURCE_ROOT; };
+		4D5FE70969F04C0AAFDFD6D3 /* UIGestureRecognizer+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIGestureRecognizer+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIGestureRecognizer+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		4D67A2F25FCA45BA9B859D55 /* QMapViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QMapViewController.m; path = QuickDialog/quickdialog/QMapViewController.m; sourceTree = SOURCE_ROOT; };
+		4D7B90511F12453E9E2F4C4A /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFNetworkActivityIndicatorManager.h; path = AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = SOURCE_ROOT; };
+		4E230EB6D3B040DE9257FE0A /* QMapAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QMapAnnotation.m; path = QuickDialog/quickdialog/QMapAnnotation.m; sourceTree = SOURCE_ROOT; };
+		4E92132F35324ADD84E2BF76 /* QMapElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QMapElement.h; path = QuickDialog/quickdialog/QMapElement.h; sourceTree = SOURCE_ROOT; };
+		4EF021BD444D4F2FAA82CAD4 /* ZBarCaptureReader.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarCaptureReader.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarCaptureReader.h; sourceTree = SOURCE_ROOT; };
+		50A58D68F47443269E640FE3 /* QuickDialogTableDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogTableDelegate.m; path = QuickDialog/quickdialog/QuickDialogTableDelegate.m; sourceTree = SOURCE_ROOT; };
+		50E3CD5A082F4C168A60057A /* sysv.S */ = {isa = PBXFileReference; includeInIndex = 1; name = sysv.S; path = libffi/ios/src/arm/sysv.S; sourceTree = SOURCE_ROOT; };
+		5183304BBEDF44DF89686E70 /* code39.h */ = {isa = PBXFileReference; includeInIndex = 1; name = code39.h; path = ZBarSDK/zbar/decoder/code39.h; sourceTree = SOURCE_ROOT; };
+		51F636F0E6D6407286E3E775 /* ZBarReaderController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderController.m; path = ZBarSDK/iphone/ZBarReaderController.m; sourceTree = SOURCE_ROOT; };
+		561E004DAE3541EF87B7BD45 /* NSTimer+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSTimer+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSTimer+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		57521EA51B6349B39679A78D /* x.h */ = {isa = PBXFileReference; includeInIndex = 1; name = x.h; path = ZBarSDK/zbar/window/x.h; sourceTree = SOURCE_ROOT; };
+		592232654E844595B50778AD /* QDecimalTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QDecimalTableViewCell.m; path = QuickDialog/quickdialog/QDecimalTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		59E558CBE1DF4AF7BF59C844 /* QuickDialogTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogTableView.h; path = QuickDialog/quickdialog/QuickDialogTableView.h; sourceTree = SOURCE_ROOT; };
+		5A00F62A5EF3494285CAC1CD /* QuickDialogDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogDataSource.m; path = QuickDialog/quickdialog/QuickDialogDataSource.m; sourceTree = SOURCE_ROOT; };
+		5C995C65E2524854A784DDBD /* QDateTimeElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QDateTimeElement.m; path = QuickDialog/quickdialog/QDateTimeElement.m; sourceTree = SOURCE_ROOT; };
+		5CBAAC71861143999BC8E95B /* QTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QTableViewCell.m; path = QuickDialog/quickdialog/QTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		5CECA203E7AC472C88007410 /* bch15_5.c */ = {isa = PBXFileReference; includeInIndex = 1; name = bch15_5.c; path = ZBarSDK/zbar/qrcode/bch15_5.c; sourceTree = SOURCE_ROOT; };
+		5F271E421DB44F70A21B8DD3 /* NSDictionary+ConciseKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSDictionary+ConciseKit.m"; path = "ConciseKit/src/NSDictionary+ConciseKit.m"; sourceTree = SOURCE_ROOT; };
+		6046FC0B12754AFDA8787A8B /* symbol.h */ = {isa = PBXFileReference; includeInIndex = 1; name = symbol.h; path = ZBarSDK/zbar/symbol.h; sourceTree = SOURCE_ROOT; };
+		605B7CD4AFEE4F1396C58B8C /* NSCache+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSCache+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSCache+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		618BE5E570AE4755B5CA320C /* NSObject+AssociatedObjects.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSObject+AssociatedObjects.m"; path = "BlocksKit/BlocksKit/NSObject+AssociatedObjects.m"; sourceTree = SOURCE_ROOT; };
+		62733098299641F4B9DD0376 /* ffi.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ffi.h; path = libffi/ios/include/ffi.h; sourceTree = SOURCE_ROOT; };
+		64DBC3FB4C934084B0E9F74A /* QDecimalElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QDecimalElement.h; path = QuickDialog/quickdialog/QDecimalElement.h; sourceTree = SOURCE_ROOT; };
+		656040551FCB453482C775E7 /* scanner.c */ = {isa = PBXFileReference; includeInIndex = 1; name = scanner.c; path = ZBarSDK/zbar/scanner.c; sourceTree = SOURCE_ROOT; };
+		65DA4102DDF649EB876E8C06 /* QRootElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QRootElement.m; path = QuickDialog/quickdialog/QRootElement.m; sourceTree = SOURCE_ROOT; };
+		662FF7C1F71A4936B7698A98 /* debug.h */ = {isa = PBXFileReference; includeInIndex = 1; name = debug.h; path = ZBarSDK/iphone/debug.h; sourceTree = SOURCE_ROOT; };
+		6721F333734E404ABFA828EB /* QBindingEvaluator.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QBindingEvaluator.h; path = QuickDialog/quickdialog/QBindingEvaluator.h; sourceTree = SOURCE_ROOT; };
+		680954A3684448F1ACECE6AC /* QWebElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QWebElement.m; path = QuickDialog/quickdialog/QWebElement.m; sourceTree = SOURCE_ROOT; };
+		689E44F59D4E4B9C8F4FBED4 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFImageRequestOperation.m; path = AFNetworking/AFNetworking/AFImageRequestOperation.m; sourceTree = SOURCE_ROOT; };
+		68E5CE4E550E4BC1ACD43664 /* ParseDummy.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ParseDummy.h; path = Parse/ParseDummy.h; sourceTree = SOURCE_ROOT; };
+		694BDD1DC4EE490497D4C165 /* NSObject+AssociatedObjects.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSObject+AssociatedObjects.h"; path = "BlocksKit/BlocksKit/NSObject+AssociatedObjects.h"; sourceTree = SOURCE_ROOT; };
+		69AADD6C9C74417180F28303 /* MFMessageComposeViewController+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "MFMessageComposeViewController+BlocksKit.h"; path = "BlocksKit/BlocksKit/MessageUI/MFMessageComposeViewController+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		6B2FFAB016854889B86E12E7 /* QTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QTextField.h; path = QuickDialog/quickdialog/QTextField.h; sourceTree = SOURCE_ROOT; };
+		6D2AD6CC20E242CBA11B6D26 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFHTTPRequestOperation.h; path = AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = SOURCE_ROOT; };
+		6DD8B2F52FCA4AA283074770 /* UIPopoverController+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIPopoverController+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIPopoverController+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		6F7E582BE136477682002F46 /* code128.h */ = {isa = PBXFileReference; includeInIndex = 1; name = code128.h; path = ZBarSDK/zbar/decoder/code128.h; sourceTree = SOURCE_ROOT; };
+		6FC46BDF927A403ABF6B4590 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; name = config.h; path = ZBarSDK/iphone/include/config.h; sourceTree = SOURCE_ROOT; };
+		70D51BB575D44FFEB06A21C1 /* QButtonElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QButtonElement.m; path = QuickDialog/quickdialog/QButtonElement.m; sourceTree = SOURCE_ROOT; };
+		70FE2469191D4E2883A04C6A /* refcnt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = refcnt.c; path = ZBarSDK/zbar/refcnt.c; sourceTree = SOURCE_ROOT; };
+		71EE69584A234D54B333D9D5 /* QMapAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QMapAnnotation.h; path = QuickDialog/quickdialog/QMapAnnotation.h; sourceTree = SOURCE_ROOT; };
+		74C95E27945B4A09987F9494 /* QSortingSection.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QSortingSection.h; path = QuickDialog/quickdialog/QSortingSection.h; sourceTree = SOURCE_ROOT; };
+		74FB9027E516469E939988BE /* DOAutocompleteTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; name = DOAutocompleteTextField.m; path = QuickDialog/quickdialog/DOAutocompleteTextField.m; sourceTree = SOURCE_ROOT; };
+		75629880307C4253A2CC4D41 /* rs.h */ = {isa = PBXFileReference; includeInIndex = 1; name = rs.h; path = ZBarSDK/zbar/qrcode/rs.h; sourceTree = SOURCE_ROOT; };
+		75E8BF758C2D40A3B3959822 /* QMultilineTextViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QMultilineTextViewController.m; path = QuickDialog/quickdialog/QMultilineTextViewController.m; sourceTree = SOURCE_ROOT; };
+		76F713BBDADB424EBDBA5EE0 /* isaac.h */ = {isa = PBXFileReference; includeInIndex = 1; name = isaac.h; path = ZBarSDK/zbar/qrcode/isaac.h; sourceTree = SOURCE_ROOT; };
+		77D06CF1E9294E0EBA543275 /* QRadioItemElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QRadioItemElement.h; path = QuickDialog/quickdialog/QRadioItemElement.h; sourceTree = SOURCE_ROOT; };
+		7857EF8FC2F44C9E8195CBB5 /* NSURLConnection+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSURLConnection+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSURLConnection+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		7864BCB29C394A91962061C7 /* NSObject+BlockObservation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSObject+BlockObservation.h"; path = "BlocksKit/BlocksKit/NSObject+BlockObservation.h"; sourceTree = SOURCE_ROOT; };
+		7888B88E67614E948D3026D0 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFXMLRequestOperation.h; path = AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = SOURCE_ROOT; };
+		7892A9E5B22C45658663DF87 /* window.h */ = {isa = PBXFileReference; includeInIndex = 1; name = window.h; path = ZBarSDK/zbar/window.h; sourceTree = SOURCE_ROOT; };
+		7936AFB781D147878D1D8F87 /* posix.h */ = {isa = PBXFileReference; includeInIndex = 1; name = posix.h; path = ZBarSDK/zbar/processor/posix.h; sourceTree = SOURCE_ROOT; };
+		7A51EF63400B463CBE07D365 /* QuickDialogStyleProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogStyleProvider.h; path = QuickDialog/quickdialog/QuickDialogStyleProvider.h; sourceTree = SOURCE_ROOT; };
+		7A9E77D6A119490EBFC5625F /* NSDictionary+ConciseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSDictionary+ConciseKit.h"; path = "ConciseKit/src/NSDictionary+ConciseKit.h"; sourceTree = SOURCE_ROOT; };
+		7B60562ADFA1400F999EC7C8 /* ConciseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ConciseKit.h; path = ConciseKit/src/ConciseKit.h; sourceTree = SOURCE_ROOT; };
+		7B8CF1CD4B56442F862C7B0D /* QuickDialogController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogController.h; path = QuickDialog/quickdialog/QuickDialogController.h; sourceTree = SOURCE_ROOT; };
+		7C926D2BDBC949008785D1EA /* qrdec.c */ = {isa = PBXFileReference; includeInIndex = 1; name = qrdec.c; path = ZBarSDK/zbar/qrcode/qrdec.c; sourceTree = SOURCE_ROOT; };
+		7D16DA18D7E94CE28205281C /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFJSONRequestOperation.h; path = AFNetworking/AFNetworking/AFJSONRequestOperation.h; sourceTree = SOURCE_ROOT; };
+		7D3737768F0E40E598D8C869 /* QPickerWhitespaceDelimitedStringParser.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QPickerWhitespaceDelimitedStringParser.h; path = QuickDialog/quickdialog/QPickerWhitespaceDelimitedStringParser.h; sourceTree = SOURCE_ROOT; };
+		7DD9F2972EFA41F68C93A351 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFJSONRequestOperation.m; path = AFNetworking/AFNetworking/AFJSONRequestOperation.m; sourceTree = SOURCE_ROOT; };
+		81D9DEDC020946A3B25422A3 /* QWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QWebViewController.h; path = QuickDialog/quickdialog/QWebViewController.h; sourceTree = SOURCE_ROOT; };
+		82029E002F614735AF00D42C /* UIControl+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIControl+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIControl+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		82D35551AF1B4AB1AD45DC37 /* QMapViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QMapViewController.h; path = QuickDialog/quickdialog/QMapViewController.h; sourceTree = SOURCE_ROOT; };
+		83C34BE41E7D456495FC54CE /* QBooleanElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QBooleanElement.h; path = QuickDialog/quickdialog/QBooleanElement.h; sourceTree = SOURCE_ROOT; };
+		84A3879F6A8D4EB2BB313081 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFURLConnectionOperation.h; path = AFNetworking/AFNetworking/AFURLConnectionOperation.h; sourceTree = SOURCE_ROOT; };
+		85CC5187165D4D5585D5044A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		85EC4DD5001B49F293439C35 /* QEmptyListElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QEmptyListElement.h; path = QuickDialog/quickdialog/QEmptyListElement.h; sourceTree = SOURCE_ROOT; };
+		861D26BA31314D7C801CC47E /* NSObject+BlockObservation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSObject+BlockObservation.m"; path = "BlocksKit/BlocksKit/NSObject+BlockObservation.m"; sourceTree = SOURCE_ROOT; };
+		862FE2D4133843C9A40381F1 /* NSMutableArray+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableArray+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSMutableArray+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		87A912F5A2C1461BA45033B6 /* QSelectItemElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QSelectItemElement.m; path = QuickDialog/quickdialog/QSelectItemElement.m; sourceTree = SOURCE_ROOT; };
+		87C8284AF7684AADBD32F281 /* NSSet+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSSet+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSSet+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		87E69227147D462988C40F16 /* ZBarCVImage.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarCVImage.h; path = ZBarSDK/iphone/ZBarCVImage.h; sourceTree = SOURCE_ROOT; };
+		88D54ADD004C486AA5D2F089 /* img_scanner.h */ = {isa = PBXFileReference; includeInIndex = 1; name = img_scanner.h; path = ZBarSDK/zbar/img_scanner.h; sourceTree = SOURCE_ROOT; };
+		8949A663A4314FD28368A01B /* QAutoEntryElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QAutoEntryElement.h; path = QuickDialog/quickdialog/QAutoEntryElement.h; sourceTree = SOURCE_ROOT; };
+		898DD6EF5ADD4FBC947D848B /* ZBarHelpController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarHelpController.m; path = ZBarSDK/iphone/ZBarHelpController.m; sourceTree = SOURCE_ROOT; };
+		8A7AFC6D2E174B4DA46EC975 /* QLabelElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QLabelElement.m; path = QuickDialog/quickdialog/QLabelElement.m; sourceTree = SOURCE_ROOT; };
+		8B5E7645B0A64A398FEA1E22 /* QRootElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QRootElement.h; path = QuickDialog/quickdialog/QRootElement.h; sourceTree = SOURCE_ROOT; };
+		8B5EECC9EFEA4CBE8A4A0282 /* video.h */ = {isa = PBXFileReference; includeInIndex = 1; name = video.h; path = ZBarSDK/zbar/video.h; sourceTree = SOURCE_ROOT; };
+		8BDED6FA0D46401A83ADB5EB /* NSIndexSet+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSIndexSet+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSIndexSet+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		8BE0E6BF14534098A4A0E594 /* A2DynamicDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; name = A2DynamicDelegate.m; path = A2DynamicDelegate/A2DynamicDelegate.m; sourceTree = SOURCE_ROOT; };
+		8BF9CEDA8E3941F3B6B89D59 /* ZBarCaptureReader.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarCaptureReader.m; path = ZBarSDK/iphone/ZBarCaptureReader.m; sourceTree = SOURCE_ROOT; };
+		8E51C30CE5764CA49BD8E5F4 /* image.c */ = {isa = PBXFileReference; includeInIndex = 1; name = image.c; path = ZBarSDK/zbar/image.c; sourceTree = SOURCE_ROOT; };
+		8E879225FD7D4D0C86CA0DC2 /* MFMailComposeViewController+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "MFMailComposeViewController+BlocksKit.h"; path = "BlocksKit/BlocksKit/MessageUI/MFMailComposeViewController+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		8F964F3497E943158ADF7898 /* UIPopoverController+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIPopoverController+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIPopoverController+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		8FD58ACBCC0A476CBD13855B /* ZBarReaderViewImpl_Capture.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderViewImpl_Capture.m; path = ZBarSDK/iphone/ZBarReaderViewImpl_Capture.m; sourceTree = SOURCE_ROOT; };
+		905A2B3EA73448B0915B4C97 /* QEntryTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QEntryTableViewCell.m; path = QuickDialog/quickdialog/QEntryTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		9146E195B284435EABFBEEEB /* QSelectSection.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QSelectSection.h; path = QuickDialog/quickdialog/QSelectSection.h; sourceTree = SOURCE_ROOT; };
+		92256485EDD7400A880572D3 /* QDynamicDataSection.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QDynamicDataSection.h; path = QuickDialog/quickdialog/QDynamicDataSection.h; sourceTree = SOURCE_ROOT; };
+		92E98CF9D5C746FF89325B95 /* timer.h */ = {isa = PBXFileReference; includeInIndex = 1; name = timer.h; path = ZBarSDK/zbar/timer.h; sourceTree = SOURCE_ROOT; };
+		9314A87D3C404BF585767DE1 /* UIBarButtonItem+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIBarButtonItem+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIBarButtonItem+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		932FE88EA13249C989640691 /* code39.c */ = {isa = PBXFileReference; includeInIndex = 1; name = code39.c; path = ZBarSDK/zbar/decoder/code39.c; sourceTree = SOURCE_ROOT; };
+		93E9F92D1DC44F29983D60E0 /* QSection.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QSection.m; path = QuickDialog/quickdialog/QSection.m; sourceTree = SOURCE_ROOT; };
+		9615740E4ADA40C7B9DF6FF5 /* zbar.h */ = {isa = PBXFileReference; includeInIndex = 1; name = zbar.h; path = ZBarSDK/include/zbar.h; sourceTree = SOURCE_ROOT; };
+		96E0578AEEB04B5C874B294F /* DOAutocompleteTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; name = DOAutocompleteTextField.h; path = QuickDialog/quickdialog/DOAutocompleteTextField.h; sourceTree = SOURCE_ROOT; };
+		971BFE76D97345759053C52F /* A2BlockClosure.h */ = {isa = PBXFileReference; includeInIndex = 1; name = A2BlockClosure.h; path = A2DynamicDelegate/A2BlockClosure.h; sourceTree = SOURCE_ROOT; };
+		971E983A609E4C499A48FEF9 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; name = MBProgressHUD.m; path = MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
+		97EE738B05EA4D35B4B08F54 /* NSArray+ConciseKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSArray+ConciseKit.m"; path = "ConciseKit/src/NSArray+ConciseKit.m"; sourceTree = SOURCE_ROOT; };
+		98C929A445044CB09EC731EB /* QuickDialogWebController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogWebController.h; path = QuickDialog/quickdialog/QuickDialogWebController.h; sourceTree = SOURCE_ROOT; };
+		99A82B153A8341768F4CDE5C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F632B5831E49F98790BF43 /* ffi_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ffi_i386.h; path = libffi/ios/include/ffi_i386.h; sourceTree = SOURCE_ROOT; };
+		9C0AB1133F3A4484A70DDC0A /* qr_finder.h */ = {isa = PBXFileReference; includeInIndex = 1; name = qr_finder.h; path = ZBarSDK/zbar/decoder/qr_finder.h; sourceTree = SOURCE_ROOT; };
+		9C8C4802C55F4854964354F0 /* QRadioSection.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QRadioSection.h; path = QuickDialog/quickdialog/QRadioSection.h; sourceTree = SOURCE_ROOT; };
+		9D886212C738429AAB467628 /* mutex.h */ = {isa = PBXFileReference; includeInIndex = 1; name = mutex.h; path = ZBarSDK/zbar/mutex.h; sourceTree = SOURCE_ROOT; };
+		9DF90CB75E084A2B9BBFD2B3 /* QuickDialogController+Loading.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "QuickDialogController+Loading.h"; path = "QuickDialog/quickdialog/QuickDialogController+Loading.h"; sourceTree = SOURCE_ROOT; };
+		9E6481903AFB430CA4F460A0 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFHTTPRequestOperation.m; path = AFNetworking/AFNetworking/AFHTTPRequestOperation.m; sourceTree = SOURCE_ROOT; };
+		9EBC3C45F5A2411C945CEC30 /* AFJSONUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFJSONUtilities.m; path = AFNetworking/AFNetworking/AFJSONUtilities.m; sourceTree = SOURCE_ROOT; };
+		A0E0E19490BF44109BF01671 /* ConciseKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ConciseKit.m; path = ConciseKit/src/ConciseKit.m; sourceTree = SOURCE_ROOT; };
+		A24321FD7EE64EEAB2814FA8 /* QuickDialogTableDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogTableDelegate.h; path = QuickDialog/quickdialog/QuickDialogTableDelegate.h; sourceTree = SOURCE_ROOT; };
+		A2740E13325D4407B9D9425E /* trampoline.S */ = {isa = PBXFileReference; includeInIndex = 1; name = trampoline.S; path = libffi/ios/src/arm/trampoline.S; sourceTree = SOURCE_ROOT; };
+		A2796A1927F14C63A7766BFC /* img_scanner.c */ = {isa = PBXFileReference; includeInIndex = 1; name = img_scanner.c; path = ZBarSDK/zbar/img_scanner.c; sourceTree = SOURCE_ROOT; };
+		A27F0EF5CE724096AFF1CC91 /* win.h */ = {isa = PBXFileReference; includeInIndex = 1; name = win.h; path = ZBarSDK/zbar/window/win.h; sourceTree = SOURCE_ROOT; };
+		A2C59C71CB634BDC91C506B7 /* NSMutableArray+MoveObject.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableArray+MoveObject.m"; path = "QuickDialog/quickdialog/NSMutableArray+MoveObject.m"; sourceTree = SOURCE_ROOT; };
+		A40E74E3EC66431C94978AD8 /* bch15_5.h */ = {isa = PBXFileReference; includeInIndex = 1; name = bch15_5.h; path = ZBarSDK/zbar/qrcode/bch15_5.h; sourceTree = SOURCE_ROOT; };
+		A4280250654C4A13B4CA2CD8 /* qr_finder.c */ = {isa = PBXFileReference; includeInIndex = 1; name = qr_finder.c; path = ZBarSDK/zbar/decoder/qr_finder.c; sourceTree = SOURCE_ROOT; };
+		A487F75174F342CEA3EE964C /* debug.h */ = {isa = PBXFileReference; includeInIndex = 1; name = debug.h; path = ZBarSDK/zbar/debug.h; sourceTree = SOURCE_ROOT; };
+		A4A3CD041FAF41ABA906B79F /* QPickerTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QPickerTableViewCell.m; path = QuickDialog/quickdialog/QPickerTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		A5121F3338EB4F7B88A8C5AE /* ffi_common.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ffi_common.h; path = libffi/ios/include/ffi_common.h; sourceTree = SOURCE_ROOT; };
+		A56F842F0085420E989EACB3 /* AFHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFHTTPClient.h; path = AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = SOURCE_ROOT; };
+		A6B76A8D160F4DDA8E7F274A /* QRadioElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QRadioElement.m; path = QuickDialog/quickdialog/QRadioElement.m; sourceTree = SOURCE_ROOT; };
+		A6E2BFCB5BFE4605973514DC /* QButtonElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QButtonElement.h; path = QuickDialog/quickdialog/QButtonElement.h; sourceTree = SOURCE_ROOT; };
+		A713D4083FED4A98BBB7E304 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; name = AFPropertyListRequestOperation.h; path = AFNetworking/AFNetworking/AFPropertyListRequestOperation.h; sourceTree = SOURCE_ROOT; };
+		A7C7378EB1EA4541B21055D1 /* NSMutableArray+MoveObject.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableArray+MoveObject.h"; path = "QuickDialog/quickdialog/NSMutableArray+MoveObject.h"; sourceTree = SOURCE_ROOT; };
+		A9B5F807B71641909F5F3A6A /* NSObject+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSObject+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSObject+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		AB838D8EE8A34EDD9B03B5E9 /* qrcode.h */ = {isa = PBXFileReference; includeInIndex = 1; name = qrcode.h; path = ZBarSDK/zbar/qrcode.h; sourceTree = SOURCE_ROOT; };
+		ABDEE56E9A76465CBE938980 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-resources.sh"; path = "Pods-resources.sh"; sourceTree = SOURCE_ROOT; };
+		ABEC59B398C840F9B0807FBD /* NSInvocation+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSInvocation+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSInvocation+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		AC33E68A83564A638CBC6DC4 /* TestFlight.h */ = {isa = PBXFileReference; includeInIndex = 1; name = TestFlight.h; path = TestFlightSDK/TestFlight.h; sourceTree = SOURCE_ROOT; };
+		ADE7229E87A8427FABCAC2EE /* qrdectxt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = qrdectxt.c; path = ZBarSDK/zbar/qrcode/qrdectxt.c; sourceTree = SOURCE_ROOT; };
+		B084E7F0B5BD4C76AACF91A0 /* databar.c */ = {isa = PBXFileReference; includeInIndex = 1; name = databar.c; path = ZBarSDK/zbar/decoder/databar.c; sourceTree = SOURCE_ROOT; };
+		B177E386F70A4653978515B3 /* QSelectSection.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QSelectSection.m; path = QuickDialog/quickdialog/QSelectSection.m; sourceTree = SOURCE_ROOT; };
+		B1810DEEA48B40EEA2982852 /* ffitarget_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ffitarget_armv7.h; path = libffi/ios/include/ffitarget_armv7.h; sourceTree = SOURCE_ROOT; };
+		B331B90DFA7944BB9FE8294D /* ParseDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ParseDummy.m; path = Parse/ParseDummy.m; sourceTree = SOURCE_ROOT; };
+		B3391F97E2FD4F5F9FA584C3 /* QSection.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QSection.h; path = QuickDialog/quickdialog/QSection.h; sourceTree = SOURCE_ROOT; };
+		B347DDFB3CBD48D1BEDE7790 /* Pods-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-prefix.pch"; path = "Pods-prefix.pch"; sourceTree = SOURCE_ROOT; };
+		B45A9E6A8AD64E4C91C118B5 /* NSMutableArray+IMSExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableArray+IMSExtensions.h"; path = "QuickDialog/quickdialog/NSMutableArray+IMSExtensions.h"; sourceTree = SOURCE_ROOT; };
+		B4A9E5C905844AFA9F33666F /* NSArray+ConciseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSArray+ConciseKit.h"; path = "ConciseKit/src/NSArray+ConciseKit.h"; sourceTree = SOURCE_ROOT; };
+		B54C27CC239447EDAE6068C3 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B59490B8D82A4B4E9F9D08EB /* QDateTimeElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QDateTimeElement.h; path = QuickDialog/quickdialog/QDateTimeElement.h; sourceTree = SOURCE_ROOT; };
+		B6297F3AC99643E8BA4E4755 /* ZBarImage.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarImage.m; path = ZBarSDK/iphone/ZBarImage.m; sourceTree = SOURCE_ROOT; };
+		B6D267E16B80483D957CA3A2 /* UIView+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIView+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIView+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		B8FC39E6291F45AE8F5D7DC7 /* QSegmentedElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QSegmentedElement.m; path = QuickDialog/quickdialog/QSegmentedElement.m; sourceTree = SOURCE_ROOT; };
+		BAB70EE050754456B8FE71B1 /* NSInvocation+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSInvocation+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSInvocation+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		BBE16B9DAB384182AE708D55 /* prep_cif.c */ = {isa = PBXFileReference; includeInIndex = 1; name = prep_cif.c; path = libffi/src/prep_cif.c; sourceTree = SOURCE_ROOT; };
+		BCB50574A7F24E6A97BA06F3 /* QuickDialogDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogDataSource.h; path = QuickDialog/quickdialog/QuickDialogDataSource.h; sourceTree = SOURCE_ROOT; };
+		BCE82B1619DA4F4887DAA27F /* darwin.S */ = {isa = PBXFileReference; includeInIndex = 1; name = darwin.S; path = libffi/ios/src/x86/darwin.S; sourceTree = SOURCE_ROOT; };
+		BD8207406A2C40E5BE9D0CF2 /* NSMutableIndexSet+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableIndexSet+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSMutableIndexSet+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		BDB3C764444B4821AE0057CF /* AFHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFHTTPClient.m; path = AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = SOURCE_ROOT; };
+		BDC1EA5FF3784E3383563024 /* QDateTimeInlineElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QDateTimeInlineElement.h; path = QuickDialog/quickdialog/QDateTimeInlineElement.h; sourceTree = SOURCE_ROOT; };
+		BDF219F9C0B34BC386F94AD7 /* QEmptyListElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QEmptyListElement.m; path = QuickDialog/quickdialog/QEmptyListElement.m; sourceTree = SOURCE_ROOT; };
+		BE6062386D6B4733861A41D2 /* Flurry.h */ = {isa = PBXFileReference; includeInIndex = 1; name = Flurry.h; path = FlurrySDK/Flurry/Flurry.h; sourceTree = SOURCE_ROOT; };
+		C04921897BC544009FC564DE /* NSMutableArray+IMSExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableArray+IMSExtensions.m"; path = "QuickDialog/quickdialog/NSMutableArray+IMSExtensions.m"; sourceTree = SOURCE_ROOT; };
+		C0A64C829B6B4EEBB1460ADF /* binarize.h */ = {isa = PBXFileReference; includeInIndex = 1; name = binarize.h; path = ZBarSDK/zbar/qrcode/binarize.h; sourceTree = SOURCE_ROOT; };
+		C0BD7923618F4395BB560AE8 /* QEntryElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QEntryElement.m; path = QuickDialog/quickdialog/QEntryElement.m; sourceTree = SOURCE_ROOT; };
+		C0ED1CD4720A4B779AB8EC74 /* NSIndexSet+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSIndexSet+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSIndexSet+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		C200A2B0D85647C0AEC5C052 /* code93.c */ = {isa = PBXFileReference; includeInIndex = 1; name = code93.c; path = ZBarSDK/zbar/decoder/code93.c; sourceTree = SOURCE_ROOT; };
+		C246AD724A204F00A90F810A /* refcnt.h */ = {isa = PBXFileReference; includeInIndex = 1; name = refcnt.h; path = ZBarSDK/zbar/refcnt.h; sourceTree = SOURCE_ROOT; };
+		C2D196AAA7A8423EB06D2A25 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; name = MBProgressHUD.h; path = MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
+		C3F35F304BBB4002B3C24A66 /* ZBarHelpController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarHelpController.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarHelpController.h; sourceTree = SOURCE_ROOT; };
+		C49304605A884688914A461B /* UIAlertView+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIAlertView+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIAlertView+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		C532B79C77684C4B98D6C28F /* NSMutableSet+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableSet+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSMutableSet+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		C549383DA3744ECA8183FBCD /* QuickDialogController+Loading.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "QuickDialogController+Loading.m"; path = "QuickDialog/quickdialog/QuickDialogController+Loading.m"; sourceTree = SOURCE_ROOT; };
+		C64B7E61733B4496AE153E74 /* NSCache+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSCache+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSCache+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		C6C6179D32624AC1B2651E96 /* UIWebView+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIWebView+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIWebView+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		C6DD06A4570E4163810CAC7C /* thread.h */ = {isa = PBXFileReference; includeInIndex = 1; name = thread.h; path = ZBarSDK/zbar/thread.h; sourceTree = SOURCE_ROOT; };
+		C72ABEC1606A48C6A7BC1DB9 /* QPickerWhitespaceDelimitedStringParser.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QPickerWhitespaceDelimitedStringParser.m; path = QuickDialog/quickdialog/QPickerWhitespaceDelimitedStringParser.m; sourceTree = SOURCE_ROOT; };
+		C747C02C6A13432AA03120BF /* QDecimalTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QDecimalTableViewCell.h; path = QuickDialog/quickdialog/QDecimalTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		C74FB05C51FB4B978AC4112B /* NSString+ConciseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSString+ConciseKit.h"; path = "ConciseKit/src/NSString+ConciseKit.h"; sourceTree = SOURCE_ROOT; };
+		C775985FC268401380402B9B /* QMapElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QMapElement.m; path = QuickDialog/quickdialog/QMapElement.m; sourceTree = SOURCE_ROOT; };
+		C7B38909A76D498697B713E3 /* QTextElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QTextElement.h; path = QuickDialog/quickdialog/QTextElement.h; sourceTree = SOURCE_ROOT; };
+		C92D62F373AD43798EAB397C /* UIAlertView+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIAlertView+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIAlertView+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		C9A0857D95D148A19B4D7E3A /* decoder.h */ = {isa = PBXFileReference; includeInIndex = 1; name = decoder.h; path = ZBarSDK/zbar/decoder.h; sourceTree = SOURCE_ROOT; };
+		CA174107FD744A479122031B /* i25.c */ = {isa = PBXFileReference; includeInIndex = 1; name = i25.c; path = ZBarSDK/zbar/decoder/i25.c; sourceTree = SOURCE_ROOT; };
+		CA2A4AB425FC413DA963FE74 /* UIGestureRecognizer+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIGestureRecognizer+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIGestureRecognizer+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		CB4721BDE67B4C1E821ABB27 /* A2BlockDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; name = A2BlockDelegate.h; path = A2DynamicDelegate/A2BlockDelegate.h; sourceTree = SOURCE_ROOT; };
+		CBCBC835F37E448488281914 /* fficonfig.h */ = {isa = PBXFileReference; includeInIndex = 1; name = fficonfig.h; path = libffi/ios/include/fficonfig.h; sourceTree = SOURCE_ROOT; };
+		CCC0BD5922524190BBB3ACB4 /* QSegmentedElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QSegmentedElement.h; path = QuickDialog/quickdialog/QSegmentedElement.h; sourceTree = SOURCE_ROOT; };
+		CCCF173B8F734967BF41026C /* QDynamicDataSection.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QDynamicDataSection.m; path = QuickDialog/quickdialog/QDynamicDataSection.m; sourceTree = SOURCE_ROOT; };
+		CD28F226AF694678B71B7BC4 /* QBooleanElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QBooleanElement.m; path = QuickDialog/quickdialog/QBooleanElement.m; sourceTree = SOURCE_ROOT; };
+		CD9F3167FBA04CBC8D377740 /* ZBarReaderController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderController.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarReaderController.h; sourceTree = SOURCE_ROOT; };
+		CE78B2B5B116460CB39D40A5 /* NSDictionary+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSDictionary+BlocksKit.m"; path = "BlocksKit/BlocksKit/NSDictionary+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		CEAD4F58DCD343E5A675AA95 /* QEntryElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QEntryElement.h; path = QuickDialog/quickdialog/QEntryElement.h; sourceTree = SOURCE_ROOT; };
+		CEE2F1F5F06F4120948E6328 /* QTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QTextField.m; path = QuickDialog/quickdialog/QTextField.m; sourceTree = SOURCE_ROOT; };
+		CF313EDD767844949764D56B /* QuickDialogTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogTableView.m; path = QuickDialog/quickdialog/QuickDialogTableView.m; sourceTree = SOURCE_ROOT; };
+		CF9A89771BBC41F891410E24 /* ZBarSymbol.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarSymbol.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarSymbol.h; sourceTree = SOURCE_ROOT; };
+		D093E4B711F24B5784F4005E /* ZBarImageScanner.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarImageScanner.m; path = ZBarSDK/iphone/ZBarImageScanner.m; sourceTree = SOURCE_ROOT; };
+		D2656D5E320F4FE0A0796DC3 /* binarize.c */ = {isa = PBXFileReference; includeInIndex = 1; name = binarize.c; path = ZBarSDK/zbar/qrcode/binarize.c; sourceTree = SOURCE_ROOT; };
+		D2AB0C0402114C5B881C557D /* pdf417.h */ = {isa = PBXFileReference; includeInIndex = 1; name = pdf417.h; path = ZBarSDK/zbar/decoder/pdf417.h; sourceTree = SOURCE_ROOT; };
+		D36972F8357040D1B7E2ABBD /* QAutoEntryElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QAutoEntryElement.m; path = QuickDialog/quickdialog/QAutoEntryElement.m; sourceTree = SOURCE_ROOT; };
+		D3A5B6B37871469D80D1188F /* UIControl+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIControl+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIControl+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		D401692E8CA7434595EF0021 /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarCameraSimulator.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarCameraSimulator.h; sourceTree = SOURCE_ROOT; };
+		D56051F21C2B499CB4EA301D /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFPropertyListRequestOperation.m; path = AFNetworking/AFNetworking/AFPropertyListRequestOperation.m; sourceTree = SOURCE_ROOT; };
+		D6C82F3C881148ED85560AB1 /* fficonfig_armv7.h */ = {isa = PBXFileReference; includeInIndex = 1; name = fficonfig_armv7.h; path = libffi/ios/include/fficonfig_armv7.h; sourceTree = SOURCE_ROOT; };
+		D70F7A8925634181A23C9047 /* ZBarReaderView.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarReaderView.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarReaderView.h; sourceTree = SOURCE_ROOT; };
+		D750E4E43B17418BB21AF737 /* ZBarImageScanner.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarImageScanner.h; path = ZBarSDK/iphone/include/ZBarSDK/ZBarImageScanner.h; sourceTree = SOURCE_ROOT; };
+		D7B4FBAEBA4F43829778ECA9 /* QRadioItemElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QRadioItemElement.m; path = QuickDialog/quickdialog/QRadioItemElement.m; sourceTree = SOURCE_ROOT; };
+		D89FC28341464E6DA5D95FA2 /* ean.h */ = {isa = PBXFileReference; includeInIndex = 1; name = ean.h; path = ZBarSDK/zbar/decoder/ean.h; sourceTree = SOURCE_ROOT; };
+		D935F44AA0CC47268098BD90 /* CKMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; name = CKMacros.h; path = ConciseKit/src/CKMacros.h; sourceTree = SOURCE_ROOT; };
+		DB3242C51BE74C50A429E759 /* UIActionSheet+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIActionSheet+BlocksKit.m"; path = "BlocksKit/BlocksKit/UIKit/UIActionSheet+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		DCF78D3A05264F3BAE18EC60 /* types.c */ = {isa = PBXFileReference; includeInIndex = 1; name = types.c; path = libffi/src/types.c; sourceTree = SOURCE_ROOT; };
+		DD19BD49F1204C3E896597FD /* fficonfig_i386.h */ = {isa = PBXFileReference; includeInIndex = 1; name = fficonfig_i386.h; path = libffi/ios/include/fficonfig_i386.h; sourceTree = SOURCE_ROOT; };
+		DD95292C9D0747FC9693A1C6 /* ffi.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ffi.c; path = libffi/ios/src/arm/ffi.c; sourceTree = SOURCE_ROOT; };
+		DE51CE8738394BA389AF4AB3 /* QRootElement+JsonBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "QRootElement+JsonBuilder.m"; path = "QuickDialog/quickdialog/QRootElement+JsonBuilder.m"; sourceTree = SOURCE_ROOT; };
+		DF25E25BB7B34E40AD81A855 /* ZBarCameraSimulator.m */ = {isa = PBXFileReference; includeInIndex = 1; name = ZBarCameraSimulator.m; path = ZBarSDK/iphone/ZBarCameraSimulator.m; sourceTree = SOURCE_ROOT; };
+		E003C70DBBCB4F1798A93E01 /* event.h */ = {isa = PBXFileReference; includeInIndex = 1; name = event.h; path = ZBarSDK/zbar/event.h; sourceTree = SOURCE_ROOT; };
+		E09B8F1935424E81805BE040 /* util.h */ = {isa = PBXFileReference; includeInIndex = 1; name = util.h; path = ZBarSDK/zbar/qrcode/util.h; sourceTree = SOURCE_ROOT; };
+		E0F90B1A39064803A3763CF7 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFURLConnectionOperation.m; path = AFNetworking/AFNetworking/AFURLConnectionOperation.m; sourceTree = SOURCE_ROOT; };
+		E1D547130E0240CEB36A6196 /* QMultilineTextViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QMultilineTextViewController.h; path = QuickDialog/quickdialog/QMultilineTextViewController.h; sourceTree = SOURCE_ROOT; };
+		E29C7DE78CE342549F9D9BFA /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFNetworkActivityIndicatorManager.m; path = AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m; sourceTree = SOURCE_ROOT; };
+		E38AB601556B435B9320877B /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; name = AFXMLRequestOperation.m; path = AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = SOURCE_ROOT; };
+		E3EBD5A89B3D42F9A3960260 /* A2BlockDelegate+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "A2BlockDelegate+BlocksKit.h"; path = "BlocksKit/BlocksKit/A2BlockDelegate+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		E4E2C44931A84039807BC875 /* CKSingleton.h */ = {isa = PBXFileReference; includeInIndex = 1; name = CKSingleton.h; path = ConciseKit/src/CKSingleton.h; sourceTree = SOURCE_ROOT; };
+		E5015BA2CB2D4E5AA9EA0944 /* NSString+ConciseKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSString+ConciseKit.m"; path = "ConciseKit/src/NSString+ConciseKit.m"; sourceTree = SOURCE_ROOT; };
+		E6F40F7E75924DCA951C39BC /* NSDictionary+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSDictionary+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSDictionary+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		EB55A73803254CD48C4673AE /* QPickerTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QPickerTableViewCell.h; path = QuickDialog/quickdialog/QPickerTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		EBA0406BE67940899D3EC76B /* A2BlockDelegate+BlocksKit.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "A2BlockDelegate+BlocksKit.m"; path = "BlocksKit/BlocksKit/A2BlockDelegate+BlocksKit.m"; sourceTree = SOURCE_ROOT; };
+		EC35BA1037B34D30B643CDF3 /* QMultilineElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QMultilineElement.m; path = QuickDialog/quickdialog/QMultilineElement.m; sourceTree = SOURCE_ROOT; };
+		EDEE8425C8D1405BA4ABA964 /* rs.c */ = {isa = PBXFileReference; includeInIndex = 1; name = rs.c; path = ZBarSDK/zbar/qrcode/rs.c; sourceTree = SOURCE_ROOT; };
+		EF79DBA4C07848789D88E14F /* QFloatElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QFloatElement.m; path = QuickDialog/quickdialog/QFloatElement.m; sourceTree = SOURCE_ROOT; };
+		EFD3174A739F4D56A670CF87 /* QDateTimeInlineElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QDateTimeInlineElement.m; path = QuickDialog/quickdialog/QDateTimeInlineElement.m; sourceTree = SOURCE_ROOT; };
+		EFE43F1A671643AEB14A0FB0 /* UIBarButtonItem+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIBarButtonItem+BlocksKit.h"; path = "BlocksKit/BlocksKit/UIKit/UIBarButtonItem+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		F11BF7A268AA4BB6B375B567 /* QPickerElement.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QPickerElement.m; path = QuickDialog/quickdialog/QPickerElement.m; sourceTree = SOURCE_ROOT; };
+		F282A1C0759C4F05A8EAB16B /* QRootElement+JsonBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "QRootElement+JsonBuilder.h"; path = "QuickDialog/quickdialog/QRootElement+JsonBuilder.h"; sourceTree = SOURCE_ROOT; };
+		F28D79DABEEA4E9CA1DCFCA5 /* NSMutableArray+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSMutableArray+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSMutableArray+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		F2D411DBFABC46FBB9454BEE /* QBadgeLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QBadgeLabel.m; path = QuickDialog/quickdialog/QBadgeLabel.m; sourceTree = SOURCE_ROOT; };
+		F57952053C74433EA0122553 /* QRootBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QRootBuilder.h; path = QuickDialog/quickdialog/QRootBuilder.h; sourceTree = SOURCE_ROOT; };
+		F7BB19B59F634181A4BA4DC1 /* QuickDialogController.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QuickDialogController.m; path = QuickDialog/quickdialog/QuickDialogController.m; sourceTree = SOURCE_ROOT; };
+		F9EF73F3C22746AD89EE3937 /* QElement.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QElement.h; path = QuickDialog/quickdialog/QElement.h; sourceTree = SOURCE_ROOT; };
+		FA1AC4212C4A462F9742A62D /* NSSet+BlocksKit.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "NSSet+BlocksKit.h"; path = "BlocksKit/BlocksKit/NSSet+BlocksKit.h"; sourceTree = SOURCE_ROOT; };
+		FA5F1E4307024BECBDF96231 /* decoder.c */ = {isa = PBXFileReference; includeInIndex = 1; name = decoder.c; path = ZBarSDK/zbar/decoder.c; sourceTree = SOURCE_ROOT; };
+		FAFA0B852B8941AA8C9758D4 /* QuickDialogController+Helpers.h */ = {isa = PBXFileReference; includeInIndex = 1; name = "QuickDialogController+Helpers.h"; path = "QuickDialog/quickdialog/QuickDialogController+Helpers.h"; sourceTree = SOURCE_ROOT; };
+		FCFC9FFE67FD4133A1558664 /* QAutoEntryTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; name = QAutoEntryTableViewCell.h; path = QuickDialog/quickdialog/QAutoEntryTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		FD9563AF07AF4786862477DC /* QRootBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; name = QRootBuilder.m; path = QuickDialog/quickdialog/QRootBuilder.m; sourceTree = SOURCE_ROOT; };
+		FF8F145CBEBB44EDACF69E32 /* pdf417_hash.h */ = {isa = PBXFileReference; includeInIndex = 1; name = pdf417_hash.h; path = ZBarSDK/zbar/decoder/pdf417_hash.h; sourceTree = SOURCE_ROOT; };
+		FFB04426986A4992BB36629D /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; name = "UIImageView+AFNetworking.m"; path = "AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D9C7FBA5E4A440BADC1AC50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6263E01B6845049A1E3FDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19A250E8EC374E62BEEA8E04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99A82B153A8341768F4CDE5C /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24E70E41495F48FE83C5AEC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABDEE56E9A76465CBE938980 /* Pods-resources.sh */,
+				B347DDFB3CBD48D1BEDE7790 /* Pods-prefix.pch */,
+				85CC5187165D4D5585D5044A /* Pods.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2A19F66EAC0549428CFAD379 /* TestFlightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				AC33E68A83564A638CBC6DC4 /* TestFlight.h */,
+			);
+			name = TestFlightSDK;
+			sourceTree = "<group>";
+		};
+		3EA86F5924CA4E5B94ED169D = {
+			isa = PBXGroup;
+			children = (
+				19A250E8EC374E62BEEA8E04 /* Products */,
+				B1B1A21696F742FA84F6EA1A /* Pods */,
+				D4018E8A9B8549369327D4FC /* Targets Support Files */,
+				B79667D0AE0546AAA555CE75 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		56912123AA704B41B158238B /* libffi */ = {
+			isa = PBXGroup;
+			children = (
+				62733098299641F4B9DD0376 /* ffi.h */,
+				0C48626FD62345CBB6F9E15E /* ffi_armv7.h */,
+				A5121F3338EB4F7B88A8C5AE /* ffi_common.h */,
+				99F632B5831E49F98790BF43 /* ffi_i386.h */,
+				CBCBC835F37E448488281914 /* fficonfig.h */,
+				D6C82F3C881148ED85560AB1 /* fficonfig_armv7.h */,
+				DD19BD49F1204C3E896597FD /* fficonfig_i386.h */,
+				19750DB221374DC79134705F /* ffitarget.h */,
+				B1810DEEA48B40EEA2982852 /* ffitarget_armv7.h */,
+				455549F82E164BD586C75A93 /* ffitarget_i386.h */,
+				DD95292C9D0747FC9693A1C6 /* ffi.c */,
+				50E3CD5A082F4C168A60057A /* sysv.S */,
+				A2740E13325D4407B9D9425E /* trampoline.S */,
+				185930A6461A4F5E886DE7C2 /* ffi.c */,
+				BCE82B1619DA4F4887DAA27F /* darwin.S */,
+				06C8651B4147477BBA443D67 /* closures.c */,
+				BBE16B9DAB384182AE708D55 /* prep_cif.c */,
+				39CC7AC288344B77B810798D /* raw_api.c */,
+				DCF78D3A05264F3BAE18EC60 /* types.c */,
+			);
+			name = libffi;
+			sourceTree = "<group>";
+		};
+		6DE1014E50C2432A8472623C /* ConciseKit */ = {
+			isa = PBXGroup;
+			children = (
+				3395631F8DA54572B61945E3 /* CKAdditions.h */,
+				D935F44AA0CC47268098BD90 /* CKMacros.h */,
+				E4E2C44931A84039807BC875 /* CKSingleton.h */,
+				7B60562ADFA1400F999EC7C8 /* ConciseKit.h */,
+				B4A9E5C905844AFA9F33666F /* NSArray+ConciseKit.h */,
+				7A9E77D6A119490EBFC5625F /* NSDictionary+ConciseKit.h */,
+				C74FB05C51FB4B978AC4112B /* NSString+ConciseKit.h */,
+				A0E0E19490BF44109BF01671 /* ConciseKit.m */,
+				97EE738B05EA4D35B4B08F54 /* NSArray+ConciseKit.m */,
+				5F271E421DB44F70A21B8DD3 /* NSDictionary+ConciseKit.m */,
+				E5015BA2CB2D4E5AA9EA0944 /* NSString+ConciseKit.m */,
+			);
+			name = ConciseKit;
+			sourceTree = "<group>";
+		};
+		7EA04A07BDAB417BAAFCF57A /* FlurrySDK */ = {
+			isa = PBXGroup;
+			children = (
+				BE6062386D6B4733861A41D2 /* Flurry.h */,
+			);
+			name = FlurrySDK;
+			sourceTree = "<group>";
+		};
+		988EED0BB8724F278BD68C19 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C2D196AAA7A8423EB06D2A25 /* MBProgressHUD.h */,
+				971E983A609E4C499A48FEF9 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		9EF24B47FB20493CB3A6C4D3 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				B331B90DFA7944BB9FE8294D /* ParseDummy.m */,
+				68E5CE4E550E4BC1ACD43664 /* ParseDummy.h */,
+			);
+			name = Parse;
+			sourceTree = "<group>";
+		};
+		B1B1A21696F742FA84F6EA1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D65921DD8D084E69BD7D3315 /* A2DynamicDelegate */,
+				E639A136434144EE9A3C2600 /* AFNetworking */,
+				C9E102F951304A8FAA305951 /* BlocksKit */,
+				6DE1014E50C2432A8472623C /* ConciseKit */,
+				7EA04A07BDAB417BAAFCF57A /* FlurrySDK */,
+				988EED0BB8724F278BD68C19 /* MBProgressHUD */,
+				9EF24B47FB20493CB3A6C4D3 /* Parse */,
+				C84C6F2A14FB4E4182C23F30 /* QuickDialog */,
+				CC294F0A6AD54100A5FAD3FC /* Reachability */,
+				D3D4260CAF074CEAB29FF0A2 /* TTTAttributedLabel */,
+				2A19F66EAC0549428CFAD379 /* TestFlightSDK */,
+				C8E1AF67E43B4E3EBCC4875D /* ZBarSDK */,
+				56912123AA704B41B158238B /* libffi */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B79667D0AE0546AAA555CE75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B54C27CC239447EDAE6068C3 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C84C6F2A14FB4E4182C23F30 /* QuickDialog */ = {
+			isa = PBXGroup;
+			children = (
+				96E0578AEEB04B5C874B294F /* DOAutocompleteTextField.h */,
+				B45A9E6A8AD64E4C91C118B5 /* NSMutableArray+IMSExtensions.h */,
+				A7C7378EB1EA4541B21055D1 /* NSMutableArray+MoveObject.h */,
+				8949A663A4314FD28368A01B /* QAutoEntryElement.h */,
+				FCFC9FFE67FD4133A1558664 /* QAutoEntryTableViewCell.h */,
+				0899F70BE55B425BAF78A3D8 /* QBadgeElement.h */,
+				30B8FB39C43944CA91E69359 /* QBadgeLabel.h */,
+				244E5EBF28EE4D79BB7E2B2D /* QBadgeTableCell.h */,
+				6721F333734E404ABFA828EB /* QBindingEvaluator.h */,
+				83C34BE41E7D456495FC54CE /* QBooleanElement.h */,
+				A6E2BFCB5BFE4605973514DC /* QButtonElement.h */,
+				2E4CA65D55A94940BAD22E8E /* QDateEntryTableViewCell.h */,
+				B59490B8D82A4B4E9F9D08EB /* QDateTimeElement.h */,
+				BDC1EA5FF3784E3383563024 /* QDateTimeInlineElement.h */,
+				64DBC3FB4C934084B0E9F74A /* QDecimalElement.h */,
+				C747C02C6A13432AA03120BF /* QDecimalTableViewCell.h */,
+				92256485EDD7400A880572D3 /* QDynamicDataSection.h */,
+				F9EF73F3C22746AD89EE3937 /* QElement.h */,
+				85EC4DD5001B49F293439C35 /* QEmptyListElement.h */,
+				CEAD4F58DCD343E5A675AA95 /* QEntryElement.h */,
+				1422235D3FE14880921BA1A9 /* QEntryTableViewCell.h */,
+				4112E6107233440A8B0C3FDA /* QFloatElement.h */,
+				06B87960D4514A17A71BA040 /* QLabelElement.h */,
+				304227013F0E422EBE1BDA43 /* QLoadingElement.h */,
+				71EE69584A234D54B333D9D5 /* QMapAnnotation.h */,
+				4E92132F35324ADD84E2BF76 /* QMapElement.h */,
+				82D35551AF1B4AB1AD45DC37 /* QMapViewController.h */,
+				36AC4E8620994E729FD8842B /* QMultilineElement.h */,
+				E1D547130E0240CEB36A6196 /* QMultilineTextViewController.h */,
+				404A9BDFBDE847858BBFEF2A /* QPickerElement.h */,
+				EB55A73803254CD48C4673AE /* QPickerTableViewCell.h */,
+				15F6396954924151B54FC767 /* QPickerValueParser.h */,
+				7D3737768F0E40E598D8C869 /* QPickerWhitespaceDelimitedStringParser.h */,
+				42244EBA00D14F9098B13AFA /* QRadioElement.h */,
+				77D06CF1E9294E0EBA543275 /* QRadioItemElement.h */,
+				9C8C4802C55F4854964354F0 /* QRadioSection.h */,
+				F57952053C74433EA0122553 /* QRootBuilder.h */,
+				F282A1C0759C4F05A8EAB16B /* QRootElement+JsonBuilder.h */,
+				8B5E7645B0A64A398FEA1E22 /* QRootElement.h */,
+				B3391F97E2FD4F5F9FA584C3 /* QSection.h */,
+				CCC0BD5922524190BBB3ACB4 /* QSegmentedElement.h */,
+				1A6C272CBE4948269E6DE8A4 /* QSelectItemElement.h */,
+				9146E195B284435EABFBEEEB /* QSelectSection.h */,
+				74C95E27945B4A09987F9494 /* QSortingSection.h */,
+				2A179489C22041408D319F02 /* QTableViewCell.h */,
+				C7B38909A76D498697B713E3 /* QTextElement.h */,
+				6B2FFAB016854889B86E12E7 /* QTextField.h */,
+				3F18E3B7211242E081886E21 /* QuickDialog.h */,
+				FAFA0B852B8941AA8C9758D4 /* QuickDialogController+Helpers.h */,
+				9DF90CB75E084A2B9BBFD2B3 /* QuickDialogController+Loading.h */,
+				7B8CF1CD4B56442F862C7B0D /* QuickDialogController.h */,
+				BCB50574A7F24E6A97BA06F3 /* QuickDialogDataSource.h */,
+				38D1650828BE4495B8ECC46C /* QuickDialogEntryElementDelegate.h */,
+				7A51EF63400B463CBE07D365 /* QuickDialogStyleProvider.h */,
+				A24321FD7EE64EEAB2814FA8 /* QuickDialogTableDelegate.h */,
+				59E558CBE1DF4AF7BF59C844 /* QuickDialogTableView.h */,
+				98C929A445044CB09EC731EB /* QuickDialogWebController.h */,
+				256D9B0004F44E4993121806 /* QWebElement.h */,
+				81D9DEDC020946A3B25422A3 /* QWebViewController.h */,
+				74FB9027E516469E939988BE /* DOAutocompleteTextField.m */,
+				C04921897BC544009FC564DE /* NSMutableArray+IMSExtensions.m */,
+				A2C59C71CB634BDC91C506B7 /* NSMutableArray+MoveObject.m */,
+				D36972F8357040D1B7E2ABBD /* QAutoEntryElement.m */,
+				1AEB02162E57436693200A9C /* QAutoEntryTableViewCell.m */,
+				37B19AF598FE4B3FB25422DF /* QBadgeElement.m */,
+				F2D411DBFABC46FBB9454BEE /* QBadgeLabel.m */,
+				31A27CDADBB44C2D86458DD8 /* QBadgeTableCell.m */,
+				48096B810D7C4761A91F1B25 /* QBindingEvaluator.m */,
+				CD28F226AF694678B71B7BC4 /* QBooleanElement.m */,
+				70D51BB575D44FFEB06A21C1 /* QButtonElement.m */,
+				17895B9DB9EB4FA88637D4B3 /* QDateEntryTableViewCell.m */,
+				5C995C65E2524854A784DDBD /* QDateTimeElement.m */,
+				EFD3174A739F4D56A670CF87 /* QDateTimeInlineElement.m */,
+				4BCA34E538BD4F46AE1A7522 /* QDecimalElement.m */,
+				592232654E844595B50778AD /* QDecimalTableViewCell.m */,
+				CCCF173B8F734967BF41026C /* QDynamicDataSection.m */,
+				346C77162AAC4E1B84C7D0F1 /* QElement.m */,
+				BDF219F9C0B34BC386F94AD7 /* QEmptyListElement.m */,
+				C0BD7923618F4395BB560AE8 /* QEntryElement.m */,
+				905A2B3EA73448B0915B4C97 /* QEntryTableViewCell.m */,
+				EF79DBA4C07848789D88E14F /* QFloatElement.m */,
+				8A7AFC6D2E174B4DA46EC975 /* QLabelElement.m */,
+				37710B88026442A5BA3F3844 /* QLoadingElement.m */,
+				4E230EB6D3B040DE9257FE0A /* QMapAnnotation.m */,
+				C775985FC268401380402B9B /* QMapElement.m */,
+				4D67A2F25FCA45BA9B859D55 /* QMapViewController.m */,
+				EC35BA1037B34D30B643CDF3 /* QMultilineElement.m */,
+				75E8BF758C2D40A3B3959822 /* QMultilineTextViewController.m */,
+				F11BF7A268AA4BB6B375B567 /* QPickerElement.m */,
+				A4A3CD041FAF41ABA906B79F /* QPickerTableViewCell.m */,
+				C72ABEC1606A48C6A7BC1DB9 /* QPickerWhitespaceDelimitedStringParser.m */,
+				A6B76A8D160F4DDA8E7F274A /* QRadioElement.m */,
+				D7B4FBAEBA4F43829778ECA9 /* QRadioItemElement.m */,
+				0C770DB17CCB406286E532D2 /* QRadioSection.m */,
+				FD9563AF07AF4786862477DC /* QRootBuilder.m */,
+				DE51CE8738394BA389AF4AB3 /* QRootElement+JsonBuilder.m */,
+				65DA4102DDF649EB876E8C06 /* QRootElement.m */,
+				93E9F92D1DC44F29983D60E0 /* QSection.m */,
+				B8FC39E6291F45AE8F5D7DC7 /* QSegmentedElement.m */,
+				87A912F5A2C1461BA45033B6 /* QSelectItemElement.m */,
+				B177E386F70A4653978515B3 /* QSelectSection.m */,
+				0670E0A9107949D3B2BAAF08 /* QSortingSection.m */,
+				5CBAAC71861143999BC8E95B /* QTableViewCell.m */,
+				1C7629A72E4D4D9482BD7B06 /* QTextElement.m */,
+				CEE2F1F5F06F4120948E6328 /* QTextField.m */,
+				055809E3A2F0457A874BB9AF /* QuickDialogController+Helpers.m */,
+				C549383DA3744ECA8183FBCD /* QuickDialogController+Loading.m */,
+				F7BB19B59F634181A4BA4DC1 /* QuickDialogController.m */,
+				5A00F62A5EF3494285CAC1CD /* QuickDialogDataSource.m */,
+				50A58D68F47443269E640FE3 /* QuickDialogTableDelegate.m */,
+				CF313EDD767844949764D56B /* QuickDialogTableView.m */,
+				250CA9F8993B48EABF2EE4DA /* QuickDialogWebController.m */,
+				680954A3684448F1ACECE6AC /* QWebElement.m */,
+				0868ACB32DF44E24820A82CE /* QWebViewController.m */,
+			);
+			name = QuickDialog;
+			sourceTree = "<group>";
+		};
+		C8E1AF67E43B4E3EBCC4875D /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9615740E4ADA40C7B9DF6FF5 /* zbar.h */,
+				A487F75174F342CEA3EE964C /* debug.h */,
+				6F7E582BE136477682002F46 /* code128.h */,
+				5183304BBEDF44DF89686E70 /* code39.h */,
+				228BFAA8E13B439E911AECF3 /* code93.h */,
+				0917586AB42949C4B175B7AC /* databar.h */,
+				D89FC28341464E6DA5D95FA2 /* ean.h */,
+				316334824E6548DC9C254894 /* i25.h */,
+				D2AB0C0402114C5B881C557D /* pdf417.h */,
+				FF8F145CBEBB44EDACF69E32 /* pdf417_hash.h */,
+				9C0AB1133F3A4484A70DDC0A /* qr_finder.h */,
+				C9A0857D95D148A19B4D7E3A /* decoder.h */,
+				43290BAEE2B74175838E396F /* error.h */,
+				E003C70DBBCB4F1798A93E01 /* event.h */,
+				1D31A4C789D54B8FA77038FC /* image.h */,
+				88D54ADD004C486AA5D2F089 /* img_scanner.h */,
+				9D886212C738429AAB467628 /* mutex.h */,
+				7936AFB781D147878D1D8F87 /* posix.h */,
+				0ADC4869466248F5902AD001 /* processor.h */,
+				A40E74E3EC66431C94978AD8 /* bch15_5.h */,
+				C0A64C829B6B4EEBB1460ADF /* binarize.h */,
+				76F713BBDADB424EBDBA5EE0 /* isaac.h */,
+				1CE52D2B36ED4092B07BA88A /* qrdec.h */,
+				75629880307C4253A2CC4D41 /* rs.h */,
+				E09B8F1935424E81805BE040 /* util.h */,
+				AB838D8EE8A34EDD9B03B5E9 /* qrcode.h */,
+				C246AD724A204F00A90F810A /* refcnt.h */,
+				45BA6C5236C348A588D450D1 /* svg.h */,
+				6046FC0B12754AFDA8787A8B /* symbol.h */,
+				C6DD06A4570E4163810CAC7C /* thread.h */,
+				92E98CF9D5C746FF89325B95 /* timer.h */,
+				8B5EECC9EFEA4CBE8A4A0282 /* video.h */,
+				A27F0EF5CE724096AFF1CC91 /* win.h */,
+				57521EA51B6349B39679A78D /* x.h */,
+				7892A9E5B22C45658663DF87 /* window.h */,
+				662FF7C1F71A4936B7698A98 /* debug.h */,
+				87E69227147D462988C40F16 /* ZBarCVImage.h */,
+				6FC46BDF927A403ABF6B4590 /* config.h */,
+				D401692E8CA7434595EF0021 /* ZBarCameraSimulator.h */,
+				4EF021BD444D4F2FAA82CAD4 /* ZBarCaptureReader.h */,
+				C3F35F304BBB4002B3C24A66 /* ZBarHelpController.h */,
+				404409DD160548D3A2D4F9A4 /* ZBarImage.h */,
+				D750E4E43B17418BB21AF737 /* ZBarImageScanner.h */,
+				CD9F3167FBA04CBC8D377740 /* ZBarReaderController.h */,
+				D70F7A8925634181A23C9047 /* ZBarReaderView.h */,
+				0A374C1FDF9B4E80B54AC0E1 /* ZBarReaderViewController.h */,
+				037ECF71019C4D638814DF8C /* ZBarSDK.h */,
+				CF9A89771BBC41F891410E24 /* ZBarSymbol.h */,
+				4A1B99ACED2649F99990E888 /* config.c */,
+				FA5F1E4307024BECBDF96231 /* decoder.c */,
+				4C8AB5CE66C34441B0069621 /* error.c */,
+				8E51C30CE5764CA49BD8E5F4 /* image.c */,
+				A2796A1927F14C63A7766BFC /* img_scanner.c */,
+				70FE2469191D4E2883A04C6A /* refcnt.c */,
+				656040551FCB453482C775E7 /* scanner.c */,
+				3C7E19222EE6437486C95B71 /* symbol.c */,
+				35A4AF83F0E14A0A98CAA1E1 /* code128.c */,
+				932FE88EA13249C989640691 /* code39.c */,
+				29E357F71A514C4EAB0828EA /* ean.c */,
+				CA174107FD744A479122031B /* i25.c */,
+				A4280250654C4A13B4CA2CD8 /* qr_finder.c */,
+				B084E7F0B5BD4C76AACF91A0 /* databar.c */,
+				C200A2B0D85647C0AEC5C052 /* code93.c */,
+				5CECA203E7AC472C88007410 /* bch15_5.c */,
+				D2656D5E320F4FE0A0796DC3 /* binarize.c */,
+				0E013081CF364CEBBFA0E19B /* isaac.c */,
+				7C926D2BDBC949008785D1EA /* qrdec.c */,
+				ADE7229E87A8427FABCAC2EE /* qrdectxt.c */,
+				EDEE8425C8D1405BA4ABA964 /* rs.c */,
+				230C1309194643E1B0FEDC74 /* util.c */,
+				DF25E25BB7B34E40AD81A855 /* ZBarCameraSimulator.m */,
+				8BF9CEDA8E3941F3B6B89D59 /* ZBarCaptureReader.m */,
+				3D92C8F6DD1443E4A6965B9B /* ZBarCVImage.m */,
+				898DD6EF5ADD4FBC947D848B /* ZBarHelpController.m */,
+				B6297F3AC99643E8BA4E4755 /* ZBarImage.m */,
+				D093E4B711F24B5784F4005E /* ZBarImageScanner.m */,
+				51F636F0E6D6407286E3E775 /* ZBarReaderController.m */,
+				09FA35E5FA0E4B6DA200E993 /* ZBarReaderView.m */,
+				47B877045F314E6991089238 /* ZBarReaderViewController.m */,
+				8FD58ACBCC0A476CBD13855B /* ZBarReaderViewImpl_Capture.m */,
+				44AD6FCF1561401D88020671 /* ZBarReaderViewImpl_Simulator.m */,
+				008A563630814588980A0B94 /* ZBarSymbol.m */,
+			);
+			name = ZBarSDK;
+			sourceTree = "<group>";
+		};
+		C9E102F951304A8FAA305951 /* BlocksKit */ = {
+			isa = PBXGroup;
+			children = (
+				E3EBD5A89B3D42F9A3960260 /* A2BlockDelegate+BlocksKit.h */,
+				17860566B4CD42478CC2430F /* BKGlobals.h */,
+				2CE8828A4E6040149EB678C7 /* BKMacros.h */,
+				4D1FA1FA272245018DBE8168 /* BlocksKit.h */,
+				2D61A88069E8494A8DBD5753 /* NSArray+BlocksKit.h */,
+				C64B7E61733B4496AE153E74 /* NSCache+BlocksKit.h */,
+				E6F40F7E75924DCA951C39BC /* NSDictionary+BlocksKit.h */,
+				C0ED1CD4720A4B779AB8EC74 /* NSIndexSet+BlocksKit.h */,
+				ABEC59B398C840F9B0807FBD /* NSInvocation+BlocksKit.h */,
+				F28D79DABEEA4E9CA1DCFCA5 /* NSMutableArray+BlocksKit.h */,
+				4B2D450B001848DEBF9893BE /* NSMutableDictionary+BlocksKit.h */,
+				041409E78CE64A949A6589BB /* NSMutableIndexSet+BlocksKit.h */,
+				C532B79C77684C4B98D6C28F /* NSMutableSet+BlocksKit.h */,
+				694BDD1DC4EE490497D4C165 /* NSObject+AssociatedObjects.h */,
+				7864BCB29C394A91962061C7 /* NSObject+BlockObservation.h */,
+				A9B5F807B71641909F5F3A6A /* NSObject+BlocksKit.h */,
+				FA1AC4212C4A462F9742A62D /* NSSet+BlocksKit.h */,
+				1BF4131C5C414B4FB33FE2EC /* NSTimer+BlocksKit.h */,
+				25429A78B42C43B4B6386CD4 /* NSURLConnection+BlocksKit.h */,
+				EBA0406BE67940899D3EC76B /* A2BlockDelegate+BlocksKit.m */,
+				353FF72C64AF47A3805D5F35 /* NSArray+BlocksKit.m */,
+				605B7CD4AFEE4F1396C58B8C /* NSCache+BlocksKit.m */,
+				CE78B2B5B116460CB39D40A5 /* NSDictionary+BlocksKit.m */,
+				8BDED6FA0D46401A83ADB5EB /* NSIndexSet+BlocksKit.m */,
+				BAB70EE050754456B8FE71B1 /* NSInvocation+BlocksKit.m */,
+				862FE2D4133843C9A40381F1 /* NSMutableArray+BlocksKit.m */,
+				4AA9971DDFD14F999746B078 /* NSMutableDictionary+BlocksKit.m */,
+				BD8207406A2C40E5BE9D0CF2 /* NSMutableIndexSet+BlocksKit.m */,
+				08A6EC86D223487281967B8A /* NSMutableSet+BlocksKit.m */,
+				618BE5E570AE4755B5CA320C /* NSObject+AssociatedObjects.m */,
+				861D26BA31314D7C801CC47E /* NSObject+BlockObservation.m */,
+				31FAFA06F91F435CAC44776D /* NSObject+BlocksKit.m */,
+				87C8284AF7684AADBD32F281 /* NSSet+BlocksKit.m */,
+				561E004DAE3541EF87B7BD45 /* NSTimer+BlocksKit.m */,
+				7857EF8FC2F44C9E8195CBB5 /* NSURLConnection+BlocksKit.m */,
+				2DB77954B2E04D44910C5217 /* UIActionSheet+BlocksKit.h */,
+				C49304605A884688914A461B /* UIAlertView+BlocksKit.h */,
+				EFE43F1A671643AEB14A0FB0 /* UIBarButtonItem+BlocksKit.h */,
+				D3A5B6B37871469D80D1188F /* UIControl+BlocksKit.h */,
+				CA2A4AB425FC413DA963FE74 /* UIGestureRecognizer+BlocksKit.h */,
+				6DD8B2F52FCA4AA283074770 /* UIPopoverController+BlocksKit.h */,
+				B6D267E16B80483D957CA3A2 /* UIView+BlocksKit.h */,
+				C6C6179D32624AC1B2651E96 /* UIWebView+BlocksKit.h */,
+				DB3242C51BE74C50A429E759 /* UIActionSheet+BlocksKit.m */,
+				C92D62F373AD43798EAB397C /* UIAlertView+BlocksKit.m */,
+				9314A87D3C404BF585767DE1 /* UIBarButtonItem+BlocksKit.m */,
+				82029E002F614735AF00D42C /* UIControl+BlocksKit.m */,
+				4D5FE70969F04C0AAFDFD6D3 /* UIGestureRecognizer+BlocksKit.m */,
+				8F964F3497E943158ADF7898 /* UIPopoverController+BlocksKit.m */,
+				084312D102EA493EBC1CF8C4 /* UIView+BlocksKit.m */,
+				0B5043F5B60945AB976BAB65 /* UIWebView+BlocksKit.m */,
+				8E879225FD7D4D0C86CA0DC2 /* MFMailComposeViewController+BlocksKit.h */,
+				69AADD6C9C74417180F28303 /* MFMessageComposeViewController+BlocksKit.h */,
+				1FF4A9FF069E4617B682AA6E /* MFMailComposeViewController+BlocksKit.m */,
+				31A77EDB5E4748F79F754E8E /* MFMessageComposeViewController+BlocksKit.m */,
+			);
+			name = BlocksKit;
+			sourceTree = "<group>";
+		};
+		CC294F0A6AD54100A5FAD3FC /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				2B1DE640E9464A5CB2063558 /* Reachability.h */,
+				0E917ACECEF04C4A832AB367 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		D3D4260CAF074CEAB29FF0A2 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				03589E8C533D4D52891A1546 /* TTTAttributedLabel.h */,
+				2BF802CA395443DCB43F23AE /* TTTAttributedLabel.m */,
+			);
+			name = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
+		D4018E8A9B8549369327D4FC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				24E70E41495F48FE83C5AEC3 /* Pods */,
+				094E90E9D3B94392A8AF6408 /* PodsDummy_Pods.m */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D65921DD8D084E69BD7D3315 /* A2DynamicDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1962686DA3CD4072B25C5804 /* A2DynamicDelegate.h */,
+				8BE0E6BF14534098A4A0E594 /* A2DynamicDelegate.m */,
+				CB4721BDE67B4C1E821ABB27 /* A2BlockDelegate.h */,
+				2066B10D3E2D43D3A5312386 /* A2BlockDelegate.m */,
+				971BFE76D97345759053C52F /* A2BlockClosure.h */,
+				0EA25735BA174F48838F3FEF /* A2BlockClosure.m */,
+			);
+			name = A2DynamicDelegate;
+			sourceTree = "<group>";
+		};
+		E639A136434144EE9A3C2600 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				A56F842F0085420E989EACB3 /* AFHTTPClient.h */,
+				6D2AD6CC20E242CBA11B6D26 /* AFHTTPRequestOperation.h */,
+				1203760BE9BF4519A8654637 /* AFImageRequestOperation.h */,
+				7D16DA18D7E94CE28205281C /* AFJSONRequestOperation.h */,
+				054FC3EEE42847C6AC75EBCE /* AFJSONUtilities.h */,
+				4D7B90511F12453E9E2F4C4A /* AFNetworkActivityIndicatorManager.h */,
+				071C24710BD84A51BB5D0CD7 /* AFNetworking.h */,
+				A713D4083FED4A98BBB7E304 /* AFPropertyListRequestOperation.h */,
+				84A3879F6A8D4EB2BB313081 /* AFURLConnectionOperation.h */,
+				7888B88E67614E948D3026D0 /* AFXMLRequestOperation.h */,
+				03E51249CE3848A98A3F7B22 /* UIImageView+AFNetworking.h */,
+				BDB3C764444B4821AE0057CF /* AFHTTPClient.m */,
+				9E6481903AFB430CA4F460A0 /* AFHTTPRequestOperation.m */,
+				689E44F59D4E4B9C8F4FBED4 /* AFImageRequestOperation.m */,
+				7DD9F2972EFA41F68C93A351 /* AFJSONRequestOperation.m */,
+				9EBC3C45F5A2411C945CEC30 /* AFJSONUtilities.m */,
+				E29C7DE78CE342549F9D9BFA /* AFNetworkActivityIndicatorManager.m */,
+				D56051F21C2B499CB4EA301D /* AFPropertyListRequestOperation.m */,
+				E0F90B1A39064803A3763CF7 /* AFURLConnectionOperation.m */,
+				E38AB601556B435B9320877B /* AFXMLRequestOperation.m */,
+				FFB04426986A4992BB36629D /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27D608EC3FE4478197C0F6E9 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C72075BF627748EFABFCFB4A /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				370E2A5AC2AE4ADE842B10E8 /* Sources */,
+				EA2F08371C6F4079B4282AA4 /* CopyFiles */,
+				5D9C7FBA5E4A440BADC1AC50 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 99A82B153A8341768F4CDE5C /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		170D7F1632664EB7B978BE77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = 23DB7D1C8DEC4B4990791D38 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3EA86F5924CA4E5B94ED169D;
+			productRefGroup = 19A250E8EC374E62BEEA8E04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27D608EC3FE4478197C0F6E9 /* Pods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		370E2A5AC2AE4ADE842B10E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C04E33E37349929CA1570B /* A2DynamicDelegate.m in Sources */,
+				06071F031B2D4EF1A97142E4 /* A2BlockDelegate.m in Sources */,
+				DFAE6AE5B02F4D7A945CB176 /* A2BlockClosure.m in Sources */,
+				015A00CA7B5F401E90BD844E /* AFHTTPClient.m in Sources */,
+				037EB604D6664481B6347E07 /* AFHTTPRequestOperation.m in Sources */,
+				E5864D784146462493916098 /* AFImageRequestOperation.m in Sources */,
+				4E766D5C6CE2441495015300 /* AFJSONRequestOperation.m in Sources */,
+				3295F06B7E8D44C685DFB7D3 /* AFJSONUtilities.m in Sources */,
+				D6EDA37EAB654B8AB7B31C14 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				E9EDDBB009FE495B87F003C5 /* AFPropertyListRequestOperation.m in Sources */,
+				0A1B7EA47F074EDEBB5FF046 /* AFURLConnectionOperation.m in Sources */,
+				854834928FA74F60BD5B4B00 /* AFXMLRequestOperation.m in Sources */,
+				1C6A0317A4FD4AF39DF8874A /* UIImageView+AFNetworking.m in Sources */,
+				A5551FBA2037411B89A0E214 /* A2BlockDelegate+BlocksKit.m in Sources */,
+				40201C495027432CA160DDC5 /* NSArray+BlocksKit.m in Sources */,
+				7417B386F595412A8079D8EA /* NSCache+BlocksKit.m in Sources */,
+				25E9ED709CDA49B382184951 /* NSDictionary+BlocksKit.m in Sources */,
+				28C5A61FB8E742C58DE44358 /* NSIndexSet+BlocksKit.m in Sources */,
+				0363F2C8AF0943378D543380 /* NSInvocation+BlocksKit.m in Sources */,
+				7D27ED0C4DC0451489F1A95B /* NSMutableArray+BlocksKit.m in Sources */,
+				0E00668C218741F489980BFA /* NSMutableDictionary+BlocksKit.m in Sources */,
+				DB5D0DF6831B4C30BBF5E1C8 /* NSMutableIndexSet+BlocksKit.m in Sources */,
+				B3039A3807E1492C9B566C94 /* NSMutableSet+BlocksKit.m in Sources */,
+				095214D1712D4E7C9A103FFE /* NSObject+AssociatedObjects.m in Sources */,
+				14E32C3696EE4719BF75E817 /* NSObject+BlockObservation.m in Sources */,
+				EF6AEEF519B64E70BAFC3E02 /* NSObject+BlocksKit.m in Sources */,
+				CD650B022A4B42DFA384EE0B /* NSSet+BlocksKit.m in Sources */,
+				8F665794938649EC9F5A5DDB /* NSTimer+BlocksKit.m in Sources */,
+				681F99C7C67740F8858A21F7 /* NSURLConnection+BlocksKit.m in Sources */,
+				90354DB4450342F492C80753 /* UIActionSheet+BlocksKit.m in Sources */,
+				BA094442E78E4BCE8C355708 /* UIAlertView+BlocksKit.m in Sources */,
+				31BFB2325D934F46B13AD7C5 /* UIBarButtonItem+BlocksKit.m in Sources */,
+				5E7D7FF0CE644D60BD1D3A3A /* UIControl+BlocksKit.m in Sources */,
+				6498A3C02EDE474D958E396B /* UIGestureRecognizer+BlocksKit.m in Sources */,
+				2327B7492D7845CABC75D3E7 /* UIPopoverController+BlocksKit.m in Sources */,
+				53763D8E6C7C4A65BCA81FE6 /* UIView+BlocksKit.m in Sources */,
+				C575BE64EF4A4D4890C4E5DF /* UIWebView+BlocksKit.m in Sources */,
+				1A53BF0B5BCB4AF5A3F9C9AE /* MFMailComposeViewController+BlocksKit.m in Sources */,
+				032D2E4A2D1A4359B79EBE08 /* MFMessageComposeViewController+BlocksKit.m in Sources */,
+				E8D2F162039C42988BE62B2C /* ConciseKit.m in Sources */,
+				EACC8F7A34FB4530B78A78D7 /* NSArray+ConciseKit.m in Sources */,
+				759D8E49645547F9A78B2BF6 /* NSDictionary+ConciseKit.m in Sources */,
+				05189389BE8F4FC0B241840B /* NSString+ConciseKit.m in Sources */,
+				5B200A9A609B4D129AC4D11C /* MBProgressHUD.m in Sources */,
+				15F726E11F9348A980299FF7 /* ParseDummy.m in Sources */,
+				F0165C5EB7034E2AB35EF8A9 /* DOAutocompleteTextField.m in Sources */,
+				72FAEB59CCF44CAE9C8EB712 /* NSMutableArray+IMSExtensions.m in Sources */,
+				D7D782880CC748D5ADEC0456 /* NSMutableArray+MoveObject.m in Sources */,
+				BDE3F0D02AB6436D86989CCF /* QAutoEntryElement.m in Sources */,
+				A22ADB3056054BD5A20B1022 /* QAutoEntryTableViewCell.m in Sources */,
+				A1F6CCD76BB742DBB6551724 /* QBadgeElement.m in Sources */,
+				32FAE0D09F7146D49063839F /* QBadgeLabel.m in Sources */,
+				9B3286B2537041ADB1F6A42B /* QBadgeTableCell.m in Sources */,
+				C6A31CA870844820A45D4EA4 /* QBindingEvaluator.m in Sources */,
+				341D0A85BBF74E569A759D07 /* QBooleanElement.m in Sources */,
+				F58336D709C04AC79858AC2E /* QButtonElement.m in Sources */,
+				45D40207915247BEA2124D83 /* QDateEntryTableViewCell.m in Sources */,
+				3AE4DF7DB38C47D3B50B5E7D /* QDateTimeElement.m in Sources */,
+				6343B47B15C6464A8E6578C8 /* QDateTimeInlineElement.m in Sources */,
+				81C58684362D4B47A323934F /* QDecimalElement.m in Sources */,
+				210F895DCDBE46DD994ECBB8 /* QDecimalTableViewCell.m in Sources */,
+				D19DBD3AB9D2457386722247 /* QDynamicDataSection.m in Sources */,
+				F5596BFDB75E45AF8A06CC11 /* QElement.m in Sources */,
+				11CE8B74EDCC4E5287B2C5D5 /* QEmptyListElement.m in Sources */,
+				0F3731C920034C9386703049 /* QEntryElement.m in Sources */,
+				3BFD4980A01340FBB8C2672C /* QEntryTableViewCell.m in Sources */,
+				A610B965AE1D4BB4B2C03239 /* QFloatElement.m in Sources */,
+				B4C5BF574E2D4D2993A7AA28 /* QLabelElement.m in Sources */,
+				88A153F54C5A43C396F2569B /* QLoadingElement.m in Sources */,
+				C20B018ED6264C40842A37D8 /* QMapAnnotation.m in Sources */,
+				A411212D66504CC7B7E30FF4 /* QMapElement.m in Sources */,
+				DA1A0D9DBE414423ADDC9945 /* QMapViewController.m in Sources */,
+				F2B7AF78BF734692A820BA84 /* QMultilineElement.m in Sources */,
+				96F5CB452D7A4DF784B16919 /* QMultilineTextViewController.m in Sources */,
+				7E67569E31204AC993E02FB6 /* QPickerElement.m in Sources */,
+				6BD6767DB83142FFA50C59B3 /* QPickerTableViewCell.m in Sources */,
+				560BB1AC62DA4B89A19EE697 /* QPickerWhitespaceDelimitedStringParser.m in Sources */,
+				80FEE4D6E32D4C26A7527A85 /* QRadioElement.m in Sources */,
+				D217BA2FB1FF41428F023599 /* QRadioItemElement.m in Sources */,
+				39A64B6F08FF4E5DB0B26E8E /* QRadioSection.m in Sources */,
+				8722BF743645482180EB1BD6 /* QRootBuilder.m in Sources */,
+				646D6DEA23454624937E886B /* QRootElement+JsonBuilder.m in Sources */,
+				9C33FE10B843472D8EFC863D /* QRootElement.m in Sources */,
+				7B2B3710EA1F47C587F1537D /* QSection.m in Sources */,
+				6AB1B5AEC61A451381A67E7C /* QSegmentedElement.m in Sources */,
+				3C5773425EE44BEE9A58FFBD /* QSelectItemElement.m in Sources */,
+				EECA2763A9084037A323E794 /* QSelectSection.m in Sources */,
+				4CA7FE28CA404213B06DC91C /* QSortingSection.m in Sources */,
+				BD8129BCA2DD484B9B93AA12 /* QTableViewCell.m in Sources */,
+				D6683CEA14084FA0837426E8 /* QTextElement.m in Sources */,
+				CBFE5B37F28543CBAF4B7CBB /* QTextField.m in Sources */,
+				458098C792FD42D9BC1E3179 /* QuickDialogController+Helpers.m in Sources */,
+				895B577B418641909406DAAF /* QuickDialogController+Loading.m in Sources */,
+				BE2F5BF9237E440E99025509 /* QuickDialogController.m in Sources */,
+				CDF563A3E3CB4730B8B38DEA /* QuickDialogDataSource.m in Sources */,
+				27DD6DF4DA634FBEBB1626B4 /* QuickDialogTableDelegate.m in Sources */,
+				19703432C652462AA533B1AA /* QuickDialogTableView.m in Sources */,
+				CAC5FF74AB824C8DB4258C07 /* QuickDialogWebController.m in Sources */,
+				DD393C41AC154E0189913F17 /* QWebElement.m in Sources */,
+				A4958C4BA07A427B95889D08 /* QWebViewController.m in Sources */,
+				57E1B22CEBC04B0FB2492505 /* Reachability.m in Sources */,
+				441B5C0EA36F4E87B3459800 /* TTTAttributedLabel.m in Sources */,
+				EF1F77BDCF92438299EB1D95 /* config.c in Sources */,
+				EF479E9A6B734202A507C1F7 /* decoder.c in Sources */,
+				3AECAB7E7681462195FCF45B /* error.c in Sources */,
+				9BE9A29794B54B63AAC776FE /* image.c in Sources */,
+				008785FC22F44D61B036F060 /* img_scanner.c in Sources */,
+				549739E476014584B332D3A2 /* refcnt.c in Sources */,
+				34E22F134955495B95929A1D /* scanner.c in Sources */,
+				66EA5DA6041A4C189CF00BF6 /* symbol.c in Sources */,
+				ED7384AA35754D83993CF123 /* code128.c in Sources */,
+				CCDDAED719F44071B2680A22 /* code39.c in Sources */,
+				D95A00DFD16E4F61873E5F15 /* ean.c in Sources */,
+				511E352AC6BD4BEA94887974 /* i25.c in Sources */,
+				964B8D14569442B9B79414FC /* qr_finder.c in Sources */,
+				B599698328704F41A1FC1A76 /* databar.c in Sources */,
+				588C24C62D6B44379AEE383C /* code93.c in Sources */,
+				EDFF44DF94ED4D5B8B34C7B6 /* bch15_5.c in Sources */,
+				E5411F7E30EE495BBD985423 /* binarize.c in Sources */,
+				E234FCE8081A41DF9E55C98F /* isaac.c in Sources */,
+				6B8D3364FEB0426D961F71DE /* qrdec.c in Sources */,
+				70264BBB125B41A68AB06A87 /* qrdectxt.c in Sources */,
+				9FCEFFAF5AE2427F9866403C /* rs.c in Sources */,
+				77C71C91E916409E9C75813C /* util.c in Sources */,
+				239AE2617DEA4D37B511A631 /* ZBarCameraSimulator.m in Sources */,
+				5249B28EAF4A4770AD2B44B5 /* ZBarCaptureReader.m in Sources */,
+				E2289238CC2F4B5DA9ACF5DA /* ZBarCVImage.m in Sources */,
+				2F5005338F27470AA1B84570 /* ZBarHelpController.m in Sources */,
+				9DB5BAA5B8FA4DB78F37B911 /* ZBarImage.m in Sources */,
+				A6CF889CFD0D480392410C9D /* ZBarImageScanner.m in Sources */,
+				9C9B17BCE35444EF99991F76 /* ZBarReaderController.m in Sources */,
+				4C895766C7E04677B3340DC0 /* ZBarReaderView.m in Sources */,
+				B0DFD7FD72044C58ABE6F32C /* ZBarReaderViewController.m in Sources */,
+				77B8371D654B4C92B2361F9E /* ZBarReaderViewImpl_Capture.m in Sources */,
+				047F9BEC1D0B493F8EEE8CD5 /* ZBarReaderViewImpl_Simulator.m in Sources */,
+				E2DB45B859C949088990A606 /* ZBarSymbol.m in Sources */,
+				E7876F40ABA546719AE6BEAD /* ffi.c in Sources */,
+				2CAE23E3F9634346A91BA352 /* sysv.S in Sources */,
+				B69F51A425C94C6FB2AC832C /* trampoline.S in Sources */,
+				D1DD45C28D0648FAB8CEFFF4 /* ffi.c in Sources */,
+				A724C6D12C504D0B8B7B99F2 /* darwin.S in Sources */,
+				EA8CFD42E6EB463EBC3480B2 /* closures.c in Sources */,
+				3E58059B060B414780EE23DF /* prep_cif.c in Sources */,
+				A3FF776112FC487D8BD9D55E /* raw_api.c in Sources */,
+				7794C0F9322446CF935BC0AE /* types.c in Sources */,
+				240C903DDEFF41E78F26948F /* PodsDummy_Pods.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6F51CFB7A1C54D60A7B2027A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85CC5187165D4D5585D5044A /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
+				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
+				PODS_ROOT = "${SRCROOT}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9156066AEBE74DFFA6C2855A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85CC5187165D4D5585D5044A /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
+				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
+				PODS_ROOT = "${SRCROOT}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		920CBDBDBFD6498BA6BFF568 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		ECDF98296F194E71A48D96ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23DB7D1C8DEC4B4990791D38 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				920CBDBDBFD6498BA6BFF568 /* Debug */,
+				ECDF98296F194E71A48D96ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C72075BF627748EFABFCFB4A /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F51CFB7A1C54D60A7B2027A /* Debug */,
+				9156066AEBE74DFFA6C2855A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 170D7F1632664EB7B978BE77 /* Project object */;
+}
