@@ -59,6 +59,13 @@ static NSString *const kLocationKey = @"camp_Pointer.loc_Pointer";
     [query includeKey:kCampaignKey];
     [query includeKey:kCampaignCustomerKey];
     [query includeKey:kLocationKey];
+
+    // Make sure there is a valid campaign
+    [query whereKeyExists:kCampaignKey];
+
+    // Make sure the campaign has both a customer and location
+    [query whereKey:kCampaignKey matchesQuery:[Campaign queryForValidCustomerAndLocation]];
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             response(nil, error);

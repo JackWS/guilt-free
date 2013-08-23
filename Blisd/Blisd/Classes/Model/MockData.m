@@ -57,7 +57,7 @@
 }
 
 + (NSString *) generateCheckInURL {
-    return @"http://blisd.com/app/CbgnDW419nF";
+    return @"http://blisd.com/CbgnDW419nF";
 }
 
 + (void) callAfterDelay:(CGFloat) delayInSeconds successBlock:(void (^)()) success failureBlock:(void (^)()) failure {

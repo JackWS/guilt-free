@@ -59,7 +59,7 @@
 "POST_SCAN_FACEBOOK_EARNED_DESCRIPTION" = "You could, too!";
 "POST_SCAN_TWITTER_EARNED_TEXT" = "I got Bliss at %@";
 
-"SHARE_CUSTOMER_URL" = "http://blisd.com/app/customerpage/customer.php?id=%@";
+"SHARE_CUSTOMER_URL" = "http://blisd.com/customerpage/customer.php?id=%@";
 
 "NO_EMAIL_ACCOUNT_TITLE" = "No Email Account";
 "NO_EMAIL_ACCOUNT_MESSAGE" = "This device hasn't been set up to send email. Please configure an account first.";

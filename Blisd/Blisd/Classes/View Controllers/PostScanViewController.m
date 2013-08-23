@@ -151,6 +151,7 @@ typedef enum {
                                   [self.hudHelper hide];
                                   if ([success boolValue]) {
                                       PostRedeemViewController *controller = [[PostRedeemViewController alloc] init];
+                                      controller.balance = self.balance;
                                       [self.navigationController pushViewController:controller animated:YES];
 
 //                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")

@@ -101,5 +101,13 @@ static NSString *const kLocationKey = @"loc_Pointer";
     return query;
 }
 
++ (PFQuery *) queryForValidCustomerAndLocation {
+    PFQuery *query = [PFQuery queryWithClassName:kClassName];
+    [query whereKeyExists:kCustomerKey];
+    [query whereKeyExists:kLocationKey];
+
+    return query;
+}
+
 
 @end

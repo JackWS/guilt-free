@@ -78,10 +78,10 @@
         return nil;
     }
     NSString *str = serviceDict[$int(item)];
-    if (str && extraText1) {
-        return $str(str, extraText1);
-    } else if (str && extraText1 && extraText2) {
+    if (str && extraText1 && extraText2) {
         return $str(str, extraText1, extraText2);
+    } else if (str && extraText1) {
+        return $str(str, extraText1);
     } else {
         return str;
     }
@@ -102,7 +102,7 @@
 }
 
 - (void) shareHelper:(ShareHelper *) shareHelper didCompleteShareWithService:(ShareService) shareService {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void) shareHelper:(ShareHelper *) shareHelper didReceiveError:(NSError *) error forShareWithService:(ShareService) shareService {
