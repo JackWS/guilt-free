@@ -7,6 +7,8 @@
 //
 
 #import <Parse/Parse.h>
+// Manually include this so AppCode stops complaining
+#import <Parse/PFFacebookUtils.h>
 #import "AppController.h"
 #import "ScanViewController.h"
 #import "BlissViewController.h"
@@ -213,6 +215,19 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 
 #pragma mark Facebook
 
+- (Facebook *) facebook {
+    if (!_facebook && FBSession.activeSession.isOpen) {
+        _facebook = [[Facebook alloc]
+                initWithAppId:FBSession.activeSession.appID
+                  andDelegate:nil];
+        // Store the Facebook session information
+        _facebook.accessToken = FBSession.activeSession.accessTokenData.accessToken;
+        _facebook.expirationDate = FBSession.activeSession.accessTokenData.expirationDate;
+    }
+    return _facebook;
+}
+
+
 /*
  * Callback for session changes.
  */
@@ -241,9 +256,8 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
                     initWithAppId:FBSession.activeSession.appID
                       andDelegate:nil];
 
-            // Store the Facebook session information
-            self.facebook.accessToken = FBSession.activeSession.accessToken;
-            self.facebook.expirationDate = FBSession.activeSession.expirationDate;
+            self.facebook.accessToken = FBSession.activeSession.accessTokenData.accessToken;
+            self.facebook.expirationDate = FBSession.activeSession.accessTokenData.expirationDate;
         }
     } else {
         // Clear out the Facebook instance

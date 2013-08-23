@@ -27,6 +27,7 @@
 "ERROR_SCAN" = "There was an unexpected problem scanning this code. Please try again later.";
 "ERROR_LOADING_SUBSCRIPTIONS" = "There was an unexpected problem loading your subscriptions. Please try again later.";
 "ERROR_LOADING_NEARBY_CAMPAIGNS" = "There was an unexpected problem loading nearby campaigns. Please try again later.";
+"ERROR_LINK_FACEBOOK" = "There was a problem linking your account with Facebook. Please try again later.";
 
 "NEXT_VISIT_GET" = "On your next visit, get:";
 "N_MORE_PURCHASES" = "%d more purchases";
