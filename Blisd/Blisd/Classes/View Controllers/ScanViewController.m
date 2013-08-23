@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Blisd LLC All rights reserved.
 //
 
-#import <iphone/include/ZBarSDK/ZBarReaderView.h>
+#import <ZBarSDK/zbar.h>
 #import "ScanViewController.h"
 #import "ZBarCameraSimulator.h"
 #import "HUDHelper.h"
