@@ -35,5 +35,7 @@
 
 + (PFQuery *) queryForCampaignNumber:(NSString *) campaignNumber;
 
++ (PFQuery *) queryForValidCustomerAndLocation;
+
 
 @end

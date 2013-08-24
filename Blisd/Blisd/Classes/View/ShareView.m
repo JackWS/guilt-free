@@ -65,7 +65,7 @@
 //        // If that doesn't work, link them up with the PFUser and then present the old-style dialog
 //        [PFFacebookUtils linkUser:[PFUser currentUser] permissions:nil block:^(BOOL succeeded, NSError *error) {
 //            if (succeeded) {
-//                [self shareFacebookNonNative];
+//                [self reallyShareFBNonNative];
 //            } else {
 //                if (error) {
 //                    [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"ERROR_TITLE", @"")
@@ -77,7 +77,7 @@
 //            }
 //        }];
 //    } else {
-//        [self shareFacebookNonNative];
+//        [self reallyShareFBNonNative];
 //    }
 }
 
@@ -116,7 +116,7 @@
 
 //#pragma mark Helpers
 //
-//- (void) shareFacebookNonNative {
+//- (void) reallyShareFBNonNative {
 //    PF_Facebook *fb = [PFFacebookUtils facebook];
 //    fb.accessToken = [PF_FBSession activeSession].accessToken;
 //    fb.expirationDate = [PF_FBSession activeSession].expirationDate;
@@ -139,7 +139,7 @@
 //- (void) facebookSessionStateChanged:(NSNotification *) notification {
 //    NSLog(@"STATE CHANGED!");
 //    if (PF_FBSession.activeSession.isOpen) {
-//        [self shareFacebookNonNative];
+//        [self reallyShareFBNonNative];
 //    }
 //}
 

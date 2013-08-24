@@ -6,10 +6,11 @@
 //  Copyright (c) 2012 Blisd LLC All rights reserved.
 //
 
+#import <Parse/Parse.h>
+// Manually include this so AppCode stops complaining
+#import <Parse/PFFacebookUtils.h>
 #import "AppController.h"
-
 #import "ScanViewController.h"
-
 #import "BlissViewController.h"
 #import "LogInViewController.h"
 #import "SignUpViewController.h"
@@ -20,6 +21,7 @@
 #import "UncaughtExceptionHandler.h"
 #import "Location.h"
 #import "LocationManager.h"
+#import "Facebook.h"
 
 NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControllerDidChangeFacebookStatusNotification";
 
@@ -50,7 +52,7 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 }
 
 - (void) applicationDidBecomeActive:(UIApplication *) application {
-    [[PF_FBSession activeSession] handleDidBecomeActive];
+    [[FBSession activeSession] handleDidBecomeActive];
     [[LocationManager instance] findLocation];
 }
 
@@ -94,7 +96,7 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 - (void) initializeParse {
     [Parse setApplicationId:@"HjWLIOOPAcDdAGLosSh8nDY3OhB5Onh5LCdmW0en"
                   clientKey:@"Ua9MSXaabmMYAl0ZaLJirzdtuF4Cdb3ZlXRzm09F"];
-    [PFFacebookUtils initializeWithApplicationId:@"132484773511826"];
+    [PFFacebookUtils initializeFacebook];
     [PFTwitterUtils initializeWithConsumerKey:@"CGsQrEsgk8Z0EUHPc0BQ"
                                consumerSecret:@"91ZWdE68oPCmrOlxWdqkpUQakGECrwpWnUQbkgdBvwk"];
 }
@@ -213,37 +215,49 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
 
 #pragma mark Facebook
 
+- (Facebook *) facebook {
+    if (!_facebook && FBSession.activeSession.isOpen) {
+        _facebook = [[Facebook alloc]
+                initWithAppId:FBSession.activeSession.appID
+                  andDelegate:nil];
+        // Store the Facebook session information
+        _facebook.accessToken = FBSession.activeSession.accessTokenData.accessToken;
+        _facebook.expirationDate = FBSession.activeSession.accessTokenData.expirationDate;
+    }
+    return _facebook;
+}
+
+
 /*
  * Callback for session changes.
  */
-- (void)sessionStateChanged:(PF_FBSession *)session
-                      state:(PF_FBSessionState) state
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
                       error:(NSError *)error {
     switch (state) {
-        case PF_FBSessionStateOpen:
+        case FBSessionStateOpen:
             if (!error) {
                 // We have a valid session
                 NSLog(@"User session found");
             }
             break;
-        case PF_FBSessionStateClosed:
-        case PF_FBSessionStateClosedLoginFailed:
-            [PF_FBSession.activeSession closeAndClearTokenInformation];
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:
+            [FBSession.activeSession closeAndClearTokenInformation];
             break;
         default:
             break;
     }
 
-    if (PF_FBSession.activeSession.isOpen) {
+    if (FBSession.activeSession.isOpen) {
         // Initiate a Facebook instance and properties
         if (nil == self.facebook) {
-            self.facebook = [[PF_Facebook alloc]
-                    initWithAppId:PF_FBSession.activeSession.appID
+            self.facebook = [[Facebook alloc]
+                    initWithAppId:FBSession.activeSession.appID
                       andDelegate:nil];
 
-            // Store the Facebook session information
-            self.facebook.accessToken = PF_FBSession.activeSession.accessToken;
-            self.facebook.expirationDate = PF_FBSession.activeSession.expirationDate;
+            self.facebook.accessToken = FBSession.activeSession.accessTokenData.accessToken;
+            self.facebook.expirationDate = FBSession.activeSession.accessTokenData.expirationDate;
         }
     } else {
         // Clear out the Facebook instance
@@ -270,9 +284,9 @@ NSString *const kAppControllerDidChangeFacebookStatusNotification = @"AppControl
  * Opens a Facebook session and optionally shows the login UX.
  */
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
-    return [PF_FBSession openActiveSessionWithReadPermissions:nil
+    return [FBSession openActiveSessionWithReadPermissions:nil
                                           allowLoginUI:YES
-                                     completionHandler:^(PF_FBSession *session, PF_FBSessionState status, NSError *error) {
+                                     completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
                                          [self sessionStateChanged:session
                                                              state:status
                                                              error:error];

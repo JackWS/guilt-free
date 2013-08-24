@@ -151,6 +151,7 @@ typedef enum {
                                   [self.hudHelper hide];
                                   if ([success boolValue]) {
                                       PostRedeemViewController *controller = [[PostRedeemViewController alloc] init];
+                                      controller.balance = self.balance;
                                       [self.navigationController pushViewController:controller animated:YES];
 
 //                                      [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"REDEEMED_TITLE", @"")
@@ -244,7 +245,7 @@ typedef enum {
 }
 
 - (NSURL *) shareHelper:(ShareHelper *) shareHelper URLForShareWithService:(ShareService) shareService {
-    NSString *str = $str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.customer.company);
+    NSString *str = $str(NSLocalizedString(@"SHARE_CUSTOMER_URL", @""), self.balance.customer.customerNumber);
     NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     return url;
 }

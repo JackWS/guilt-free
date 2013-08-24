@@ -7,7 +7,7 @@ This pod is in the Fictorial CocoaPods Specs repo.
 Add this pod as a dependency in your project's Podfile:
 
     platform :ios
-    dependency 'Parse', '~> 1.1.12'
+    dependency 'Parse', '~> 1.1'
 
 [Create a Parse app](https://parse.com/apps/new)
 

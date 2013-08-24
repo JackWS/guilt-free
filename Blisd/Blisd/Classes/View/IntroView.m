@@ -23,15 +23,16 @@
         self.imageView = [[UIImageView alloc] initWithImage:image];
         self.imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         [self addSubview:self.imageView];
+        __block IntroView *introView = self;
         [self addEventHandler:^(id sender) {
             [UIView animateWithDuration:0.5
                              animations:^{
-                                 self.alpha = 0;
+                                 introView.alpha = 0;
                              }
                              completion:^(BOOL finished) {
-                                 [self removeFromSuperview];
-                                 if (self.doneBlock) {
-                                     self.doneBlock();
+                                 [introView removeFromSuperview];
+                                 if (introView.doneBlock) {
+                                     introView.doneBlock();
                                  }
                              }];
         } forControlEvents:UIControlEventTouchUpInside];

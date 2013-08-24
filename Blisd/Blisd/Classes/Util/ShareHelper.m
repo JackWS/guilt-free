@@ -7,11 +7,34 @@
 
 #import <Twitter/Twitter.h>
 #import <Parse/Parse.h>
+// Import so AppCode stops complaining
+#import <Parse/PFFacebookUtils.h>
 #import "ShareHelper.h"
+#import "AppController.h"
+#import "Facebook.h"
 
+
+@interface ShareHelper ()
+
+@property (nonatomic, assign) BOOL pendingShare;
+
+@end
 
 @implementation ShareHelper {
 
+}
+
+- (id) init {
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter]
+                addObserver:self
+                   selector:@selector(sessionStateChanged:)
+                       name:kAppControllerDidChangeFacebookStatusNotification
+                     object:nil];
+    }
+
+    return self;
 }
 
 - (IBAction) shareFacebook:(id) sender {
@@ -27,19 +50,16 @@
         // If that doesn't work, link them up with the PFUser and then present the old-style dialog
         [PFFacebookUtils linkUser:[PFUser currentUser] permissions:nil block:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-                [self shareFacebookNonNative];
+                [self shareFBNonNative];
             } else {
                 if (error) {
-                    [UIAlertView showAlertViewWithTitle:NSLocalizedString(@"ERROR_TITLE", @"")
-                                                message:[[error userInfo] objectForKey:@"error"]
-                                      cancelButtonTitle:NSLocalizedString(@"OK", @"")
-                                      otherButtonTitles:nil
-                                                handler:nil];
+                    NSLog(@"Error linking user with Facebook: %@", [error description]);
+                    [UIUtil displayError:error defaultText:NSLocalizedString(@"ERROR_LINK_FACEBOOK", @"")];
                 }
             }
         }];
     } else {
-        [self shareFacebookNonNative];
+        [self shareFBNonNative];
     }
 }
 
@@ -99,6 +119,7 @@
         [vc addURL:[self.delegate shareHelper:self URLForShareWithService:shareService]];
     }
     vc.completionHandler = ^(SLComposeViewControllerResult result) {
+        [[self.delegate viewControllerForShareHelper:self] dismissModalViewControllerAnimated:YES];
         if (result == SLComposeViewControllerResultDone) {
             if ([self.delegate respondsToSelector:@selector(shareHelper:didCompleteShareWithService:)]) {
                 [self.delegate shareHelper:self didCompleteShareWithService:shareService];
@@ -108,14 +129,20 @@
                 [self.delegate shareHelper:self didCancelShareWithService:shareService];
             }
         }
-        [[self.delegate viewControllerForShareHelper:self] dismissModalViewControllerAnimated:YES];
     };
 }
 
-- (void) shareFacebookNonNative {
-    PF_Facebook *fb = [PFFacebookUtils facebook];
-    fb.accessToken = [PF_FBSession activeSession].accessToken;
-    fb.expirationDate = [PF_FBSession activeSession].expirationDate;
+- (void) shareFBNonNative {
+    if (!FBSession.activeSession.isOpen) {
+        self.pendingShare = YES;
+        [[AppController instance] openSessionWithAllowLoginUI:YES];
+    } else {
+        [self reallyShareFBNonNative];
+    }
+}
+
+- (void) reallyShareFBNonNative {
+    Facebook *fb = [AppController instance].facebook;
 
     NSString *name = nil;
     if ([self.delegate respondsToSelector:@selector(shareHelper:nameForShareWithService:)]) {
@@ -176,7 +203,7 @@
     return params;
 }
 
-#pragma mark PF_FBDialogDelegate
+#pragma mark FBDialogDelegate
 
 // Handle the publish feed call back
 - (void)dialogCompleteWithUrl:(NSURL *)url {
@@ -204,14 +231,14 @@
 }
 
 
-- (void) dialog:(PF_FBDialog *) dialog didFailWithError:(NSError *) error {
+- (void) dialog:(FBDialog *) dialog didFailWithError:(NSError *) error {
     if ([self.delegate respondsToSelector:@selector(shareHelper:didCancelShareWithService:)]) {
         [self.delegate shareHelper:self didCancelShareWithService:ShareServiceFacebook];
     }
     NSLog(@"FBDialog error: %@", [error description]);
 }
 
-- (BOOL) dialog:(PF_FBDialog *) dialog shouldOpenURLInExternalBrowser:(NSURL *) url {
+- (BOOL) dialog:(FBDialog *) dialog shouldOpenURLInExternalBrowser:(NSURL *) url {
     return NO;
 }
 
@@ -228,6 +255,15 @@
         }
     }
     [[self.delegate viewControllerForShareHelper:self] dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark Notification Callbacks
+
+- (void) sessionStateChanged:(NSNotification *) notification {
+    if (FBSession.activeSession.isOpen && self.pendingShare) {
+        self.pendingShare = NO;
+        [self reallyShareFBNonNative];
+    }
 }
 
 
