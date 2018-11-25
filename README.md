@@ -1,1 +1,1 @@
-Yo, Yo, Whatch gonna do when they come for you Blisd Boyz Blisd Boyz
+Loyalty program that uses QR code scanning.
